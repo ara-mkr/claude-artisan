@@ -1,0 +1,95 @@
+/* Zen / Wabi-Sabi / Ma — design tokens (generated from style_catalog.json) */
+/* Traditional Japanese → modern | Japanese aesthetics of imperfection (wabi-sabi) and negative space (ma). */
+:root {
+  /* color */
+  --color-bg: #f2ede4;
+  --color-surface: #e9e1d2;
+  --color-surface-strong: #ded2ba;
+  --color-border: #c9bea9;
+  --color-text: #33302a;
+  --color-text-muted: #71685c;
+  --color-primary: #7a4f36;
+  --color-accent: #566349;
+  --color-ink: #4a4740;
+  /* radius */
+  --radius-sm: 3px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 0 1px 3px rgba(51, 48, 42, 0.08);
+  --shadow-md: 0 3px 10px rgba(51, 48, 42, 0.10);
+  --shadow-lg: 0 6px 20px rgba(51, 48, 42, 0.12);
+  --shadow-none: none;
+  /* font */
+  --font-sans: 'Shippori Mincho', 'Noto Serif JP', 'Iowan Old Style', Georgia, serif;
+  --font-display: 'Shippori Mincho', serif;
+  --font-mono: ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 6px;
+  --space-2: 12px;
+  --space-3: 18px;
+  --space-4: 28px;
+  --space-6: 40px;
+  --space-8: 56px;
+  --space-12: 80px;
+  --space-16: 112px;
+  --space-24: 160px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-entrance: cubic-bezier(0, 0, 0.2, 1);
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+  /* extra: an imperfect, hand-thrown asymmetric corner radius (no two corners
+     equal, like a raku bowl) paired with generous "ma" negative-space padding —
+     repeated on card and nav so nothing reads as machine-perfect */
+  --organic-radius: 22px 6px 26px 4px / 14px 20px 8px 24px;
+  --organic-radius-inverse: 6px 22px 4px 26px / 20px 14px 24px 8px;
+  --hairline-crack: 1px solid var(--color-border);
+}
+
+/* ============================================================
+   Base component classes — Zen / Wabi-Sabi / Ma
+   Signature move: an imperfect, hand-thrown asymmetric corner radius (no two
+   corners match) and unusually generous negative-space padding ("ma") —
+   repeated on nav, card, and input so surfaces feel handmade, not gridded.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--color-bg); line-height: 1.6; }
+.nav { display: flex; gap: var(--space-4); align-items: center; padding: var(--space-3) var(--space-6);
+  background: var(--color-surface); border-radius: var(--organic-radius); box-shadow: var(--shadow-sm); }
+.btn {
+  font: 500 var(--text-base)/1 var(--font-sans); color: var(--color-text);
+  padding: var(--space-2) var(--space-4); border-radius: var(--organic-radius-inverse);
+  background: var(--color-surface); border: var(--hairline-crack);
+  box-shadow: var(--shadow-sm); cursor: pointer;
+  transition: box-shadow .25s var(--ease-standard), transform .25s var(--ease-standard);
+}
+.btn:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+.btn:active { box-shadow: var(--shadow-sm); transform: translateY(0); }
+.btn:focus-visible { outline: 1px solid var(--color-primary); outline-offset: 3px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; transform: none; }
+.btn--primary { background: var(--color-primary); color: #f2ede4; border-color: var(--color-primary); }
+.card {
+  background: var(--color-surface); border-radius: var(--organic-radius);
+  box-shadow: var(--shadow-md); padding: var(--space-8); border: var(--hairline-crack);
+}
+.input {
+  width: 100%; box-sizing: border-box; color: var(--color-text); font: var(--text-base) var(--font-sans);
+  padding: var(--space-2) var(--space-3); border-radius: var(--radius-sm);
+  background: var(--color-bg); border: none; border-bottom: 1px solid var(--color-border);
+}
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-bottom-color: var(--color-primary); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font-size: var(--text-xs);
+  padding: .3em .8em; border-radius: var(--radius-pill); background: transparent;
+  color: var(--color-accent); border: 1px solid var(--color-accent); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover, .btn:active { transform: none; } }

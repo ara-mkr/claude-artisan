@@ -1,0 +1,88 @@
+/* Dreampunk — design tokens */
+/* 2010s–present | Surreal, dream-logic offshoot of vaporwave/ambient, condensed */
+:root {
+  /* color */
+  --color-bg: #171b2e;
+  --color-surface: rgba(255, 255, 255, 0.06);
+  --color-surface-strong: rgba(255, 255, 255, 0.11);
+  --color-border: rgba(180, 200, 255, 0.22);
+  --color-text: #eef1ff;
+  --color-text-muted: rgba(238, 241, 255, 0.68);
+  --color-primary: #7c9cff;
+  --color-accent: #9df0e0;
+  /* radius */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 32px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 0 2px 14px rgba(90, 110, 220, 0.20);
+  --shadow-md: 0 10px 40px rgba(90, 110, 220, 0.28);
+  --shadow-lg: 0 24px 70px rgba(90, 110, 220, 0.34);
+  /* blur */
+  --blur-backdrop: 22px;
+  /* font */
+  --font-sans: 'Nunito Sans', system-ui, sans-serif;
+  --font-display: 'Quicksand', 'Nunito Sans', sans-serif;
+  --font-mono: ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+  /* extra: signature = foggy ambient gradient field + heavy blur on every surface (no grain, cool + calm) */
+  --bg-fog: radial-gradient(90% 70% at 15% 10%, #33407a 0%, transparent 55%),
+    radial-gradient(80% 60% at 85% 90%, #1f5f66 0%, transparent 55%), var(--color-bg);
+  --fog-fill: linear-gradient(160deg, rgba(124,156,255,0.14), rgba(157,240,224,0.06));
+}
+
+/* ============================================================
+   Base component classes — Dreampunk
+   Signature move: every surface is a heavily blurred, indistinct fog
+   panel (backdrop-filter blur + soft fog gradient fill, no hard border)
+   evoking hypnagogic, liminal, otherworldly calm.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--bg-fog); background-attachment: fixed; min-height: 100vh; }
+.nav { display: flex; gap: var(--space-4); align-items: center; padding: var(--space-3) var(--space-6);
+  background: var(--fog-fill); backdrop-filter: blur(var(--blur-backdrop)); -webkit-backdrop-filter: blur(var(--blur-backdrop));
+  border: 1px solid var(--color-border); border-radius: var(--radius-pill); box-shadow: var(--shadow-sm); }
+.btn { font: 500 var(--text-base)/1 var(--font-sans); color: var(--color-text);
+  background: var(--fog-fill); backdrop-filter: blur(var(--blur-backdrop)); -webkit-backdrop-filter: blur(var(--blur-backdrop));
+  border: 1px solid var(--color-border); border-radius: var(--radius-pill); padding: var(--space-3) var(--space-6);
+  cursor: pointer; transition: box-shadow .4s var(--ease-standard), transform .4s var(--ease-standard); }
+.btn:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: color-mix(in srgb, var(--color-primary) 40%, transparent); border-color: color-mix(in srgb, var(--color-primary) 55%, transparent); }
+.card { background: var(--fog-fill); backdrop-filter: blur(var(--blur-backdrop)); -webkit-backdrop-filter: blur(var(--blur-backdrop));
+  border: 1px solid var(--color-border); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); padding: var(--space-6); }
+.input { width: 100%; box-sizing: border-box; font: var(--text-base) var(--font-sans); color: var(--color-text);
+  background: var(--fog-fill); backdrop-filter: blur(var(--blur-backdrop)); border: 1px solid var(--color-border);
+  border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); }
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 25%, transparent); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font-size: var(--text-xs); color: var(--color-text);
+  background: var(--fog-fill); backdrop-filter: blur(var(--blur-backdrop)); border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill); padding: .3em .8em; }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .nav, .card, .btn, .input, .badge { background: #232a4a; }
+}
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }

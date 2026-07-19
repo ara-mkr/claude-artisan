@@ -1,0 +1,92 @@
+/* Danish Pastel — design tokens */
+/* 2021–present | Playful pastel maximalist decor aesthetic, condensed */
+:root {
+  /* color */
+  --color-bg: #fdeef2;
+  --color-surface: #ffffff;
+  --color-surface-strong: #fff1c6;
+  --color-border: #2b2b2b;
+  --color-text: #2b2b2b;
+  --color-text-muted: #5b5450;
+  --color-primary: #ff8fb1;
+  --color-accent: #8fd3f4;
+  --color-lilac: #cdb7f6;
+  --color-mint: #a8e6c1;
+  --color-yellow: #ffe27a;
+  /* radius */
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 3px 3px 0 var(--color-border);
+  --shadow-md: 5px 5px 0 var(--color-border);
+  --shadow-lg: 8px 8px 0 var(--color-border);
+  /* font */
+  --font-sans: 'Quicksand', 'Nunito', system-ui, sans-serif;
+  --font-display: 'Fredoka', 'Baloo 2', 'Quicksand', sans-serif;
+  --font-mono: ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.34, 1.56, 0.64, 1);
+  /* extra: checkerboard mix + smiley-dot accent */
+  --checker: conic-gradient(var(--color-lilac) 90deg, transparent 90deg 180deg, var(--color-lilac) 180deg 270deg, transparent 270deg);
+  --checker-size: 24px 24px;
+}
+
+/* ============================================================
+   Base component classes — Danish Pastel
+   Signature move: a thick black cartoon outline + hard offset shadow
+   on candy-pastel fills, repeated on nav, card, and every button.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--color-bg); }
+.nav { display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-3) var(--space-6); background: var(--color-mint);
+  border: 2.5px solid var(--color-border); border-radius: var(--radius-pill); box-shadow: var(--shadow-sm); }
+.btn {
+  font: 700 var(--text-base)/1 var(--font-display); color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-pill);
+  background: var(--color-yellow); border: 2.5px solid var(--color-border); box-shadow: var(--shadow-sm);
+  cursor: pointer; transition: transform .15s var(--ease-standard), box-shadow .15s var(--ease-standard);
+}
+.btn:hover { transform: translate(-2px, -2px); box-shadow: var(--shadow-md); }
+.btn:active { transform: translate(0, 0); box-shadow: 1px 1px 0 var(--color-border); }
+.btn:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; transform: none; }
+.btn--primary { background: var(--color-primary); color: #2b2b2b; }
+.card {
+  background: var(--color-surface); border: 2.5px solid var(--color-border); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg); padding: var(--space-6); position: relative; overflow: hidden;
+}
+.card::before { content: ""; position: absolute; top: 0; right: 0; width: 56px; height: 56px;
+  background-image: var(--checker); background-size: var(--checker-size); opacity: .5; }
+.input {
+  width: 100%; box-sizing: border-box; color: var(--color-text); font: var(--text-base) var(--font-sans);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-md);
+  background: var(--color-surface); border: 2.5px solid var(--color-border); box-shadow: var(--shadow-sm);
+}
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-accent); box-shadow: var(--shadow-sm); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font: 700 var(--text-xs) var(--font-display);
+  padding: .3em .9em; border-radius: var(--radius-pill); background: var(--color-lilac);
+  color: var(--color-text); border: 2px solid var(--color-border); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }

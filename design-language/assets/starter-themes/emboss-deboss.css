@@ -1,0 +1,84 @@
+/* Emboss / Deboss — design tokens */
+/* 2000s–present | Print letterpress heritage adapted to screen (text-shadow technique), condensed */
+:root {
+  /* color */
+  --color-bg: #dbd6cb;
+  --color-surface: #d3cebf;
+  --color-surface-strong: #c8c2b0;
+  --color-border: #b8b1a0;
+  --color-text: #4a4538;
+  --color-text-muted: #6e6857;
+  --color-primary: #7a5a3a;
+  --color-accent: #a8763f;
+  --color-shadow-lo: rgba(60, 55, 40, 0.45);
+  --color-shadow-hi: rgba(255, 255, 250, 0.65);
+  /* radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 1px 1px 2px var(--color-shadow-lo), -1px -1px 1px var(--color-shadow-hi);
+  --shadow-md: inset 2px 2px 3px var(--color-shadow-lo), inset -2px -2px 3px var(--color-shadow-hi);
+  --shadow-lg: inset 3px 3px 6px var(--color-shadow-lo), inset -3px -3px 6px var(--color-shadow-hi);
+  /* font */
+  --font-sans: 'Georgia', 'Iowan Old Style', serif;
+  --font-display: 'Caslon', 'Georgia', serif;
+  --font-mono: ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  /* extra: signature = 1px light/dark text-shadow pair stamping type into the surface */
+  --emboss-text: 1px 1px 0 var(--color-shadow-hi), -1px -1px 1px var(--color-shadow-lo);
+  --deboss-text: -1px -1px 0 var(--color-shadow-hi), 1px 1px 1px var(--color-shadow-lo);
+}
+
+/* ============================================================
+   Base component classes — Emboss / Deboss
+   Signature move: a 1px light + 1px dark text-shadow pair makes type
+   look pressed into (deboss) or raised from (emboss) the tinted paper
+   surface; the same duo drives inset/outset shadows on card and input.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--color-bg); }
+.nav { display: flex; gap: var(--space-4); align-items: center; padding: var(--space-3) var(--space-6);
+  background: var(--color-surface); border-radius: var(--radius-md); box-shadow: var(--shadow-md); }
+.nav strong, .nav a { text-shadow: var(--emboss-text); }
+.btn { font: 700 var(--text-base)/1 var(--font-display); color: var(--color-text); text-shadow: var(--emboss-text);
+  background: var(--color-surface); border: none; border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-6); cursor: pointer; box-shadow: var(--shadow-sm), var(--shadow-md);
+  transition: box-shadow .15s var(--ease-standard); }
+.btn:hover { box-shadow: var(--shadow-lg); }
+.btn:active { text-shadow: var(--deboss-text); box-shadow: var(--shadow-lg); }
+.btn:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: var(--color-accent); color: #2c2214; text-shadow: 1px 1px 0 rgba(255,255,255,0.35), -1px -1px 1px rgba(0,0,0,0.3); }
+.card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-6); box-shadow: var(--shadow-sm), 0 6px 16px rgba(60,55,40,0.15); }
+.card h3 { text-shadow: var(--emboss-text); }
+.input { width: 100%; box-sizing: border-box; font: var(--text-base) var(--font-sans); color: var(--color-text);
+  background: var(--color-surface-strong); border: none; border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4); box-shadow: var(--shadow-md); }
+.input::placeholder { color: var(--color-text-muted); text-shadow: var(--deboss-text); }
+.input:focus { outline: none; box-shadow: var(--shadow-lg), 0 0 0 3px color-mix(in srgb, var(--color-primary) 25%, transparent); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font: 700 var(--text-xs) var(--font-sans);
+  color: var(--color-text); text-shadow: var(--deboss-text); background: var(--color-surface-strong);
+  border-radius: var(--radius-pill); padding: .3em .8em; box-shadow: var(--shadow-md); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } }

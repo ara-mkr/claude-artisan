@@ -1,0 +1,95 @@
+/* Blueprint / Technical Drawing — design tokens */
+/* Drafting heritage | Architectural/engineering cyanotype drawings, condensed */
+:root {
+  /* color */
+  --color-bg: #0d3b66;
+  --color-surface: #0f4a7d;
+  --color-surface-strong: #135a96;
+  --color-border: #bcd9f0;
+  --color-text: #eaf4ff;
+  --color-text-muted: #9fc4e6;
+  --color-primary: #ffffff;
+  --color-accent: #ffb703;
+  /* radius: drafting is all straight edges */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-pill: 2px;
+  /* shadow */
+  --shadow-sm: 0 1px 0 rgba(255,255,255,0.15);
+  --shadow-md: 0 2px 8px rgba(0,0,0,0.35);
+  --shadow-lg: 0 6px 18px rgba(0,0,0,0.4);
+  /* font: monospace annotations over a technical sans */
+  --font-sans: 'Archivo', 'Helvetica Neue', system-ui, sans-serif;
+  --font-display: 'Archivo', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: linear;
+  /* extra: grid paper background + dashed dimension lines */
+  --grid-line: rgba(234,244,255,0.14);
+  --bg-grid: linear-gradient(var(--grid-line) 1px, transparent 1px),
+             linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  --dim-line: 1px dashed var(--color-text-muted);
+}
+
+/* ============================================================
+   Base component classes — Blueprint
+   Signature move: white/cyan line-work on a cyanotype-blue ground, drawn
+   with hairline dashed "dimension" borders and monospace callout labels
+   repeated across nav, card, and input.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans);
+  background-color: var(--color-bg); background-image: var(--bg-grid);
+  background-size: 24px 24px; min-height: 100vh; }
+.nav { display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-3) var(--space-6); background: transparent;
+  border-bottom: var(--dim-line); }
+.nav strong { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.08em; }
+.btn {
+  font: 600 var(--text-sm)/1 var(--font-mono); color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-pill);
+  background: transparent; border: 1px solid var(--color-text);
+  text-transform: uppercase; letter-spacing: 0.06em;
+  cursor: pointer; transition: background-color .15s var(--ease-standard), color .15s var(--ease-standard);
+}
+.btn:hover { background: rgba(255,255,255,0.08); }
+.btn:active { background: rgba(255,255,255,0.16); }
+.btn:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: var(--color-primary); color: var(--color-bg); border-color: var(--color-primary); }
+.card { background: rgba(255,255,255,0.03); color: var(--color-text);
+  border: var(--dim-line); border-radius: var(--radius-lg); padding: var(--space-6);
+  position: relative; }
+.card h3 { font-family: var(--font-mono); text-transform: uppercase; font-size: var(--text-base); letter-spacing: 0.04em; }
+.input {
+  width: 100%; box-sizing: border-box; color: var(--color-text); font: var(--text-base) var(--font-mono);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm);
+  background: transparent; border: 1px solid var(--color-text-muted);
+}
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-accent);
+  box-shadow: 0 0 0 1px var(--color-accent); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font-family: var(--font-mono); font-size: var(--text-xs);
+  padding: .3em .8em; border-radius: var(--radius-pill); background: transparent;
+  border: 1px dashed var(--color-accent); color: var(--color-accent); text-transform: uppercase; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } }

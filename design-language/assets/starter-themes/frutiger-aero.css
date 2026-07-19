@@ -1,0 +1,82 @@
+/* Frutiger Aero — design tokens (generated from style_catalog.json) */
+/* 2004–2013 | Retroactively named (after Frutiger typeface + Windows Aero); nature-meets-tech optimism. */
+:root {
+  /* color */
+  --color-bg: #eaf6ff;
+  --color-surface: rgba(255,255,255,0.55);
+  --color-text: #0b3d2e;
+  --color-text-muted: #2f6b57;
+  --color-primary: #38b6ff;
+  --color-accent: #7ed957;
+  --color-sky: #8fd3ff;
+  --color-green: #5bd06a;
+  --color-aqua: #00c2c7;
+  /* radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-gloss: inset 0 1px 0 rgba(255,255,255,0.9), 0 8px 20px rgba(56,182,255,0.25);
+  --shadow-sm: 0 4px 12px rgba(56,182,255,0.2);
+  /* blur */
+  --blur-backdrop: 10px;
+  /* font */
+  --font-sans: 'Frutiger', 'Myriad Pro', 'Segoe UI', system-ui, sans-serif;
+  --font-display: 'Myriad Pro', 'Segoe UI', sans-serif;
+  --font-mono: ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  /* extra (signature gradients, composite borders, filters) */
+  --glossy: linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.25) 50%, rgba(255,255,255,0.4) 51%, rgba(255,255,255,0.65) 100%);
+  --sky-bg: linear-gradient(180deg, #eaf6ff 0%, #bfe8ff 55%, #d9f7d0 100%);
+}
+
+/* ============================================================
+   Base component classes — Frutiger Aero (token-driven).
+   Signature move lives in references/00-flagship-implementation-specs/frutiger-aero.md;
+   these are accessible, token-wired starting points. */
+body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-sans); }
+.card { background: var(--color-surface, var(--color-bg)); color: var(--color-text);
+  border-radius: var(--radius-md); box-shadow: var(--shadow-gloss);
+  padding: var(--space-6, 24px); border: 1px solid var(--color-border, transparent); }
+.nav { display: flex; gap: var(--space-4, 16px); align-items: center;
+  padding: var(--space-3, 12px) var(--space-6, 24px); background: var(--color-surface, var(--color-bg));
+  box-shadow: var(--shadow-gloss); }
+.btn { font: 700 var(--text-base, 1rem)/1 var(--font-display, var(--font-sans)); color: var(--color-text);
+  background: var(--color-surface, var(--color-bg)); border-radius: var(--radius-md);
+  padding: var(--space-3, 12px) var(--space-6, 24px); box-shadow: var(--shadow-gloss); cursor: pointer; border: 1px solid var(--color-border, transparent);
+  transition: transform .12s var(--ease-standard, ease), box-shadow .12s var(--ease-standard, ease), filter .12s; }
+.btn:hover { transform: translateY(-1px); filter: brightness(1.05); }
+.btn:active { transform: translateY(0); }
+.btn:focus-visible { outline: 2px solid var(--color-accent, var(--color-primary)); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; transform: none; }
+.btn--primary { background: var(--color-primary); color: #111111; border-color: transparent; }
+.input { width: 100%; box-sizing: border-box; font: var(--text-base, 1rem) var(--font-sans); color: var(--color-text);
+  background: var(--color-surface, #fff); border-radius: var(--radius-sm);
+  padding: var(--space-3, 12px) var(--space-4, 16px); border: 1px solid var(--color-border, transparent); }
+.input:focus { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.input::placeholder { color: var(--color-text-muted, currentColor); opacity: .7; }
+.badge { display: inline-flex; align-items: center; gap: .4em; font: 700 var(--text-xs, .75rem) var(--font-sans);
+  color: #111111; background: var(--color-primary); border-radius: var(--radius-pill, 999px); padding: .3em .8em; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover, .btn:active { transform: none; } }

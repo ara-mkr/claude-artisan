@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neubrutalism — component example</title>
+<link rel="stylesheet" href="../starter-themes/neubrutalism.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-12) var(--space-6); display: grid; gap: var(--space-8); }
+  h1 { font: 900 var(--text-4xl)/1 var(--font-display); margin: 0; text-transform: uppercase; }
+  p.lede { font-size: var(--text-lg); margin: 0; max-width: 52ch; }
+  .row { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-6); }
+  .card h3 { margin: 0 0 var(--space-2); font: 800 var(--text-xl) var(--font-display); }
+  .card p { margin: 0; }
+  .card--blue { background: var(--color-blue); color: #fff; }
+  .card--pink { background: var(--color-pink); }
+</style>
+</head>
+<body>
+  <nav class="nav">
+    <strong style="margin-right:auto;font-family:var(--font-display)">BONK.</strong>
+    <a href="#" style="color:var(--color-text);text-decoration:none;font-weight:800">Docs</a>
+    <button class="btn btn--accent">Buy</button>
+  </nav>
+  <div class="wrap">
+    <header>
+      <h1>Loud, flat, and unmistakable.</h1>
+      <p class="lede">The border-and-hard-shadow pair goes on <em>every</em> control. Buttons slide into
+        their shadow on press — the whole system feels physical and clicky.</p>
+    </header>
+
+    <div class="row">
+      <button class="btn">Primary</button>
+      <button class="btn btn--accent">Accent</button>
+      <button class="btn" disabled>Disabled</button>
+      <span class="badge">New</span>
+      <span class="toggle" role="switch" aria-checked="true" tabindex="0"></span>
+    </div>
+
+    <input class="input" placeholder="Type something bold…" aria-label="Demo input">
+
+    <div class="grid">
+      <article class="card card--pink"><h3>Hard shadows</h3><p>No blur. Pure offset. That's the whole trick.</p></article>
+      <article class="card card--blue"><h3>Clashing color</h3><p>Saturated fills, near-black text, thick borders.</p></article>
+      <article class="card"><h3>Chunky type</h3><p>Archivo Black display over Space Grotesk body.</p></article>
+    </div>
+  </div>
+</body>
+</html>

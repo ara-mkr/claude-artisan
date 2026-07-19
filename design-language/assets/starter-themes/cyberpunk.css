@@ -1,0 +1,82 @@
+/* Cyberpunk — design tokens (generated from style_catalog.json) */
+/* 1982–present | Literary roots (Gibson 'Neuromancer' 1984); visual codex from Blade Runner (1982); revived by Cyberpunk 2077. */
+:root {
+  /* color */
+  --color-bg: #05010d;
+  --color-surface: #0d0221;
+  --color-surface-2: #160a2b;
+  --color-text: #e8f9ff;
+  --color-text-muted: #7a8fa6;
+  --color-primary: #00fff5;
+  --color-accent: #ff003c;
+  --color-magenta: #ff00e6;
+  --color-yellow: #faff00;
+  --color-border: #00fff5;
+  /* radius */
+  --radius-sm: 0px;
+  --radius-md: 2px;
+  --radius-lg: 4px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-glow-cyan: 0 0 6px #00fff5, 0 0 18px rgba(0,255,245,0.6);
+  --shadow-glow-magenta: 0 0 6px #ff00e6, 0 0 18px rgba(255,0,230,0.6);
+  /* font */
+  --font-sans: 'Rajdhani', 'Chakra Petch', system-ui, sans-serif;
+  --font-display: 'Orbitron', 'Rajdhani', sans-serif;
+  --font-mono: 'Share Tech Mono', ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: steps(3, end);
+  --ease-glitch: steps(2, jump-none);
+  /* extra (signature gradients, composite borders, filters) */
+  --scanline: repeating-linear-gradient(0deg, rgba(0,255,245,0.05) 0 1px, transparent 1px 3px);
+  --neon-border: 1px solid #00fff5;
+}
+
+/* ============================================================
+   Base component classes — cyberpunk
+   Signature move: neon glow (box/text-shadow) on near-black, mono type,
+   hard clipped corners, scanline overlay. Glow the borders, not the fills.
+   ============================================================ */
+body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-sans);
+  position: relative; }
+body::after { content:""; position: fixed; inset: 0; pointer-events: none; background: var(--scanline); z-index: 9999; }
+.clip { clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px)); }
+.card { background: var(--color-surface); border: var(--neon-border); box-shadow: var(--shadow-glow-cyan);
+  padding: var(--space-6); }
+.nav { display:flex; gap: var(--space-4); align-items:center; background: var(--color-surface-2);
+  border-bottom: 1px solid var(--color-primary); box-shadow: 0 1px 0 var(--color-primary); padding: var(--space-3) var(--space-6); }
+.btn { font: 700 var(--text-base)/1 var(--font-display); letter-spacing:.08em; text-transform: uppercase;
+  color: var(--color-primary); background: transparent; border: 1px solid var(--color-primary);
+  box-shadow: var(--shadow-glow-cyan); padding: var(--space-3) var(--space-6); cursor: pointer;
+  transition: color .1s var(--ease-standard), background .1s var(--ease-standard); }
+.btn:hover { color: var(--color-bg); background: var(--color-primary); }
+.btn:focus-visible { outline: 2px solid var(--color-magenta); outline-offset: 2px; }
+.btn--danger { color: var(--color-accent); border-color: var(--color-accent); box-shadow: var(--shadow-glow-magenta); }
+.input { font: var(--text-base) var(--font-mono); color: var(--color-text); background: #0a0518;
+  border: 1px solid var(--color-primary); padding: var(--space-3) var(--space-4); }
+.input:focus { outline: none; box-shadow: var(--shadow-glow-cyan); }
+.badge { font: 700 var(--text-xs) var(--font-mono); color: var(--color-yellow); border: 1px solid var(--color-yellow);
+  text-transform: uppercase; padding: 0 .5em; }
+/* Accessibility: neon on black reads well, but pure-saturated small text can
+   shimmer — verify body text with contrast_check.py and offer reduced-motion. */
+@media (prefers-reduced-motion: reduce) { body::after { display: none; } .btn { transition: none; } }

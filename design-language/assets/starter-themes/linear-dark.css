@@ -1,0 +1,85 @@
+/* Linear Style — design tokens */
+/* 2020–present | Linear (issue tracker) product aesthetic, condensed */
+:root {
+  /* color */
+  --color-bg: #08090a;
+  --color-surface: #101113;
+  --color-surface-strong: #17181b;
+  --color-border: rgba(255,255,255,0.09);
+  --color-text: #f7f8f8;
+  --color-text-muted: #8a8f98;
+  --color-primary: #5e6ad2;
+  --color-accent: #4ea7fc;
+  --color-glow: rgba(94,106,210,0.5);
+  /* radius */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.4);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.5);
+  --shadow-lg: 0 16px 40px rgba(0,0,0,0.6);
+  /* font */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Inter', system-ui, sans-serif;
+  --font-mono: 'Berkeley Mono', ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.8125rem;
+  --text-base: 0.9375rem;
+  --text-lg: 1.0625rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.625rem;
+  --text-3xl: 2.125rem;
+  --text-4xl: 2.75rem;
+  --text-5xl: 3.75rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  /* extra: subtle radial indigo glow + hairline borders are the signature move */
+  --bg-image: radial-gradient(60% 45% at 50% -5%, rgba(94,106,210,0.18) 0%, transparent 60%), var(--color-bg);
+}
+
+/* ============================================================
+   Base component classes — Linear style
+   Signature move: near-invisible 1px hairline borders on every surface,
+   plus a soft indigo glow that appears behind the primary action on
+   hover — crisp, dark, premium SaaS repeated on nav, card, and btn.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); font-size: var(--text-base);
+  background: var(--bg-image); background-attachment: fixed; min-height: 100vh; }
+.nav { display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-3) var(--space-6); background: var(--color-surface);
+  border: 1px solid var(--color-border); border-radius: var(--radius-lg); }
+.btn { font: 500 var(--text-base)/1 var(--font-sans); color: var(--color-text);
+  padding: var(--space-2) var(--space-4); border-radius: var(--radius-md);
+  background: var(--color-surface-strong); border: 1px solid var(--color-border);
+  cursor: pointer; transition: border-color .15s var(--ease-standard), box-shadow .15s var(--ease-standard); }
+.btn:hover { border-color: rgba(255,255,255,0.18); box-shadow: var(--shadow-sm); }
+.btn:active { background: var(--color-surface); }
+.btn:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.btn[disabled] { opacity: .45; cursor: not-allowed; }
+.btn--primary { background: var(--color-primary); color: #ffffff; border-color: var(--color-primary); }
+.btn--primary:hover { box-shadow: 0 0 0 4px var(--color-glow); border-color: var(--color-primary); }
+.card { background: var(--color-surface); border-radius: var(--radius-lg); border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm); padding: var(--space-6); }
+.input { width: 100%; box-sizing: border-box; color: var(--color-text); font: var(--text-base) var(--font-sans);
+  padding: var(--space-2) var(--space-4); border-radius: var(--radius-md);
+  background: var(--color-surface-strong); border: 1px solid var(--color-border); }
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-glow); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font-size: var(--text-xs); font-weight: 500;
+  padding: .3em .8em; border-radius: var(--radius-pill); background: var(--color-surface-strong);
+  color: var(--color-accent); border: 1px solid var(--color-border); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } }

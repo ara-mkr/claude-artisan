@@ -1,0 +1,123 @@
+/* Glassmorphism — design tokens (generated from style_catalog.json) */
+/* 2020–present | Coined by Michał Malewicz (2020); echoes macOS Big Sur / Windows Acrylic. */
+:root {
+  /* color */
+  --color-bg: #0f172a;
+  --color-bg-gradient-a: #1e3a8a;
+  --color-bg-gradient-b: #7c3aed;
+  --color-surface: rgba(255, 255, 255, 0.10);
+  --color-surface-strong: rgba(255, 255, 255, 0.18);
+  --color-border: rgba(255, 255, 255, 0.22);
+  --color-text: #f8fafc;
+  --color-text-muted: rgba(248, 250, 252, 0.72);
+  --color-primary: #38bdf8;
+  --color-accent: #e879f9;
+  /* radius */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 0 4px 16px rgba(0,0,0,0.18);
+  --shadow-md: 0 8px 32px rgba(0,0,0,0.28);
+  --shadow-lg: 0 16px 48px rgba(0,0,0,0.36);
+  --shadow-inset-hi: inset 0 1px 0 rgba(255,255,255,0.35);
+  /* blur */
+  --blur-backdrop: 16px;
+  --blur-backdrop-strong: 28px;
+  /* font */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-entrance: cubic-bezier(0, 0, 0, 1);
+  --ease-exit: cubic-bezier(0.3, 0, 1, 1);
+  /* extra (signature gradients, composite borders, filters) */
+  --bg-image: radial-gradient(120% 120% at 0% 0%, #1e3a8a 0%, #0f172a 55%, #7c3aed 120%);
+  --glass-fill: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.06));
+  --glass-border: 1px solid rgba(255,255,255,0.22);
+}
+
+/* ============================================================
+   Base component classes — glassmorphism
+   Signature move: frosted translucent panel (backdrop-filter blur) +
+   1px light top border + inner highlight, floating over a vivid gradient.
+   Repeat the glass treatment on every raised surface, never just once.
+   ============================================================ */
+body {
+  margin: 0; color: var(--color-text); font-family: var(--font-sans);
+  background: var(--bg-image); background-attachment: fixed; min-height: 100vh;
+}
+.glass {
+  background: var(--glass-fill);
+  backdrop-filter: blur(var(--blur-backdrop)); -webkit-backdrop-filter: blur(var(--blur-backdrop));
+  border: var(--glass-border); box-shadow: var(--shadow-md), var(--shadow-inset-hi);
+  border-radius: var(--radius-lg);
+}
+.card { composes: glass; }
+.card, .modal, .nav { background: var(--glass-fill);
+  backdrop-filter: blur(var(--blur-backdrop)); -webkit-backdrop-filter: blur(var(--blur-backdrop));
+  border: var(--glass-border); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md), var(--shadow-inset-hi); }
+.card { padding: var(--space-6); }
+.nav { display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-pill); }
+.btn {
+  font: 600 var(--text-base)/1 var(--font-sans); color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-pill);
+  background: var(--glass-fill); border: var(--glass-border);
+  backdrop-filter: blur(var(--blur-backdrop)); -webkit-backdrop-filter: blur(var(--blur-backdrop));
+  box-shadow: var(--shadow-sm), var(--shadow-inset-hi);
+  cursor: pointer; transition: transform .2s var(--ease-standard), box-shadow .2s var(--ease-standard);
+}
+.btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-md), var(--shadow-inset-hi); }
+.btn:active { transform: translateY(0); box-shadow: var(--shadow-sm); }
+.btn:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: color-mix(in srgb, var(--color-primary) 35%, transparent);
+  border-color: color-mix(in srgb, var(--color-primary) 60%, transparent); }
+.input {
+  width: 100%; color: var(--color-text); font: var(--text-base) var(--font-sans);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-md);
+  background: rgba(255,255,255,0.06); border: var(--glass-border);
+  backdrop-filter: blur(var(--blur-backdrop));
+}
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 30%, transparent); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font-size: var(--text-xs);
+  padding: .3em .8em; border-radius: var(--radius-pill); background: var(--glass-fill);
+  border: var(--glass-border); }
+/* Accessibility: glass needs a legibility scrim for body text and a solid
+   fallback where backdrop-filter is unsupported or prefers-reduced-transparency. */
+.glass-scrim { position: relative; }
+.glass-scrim::before { content: ""; position: absolute; inset: 0; border-radius: inherit;
+  background: var(--color-scrim, rgba(0,0,0,0.28)); z-index: -1; }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .card, .modal, .nav, .btn, .input { background: #1b2540; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .card, .modal, .nav, .btn, .input { background: #1b2540; backdrop-filter: none; -webkit-backdrop-filter: none; }
+}
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }

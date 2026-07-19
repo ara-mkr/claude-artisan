@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Retro Americana / Diner — component example</title>
+<!-- Import the one starter theme; that's ~80% of the look. -->
+<link rel="stylesheet" href="../starter-themes/americana-diner.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-16) var(--space-6); display: grid; gap: var(--space-8); }
+  h1 { font: 400 var(--text-4xl)/1.05 var(--font-display); margin: 0; }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-lg); margin: 0; max-width: 52ch; }
+  .row { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4); }
+  .card h3 { margin: 0 0 var(--space-2); font-size: var(--text-xl); }
+  .card p { margin: 0; color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto">Route 66 Diner</strong>
+      <a href="#" style="color:var(--color-text);text-decoration:none">Menu</a>
+      <a href="#" style="color:var(--color-text-muted);text-decoration:none">Jukebox</a>
+      <button class="btn btn--primary">Reserve a booth</button>
+    </nav>
+
+    <header>
+      <h1>Chrome bumpers, cherry-red vinyl.</h1>
+      <p class="lede">Checkerboard trim and hard offset drop-shadows give every panel the bounce of a
+        50s roadside diner sign — nostalgic, wholesome, a little bit kitsch.</p>
+    </header>
+
+    <div class="row">
+      <button class="btn btn--primary">Order a malt</button>
+      <button class="btn">See specials</button>
+      <button class="btn" disabled>Booth full</button>
+      <span class="badge">Open 24hrs</span>
+    </div>
+
+    <input class="input" placeholder="Table for how many?">
+
+    <div class="grid">
+      <article class="card">
+        <h3>Checkerboard trim</h3>
+        <p>A black-and-cream checker stripe runs along every card and nav edge, diner-floor style.</p>
+      </article>
+      <article class="card">
+        <h3>Chrome bumper shadow</h3>
+        <p>Hard, unblurred offset shadows give buttons and cards the weight of real chrome trim.</p>
+      </article>
+    </div>
+  </div>
+</body>
+</html>

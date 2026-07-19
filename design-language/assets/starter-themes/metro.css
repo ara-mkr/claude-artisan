@@ -1,0 +1,84 @@
+/* Metro / Microsoft Design Language — design tokens */
+/* 2010–2017 | Microsoft, Windows Phone 7 (2010), Windows 8, condensed */
+:root {
+  /* color */
+  --color-bg: #0d0d0d;
+  --color-surface: #1a1a1a;
+  --color-surface-strong: #262626;
+  --color-border: #3a3a3a;
+  --color-text: #ffffff;
+  --color-text-muted: #a6a6a6;
+  --color-primary: #2d89ef;
+  --color-accent: #e51400;
+  --color-tile-purple: #6a00ff;
+  --color-tile-green: #00a300;
+  --color-tile-teal: #00aba9;
+  /* radius: Metro is flat and square, zero everywhere */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-pill: 0px;
+  /* shadow: no shadows, flatness is the point */
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  /* font */
+  --font-sans: 'Segoe UI', 'Segoe UI Light', system-ui, sans-serif;
+  --font-display: 'Segoe UI Light', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'Consolas', ui-monospace, monospace;
+  /* text: Metro leans on oversized, light-weight type for hierarchy */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.75rem;
+  --text-4xl: 3.5rem;
+  --text-5xl: 5rem;
+  /* space: dense tile grid rhythm */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease: fast, linear, no bounce — content-first motion */
+  --ease-standard: cubic-bezier(0.1, 0.9, 0.2, 1);
+  /* extra: flat color tiles, edge-to-edge, no chrome — the tile IS the button */
+  --tile-grid-gap: 2px;
+}
+
+/* ============================================================
+   Base component classes — Metro
+   Signature move: flat, edge-to-edge solid-color tiles with zero radius and
+   zero shadow — the surface color itself carries all the meaning. Repeats
+   on nav, btn--primary (a color tile), and badge.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--color-bg); min-height: 100vh; }
+.nav { display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-4) var(--space-6); background: var(--color-surface); border-bottom: 1px solid var(--color-border); }
+.btn { font: 300 var(--text-lg)/1 var(--font-sans); text-transform: uppercase; letter-spacing: .04em;
+  color: var(--color-text); padding: var(--space-4) var(--space-6); border-radius: var(--radius-sm);
+  background: var(--color-surface-strong); border: none; cursor: pointer;
+  transition: background-color .12s var(--ease-standard); }
+.btn:hover { background-color: var(--color-primary); }
+.btn:active { background-color: color-mix(in srgb, var(--color-primary) 80%, black); }
+.btn:focus-visible { outline: 2px solid #ffffff; outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; background: var(--color-surface-strong); }
+.btn--primary { background: var(--color-primary); color: #ffffff; }
+.btn--primary:hover { background: color-mix(in srgb, var(--color-primary) 85%, white); }
+.card { background: var(--color-tile-purple); color: #ffffff; border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm); padding: var(--space-6); }
+.card:nth-of-type(2n) { background: var(--color-tile-teal); }
+.input { width: 100%; box-sizing: border-box; color: var(--color-text); font: var(--text-base) var(--font-sans);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm);
+  background: var(--color-surface); border: none; border-bottom: 2px solid var(--color-text-muted); }
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-bottom-color: var(--color-primary); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font-size: var(--text-xs); text-transform: uppercase;
+  padding: .3em .8em; border-radius: var(--radius-sm); background: var(--color-accent); color: #ffffff; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } }

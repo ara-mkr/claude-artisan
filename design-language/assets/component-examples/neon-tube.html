@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neon Sign / Tube — component example</title>
+<link rel="stylesheet" href="../starter-themes/neon-tube.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-16, 64px) var(--space-6, 24px); display: grid; gap: var(--space-8, 32px); }
+  h1 { font: 400 var(--text-4xl, 3rem)/1.05 var(--font-display); margin: 0; text-shadow: var(--tube-text-glow); }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-lg, 1.125rem); margin: 0; max-width: 52ch; }
+  .row { display: flex; gap: var(--space-4, 16px); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4, 16px); }
+  .card h3 { margin: 0 0 var(--space-2, 8px); font-size: var(--text-xl, 1.375rem); }
+  .card p { margin: 0; color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto;color:var(--color-accent)">OPEN 24HRS</strong>
+      <a href="#" style="color:var(--color-text);text-decoration:none">Menu</a>
+      <a href="#" style="color:var(--color-text-muted);text-decoration:none">Directions</a>
+      <button class="btn btn--primary">Sign in</button>
+    </nav>
+    <header>
+      <h1>Open all night, glowing.</h1>
+      <p class="lede">A bloomed tube-glow wraps the headline text, and the same bright bordered stroke
+        repeats around the nav pill, the primary button, and every card edge.</p>
+    </header>
+    <div class="row">
+      <button class="btn btn--primary">Order now</button>
+      <button class="btn">View menu</button>
+      <button class="btn" disabled>Closed</button>
+      <span class="badge">HOT NOW</span>
+    </div>
+    <input class="input" placeholder="Delivery address…" aria-label="Delivery address">
+    <div class="grid">
+      <article class="card"><h3>Diner Special</h3><p>Pink tube glow reflects off the chrome countertop.</p></article>
+      <article class="card"><h3>Late Night Bar</h3><p>Cyan neon flickers behind the frosted glass window.</p></article>
+    </div>
+  </div>
+</body>
+</html>

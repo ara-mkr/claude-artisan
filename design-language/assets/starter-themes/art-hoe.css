@@ -1,0 +1,105 @@
+/* Art Hoe — design tokens */
+/* 2015–present | Art-student creative-expression subculture, condensed */
+:root {
+  /* color: warm earthy paper tones + bright sunflower/terracotta accents */
+  --color-bg: #f5ead9;
+  --color-surface: #fdf3e0;
+  --color-surface-strong: #f7e2c3;
+  --color-border: #3a2b1e;
+  --color-text: #3a2b1e;
+  --color-text-muted: #6b5847;
+  --color-primary: #c1440e;
+  --color-accent: #d4a017;
+  --color-olive: #6b7a3f;
+  --color-clay: #b5651d;
+  /* radius: soft, hand-trimmed */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+  /* shadow: soft polaroid drop, no hard offset */
+  --shadow-sm: 0 2px 6px rgba(58,43,30,0.14);
+  --shadow-md: 0 8px 20px rgba(58,43,30,0.18);
+  --shadow-lg: 0 16px 36px rgba(58,43,30,0.22);
+  /* font: journal serif headline + warm sans body */
+  --font-sans: 'Nunito Sans', 'Avenir Next', system-ui, sans-serif;
+  --font-display: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-mono: 'Courier Prime', ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease: gentle, hand-drawn */
+  --ease-standard: cubic-bezier(0.33, 1, 0.68, 1);
+  /* extra: paint-splatter accent + polaroid tilt — the signature move,
+     built from radial-gradient blobs so it needs no image asset */
+  --splatter: radial-gradient(circle at 12% 20%, var(--color-primary) 0 6px, transparent 7px),
+              radial-gradient(circle at 78% 15%, var(--color-accent) 0 4px, transparent 5px),
+              radial-gradient(circle at 88% 70%, var(--color-olive) 0 5px, transparent 6px),
+              radial-gradient(circle at 25% 85%, var(--color-clay) 0 3px, transparent 4px);
+  --tilt-card: rotate(-1.2deg);
+  --tilt-badge: rotate(2deg);
+}
+
+/* ============================================================
+   Base component classes — Art Hoe
+   Signature move: a scattered paint-splatter dot cluster (radial-gradient
+   blobs in the primary/accent/olive/clay palette) layered into the
+   background of every raised surface, plus a slight collage/polaroid
+   tilt on cards — repeats on nav, card, and badge so it reads as a
+   hand-kept sketchbook, not a single decorated element.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--color-bg); min-height: 100vh; }
+.nav {
+  display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-3) var(--space-6); background: var(--color-surface);
+  background-image: var(--splatter);
+  border-bottom: 2px solid var(--color-border); box-shadow: var(--shadow-sm);
+}
+.btn {
+  font: 600 var(--text-base)/1 var(--font-sans); color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-pill);
+  background: var(--color-surface-strong); border: 2px solid var(--color-border);
+  box-shadow: var(--shadow-sm); cursor: pointer;
+  transition: transform .2s var(--ease-standard), box-shadow .2s var(--ease-standard);
+}
+.btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn:active { transform: translateY(0); box-shadow: var(--shadow-sm); }
+.btn:focus-visible { outline: 3px solid var(--color-olive); outline-offset: 3px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; transform: none; }
+.btn--primary { background: var(--color-primary); color: #fff8ec; border-color: var(--color-primary); }
+.card {
+  background: var(--color-surface); color: var(--color-text);
+  background-image: var(--splatter);
+  border-radius: var(--radius-lg); padding: var(--space-6);
+  border: 2px solid var(--color-border); box-shadow: var(--shadow-md);
+  transform: var(--tilt-card);
+}
+.input {
+  width: 100%; box-sizing: border-box; color: var(--color-text); font: var(--text-base) var(--font-sans);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-md);
+  background: var(--color-surface); border: 2px solid var(--color-border);
+}
+.input::placeholder { color: var(--color-text-muted); font-style: italic; }
+.input:focus { outline: none; border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 25%, transparent); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font-size: var(--text-xs); font-weight: 700;
+  padding: .3em .8em; border-radius: var(--radius-pill); background: var(--color-accent);
+  color: #3a2b1e; border: 2px solid var(--color-border); transform: var(--tilt-badge); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }

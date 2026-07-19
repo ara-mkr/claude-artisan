@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anti-Design — component example</title>
+<!-- Import the one starter theme; that's ~80% of the look. -->
+<link rel="stylesheet" href="../starter-themes/anti-design.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-16) var(--space-6); display: grid; gap: var(--space-8); }
+  h1 { font: 700 var(--text-4xl)/1.05 var(--font-display); margin: 0; }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-lg); margin: 0; max-width: 52ch; }
+  .row { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4); }
+  .card h3 { margin: 0 0 var(--space-2); font-size: var(--text-xl); }
+  .card p { margin: 0; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto">UGLY.CO</strong>
+      <a href="#" style="color:var(--color-text);text-decoration:underline">Shop</a>
+      <a href="#" style="color:var(--color-text-muted);text-decoration:underline">About</a>
+      <button class="btn btn--primary">ENTER</button>
+    </nav>
+
+    <header>
+      <h1>Beauty is a rule. We broke it.</h1>
+      <p class="lede">Clashing type, mis-registered shadows, and a tilt that never sits still —
+        every surface refuses the polished grid on purpose, and it repeats everywhere so the
+        chaos reads as a system, not an accident.</p>
+    </header>
+
+    <div class="row">
+      <button class="btn btn--primary">CLICK HERE!!!</button>
+      <button class="btn">maybe later</button>
+      <button class="btn" disabled>nope</button>
+      <span class="badge">new!!</span>
+    </div>
+
+    <input class="input" placeholder="type your email (we won't spell-check it)" aria-label="Email">
+
+    <div class="grid">
+      <article class="card">
+        <h3>Default is a statement</h3>
+        <p>System fonts, unstyled scrollbars, browser blue links — embraced, not hidden.</p>
+      </article>
+      <article class="card">
+        <h3>Hierarchy is optional</h3>
+        <p>Nothing here tells your eye where to go first. That's the point.</p>
+      </article>
+    </div>
+  </div>
+</body>
+</html>

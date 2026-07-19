@@ -1,0 +1,89 @@
+/* Carbon Design System — design tokens */
+/* 2017–present | IBM, condensed */
+:root {
+  /* color */
+  --color-bg: #161616;
+  --color-surface: #262626;
+  --color-surface-strong: #393939;
+  --color-border: #525252;
+  --color-text: #f4f4f4;
+  --color-text-muted: #c6c6c6;
+  --color-primary: #4589ff;
+  --color-accent: #08bdba;
+  /* radius: enterprise, near-flat */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-pill: 2px;
+  /* shadow: restrained, almost none */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md: 0 2px 6px rgba(0,0,0,0.35);
+  --shadow-lg: 0 4px 12px rgba(0,0,0,0.4);
+  /* font: IBM Plex family */
+  --font-sans: 'IBM Plex Sans', 'Helvetica Neue', system-ui, sans-serif;
+  --font-display: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 2.875rem;
+  --text-5xl: 3.75rem;
+  /* space: 2x grid discipline */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.2, 0, 0.38, 0.9);
+  /* extra: 2px bottom border as interactive underline, IBM Plex data grid tint */
+  --underline-active: 2px solid var(--color-primary);
+  --grid-tint: rgba(255,255,255,0.02);
+}
+
+/* ============================================================
+   Base component classes — Carbon Design System
+   Signature move: flat, near-zero-radius panels with a 1px hairline
+   border and a 2px solid bottom-border used as the interactive/focus
+   accent — repeated on input, nav (active link), and btn.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans);
+  background: var(--color-bg); min-height: 100vh; }
+.nav { display: flex; gap: var(--space-6); align-items: center;
+  padding: var(--space-4) var(--space-6); background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border); }
+.btn {
+  font: 400 var(--text-sm)/1 var(--font-sans); color: var(--color-text);
+  padding: var(--space-4) var(--space-6); border-radius: var(--radius-sm);
+  background: var(--color-surface-strong); border: none;
+  cursor: pointer; transition: background-color .11s var(--ease-standard);
+}
+.btn:hover { background: #4c4c4c; }
+.btn:active { background: #6f6f6f; }
+.btn:focus-visible { outline: 2px solid var(--color-primary); outline-offset: -2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: var(--color-primary); color: #ffffff; }
+.btn--primary:hover { background: #619eff; }
+.card { background: var(--color-surface); color: var(--color-text);
+  border-radius: var(--radius-lg); padding: var(--space-6);
+  border-top: var(--underline-active); }
+.input {
+  width: 100%; box-sizing: border-box; color: var(--color-text); font: var(--text-base) var(--font-sans);
+  padding: var(--space-4); border-radius: var(--radius-sm);
+  background: var(--color-surface-strong); border: none; border-bottom: 1px solid var(--color-text-muted);
+}
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-bottom: var(--underline-active);
+  box-shadow: inset 0 -1px 0 var(--color-primary); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font-size: var(--text-xs);
+  padding: .3em .8em; border-radius: var(--radius-pill); background: var(--color-accent); color: #003835; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } }

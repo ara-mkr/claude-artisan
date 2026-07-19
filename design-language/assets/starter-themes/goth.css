@@ -1,0 +1,89 @@
+/* Goth / Gothic — design tokens */
+/* 1980s–present | Post-punk goth subculture, condensed */
+:root {
+  /* color */
+  --color-bg: #0a0508;
+  --color-surface: #150c11;
+  --color-surface-strong: #1f1218;
+  --color-border: #4a1f2e;
+  --color-text: #ece3e6;
+  --color-text-muted: #b79aa5;
+  --color-primary: #7a1128;
+  --color-accent: #9c6b3f;
+  --color-blood: #5c0e1f;
+  --color-rose: #b83a52;
+  /* radius */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.6);
+  --shadow-md: 0 6px 20px rgba(0,0,0,0.7);
+  --shadow-lg: 0 14px 40px rgba(0,0,0,0.8);
+  --shadow-ecclesiastic: inset 0 0 0 1px rgba(156,107,63,0.35);
+  /* font */
+  --font-sans: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  --font-display: 'UnifrakturCook', 'Pirata One', 'Cinzel Decorative', serif;
+  --font-mono: 'Courier Prime', ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  /* extra: ornate filigree border + rose-gold hairline, repeated on nav/card/btn */
+  --border-filigree: 1px solid var(--color-border);
+  --hairline-gradient: linear-gradient(90deg, transparent, var(--color-accent) 50%, transparent);
+  --bg-image: radial-gradient(90% 60% at 50% -10%, #1f0c14 0%, #0a0508 60%);
+}
+
+/* ============================================================
+   Base component classes — Goth
+   Signature move: a thin rose-gold hairline rule (top border on nav/card,
+   bottom-border underglow on inputs) evoking ecclesiastical metalwork
+   against near-black, plus a deep-red primary for ritual emphasis.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--bg-image) var(--color-bg); min-height: 100vh; }
+.nav { display: flex; gap: var(--space-4); align-items: center; padding: var(--space-4) var(--space-6);
+  background: var(--color-surface); border-bottom: var(--border-filigree);
+  border-top: 2px solid transparent; border-image: var(--hairline-gradient) 1; }
+.btn { font: 600 var(--text-base)/1 var(--font-sans); letter-spacing: .03em; color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-md);
+  background: var(--color-surface-strong); border: var(--border-filigree);
+  box-shadow: var(--shadow-sm); cursor: pointer; transition: box-shadow .2s var(--ease-standard), transform .2s var(--ease-standard); }
+.btn:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: linear-gradient(180deg, var(--color-primary), var(--color-blood));
+  border-color: var(--color-rose); color: #f4e6ea; }
+.card { background: var(--color-surface); border: var(--border-filigree); border-top: 2px solid transparent;
+  border-image: var(--hairline-gradient) 1; border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md), var(--shadow-ecclesiastic); padding: var(--space-6); }
+.input { width: 100%; box-sizing: border-box; color: var(--color-text); font: var(--text-base) var(--font-sans);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm);
+  background: var(--color-surface-strong); border: var(--border-filigree);
+  border-bottom: 2px solid var(--color-accent); }
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-rose); box-shadow: 0 0 0 3px rgba(184,58,82,0.25); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font-size: var(--text-xs); letter-spacing: .04em;
+  padding: .3em .8em; border-radius: var(--radius-pill); background: var(--color-surface-strong);
+  border: 1px solid var(--color-accent); color: var(--color-accent); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }

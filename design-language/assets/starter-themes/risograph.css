@@ -1,0 +1,80 @@
+/* Risograph — design tokens (generated from style_catalog.json) */
+/* 1980s stencil printing → 2010s revival | Riso Kagaku duplicator; indie print revival. */
+:root {
+  /* color */
+  --color-bg: #f3ecde;
+  --color-surface: #f3ecde;
+  --color-text: #1a1a1a;
+  --color-text-muted: #444444;
+  --color-primary: #ff5b45;
+  --color-accent: #0078bf;
+  --color-yellow: #ffd200;
+  --color-green: #00a95c;
+  --color-pink: #ff48b0;
+  /* radius */
+  --radius-sm: 0px;
+  --radius-md: 2px;
+  --radius-lg: 4px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-none: none;
+  /* font */
+  --font-sans: 'Space Grotesk', 'Archivo', system-ui, sans-serif;
+  --font-display: 'Archivo Black', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: linear;
+  /* extra (signature gradients, composite borders, filters) */
+  --grain: url('data:image/svg+xml;...noise');
+  --halftone: radial-gradient(#ff5b45 30%, transparent 31%) 0 0 / 6px 6px;
+  --multiply: multiply;
+}
+
+/* ============================================================
+   Base component classes — Risograph (token-driven).
+   Signature move lives in references/00-flagship-implementation-specs/risograph.md;
+   these are accessible, token-wired starting points. */
+body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-sans); }
+.card { background: var(--color-surface, var(--color-bg)); color: var(--color-text);
+  border-radius: var(--radius-md); box-shadow: var(--shadow-none);
+  padding: var(--space-6, 24px); border: 2px solid var(--color-text); }
+.nav { display: flex; gap: var(--space-4, 16px); align-items: center;
+  padding: var(--space-3, 12px) var(--space-6, 24px); background: var(--color-surface, var(--color-bg));
+  border-bottom: 2px solid var(--color-text); }
+.btn { font: 700 var(--text-base, 1rem)/1 var(--font-display, var(--font-sans)); color: var(--color-text);
+  background: var(--color-surface, var(--color-bg)); border-radius: var(--radius-md);
+  padding: var(--space-3, 12px) var(--space-6, 24px); box-shadow: var(--shadow-none); cursor: pointer; border: 2px solid var(--color-text);
+  transition: transform .12s var(--ease-standard, ease), box-shadow .12s var(--ease-standard, ease), filter .12s; }
+.btn:hover { transform: translateY(-1px); filter: brightness(0.96); }
+.btn:active { transform: translateY(0); }
+.btn:focus-visible { outline: 2px solid var(--color-accent, var(--color-primary)); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; transform: none; }
+.btn--primary { background: var(--color-primary); color: #111111; border-color: var(--color-text); }
+.input { width: 100%; box-sizing: border-box; font: var(--text-base, 1rem) var(--font-sans); color: var(--color-text);
+  background: var(--color-surface, #fff); border-radius: var(--radius-sm);
+  padding: var(--space-3, 12px) var(--space-4, 16px); border: 2px solid var(--color-text); }
+.input:focus { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.input::placeholder { color: var(--color-text-muted, currentColor); opacity: .7; }
+.badge { display: inline-flex; align-items: center; gap: .4em; font: 700 var(--text-xs, .75rem) var(--font-sans);
+  color: #111111; background: var(--color-primary); border-radius: var(--radius-pill, 999px); padding: .3em .8em; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover, .btn:active { transform: none; } }

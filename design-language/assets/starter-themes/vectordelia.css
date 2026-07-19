@@ -1,0 +1,100 @@
+/* Vectordelia — design tokens (generated from style_catalog.json) */
+/* 2004–2010 | Mid-2000s vector-art trend (part of Frutiger family). */
+:root {
+  /* color */
+  --color-bg: #eaf6ff;
+  --color-surface: #ffffff;
+  --color-surface-strong: #f2fbff;
+  --color-text: #0b2545;
+  --color-text-muted: #45607e;
+  --color-primary: #0ea5e9;
+  --color-accent: #ec4899;
+  --color-lime: #a3e635;
+  --color-violet: #8b5cf6;
+  /* radius */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 0 2px 8px rgba(14, 165, 233, 0.18);
+  --shadow-md: 0 6px 20px rgba(14, 165, 233, 0.24);
+  --shadow-lg: 0 12px 36px rgba(14, 165, 233, 0.28);
+  --shadow-inset-hi: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  /* font */
+  --font-sans: 'Myriad Pro', 'Segoe UI', -apple-system, sans-serif;
+  --font-display: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  --font-mono: ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-entrance: cubic-bezier(0, 0, 0, 1);
+  --ease-exit: cubic-bezier(0.3, 0, 1, 1);
+  /* extra: a glossy swooping "wirebird" gradient — a saturated blue-to-violet
+     swirl with a bright glass highlight band across the top, the Illustrator
+     flourish-era signature repeated across every raised surface */
+  --swirl-gradient: linear-gradient(120deg, #0369a1 0%, #0e7490 30%, #6d28d9 65%, #be185d 100%);
+  --gloss-sheen: linear-gradient(180deg, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.12) 35%, rgba(255,255,255,0) 60%);
+}
+
+/* ============================================================
+   Base component classes — Vectordelia
+   Signature move: a glossy blue-violet-magenta "wirebird" swirl gradient
+   topped with a bright sheen highlight — repeated on nav, btn--primary, and
+   card top-edge, evoking mid-2000s Illustrator vector flourish art.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--color-bg); }
+.nav { display: flex; gap: var(--space-4); align-items: center; padding: var(--space-3) var(--space-6);
+  background: var(--swirl-gradient); border-radius: var(--radius-pill); box-shadow: var(--shadow-md);
+  color: #ffffff; position: relative; overflow: hidden; }
+.nav::before { content: ""; position: absolute; inset: 0; background: var(--gloss-sheen); pointer-events: none; }
+.nav a { position: relative; z-index: 1; }
+.btn {
+  font: 700 var(--text-base)/1 var(--font-display); color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-pill);
+  background: var(--color-surface); border: 1px solid color-mix(in srgb, var(--color-primary) 35%, transparent);
+  box-shadow: var(--shadow-sm), var(--shadow-inset-hi); cursor: pointer;
+  transition: transform .2s var(--ease-standard), box-shadow .2s var(--ease-standard);
+}
+.btn:hover { transform: translateY(-2px) scale(1.02); box-shadow: var(--shadow-md), var(--shadow-inset-hi); }
+.btn:active { transform: translateY(0) scale(1); box-shadow: var(--shadow-sm); }
+.btn:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; transform: none; }
+.btn--primary { background: var(--swirl-gradient); color: #ffffff; border-color: transparent; position: relative; overflow: hidden; }
+.btn--primary::before { content: ""; position: absolute; inset: 0; background: var(--gloss-sheen); pointer-events: none; }
+.card {
+  background: var(--color-surface); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md); padding: var(--space-6); border: 1px solid color-mix(in srgb, var(--color-primary) 18%, transparent);
+  position: relative; overflow: hidden;
+}
+.card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 6px; background: var(--swirl-gradient); }
+.input {
+  width: 100%; box-sizing: border-box; color: var(--color-text); font: var(--text-base) var(--font-sans);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-md);
+  background: var(--color-surface-strong); border: 1px solid color-mix(in srgb, var(--color-primary) 30%, transparent);
+}
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 25%, transparent); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font: 700 var(--text-xs) var(--font-display);
+  padding: .3em .9em; border-radius: var(--radius-pill); background: var(--color-lime); color: #14401f; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover, .btn:active { transform: none; } }

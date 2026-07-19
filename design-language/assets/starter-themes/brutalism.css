@@ -1,0 +1,71 @@
+/* Brutalist Web Design — design tokens (generated from style_catalog.json) */
+/* 2014–present | Named after architectural Brutalism (béton brut); web movement popularized via brutalistwebsites.com (Pascal Deville). */
+:root {
+  /* color */
+  --color-bg: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-2: #f0f0f0;
+  --color-text: #000000;
+  --color-text-muted: #333333;
+  --color-primary: #0000ff;
+  --color-accent: #ff0000;
+  --color-visited: #800080;
+  /* radius */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-pill: 0px;
+  /* shadow */
+  --shadow-none: none;
+  --shadow-hard: 4px 4px 0 #000000;
+  /* font */
+  --font-sans: 'Times New Roman', Times, serif;
+  --font-display: 'Courier New', 'Times New Roman', serif;
+  --font-mono: 'Courier New', monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.9rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.6rem;
+  --text-2xl: 2.2rem;
+  --text-3xl: 3rem;
+  --text-4xl: 4.5rem;
+  --text-5xl: 6rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  /* ease */
+  --ease-standard: linear;
+  /* extra (signature gradients, composite borders, filters) */
+  --link-decoration: underline;
+  --border: 2px solid #000000;
+}
+
+/* ============================================================
+   Base component classes — brutalist web design
+   Signature move: raw, near-default HTML honesty. System/serif fonts,
+   hard 2px black borders, zero rounding, default-blue links, visible grid.
+   ============================================================ */
+body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-sans);
+  line-height: 1.4; max-width: 70ch; padding: var(--space-6); }
+a { color: var(--color-primary); text-decoration: var(--link-decoration); }
+a:visited { color: var(--color-visited); }
+.card { border: var(--border); padding: var(--space-4); }
+.nav { display:flex; gap: var(--space-4); border-bottom: var(--border); padding-bottom: var(--space-2); }
+.btn { font: var(--text-base) var(--font-mono); color: var(--color-text); background: var(--color-surface);
+  border: var(--border); border-radius: 0; padding: var(--space-2) var(--space-4); cursor: pointer; }
+.btn:hover { background: var(--color-text); color: var(--color-bg); }
+.btn:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.btn[disabled] { color: var(--color-text-muted); cursor: not-allowed; }
+.input { font: var(--text-base) var(--font-mono); color: var(--color-text); background: #fff;
+  border: var(--border); border-radius: 0; padding: var(--space-2) var(--space-3); }
+.badge { font: var(--text-xs) var(--font-mono); border: 1px solid var(--color-text); padding: 0 .4em; }
+/* Accessibility: brutalism is high-contrast by nature (black on white passes
+   AAA), but keep link underlines and real focus outlines — don't strip them. */

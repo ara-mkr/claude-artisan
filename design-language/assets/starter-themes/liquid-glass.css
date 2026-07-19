@@ -1,0 +1,90 @@
+/* Liquid Glass — design tokens (generated from style_catalog.json) */
+/* 2025–present | Apple, announced WWDC June 2025; ships in iOS/iPadOS 26, macOS Tahoe, etc. */
+:root {
+  /* color */
+  --color-bg: #000000;
+  --color-surface: rgba(255,255,255,0.06);
+  --color-surface-strong: rgba(255,255,255,0.14);
+  --color-border: rgba(255,255,255,0.30);
+  --color-specular: rgba(255,255,255,0.65);
+  --color-text: #ffffff;
+  --color-text-muted: rgba(235,235,245,0.60);
+  --color-primary: #0a84ff;
+  --color-accent: #64d2ff;
+  --color-scrim: rgba(0,0,0,0.35);
+  /* radius */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+  --radius-concentric: 22px;
+  /* shadow */
+  --shadow-sm: 0 2px 10px rgba(0,0,0,0.25);
+  --shadow-md: 0 10px 40px rgba(0,0,0,0.35);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.45);
+  --shadow-edge: inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -1px 0 rgba(255,255,255,0.10);
+  /* blur */
+  --blur-backdrop: 20px;
+  --blur-backdrop-thick: 40px;
+  /* font */
+  --font-sans: -apple-system, 'SF Pro Text', system-ui, sans-serif;
+  --font-display: -apple-system, 'SF Pro Display', system-ui, sans-serif;
+  --font-mono: 'SF Mono', ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.2, 0.9, 0.1, 1.1);
+  --ease-entrance: cubic-bezier(0.16, 1, 0.3, 1);
+  /* extra (signature gradients, composite borders, filters) */
+  --lens-highlight: linear-gradient(135deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.05) 40%, rgba(255,255,255,0) 70%);
+  --refraction: saturate(1.8) brightness(1.1);
+  --glass-border: 1px solid rgba(255,255,255,0.30);
+}
+
+/* ============================================================
+   Base component classes — Liquid Glass (token-driven).
+   Signature move lives in references/00-flagship-implementation-specs/liquid-glass.md;
+   these are accessible, token-wired starting points. */
+body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-sans); }
+.card { background: var(--color-surface, var(--color-bg)); color: var(--color-text);
+  border-radius: var(--radius-md); box-shadow: var(--shadow-md);
+  padding: var(--space-6, 24px); border: 1px solid var(--color-border, transparent); }
+.nav { display: flex; gap: var(--space-4, 16px); align-items: center;
+  padding: var(--space-3, 12px) var(--space-6, 24px); background: var(--color-surface, var(--color-bg));
+  box-shadow: var(--shadow-md); }
+.btn { font: 700 var(--text-base, 1rem)/1 var(--font-display, var(--font-sans)); color: var(--color-text);
+  background: var(--color-surface, var(--color-bg)); border-radius: var(--radius-md);
+  padding: var(--space-3, 12px) var(--space-6, 24px); box-shadow: var(--shadow-md); cursor: pointer; border: 1px solid var(--color-border, transparent);
+  transition: transform .12s var(--ease-standard, ease), box-shadow .12s var(--ease-standard, ease), filter .12s; }
+.btn:hover { transform: translateY(-1px); filter: brightness(1.05); }
+.btn:active { transform: translateY(0); }
+.btn:focus-visible { outline: 2px solid var(--color-accent, var(--color-primary)); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; transform: none; }
+.btn--primary { background: var(--color-primary); color: #111111; border-color: transparent; }
+.input { width: 100%; box-sizing: border-box; font: var(--text-base, 1rem) var(--font-sans); color: var(--color-text);
+  background: var(--color-surface, #fff); border-radius: var(--radius-sm);
+  padding: var(--space-3, 12px) var(--space-4, 16px); border: 1px solid var(--color-border, transparent); }
+.input:focus { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.input::placeholder { color: var(--color-text-muted, currentColor); opacity: .7; }
+.badge { display: inline-flex; align-items: center; gap: .4em; font: 700 var(--text-xs, .75rem) var(--font-sans);
+  color: #111111; background: var(--color-primary); border-radius: var(--radius-pill, 999px); padding: .3em .8em; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover, .btn:active { transform: none; } }

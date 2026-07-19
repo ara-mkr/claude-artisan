@@ -1,0 +1,85 @@
+/* Decopunk — design tokens */
+/* 2010s–present | Sleeker, brighter offshoot of dieselpunk (1920s–40s), condensed */
+:root {
+  /* color */
+  --color-bg: #12100a;
+  --color-surface: #1c1811;
+  --color-surface-strong: #262019;
+  --color-border: #caa24b;
+  --color-text: #f6ecd6;
+  --color-text-muted: #cbb98f;
+  --color-primary: #e3b23c;
+  --color-accent: #6fd3c7;
+  --color-chrome: #e9e4d8;
+  /* radius */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 0 1px 4px rgba(0,0,0,0.4);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.5);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.55);
+  /* font */
+  --font-sans: 'Century Gothic', 'Futura', system-ui, sans-serif;
+  --font-display: 'Poiret One', 'Broadway', 'Futura', serif;
+  --font-mono: ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  /* extra: signature = gold chevron sunburst edge + metallic gradient border */
+  --gold-gradient: linear-gradient(135deg, #f6d787, #caa24b 45%, #8a6a24 100%);
+  --chevron-bg: repeating-linear-gradient(115deg, rgba(202,162,75,0.08) 0 6px, transparent 6px 26px);
+  --border-metal: 1px solid transparent;
+}
+
+/* ============================================================
+   Base component classes — Decopunk
+   Signature move: a thin metallic gold gradient border (border-image)
+   plus a faint repeating chevron/sunburst tint, repeated on nav, card,
+   and button — polished streamline-luxury over a near-black ground.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--color-bg) var(--chevron-bg); }
+.nav { display: flex; gap: var(--space-4); align-items: center; padding: var(--space-3) var(--space-6);
+  background: var(--color-surface); border-bottom: 2px solid; border-image: var(--gold-gradient) 1; }
+.btn { font: 600 var(--text-sm)/1 var(--font-sans); letter-spacing: .08em; text-transform: uppercase;
+  color: var(--color-text); background: var(--color-surface-strong);
+  border: 1px solid var(--color-border); border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-6); cursor: pointer;
+  transition: box-shadow .2s var(--ease-standard), transform .2s var(--ease-standard); }
+.btn:hover { box-shadow: 0 0 0 1px var(--color-primary), var(--shadow-md); transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: var(--gold-gradient); color: #1c1811; border-color: transparent; }
+.card { background: var(--color-surface) var(--chevron-bg); border-radius: var(--radius-lg);
+  border: 2px solid; border-image: var(--gold-gradient) 1; box-shadow: var(--shadow-md); padding: var(--space-6); }
+.input { width: 100%; box-sizing: border-box; font: var(--text-base) var(--font-sans); color: var(--color-text);
+  background: var(--color-surface-strong); border: 1px solid var(--color-border); border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4); }
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 25%, transparent); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font: 700 var(--text-xs) var(--font-sans);
+  letter-spacing: .06em; text-transform: uppercase; color: #1c1811; background: var(--gold-gradient);
+  border-radius: var(--radius-pill); padding: .3em .8em; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }

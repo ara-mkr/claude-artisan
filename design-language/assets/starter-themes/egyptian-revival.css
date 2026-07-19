@@ -1,0 +1,82 @@
+/* Egyptian / Ancient Revival — design tokens */
+/* 1820s & 1920s revivals | Egyptomania after Napoleon's campaigns and Tutankhamun (1922), condensed */
+:root {
+  /* color */
+  --color-bg: #efe2c0;
+  --color-surface: #f7ecd3;
+  --color-surface-strong: #e6d3a3;
+  --color-border: #b8860b;
+  --color-text: #241a0e;
+  --color-text-muted: #5a4527;
+  --color-primary: #1b3f6b;
+  --color-accent: #b8860b;
+  --color-terracotta: #a3441f;
+  /* radius */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 0 1px 4px rgba(36,26,14,0.2);
+  --shadow-md: 0 6px 16px rgba(36,26,14,0.24);
+  --shadow-lg: 0 16px 36px rgba(36,26,14,0.3);
+  /* font */
+  --font-sans: 'Trajan Pro', 'Cinzel', 'Georgia', serif;
+  --font-display: 'Cinzel', 'Trajan Pro', serif;
+  --font-mono: ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  /* extra: signature = repeating gold key-pattern border stripe + lapis/terracotta banding */
+  --key-pattern: repeating-linear-gradient(90deg, var(--color-accent) 0 8px, transparent 8px 10px, var(--color-accent) 10px 18px, transparent 18px 24px);
+  --banded-border: 4px solid var(--color-accent);
+}
+
+/* ============================================================
+   Base component classes — Egyptian / Ancient Revival
+   Signature move: a repeating gold key-pattern (Greek-key/hieroglyph
+   inspired) border stripe runs along the nav's base and every card's
+   top edge — monumental, symmetric, gold on papyrus cream.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--color-bg); }
+.nav { display: flex; gap: var(--space-4); align-items: center; padding: var(--space-4) var(--space-6);
+  background: var(--color-surface); border-bottom: var(--banded-border); position: relative; }
+.nav::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 4px; background-image: var(--key-pattern); }
+.btn { font: 700 var(--text-sm)/1 var(--font-display); letter-spacing: .04em; color: var(--color-text);
+  background: var(--color-surface-strong); border: 2px solid var(--color-border); border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-6); cursor: pointer; transition: transform .15s var(--ease-standard), box-shadow .15s var(--ease-standard); }
+.btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-sm); }
+.btn:active { transform: translateY(0); }
+.btn:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: var(--color-primary); color: #f7ecd3; border-color: var(--color-accent); }
+.card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md); padding: var(--space-6); position: relative; }
+.card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 6px; background-image: var(--key-pattern); }
+.input { width: 100%; box-sizing: border-box; font: var(--text-base) var(--font-sans); color: var(--color-text);
+  background: var(--color-surface); border: 2px solid var(--color-border); border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4); }
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 25%, transparent); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font: 700 var(--text-xs) var(--font-display);
+  color: #f7ecd3; background: var(--color-terracotta); border-radius: var(--radius-pill); padding: .3em .9em; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }

@@ -1,0 +1,90 @@
+/* Psychedelic Art — design tokens */
+/* 1965–1971 | San Francisco (Wes Wilson, Victor Moscoso), condensed */
+:root {
+  /* color: intense vibrating complementary pairs */
+  --color-bg: #ff5f9e;
+  --color-surface: #ffe14d;
+  --color-surface-strong: #ff8a3d;
+  --color-border: #1a0b2e;
+  --color-text: #1a0b2e;
+  --color-text-muted: #4b2c63;
+  --color-primary: #00c2a8;
+  --color-accent: #6a1fd0;
+  --color-vibrate-a: #ff5f9e;
+  --color-vibrate-b: #00c2a8;
+  /* radius: melting, warped forms */
+  --radius-sm: 12px;
+  --radius-md: 40% 60% 55% 45% / 50% 40% 60% 50%;
+  --radius-lg: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 0 0 0 4px var(--color-vibrate-a);
+  --shadow-md: 0 0 0 4px var(--color-vibrate-b), 0 8px 24px rgba(26,11,46,0.3);
+  --shadow-lg: 0 0 0 6px var(--color-accent), 0 16px 40px rgba(26,11,46,0.35);
+  /* font: warped hand-drawn lettering feel */
+  --font-sans: 'Cooper Black', 'Baloo 2', system-ui, sans-serif;
+  --font-display: 'Cooper Black', 'Baloo 2', cursive;
+  --font-mono: ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.65, 0, 0.35, 1);
+  /* extra: kaleidoscopic swirl background + vibrating outline ring */
+  --swirl-bg: radial-gradient(circle at 20% 30%, #ffe14d 0%, transparent 40%), radial-gradient(circle at 80% 20%, #00c2a8 0%, transparent 45%), radial-gradient(circle at 50% 80%, #6a1fd0 0%, transparent 50%), var(--color-bg);
+}
+
+/* ============================================================
+   Base component classes — Psychedelic Art
+   Signature move: a vibrating solid-color outline ring (complementary hue,
+   no blur) plus melting asymmetric border-radius, repeated on card, btn
+   and input so every shape looks like it's warping.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--swirl-bg); background-attachment: fixed; }
+.nav {
+  display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-3) var(--space-6); background: var(--color-surface);
+  border-radius: var(--radius-pill); box-shadow: var(--shadow-sm);
+}
+.btn {
+  font: 700 var(--text-base)/1 var(--font-display); color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-pill);
+  background: var(--color-surface); border: none; box-shadow: var(--shadow-sm); cursor: pointer;
+  transition: transform .3s var(--ease-standard), box-shadow .3s var(--ease-standard);
+}
+.btn:hover { transform: scale(1.05) rotate(-2deg); box-shadow: var(--shadow-md); }
+.btn:active { transform: scale(.97); }
+.btn:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 4px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: var(--color-primary); color: #fff4e0; }
+.card {
+  background: var(--color-surface-strong); border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md); padding: var(--space-8) var(--space-6); border: none; color: #1a0b2e;
+}
+.input {
+  width: 100%; box-sizing: border-box; color: var(--color-text); font: var(--text-base) var(--font-sans);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-pill);
+  background: var(--color-surface); border: none; box-shadow: var(--shadow-sm);
+}
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; box-shadow: var(--shadow-md); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font: 700 var(--text-xs)/1 var(--font-sans);
+  padding: .35em .9em; border-radius: var(--radius-pill); background: var(--color-accent); color: #fff4e0; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover, .btn:active { transform: none; } }

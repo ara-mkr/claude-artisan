@@ -1,0 +1,88 @@
+/* Art Nouveau — design tokens */
+/* 1890–1910 | Europe (Alphonse Mucha, Hector Guimard, Gustav Klimt), condensed */
+:root {
+  /* color */
+  --color-bg: #f3ead9;
+  --color-surface: #fbf6ec;
+  --color-surface-strong: #ede0c4;
+  --color-border: #8a6d3b;
+  --color-text: #2e2412;
+  --color-text-muted: #6b5a3c;
+  --color-primary: #2f5233;
+  --color-accent: #b8860b;
+  --color-terracotta: #a5502c;
+  /* radius — whiplash curves: deliberately asymmetric, never uniform corners */
+  --radius-sm: 6px;
+  --radius-md: 30px 6px 30px 6px;
+  --radius-lg: 60px 12px 60px 12px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 0 2px 6px rgba(46,36,18,0.12);
+  --shadow-md: 0 6px 18px rgba(46,36,18,0.16);
+  --shadow-lg: 0 14px 32px rgba(46,36,18,0.2);
+  /* font */
+  --font-sans: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  --font-display: 'Cinzel Decorative', 'Playfair Display', Georgia, serif;
+  --font-mono: ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  /* extra — signature whiplash vine border + gilded underline */
+  --vine-underline: linear-gradient(90deg, transparent, var(--color-accent) 20%, var(--color-accent) 80%, transparent);
+  --gilt-border: 1px solid var(--color-accent);
+}
+
+/* ============================================================
+   Base component classes — Art Nouveau
+   Signature move: asymmetric "whiplash curve" radii (--radius-md/lg) plus a
+   thin gilded border and a botanical gold underline. Repeated on nav, card,
+   and the primary button so every surface reads as one sinuous system.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--color-bg); }
+.nav { display: flex; gap: var(--space-4); align-items: center; padding: var(--space-3) var(--space-6);
+  background: var(--color-surface); border-bottom: var(--gilt-border);
+  box-shadow: var(--shadow-sm); }
+.btn {
+  font: 600 var(--text-base)/1 var(--font-sans); color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-md);
+  background: var(--color-surface); border: var(--gilt-border);
+  box-shadow: var(--shadow-sm); cursor: pointer;
+  transition: transform .2s var(--ease-standard), box-shadow .2s var(--ease-standard);
+}
+.btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.btn:active { transform: translateY(0); }
+.btn:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: var(--color-primary); color: #f7f0dc; border-color: var(--color-accent); }
+.card { background: var(--color-surface); border-radius: var(--radius-lg); border: var(--gilt-border);
+  box-shadow: var(--shadow-md); padding: var(--space-6); position: relative; }
+.card::after { content: ""; position: absolute; left: var(--space-6); right: var(--space-6); bottom: var(--space-3);
+  height: 2px; background: var(--vine-underline); }
+.input { width: 100%; box-sizing: border-box; color: var(--color-text); font: var(--text-base) var(--font-sans);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); background: var(--color-surface);
+  border: var(--gilt-border); }
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(47,82,51,0.2); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font-size: var(--text-xs);
+  padding: .3em .9em; border-radius: var(--radius-pill); background: var(--color-surface-strong);
+  border: var(--gilt-border); color: var(--color-text); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }

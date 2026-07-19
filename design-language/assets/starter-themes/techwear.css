@@ -1,0 +1,96 @@
+/* Techwear — design tokens */
+/* 2014–present | Functional futuristic urban apparel subculture, condensed */
+:root {
+  /* color */
+  --color-bg: #0b0c0d;
+  --color-surface: #17181a;
+  --color-surface-strong: #212325;
+  --color-border: #35383b;
+  --color-text: #eceeef;
+  --color-text-muted: #9aa0a4;
+  --color-primary: #c8ff3d;
+  --color-accent: #ff5b2e;
+  --color-strap: #55595c;
+  /* radius: mostly hard, small utilitarian rounds on buckle-like corners */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.5);
+  --shadow-md: 0 4px 10px rgba(0,0,0,0.55);
+  --shadow-lg: 0 12px 28px rgba(0,0,0,0.6);
+  /* font: tactical condensed sans */
+  --font-sans: 'Neue Haas Grotesk', 'Inter', system-ui, sans-serif;
+  --font-display: 'Eurostile', 'Oswald', 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.3, 0, 0.15, 1);
+  /* extra: a stitched strap seam (dashed border) + a corner buckle notch, the signature move */
+  --stitch-line: repeating-linear-gradient(90deg, var(--color-strap) 0 6px, transparent 6px 11px);
+  --buckle-notch: linear-gradient(135deg, transparent 8px, var(--color-border) 8px);
+}
+
+/* ============================================================
+   Base component classes — Techwear
+   Signature move: a stitched strap seam — a dashed thread line inset from
+   the edge — repeated on nav, card, and input, evoking webbing straps on
+   technical outerwear; a clipped buckle-notch corner on primary buttons.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--color-bg); }
+.nav { position: relative; display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-3) var(--space-6); background: var(--color-surface);
+  border: 1px solid var(--color-border); border-radius: var(--radius-md); }
+.nav::after { content: ""; position: absolute; left: var(--space-4); right: var(--space-4); bottom: 5px; height: 1px;
+  background: var(--stitch-line); }
+.btn {
+  font: 700 var(--text-sm)/1 var(--font-display); letter-spacing: .08em; text-transform: uppercase;
+  color: var(--color-text); padding: var(--space-3) var(--space-6);
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  background: var(--color-surface-strong); border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer; transition: transform .15s var(--ease-standard), box-shadow .15s var(--ease-standard);
+}
+.btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.btn:active { transform: translateY(0); }
+.btn:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; transform: none; }
+.btn--primary { background: var(--color-primary); color: #0b0c0d; border-color: var(--color-primary); }
+.card { position: relative; background: var(--color-surface); color: var(--color-text);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border); padding: var(--space-6) var(--space-6) var(--space-8); }
+.card::after { content: ""; position: absolute; left: var(--space-6); right: var(--space-6); bottom: var(--space-4); height: 1px;
+  background: var(--stitch-line); }
+.input {
+  width: 100%; box-sizing: border-box; color: var(--color-text); font: var(--text-base) var(--font-sans);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm);
+  background: var(--color-surface-strong); border: 1px solid var(--color-border);
+  border-bottom: 2px dashed var(--color-strap);
+}
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 25%, transparent); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font-weight: 700; font-size: var(--text-xs);
+  text-transform: uppercase; letter-spacing: .06em; padding: .3em .8em; border-radius: var(--radius-pill);
+  color: #0b0c0d; background: var(--color-accent); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }

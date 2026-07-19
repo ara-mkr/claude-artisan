@@ -1,0 +1,88 @@
+/* Atompunk — design tokens */
+/* 1998–present | Retrofuturism of the atomic age (1945–1965), condensed */
+:root {
+  /* color */
+  --color-bg: #f7ecd2;
+  --color-surface: #ffffff;
+  --color-surface-strong: #fdd9a5;
+  --color-border: #1c3f4a;
+  --color-text: #14262b;
+  --color-text-muted: #3d5a61;
+  --color-primary: #e0692b;
+  --color-accent: #1c8c8c;
+  --color-chrome: #9fb4b8;
+  /* radius — Googie boomerang curves: one round end, one sharp */
+  --radius-sm: 4px;
+  --radius-md: 40px 4px 40px 4px;
+  --radius-lg: 60px 8px 60px 8px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 0 2px 6px rgba(20,38,43,0.2);
+  --shadow-md: 0 6px 16px rgba(20,38,43,0.24);
+  --shadow-lg: 0 14px 30px rgba(20,38,43,0.28);
+  /* font */
+  --font-sans: 'Century Gothic', 'Futura', 'Poppins', sans-serif;
+  --font-display: 'Trend Sans', 'Bank Gothic', 'Century Gothic', sans-serif;
+  --font-mono: ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.34, 1.4, 0.64, 1);
+  /* extra — signature starburst gradient + chrome highlight stripe */
+  --starburst: radial-gradient(circle at 20% 20%, var(--color-accent) 0%, transparent 45%),
+               radial-gradient(circle at 85% 75%, var(--color-primary) 0%, transparent 40%);
+  --chrome-stripe: linear-gradient(180deg, #ffffff 0%, var(--color-chrome) 50%, #ffffff 100%);
+}
+
+/* ============================================================
+   Base component classes — Atompunk
+   Signature move: boomerang-curve radii (one round corner, one sharp) plus a
+   thin chrome highlight stripe capping surfaces, echoing atomic-age Formica
+   counters. Repeated on nav, card, and buttons.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--color-bg); }
+.nav { display: flex; gap: var(--space-4); align-items: center; padding: var(--space-3) var(--space-6);
+  background: var(--color-surface); border-bottom: 4px solid var(--color-border); position: relative; }
+.nav::before { content:""; position:absolute; top:0; left:0; right:0; height:4px; background: var(--chrome-stripe); }
+.btn {
+  font: 700 var(--text-base)/1 var(--font-display); color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-md);
+  background: var(--color-surface); border: 3px solid var(--color-border);
+  box-shadow: var(--shadow-sm); cursor: pointer;
+  transition: transform .2s var(--ease-standard), box-shadow .2s var(--ease-standard);
+}
+.btn:hover { transform: translateY(-2px) scale(1.02); box-shadow: var(--shadow-md); }
+.btn:active { transform: translateY(0) scale(1); }
+.btn:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; transform: none; }
+.btn--primary { background: var(--color-primary); color: #fff8ec; border-color: var(--color-border); }
+.card { background: var(--color-surface); border-radius: var(--radius-lg); border: 3px solid var(--color-border);
+  box-shadow: var(--shadow-md); padding: var(--space-6); position: relative; overflow: hidden; }
+.card::after { content:""; position:absolute; inset:0; background: var(--starburst); opacity:.12; pointer-events:none; }
+.input { width: 100%; box-sizing: border-box; color: var(--color-text); font: var(--text-base) var(--font-sans);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm); background: var(--color-surface);
+  border: 3px solid var(--color-border); }
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-accent); box-shadow: 0 0 0 3px rgba(28,140,140,0.25); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font-size: var(--text-xs); font-weight: 700;
+  padding: .3em .9em; border-radius: var(--radius-pill); background: var(--color-surface-strong);
+  border: 2px solid var(--color-border); color: var(--color-text); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }

@@ -1,0 +1,113 @@
+/* Illuminated Manuscript — design tokens */
+/* 500–1500 CE | Medieval European monastic scriptoria, condensed */
+:root {
+  /* color */
+  --color-bg: #f3e6c4;
+  --color-surface: #f8edd0;
+  --color-surface-strong: #efdbaa;
+  --color-border: #7a5a1e;
+  --color-text: #2a1a10;
+  --color-text-muted: #5a4632;
+  --color-primary: #7a1f2b;
+  --color-accent: #b8860b;
+  --color-blue: #1e3a6e;
+  --color-gold: #c9971f;
+  /* radius: manuscripts are hand-ruled, not rounded — sharp panels with an
+     ornamented border standing in for corner treatment */
+  --radius-sm: 2px;
+  --radius-md: 2px;
+  --radius-lg: 2px;
+  --radius-pill: 999px;
+  /* shadow: soft, low, like candlelight on vellum */
+  --shadow-sm: 0 1px 3px rgba(42,26,16,0.25);
+  --shadow-md: 0 4px 10px rgba(42,26,16,0.3);
+  --shadow-lg: 0 10px 22px rgba(42,26,16,0.35);
+  /* font */
+  --font-sans: 'EB Garamond', 'Palatino', Georgia, serif;
+  --font-display: 'UnifrakturMaguntia', 'Blackletter', 'Cinzel', serif;
+  --font-mono: ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.75rem;
+  --text-4xl: 3.75rem;
+  --text-5xl: 5rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  /* extra: a gilded initial-capital treatment (drop cap in gold on a red
+     medallion) plus a repeating vine-and-gold-leaf border rule — the two
+     signature moves of scriptorium illumination, repeated on nav, card and
+     input so gold trim frames every surface, not just headings */
+  --gilt-border: 3px solid var(--color-gold);
+  --vine-rule: repeating-linear-gradient(90deg, var(--color-gold) 0 10px, transparent 10px 16px,
+               var(--color-primary) 16px 20px, transparent 20px 26px);
+  --illum-corner: radial-gradient(circle at 0% 0%, var(--color-gold) 0 3px, transparent 4px),
+                   radial-gradient(circle at 100% 0%, var(--color-gold) 0 3px, transparent 4px),
+                   radial-gradient(circle at 0% 100%, var(--color-gold) 0 3px, transparent 4px),
+                   radial-gradient(circle at 100% 100%, var(--color-gold) 0 3px, transparent 4px);
+}
+
+/* ============================================================
+   Base component classes — illuminated-manuscript
+   Signature move: a gilded border rule (--vine-rule) framing each surface
+   like a page margin, plus gold corner flourishes (--illum-corner) —
+   repeated on nav, card and input so gold trim reads as the page's
+   structure, not a one-off decoration.
+   ============================================================ */
+body {
+  margin: 0; color: var(--color-text); font-family: var(--font-sans);
+  background: var(--color-bg);
+  background-image: radial-gradient(ellipse at 50% 0%, rgba(201,151,31,0.12), transparent 60%);
+}
+.nav {
+  display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-3) var(--space-6); background: var(--color-surface);
+  border-bottom: var(--gilt-border); position: relative;
+}
+.nav::after { content: ""; display: block; position: absolute; left: 0; right: 0; bottom: -6px; height: 3px;
+  background-image: var(--vine-rule); }
+.btn {
+  font: 600 var(--text-base)/1 var(--font-sans); color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-md);
+  background: var(--color-surface-strong); border: 2px solid var(--color-border);
+  box-shadow: var(--shadow-sm); cursor: pointer;
+  transition: transform .18s var(--ease-standard), box-shadow .18s var(--ease-standard);
+}
+.btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.btn:active { transform: translateY(0); box-shadow: var(--shadow-sm); }
+.btn:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: var(--color-primary); color: #f8edd0; border-color: var(--color-gold); }
+.card {
+  background: var(--color-surface); border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-md); padding: var(--space-6);
+  position: relative; background-image: var(--illum-corner); background-repeat: no-repeat;
+}
+.card::before { content: ""; display: block; position: absolute; inset: 6px; border: 1px solid var(--color-gold);
+  border-radius: var(--radius-sm); pointer-events: none; }
+.input {
+  width: 100%; box-sizing: border-box; color: var(--color-text);
+  font: var(--text-base) var(--font-sans);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm);
+  background: var(--color-surface-strong); border: var(--gilt-border);
+}
+.input::placeholder { color: var(--color-text-muted); font-style: italic; }
+.input:focus { outline: none; border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(184,134,11,0.28); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font: 600 var(--text-xs) var(--font-sans);
+  padding: .3em .8em; border-radius: var(--radius-pill); background: var(--color-gold); color: #2a1a10; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }

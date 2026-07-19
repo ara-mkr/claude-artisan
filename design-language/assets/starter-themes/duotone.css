@@ -1,0 +1,81 @@
+/* Duotone — design tokens */
+/* Print heritage → 2015 web | Spotify's 2015 rebrand mainstreamed digital duotone, condensed */
+:root {
+  /* color */
+  --color-bg: #0e1f17;
+  --color-surface: #133527;
+  --color-surface-strong: #1a4732;
+  --color-border: #2fae74;
+  --color-text: #eafff2;
+  --color-text-muted: #9fe3bd;
+  --color-primary: #34d980;
+  --color-accent: #ff3e6c;
+  --tone-shadow: #0e1f17;
+  --tone-highlight: #ff3e6c;
+  /* radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+  --shadow-md: 0 6px 20px rgba(0,0,0,0.4);
+  --shadow-lg: 0 16px 40px rgba(0,0,0,0.5);
+  /* font */
+  --font-sans: 'Circular', 'Helvetica Neue', system-ui, sans-serif;
+  --font-display: 'Gotham', 'Circular', system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  /* extra: signature = two-color duotone gradient mapped across every surface (shadow→highlight ramp) */
+  --duotone-ramp: linear-gradient(135deg, var(--tone-shadow) 0%, var(--color-primary) 55%, var(--tone-highlight) 130%);
+  --duotone-wash: linear-gradient(180deg, rgba(52,217,128,0.16), rgba(255,62,108,0.10));
+}
+
+/* ============================================================
+   Base component classes — Duotone
+   Signature move: a single two-color gradient ramp (shadow → primary →
+   highlight) is reused as the page background, the primary button fill,
+   and a wash overlay on cards/nav — unifying every surface in one bitone.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--duotone-ramp); background-attachment: fixed; min-height: 100vh; }
+.nav { display: flex; gap: var(--space-4); align-items: center; padding: var(--space-3) var(--space-6);
+  background: var(--color-surface); background-image: var(--duotone-wash); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
+.btn { font: 700 var(--text-base)/1 var(--font-sans); color: var(--color-text);
+  background: var(--color-surface-strong); border: 1px solid var(--color-border); border-radius: var(--radius-pill);
+  padding: var(--space-3) var(--space-6); cursor: pointer; transition: transform .2s var(--ease-standard), box-shadow .2s var(--ease-standard); }
+.btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-sm); }
+.btn:active { transform: translateY(0); }
+.btn:focus-visible { outline: 2px solid var(--color-text); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: var(--duotone-ramp); color: #0e1f17; border-color: transparent; font-weight: 800; }
+.card { background: var(--color-surface); background-image: var(--duotone-wash); border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border); box-shadow: var(--shadow-md); padding: var(--space-6); }
+.input { width: 100%; box-sizing: border-box; font: var(--text-base) var(--font-sans); color: var(--color-text);
+  background: var(--color-surface-strong); border: 1px solid var(--color-border); border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4); }
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 25%, transparent); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font: 700 var(--text-xs) var(--font-sans);
+  color: #0e1f17; background: var(--duotone-ramp); border-radius: var(--radius-pill); padding: .3em .8em; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }

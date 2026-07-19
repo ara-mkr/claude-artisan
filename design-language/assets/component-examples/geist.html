@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vercel Geist — component example</title>
+<!-- Import the one starter theme; that's ~80% of the look. -->
+<link rel="stylesheet" href="../starter-themes/geist.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-16) var(--space-6); display: grid; gap: var(--space-8); }
+  h1 { font: 600 var(--text-4xl)/1.05 var(--font-display); margin: 0; letter-spacing: -0.02em; }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-lg); margin: 0; max-width: 52ch; }
+  .row { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4); }
+  .card h3 { margin: 0 0 var(--space-2); font-size: var(--text-xl); font-weight: 600; letter-spacing: -0.01em; }
+  .card p { margin: 0; color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto">Geist</strong>
+      <a href="#" style="color:var(--color-text);text-decoration:none">Docs</a>
+      <a href="#" style="color:var(--color-text-muted);text-decoration:none">Templates</a>
+      <button class="btn btn--primary">Deploy</button>
+    </nav>
+
+    <header>
+      <h1>Precise geometry, zero noise.</h1>
+      <p class="lede">A single hairline border traces every edge, a faint grain sits under
+        the black, and the grid never wavers — developer-premium minimalism built for
+        reading code, not decoration.</p>
+    </header>
+
+    <div class="row">
+      <button class="btn btn--primary">Deploy now</button>
+      <button class="btn">View docs</button>
+      <button class="btn" disabled>Building…</button>
+      <span class="badge">● Production</span>
+    </div>
+
+    <input class="input" placeholder="vercel deploy --prod" aria-label="Command">
+
+    <div class="grid">
+      <article class="card">
+        <h3>Hairline everywhere</h3>
+        <p>The same 1px border wraps nav, card and button — one system, no one-off strokes.</p>
+      </article>
+      <article class="card">
+        <h3>Grain, not gradient</h3>
+        <p>A subtle noise texture replaces heavy shadows, keeping the black feel tactile
+          instead of flat.</p>
+      </article>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+/* Suprematism — design tokens */
+/* 1913–1920s | Russia (Kazimir Malevich), condensed */
+:root {
+  /* color: pure limited palette floating on white ground */
+  --color-bg: #f7f7f5;
+  --color-surface: #ffffff;
+  --color-surface-strong: #efefec;
+  --color-border: #16161a;
+  --color-text: #16161a;
+  --color-text-muted: #55555c;
+  --color-primary: #d21f1f;
+  --color-accent: #1c4fa0;
+  --color-black: #16161a;
+  --color-ochre: #e0a415;
+  /* radius: pure geometry — no rounding, circles are the only curve */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-pill: 999px;
+  /* shadow: flat forms floating in space, no depth cues */
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  /* font */
+  --font-sans: 'Futura', 'Helvetica Neue', system-ui, sans-serif;
+  --font-display: 'Futura', 'Helvetica Neue', sans-serif;
+  --font-mono: ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  /* extra: tilted geometric plane accent — a rotated rectangle floating behind content, the signature move */
+  --tilt-plane: 8deg;
+  --plane-red: var(--color-primary);
+}
+
+/* ============================================================
+   Base component classes — Suprematism
+   Signature move: a tilted solid-color rectangle "floating" behind/beside
+   an element (rotation, no shadow, hard flat edges) — repeated as a
+   background accent on nav and card, and as the btn's own tilted shape.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--color-bg); }
+.nav { display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-3) var(--space-6); background: var(--color-surface);
+  border: 2px solid var(--color-black); position: relative; }
+.nav::before { content: ""; position: absolute; right: var(--space-6); top: 50%; width: 26px; height: 26px;
+  background: var(--plane-red); transform: translateY(-50%) rotate(var(--tilt-plane)); z-index: 0; }
+.btn {
+  font: 700 var(--text-base)/1 var(--font-sans); color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-md);
+  background: var(--color-surface); border: 2px solid var(--color-black);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer; transition: transform .15s var(--ease-standard);
+}
+.btn:hover { transform: rotate(-1.5deg); }
+.btn:active { transform: rotate(0deg); }
+.btn:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; transform: none; }
+.btn--primary { background: var(--color-primary); color: #ffffff; border-color: var(--color-black); }
+.card { position: relative; background: var(--color-surface); color: var(--color-text);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-md);
+  border: 2px solid var(--color-black); padding: var(--space-6); overflow: visible; z-index: 1; }
+.card::after { content: ""; position: absolute; left: -10px; bottom: -10px; width: 60px; height: 14px;
+  background: var(--color-ochre); transform: rotate(calc(var(--tilt-plane) * -1)); z-index: -1; }
+.input {
+  width: 100%; box-sizing: border-box; color: var(--color-text); font: var(--text-base) var(--font-sans);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm);
+  background: var(--color-surface); border: 2px solid var(--color-black);
+}
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 25%, transparent); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font-weight: 700; font-size: var(--text-xs);
+  padding: .3em .8em; border-radius: var(--radius-pill); color: #ffffff; background: var(--color-accent); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }

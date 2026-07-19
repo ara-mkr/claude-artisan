@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Art Hoe — component example</title>
+<!-- Import the one starter theme; that's ~80% of the look. -->
+<link rel="stylesheet" href="../starter-themes/art-hoe.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-16) var(--space-6); display: grid; gap: var(--space-8); }
+  h1 { font: 700 var(--text-4xl)/1.1 var(--font-display); margin: 0; }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-lg); margin: 0; max-width: 52ch; }
+  .row { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4); }
+  .card h3 { margin: 0 0 var(--space-2); font-size: var(--text-xl); font-family: var(--font-display); }
+  .card p { margin: 0; color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto; font-family: var(--font-display)">Sunflower Journal</strong>
+      <a href="#" style="color:var(--color-text);text-decoration:none">Sketchbook</a>
+      <a href="#" style="color:var(--color-text-muted);text-decoration:none">Film Rolls</a>
+      <button class="btn btn--primary">Start a page</button>
+    </nav>
+
+    <header>
+      <h1>Paint-stained pages, kept by hand.</h1>
+      <p class="lede">A scattered cluster of paint-splatter dots — terracotta, sunflower gold,
+        olive, clay — repeats across every surface, and cards sit tilted like polaroids
+        tucked into a sketchbook.</p>
+    </header>
+
+    <div class="row">
+      <button class="btn btn--primary">Add a collage</button>
+      <button class="btn">Browse archive</button>
+      <button class="btn" disabled>Printing…</button>
+      <span class="badge">✿ featured</span>
+    </div>
+
+    <input class="input" placeholder="caption this film photo…" aria-label="Caption">
+
+    <div class="grid">
+      <article class="card">
+        <h3>Sunflowers, always</h3>
+        <p>A recurring motif since the first Tumblr moodboards — warm, bright, hand-picked.</p>
+      </article>
+      <article class="card">
+        <h3>Collage over polish</h3>
+        <p>Torn edges and layered clippings feel more honest than a clean grid.</p>
+      </article>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VHS / Analog Video — component example</title>
+<!-- Import the one starter theme; that's ~80% of the look. -->
+<link rel="stylesheet" href="../starter-themes/vhs.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-16) var(--space-6); display: grid; gap: var(--space-8); }
+  h1 { font: 700 var(--text-4xl)/1.1 var(--font-display); margin: 0; text-shadow: var(--chroma-shadow); }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-lg); margin: 0; max-width: 52ch; }
+  .row { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4); }
+  .card h3 { margin: 0 0 var(--space-2); font-size: var(--text-xl); font-family: var(--font-display); }
+  .card p { margin: 0; color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto">PLAY ▶ 03:12:47</strong>
+      <a href="#" style="color:var(--color-text);text-decoration:none">Rewind</a>
+      <a href="#" style="color:var(--color-text-muted);text-decoration:none">Fast Forward</a>
+      <button class="btn btn--primary">● REC</button>
+    </nav>
+
+    <header>
+      <h1>Tracking lines, tape warble.</h1>
+      <p class="lede">Every heading bleeds cyan and magenta at the edges, and a repeating
+        scanline texture rides over every raised surface — a tape mistracking on rewind.</p>
+    </header>
+
+    <div class="row">
+      <button class="btn btn--primary">▶ Play</button>
+      <button class="btn">⏸ Pause</button>
+      <button class="btn" disabled>⏏ No tape</button>
+      <span class="badge">Live</span>
+    </div>
+
+    <input class="input" placeholder="TIMESTAMP 07/19/1989" aria-label="Timestamp">
+
+    <div class="grid">
+      <article class="card">
+        <h3>SP MODE</h3>
+        <p>Warm degradation and soft blur, like a fourth-generation dub of a home movie.</p>
+      </article>
+      <article class="card">
+        <h3>HUD OVERLAY</h3>
+        <p>A REC dot, a running clock, and interlaced scanlines complete the camcorder frame.</p>
+      </article>
+    </div>
+  </div>
+</body>
+</html>

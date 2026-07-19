@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nostalgiacore — component example</title>
+<link rel="stylesheet" href="../starter-themes/nostalgiacore.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-16, 64px) var(--space-6, 24px); display: grid; gap: var(--space-8, 32px); }
+  h1 { font: 700 var(--text-4xl, 3rem)/1.05 var(--font-display); margin: 0; }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-lg, 1.125rem); margin: 0; max-width: 52ch; }
+  .row { display: flex; gap: var(--space-4, 16px); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4, 16px); }
+  .card h3 { margin: 0 0 var(--space-2, 8px); font-size: var(--text-xl, 1.375rem); }
+  .card p { margin: 0; color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto">Rewind Reels</strong>
+      <a href="#" style="color:var(--color-text);text-decoration:none">Albums</a>
+      <a href="#" style="color:var(--color-text-muted);text-decoration:none">Timeline</a>
+      <button class="btn btn--primary">Sign in</button>
+    </nav>
+    <header>
+      <h1>Faded like a shoebox photo.</h1>
+      <p class="lede">A sepia grain sits over every surface and each card wears the little orange
+        camera timestamp from a disposable 35mm — the two moves that repeat across nav and card.</p>
+    </header>
+    <div class="row">
+      <button class="btn btn--primary">Relive it</button>
+      <button class="btn">Browse album</button>
+      <button class="btn" disabled>Disabled</button>
+      <span class="badge">circa 2004</span>
+    </div>
+    <input class="input" placeholder="Search old summers…" aria-label="Search">
+    <div class="grid">
+      <article class="card" data-stamp="'03 SUMMER"><h3>Backyard sprinklers</h3><p>The grain overlay and vignette make even a mock card feel like a scanned print.</p></article>
+      <article class="card" data-stamp="'99 WINTER"><h3>Mixtape liner notes</h3><p>Warm sepia tones and a courier timestamp keep the mood wistful, not gimmicky.</p></article>
+    </div>
+  </div>
+</body>
+</html>

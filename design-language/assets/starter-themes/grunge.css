@@ -1,0 +1,87 @@
+/* Grunge Design — design tokens */
+/* 1990s | David Carson (Ray Gun magazine); reaction to clean corporate design, condensed */
+:root {
+  /* color */
+  --color-bg: #1a1815;
+  --color-surface: #24211c;
+  --color-surface-strong: #2e2a23;
+  --color-border: #55503f;
+  --color-text: #ece6d8;
+  --color-text-muted: #a89f8a;
+  --color-primary: #c1391f;
+  --color-accent: #d9b23c;
+  --color-ink: #0c0b09;
+  /* radius: torn/rough, no clean rounding */
+  --radius-sm: 0px;
+  --radius-md: 2px;
+  --radius-lg: 0px;
+  --radius-pill: 2px;
+  /* shadow */
+  --shadow-sm: 2px 2px 0 var(--color-ink);
+  --shadow-md: 4px 4px 0 var(--color-ink);
+  --shadow-lg: 6px 6px 0 var(--color-ink);
+  /* font */
+  --font-sans: 'Courier New', 'Special Elite', monospace;
+  --font-display: 'Oswald', 'Impact', 'Arial Narrow', sans-serif;
+  --font-mono: 'Courier New', ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.9rem;
+  --text-3xl: 2.6rem;
+  --text-4xl: 3.6rem;
+  --text-5xl: 5rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 7px;
+  --space-3: 11px;
+  --space-4: 15px;
+  --space-6: 22px;
+  --space-8: 30px;
+  --space-12: 44px;
+  --space-16: 60px;
+  --space-24: 90px;
+  /* ease */
+  --ease-standard: steps(4, end);
+  /* extra: a grain/scratch SVG noise filter, torn-paper jagged clip-path,
+     and a slight random rotation on cards — the "photocopied degraded" move */
+  --grain-svg: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/></svg>");
+  --torn-clip: polygon(0% 2%, 3% 0%, 8% 3%, 15% 0%, 22% 2%, 30% 0%, 40% 3%, 50% 0%, 60% 2%, 70% 0%, 80% 3%, 90% 0%, 100% 2%, 100% 98%, 92% 100%, 85% 97%, 75% 100%, 65% 98%, 55% 100%, 45% 97%, 35% 100%, 25% 98%, 15% 100%, 8% 97%, 0% 100%);
+}
+
+/* ============================================================
+   Base component classes — Grunge
+   Signature move: a fractal-noise grain overlay (scratches/dirt) layered
+   on the nav and card backgrounds, plus a jagged torn-edge clip-path on
+   cards and a hard offset "photocopy" shadow instead of a soft blur.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--color-bg); position: relative; }
+body::before { content: ""; position: fixed; inset: 0; background-image: var(--grain-svg); mix-blend-mode: overlay; opacity: 0.6; pointer-events: none; }
+.nav { position: relative; z-index: 1; display: flex; gap: var(--space-4); align-items: center; padding: var(--space-4) var(--space-6);
+  background: var(--color-surface); background-image: var(--grain-svg); background-blend-mode: overlay;
+  border-bottom: 3px solid var(--color-ink); transform: rotate(-0.4deg); }
+.btn { position: relative; z-index: 1; font: 700 var(--text-base)/1 var(--font-display); letter-spacing: .02em;
+  color: var(--color-text); padding: var(--space-3) var(--space-6); border-radius: var(--radius-md);
+  background: var(--color-surface-strong); border: 2px solid var(--color-ink); box-shadow: var(--shadow-sm);
+  cursor: pointer; transition: transform .1s var(--ease-standard); }
+.btn:hover { transform: translate(-1px,-1px) rotate(-0.5deg); box-shadow: var(--shadow-md); }
+.btn:active { transform: translate(1px,1px); box-shadow: none; }
+.btn:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: var(--color-primary); color: #fff2e0; border-color: var(--color-ink); }
+.card { position: relative; z-index: 1; background: var(--color-surface); background-image: var(--grain-svg);
+  background-blend-mode: overlay; border: 2px solid var(--color-border); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md); padding: var(--space-6) var(--space-6) calc(var(--space-6) + 6px);
+  clip-path: var(--torn-clip); transform: rotate(0.3deg); }
+.input { position: relative; z-index: 1; width: 100%; box-sizing: border-box; color: var(--color-text);
+  font: var(--text-base) var(--font-sans); padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm);
+  background: var(--color-surface-strong); border: 2px solid var(--color-border); }
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-primary); box-shadow: var(--shadow-sm); }
+.badge { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: .4em; font-size: var(--text-xs);
+  font-family: var(--font-display); text-transform: uppercase; padding: .3em .8em; border-radius: var(--radius-pill);
+  background: var(--color-accent); color: var(--color-ink); transform: rotate(-2deg); }
+@media (prefers-reduced-motion: reduce) { .btn, .nav, .card, .badge { transition: none; transform: none; } }

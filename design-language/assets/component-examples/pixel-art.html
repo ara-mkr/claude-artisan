@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pixel Art / 8-bit — component example</title>
+<link rel="stylesheet" href="../starter-themes/pixel-art.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-16, 64px) var(--space-6, 24px); display: grid; gap: var(--space-8, 32px); }
+  h1 { font: 700 var(--text-3xl, 2.25rem)/1.4 var(--font-display); margin: 0; }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-sm, 0.875rem); margin: 0; max-width: 52ch; line-height: 1.7; }
+  .row { display: flex; gap: var(--space-4, 16px); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4, 16px); }
+  .card h3 { margin: 0 0 var(--space-2, 8px); font-size: var(--text-sm, 0.875rem); }
+  .card p { margin: 0; color: var(--color-text-muted); font-size: var(--text-xs, 0.75rem); line-height: 1.7; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto">QUEST.EXE</strong>
+      <a href="#" style="color:var(--color-text);text-decoration:none">MAP</a>
+      <a href="#" style="color:var(--color-text-muted);text-decoration:none">ITEMS</a>
+      <button class="btn btn--primary">SIGN IN</button>
+    </nav>
+    <header>
+      <h1>LEVEL UP THE UI</h1>
+      <p class="lede">Every raised surface gets the same hard-edge offset pixel shadow — no blur,
+        no radius — and a chunky 4px border, so nav, card and button all read as one sprite sheet.</p>
+    </header>
+    <div class="row">
+      <button class="btn btn--primary">START</button>
+      <button class="btn">OPTIONS</button>
+      <button class="btn" disabled>LOCKED</button>
+      <span class="badge">+100 XP</span>
+    </div>
+    <input class="input" placeholder="ENTER NAME" aria-label="Enter name">
+    <div class="grid">
+      <article class="card"><h3>DITHERED FILL</h3><p>Limited NES-style palette keeps every color choice deliberate.</p></article>
+      <article class="card"><h3>GRID LOCKED</h3><p>Spacing snaps to an 8px unit so nothing floats off the pixel grid.</p></article>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+/* Postmodern Graphic Design — design tokens */
+/* 1970s–1990s | Reaction to Modernism (Wolfgang Weingart, April Greiman, David Carson), condensed */
+:root {
+  /* color: clashing, ironic, layered */
+  --color-bg: #efe9df;
+  --color-surface: #ffffff;
+  --color-surface-strong: #fff2b8;
+  --color-border: #17171a;
+  --color-text: #17171a;
+  --color-text-muted: #514f52;
+  --color-primary: #e0247a;
+  --color-accent: #2b6df0;
+  --color-clash: #ffce00;
+  /* radius: irregular, intentionally inconsistent */
+  --radius-sm: 0px;
+  --radius-md: 2px;
+  --radius-lg: 999px 4px 999px 4px;
+  --radius-pill: 999px;
+  /* shadow: layered collage offset shadow */
+  --shadow-sm: 3px 3px 0 var(--color-primary);
+  --shadow-md: 6px 6px 0 var(--color-accent);
+  --shadow-lg: 9px 9px 0 var(--color-clash);
+  /* font: mixed, clashing type families */
+  --font-sans: 'Helvetica Neue', Arial, sans-serif;
+  --font-display: Georgia, 'Times New Roman', serif;
+  --font-mono: 'Courier New', ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  /* extra: layered rotated collage border, mixed-type headline treatment */
+  --collage-tilt: -1.2deg;
+  --overprint-texture: repeating-linear-gradient(45deg, rgba(23,23,26,0.04) 0 2px, transparent 2px 6px);
+}
+
+/* ============================================================
+   Base component classes — Postmodern Graphic Design
+   Signature move: layered offset "collage" shadow (a solid color block behind
+   the surface, not a blur) plus a slight rotation, repeated on card, btn, and nav.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--color-bg) var(--overprint-texture); }
+.nav {
+  display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-3) var(--space-6); background: var(--color-surface);
+  border: 2px solid var(--color-border); box-shadow: var(--shadow-sm);
+}
+.btn {
+  font: 700 var(--text-base)/1 var(--font-display); color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-md);
+  background: var(--color-surface); border: 2px solid var(--color-border);
+  box-shadow: var(--shadow-sm); cursor: pointer;
+  transition: transform .18s var(--ease-standard), box-shadow .18s var(--ease-standard);
+}
+.btn:hover { transform: rotate(var(--collage-tilt)) translate(-2px, -2px); box-shadow: var(--shadow-md); }
+.btn:active { transform: none; box-shadow: var(--shadow-sm); }
+.btn:focus-visible { outline: 2px dashed var(--color-primary); outline-offset: 3px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: var(--color-primary); color: #fff; border-color: var(--color-border); }
+.card {
+  background: var(--color-surface); border-radius: var(--radius-md);
+  border: 2px solid var(--color-border); box-shadow: var(--shadow-md); padding: var(--space-6);
+  transform: rotate(-0.6deg);
+}
+.input {
+  width: 100%; box-sizing: border-box; color: var(--color-text); font: var(--text-base) var(--font-mono);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm);
+  background: var(--color-surface); border: 2px solid var(--color-border); box-shadow: var(--shadow-sm);
+}
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-accent); box-shadow: var(--shadow-md); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font: 700 var(--text-xs)/1 var(--font-sans);
+  padding: .3em .8em; border-radius: var(--radius-sm); background: var(--color-clash); color: #17171a;
+  border: 2px solid var(--color-border); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }

@@ -1,0 +1,102 @@
+/* Googie — design tokens */
+/* 1945–1969 | Southern California car-culture architecture, condensed */
+:root {
+  /* color */
+  --color-bg: #f5ede0;
+  --color-surface: #ffffff;
+  --color-surface-strong: #fff2df;
+  --color-border: #1f2a44;
+  --color-text: #1f2a44;
+  --color-text-muted: #4c5878;
+  --color-primary: #ff6b3d;
+  --color-accent: #1fb6b0;
+  --color-gold: #f0b429;
+  /* radius: sharp corners cut by a boomerang swoop, exaggerated pill ends */
+  --radius-sm: 4px;
+  --radius-md: 4px 24px 4px 24px;
+  --radius-lg: 8px 48px 8px 48px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 3px 3px 0 var(--color-border);
+  --shadow-md: 5px 5px 0 var(--color-border);
+  --shadow-lg: 8px 8px 0 var(--color-border);
+  /* font */
+  --font-sans: 'Century Gothic', 'Avant Garde', 'Futura', sans-serif;
+  --font-display: 'Broadway', 'Cooper Black', 'Futura', sans-serif;
+  --font-mono: ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.75rem;
+  --text-4xl: 3.75rem;
+  --text-5xl: 5rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.34, 1.56, 0.64, 1);
+  /* extra: a starburst radial-gradient badge treatment plus the asymmetric
+     boomerang corner radius — the two signature moves of atomic-age
+     roadside-sign design, repeated on card, btn and badge */
+  --starburst: conic-gradient(from 0deg, var(--color-gold) 0deg 10deg, transparent 10deg 30deg,
+               var(--color-gold) 30deg 40deg, transparent 40deg 60deg, var(--color-gold) 60deg 70deg,
+               transparent 70deg 90deg, var(--color-gold) 90deg 100deg, transparent 100deg 120deg,
+               var(--color-gold) 120deg 130deg, transparent 130deg 150deg, var(--color-gold) 150deg 160deg,
+               transparent 160deg 180deg, var(--color-gold) 180deg 190deg, transparent 190deg 210deg,
+               var(--color-gold) 210deg 220deg, transparent 220deg 240deg, var(--color-gold) 240deg 250deg,
+               transparent 250deg 270deg, var(--color-gold) 270deg 280deg, transparent 280deg 300deg,
+               var(--color-gold) 300deg 310deg, transparent 310deg 330deg, var(--color-gold) 330deg 340deg,
+               transparent 340deg 360deg);
+}
+
+/* ============================================================
+   Base component classes — googie
+   Signature move: asymmetric "boomerang" corner radius (--radius-md/lg,
+   rounded on two opposite corners only) plus a hard offset poster shadow,
+   repeated on nav, card and btn to read as space-age roadside signage.
+   ============================================================ */
+body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-sans); }
+.nav {
+  display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-3) var(--space-6); background: var(--color-surface);
+  border-bottom: 4px solid var(--color-border);
+}
+.btn {
+  font: 700 var(--text-base)/1 var(--font-display); color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-md);
+  background: var(--color-surface); border: 2px solid var(--color-border);
+  box-shadow: var(--shadow-sm); cursor: pointer;
+  transition: transform .18s var(--ease-standard), box-shadow .18s var(--ease-standard);
+}
+.btn:hover { transform: translate(-2px,-2px); box-shadow: var(--shadow-md); }
+.btn:active { transform: translate(0,0); box-shadow: var(--shadow-sm); }
+.btn:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: var(--color-primary); color: #fff8ef; border-color: var(--color-border); }
+.card {
+  background: var(--color-surface); border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-md); padding: var(--space-6);
+  position: relative;
+}
+.input {
+  width: 100%; box-sizing: border-box; color: var(--color-text);
+  font: var(--text-base) var(--font-sans);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm);
+  background: var(--color-surface-strong); border: 2px solid var(--color-border);
+}
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-accent); box-shadow: var(--shadow-sm); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font: 700 var(--text-xs) var(--font-sans);
+  padding: .4em 1em; border-radius: var(--radius-pill); background: var(--color-accent); color: #062622; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }

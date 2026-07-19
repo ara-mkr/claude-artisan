@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vectordelia — component example</title>
+<!-- Import the one starter theme; that's ~80% of the look. -->
+<link rel="stylesheet" href="../starter-themes/vectordelia.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-16) var(--space-6); display: grid; gap: var(--space-8); }
+  h1 { font: 700 var(--text-4xl)/1.1 var(--font-display); margin: 0; }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-lg); margin: 0; max-width: 52ch; }
+  .row { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4); }
+  .card h3 { margin: 0 0 var(--space-2); font-size: var(--text-xl); font-family: var(--font-display); }
+  .card p { margin: 0; color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto; color:#fff;">WireBird</strong>
+      <a href="#" style="color:#fff;text-decoration:none">Features</a>
+      <a href="#" style="color:rgba(255,255,255,0.85);text-decoration:none">Pricing</a>
+      <button class="btn btn--primary">Upgrade now</button>
+    </nav>
+
+    <header>
+      <h1>Glossy swirls, saturated shine.</h1>
+      <p class="lede">The blue-violet-magenta wirebird gradient sweeps across every raised
+        surface with a bright glass sheen — pure mid-2000s Illustrator flourish.</p>
+    </header>
+
+    <div class="row">
+      <button class="btn btn--primary">Get connected</button>
+      <button class="btn">Watch demo</button>
+      <button class="btn" disabled>Coming soon</button>
+      <span class="badge">✺ Beta</span>
+    </div>
+
+    <input class="input" placeholder="Enter your broadband speed…" aria-label="Search">
+
+    <div class="grid">
+      <article class="card">
+        <h3>Floral flourish</h3>
+        <p>Every card top edge carries the same glossy swirl band as the nav and hero buttons.</p>
+      </article>
+      <article class="card">
+        <h3>Bright, saturated, alive</h3>
+        <p>Vivid gradients and a glass highlight give every panel that Web 2.0 shine.</p>
+      </article>
+    </div>
+  </div>
+</body>
+</html>

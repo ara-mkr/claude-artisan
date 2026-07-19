@@ -1,0 +1,78 @@
+/* ASCII / Terminal / TUI — design tokens (generated from style_catalog.json) */
+/* 1970s–present | Text-only terminals; revived as retro/hacker aesthetic. */
+:root {
+  /* color */
+  --color-bg: #0a0e0a;
+  --color-surface: #0f150f;
+  --color-text: #33ff66;
+  --color-text-muted: #1f9940;
+  --color-primary: #33ff66;
+  --color-accent: #ffb000;
+  --color-amber: #ffb000;
+  --color-cursor: #33ff66;
+  --color-dim: #0a3d1a;
+  /* radius */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-pill: 0px;
+  /* shadow */
+  --shadow-glow: 0 0 4px rgba(51,255,102,0.7);
+  /* font */
+  --font-sans: 'IBM Plex Mono', 'Courier New', monospace;
+  --font-display: 'IBM Plex Mono', monospace;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.5rem;
+  --text-5xl: 3rem;
+  /* space */
+  --space-1: 0.5ch;
+  --space-2: 1ch;
+  --space-3: 1.5ch;
+  --space-4: 2ch;
+  --space-6: 3ch;
+  --space-8: 4ch;
+  --space-12: 6ch;
+  --space-16: 8ch;
+  /* ease */
+  --ease-standard: steps(1, end);
+  /* extra (signature gradients, composite borders, filters) */
+  --scanline: repeating-linear-gradient(0deg, rgba(51,255,102,0.08) 0 1px, transparent 1px 2px);
+  --border: 1px solid #33ff66;
+}
+
+/* ============================================================
+   Base component classes — ASCII / Terminal / TUI (token-driven).
+   Signature move lives in references/00-flagship-implementation-specs/ascii-terminal.md;
+   these are accessible, token-wired starting points. */
+body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-sans); }
+.card { background: var(--color-surface, var(--color-bg)); color: var(--color-text);
+  border-radius: var(--radius-md); box-shadow: var(--shadow-glow);
+  padding: var(--space-6, 24px); border: 2px solid var(--color-text); }
+.nav { display: flex; gap: var(--space-4, 16px); align-items: center;
+  padding: var(--space-3, 12px) var(--space-6, 24px); background: var(--color-surface, var(--color-bg));
+  border-bottom: 2px solid var(--color-text); }
+.btn { font: 700 var(--text-base, 1rem)/1 var(--font-display, var(--font-sans)); color: var(--color-text);
+  background: var(--color-surface, var(--color-bg)); border-radius: var(--radius-md);
+  padding: var(--space-3, 12px) var(--space-6, 24px); box-shadow: var(--shadow-glow); cursor: pointer; border: 2px solid var(--color-text);
+  transition: transform .12s var(--ease-standard, ease), box-shadow .12s var(--ease-standard, ease), filter .12s; }
+.btn:hover { transform: translateY(-1px); filter: brightness(0.96); }
+.btn:active { transform: translateY(0); }
+.btn:focus-visible { outline: 2px solid var(--color-accent, var(--color-primary)); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; transform: none; }
+.btn--primary { background: var(--color-primary); color: #111111; border-color: var(--color-text); }
+.input { width: 100%; box-sizing: border-box; font: var(--text-base, 1rem) var(--font-sans); color: var(--color-text);
+  background: var(--color-surface, #fff); border-radius: var(--radius-sm);
+  padding: var(--space-3, 12px) var(--space-4, 16px); border: 2px solid var(--color-text); }
+.input:focus { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.input::placeholder { color: var(--color-text-muted, currentColor); opacity: .7; }
+.badge { display: inline-flex; align-items: center; gap: .4em; font: 700 var(--text-xs, .75rem) var(--font-sans);
+  color: #111111; background: var(--color-primary); border-radius: var(--radius-pill, 999px); padding: .3em .8em; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover, .btn:active { transform: none; } }

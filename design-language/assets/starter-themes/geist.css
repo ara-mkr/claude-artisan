@@ -1,0 +1,98 @@
+/* Vercel Geist — design tokens */
+/* 2023–present | Vercel Geist design system + Geist typeface, condensed */
+:root {
+  /* color */
+  --color-bg: #0a0a0a;
+  --color-surface: #111111;
+  --color-surface-strong: #191919;
+  --color-border: #2a2a2a;
+  --color-text: #fafafa;
+  --color-text-muted: #a1a1a1;
+  --color-primary: #fafafa;
+  --color-accent: #0072f5;
+  /* radius */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.5);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.55);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.6);
+  /* font */
+  --font-sans: 'Geist', 'Geist Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Geist', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+  /* extra: a razor-thin 1px hairline grid plus a faint radial grain — the
+     signature "precise geometry + grain accent" combination, repeated on
+     nav, card and btn borders so the whole page reads as one tight system */
+  --hairline: 1px solid var(--color-border);
+  --grain-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='90' height='90'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/></svg>");
+}
+
+/* ============================================================
+   Base component classes — geist
+   Signature move: a precise 1px hairline border (--hairline) on every
+   surface edge, plus a faint grain texture overlay — repeated on nav,
+   card and btn for the "developer-premium minimalism" read.
+   ============================================================ */
+body {
+  margin: 0; color: var(--color-text); font-family: var(--font-sans);
+  background-color: var(--color-bg); background-image: var(--grain-image);
+  background-size: 90px 90px;
+}
+.nav {
+  display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-3) var(--space-6); background: var(--color-bg);
+  border-bottom: var(--hairline);
+}
+.btn {
+  font: 500 var(--text-base)/1 var(--font-sans); color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-md);
+  background: var(--color-surface); border: var(--hairline);
+  cursor: pointer; transition: background .16s var(--ease-standard), border-color .16s var(--ease-standard);
+}
+.btn:hover { background: var(--color-surface-strong); border-color: #3a3a3a; }
+.btn:active { background: var(--color-surface); }
+.btn:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: var(--color-primary); color: #0a0a0a; border-color: var(--color-primary); }
+.card {
+  background: var(--color-surface); border: var(--hairline);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); padding: var(--space-6);
+}
+.input {
+  width: 100%; box-sizing: border-box; color: var(--color-text);
+  font: var(--text-base) var(--font-mono);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-md);
+  background: var(--color-surface); border: var(--hairline);
+}
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(0,114,245,0.28); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font-size: var(--text-xs);
+  padding: .3em .8em; border-radius: var(--radius-pill); background: var(--color-surface-strong);
+  border: var(--hairline); color: var(--color-text-muted); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } }

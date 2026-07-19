@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gorpcore — component example</title>
+<!-- Import the one starter theme; that's ~80% of the look. -->
+<link rel="stylesheet" href="../starter-themes/gorpcore.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-16) var(--space-6); display: grid; gap: var(--space-8); }
+  h1 { font: 700 var(--text-4xl)/1.05 var(--font-display); margin: 0; text-transform: uppercase; letter-spacing: .01em; }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-lg); margin: 0; max-width: 52ch; }
+  .row { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4); }
+  .card h3 { margin: 0 0 var(--space-2); font: 700 var(--text-xl) var(--font-display); text-transform: uppercase; }
+  .card p { margin: 0; color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto; font-family:var(--font-display); text-transform:uppercase; letter-spacing:.03em;">Basecamp</strong>
+      <a href="#" style="color:var(--color-text);text-decoration:none">Gear</a>
+      <a href="#" style="color:var(--color-text-muted);text-decoration:none">Trail Log</a>
+      <button class="btn btn--primary">Gear up</button>
+    </nav>
+
+    <header>
+      <h1>Built for the trail, worn to the office.</h1>
+      <p class="lede">A hi-vis dashed stitch seam and a fine ripstop weave run through the
+        whole system — earthy tones with a technical accent, functional-first, rugged by
+        default.</p>
+    </header>
+
+    <div class="row">
+      <button class="btn btn--primary">Start hike</button>
+      <button class="btn">Check pack list</button>
+      <button class="btn" disabled>Trail closed</button>
+      <span class="badge">⛰ 12.4 mi</span>
+    </div>
+
+    <input class="input" placeholder="elevation gain, ft" aria-label="Elevation">
+
+    <div class="grid">
+      <article class="card">
+        <h3>Ripstop weave</h3>
+        <p>A faint cross-hatch texture nods to technical fabric construction — function
+          made visible, not hidden.</p>
+      </article>
+      <article class="card">
+        <h3>Stitch-line seam</h3>
+        <p>The hi-vis dashed accent bar reads like a taped seam on a shell jacket — earthy
+          base, one loud technical detail.</p>
+      </article>
+    </div>
+  </div>
+</body>
+</html>

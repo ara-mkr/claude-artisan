@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Frosted Glass — component example</title>
+<!-- Import the one starter theme; that's ~80% of the look. -->
+<link rel="stylesheet" href="../starter-themes/frosted-glass.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-16) var(--space-6); display: grid; gap: var(--space-8); }
+  h1 { font: 700 var(--text-4xl)/1.05 var(--font-display); margin: 0; }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-lg); margin: 0; max-width: 52ch; }
+  .row { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4); }
+  .card h3 { margin: 0 0 var(--space-2); font-size: var(--text-xl); }
+  .card p { margin: 0; color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto">Overlay</strong>
+      <a href="#" style="color:var(--color-text);text-decoration:none">Docs</a>
+      <a href="#" style="color:var(--color-text-muted);text-decoration:none">Status</a>
+      <button class="btn btn--primary">Open panel</button>
+    </nav>
+
+    <header>
+      <h1>A plain blur, doing one job well.</h1>
+      <p class="lede">No tint, no gradient fill, no edge highlight — just a flat semi-opaque
+        white scrim and a backdrop blur, repeated identically across nav, card, and input
+        so the whole surface reads as one uniform frosted pane.</p>
+    </header>
+
+    <div class="row">
+      <button class="btn btn--primary">Confirm</button>
+      <button class="btn">Dismiss</button>
+      <button class="btn" disabled>Locked</button>
+      <span class="badge">Syncing</span>
+    </div>
+
+    <input class="input" placeholder="Search settings" aria-label="Search">
+
+    <div class="grid">
+      <article class="card">
+        <h3>Legibility first</h3>
+        <p>The scrim exists purely to keep text readable over a busy backdrop.</p>
+      </article>
+      <article class="card">
+        <h3>No refraction</h3>
+        <p>Unlike glassmorphism, there's no color bleed or specular edge — just a clean pane.</p>
+      </article>
+    </div>
+  </div>
+</body>
+</html>

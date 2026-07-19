@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bento Grid — component example</title>
+<link rel="stylesheet" href="../starter-themes/bento-grid.css">
+<style>
+  .wrap { max-width: 860px; margin: 0 auto; padding: var(--space-12, 48px) var(--space-6, 24px); display: grid; gap: var(--space-8, 32px); }
+  h1 { font: 800 var(--text-4xl, 3rem)/1.05 var(--font-display, var(--font-sans)); margin: 0; }
+  p.lede { color: var(--color-text-muted, currentColor); font-size: var(--text-lg, 1.125rem); margin: 0; max-width: 52ch; }
+  .row { display: flex; gap: var(--space-4, 16px); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-6, 24px); }
+  .card h3 { margin: 0 0 var(--space-2, 8px); font-size: var(--text-xl, 1.375rem); }
+  .card p { margin: 0; color: var(--color-text-muted, currentColor); }
+</style>
+</head>
+<body>
+  <nav class="nav">
+    <strong style="margin-right:auto">Bento Grid</strong>
+    <a href="#" style="color:inherit;text-decoration:none">Docs</a>
+    <button class="btn btn--primary">Sign in</button>
+  </nav>
+  <div class="wrap">
+    <header>
+      <h1>Bento Grid</h1>
+      <p class="lede">Button, input, card and nav wired to the bento-grid token set. The signature move
+        and the full 10-primitive rules live in the deep-spec file.</p>
+    </header>
+    <div class="row">
+      <button class="btn btn--primary">Primary</button>
+      <button class="btn">Secondary</button>
+      <button class="btn" disabled>Disabled</button>
+      <span class="badge">Badge</span>
+    </div>
+    <input class="input" placeholder="Type something…" aria-label="Demo input">
+    <div class="grid">
+      <article class="card"><h3>Card one</h3><p>Surfaces, radius and shadow come straight from tokens.</p></article>
+      <article class="card"><h3>Card two</h3><p>Swap the linked CSS to restyle the whole page.</p></article>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+/* Neubrutalism — design tokens (generated from style_catalog.json) */
+/* 2020–present | Rose with Gumroad's 2021 redesign; heavily used by Figma community. */
+:root {
+  /* color */
+  --color-bg: #fef6e4;
+  --color-surface: #ffffff;
+  --color-surface-2: #fde68a;
+  --color-text: #0a0a0a;
+  --color-text-muted: #3d3d3d;
+  --color-primary: #ffde00;
+  --color-accent: #ff5c00;
+  --color-blue: #3b82f6;
+  --color-green: #22c55e;
+  --color-pink: #ff5eb3;
+  --color-border: #0a0a0a;
+  /* radius */
+  --radius-sm: 0px;
+  --radius-md: 6px;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-hard-sm: 3px 3px 0 #0a0a0a;
+  --shadow-hard: 6px 6px 0 #0a0a0a;
+  --shadow-hard-lg: 10px 10px 0 #0a0a0a;
+  --shadow-hard-primary: 6px 6px 0 #ff5c00;
+  /* font */
+  --font-sans: 'Space Grotesk', 'Archivo', system-ui, sans-serif;
+  --font-display: 'Archivo Black', 'Space Grotesk', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  /* text */
+  --text-xs: 0.8rem;
+  --text-sm: 0.95rem;
+  --text-base: 1.05rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.6rem;
+  --text-2xl: 2.1rem;
+  --text-3xl: 2.8rem;
+  --text-4xl: 3.8rem;
+  --text-5xl: 5rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-snap: steps(1, end);
+  /* extra (signature gradients, composite borders, filters) */
+  --border: 3px solid #0a0a0a;
+  --border-thick: 4px solid #0a0a0a;
+}
+
+/* ============================================================
+   Base component classes — neubrutalism
+   Signature move: thick solid black border + hard OFFSET shadow (no blur),
+   which "lifts" on hover by sliding toward the shadow. Loud flat fills.
+   Apply the border+hard-shadow pair to EVERY interactive surface.
+   ============================================================ */
+body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-sans); }
+.card { background: var(--color-surface); border: var(--border-thick); border-radius: var(--radius-md);
+  box-shadow: var(--shadow-hard); padding: var(--space-6); }
+.nav { display: flex; gap: var(--space-4); align-items: center; background: var(--color-primary);
+  border-bottom: var(--border-thick); padding: var(--space-3) var(--space-6); }
+.btn {
+  font: 800 var(--text-base)/1 var(--font-display); color: var(--color-text);
+  background: var(--color-primary); border: var(--border-thick); border-radius: var(--radius-md);
+  box-shadow: var(--shadow-hard); padding: var(--space-3) var(--space-6); cursor: pointer;
+  transition: transform .08s var(--ease-standard), box-shadow .08s var(--ease-standard);
+}
+.btn:hover { transform: translate(3px,3px); box-shadow: var(--shadow-hard-sm); }
+.btn:active { transform: translate(6px,6px); box-shadow: 0 0 0 var(--color-border); }
+.btn:focus-visible { outline: 3px solid var(--color-blue); outline-offset: 3px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; box-shadow: var(--shadow-hard); transform: none; }
+.btn--accent { background: var(--color-accent); color: #fff; }
+.input { width: 100%; font: var(--text-base) var(--font-sans); color: var(--color-text);
+  background: #fff; border: var(--border-thick); border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-hard-sm); padding: var(--space-3) var(--space-4); }
+.input:focus { outline: none; box-shadow: var(--shadow-hard); }
+.badge { display: inline-flex; font: 800 var(--text-xs) var(--font-display); text-transform: uppercase;
+  background: var(--color-pink); border: var(--border-thick); border-radius: var(--radius-sm);
+  padding: .3em .7em; box-shadow: var(--shadow-hard-sm); }
+.toggle { width: 56px; height: 30px; background: #fff; border: var(--border-thick);
+  border-radius: var(--radius-pill); position: relative; cursor: pointer; }
+.toggle::after { content:""; position:absolute; top:2px; left:2px; width:20px; height:20px;
+  background: var(--color-primary); border: 2px solid var(--color-border); border-radius: 50%;
+  transition: transform .12s steps(3,end); }
+.toggle[aria-checked="true"]::after { transform: translateX(26px); background: var(--color-green); }
+/* Accessibility: loud fills can crush contrast — keep text near-black on light
+   fills (verify with contrast_check.py), and never rely on shadow alone for focus. */
+@media (prefers-reduced-motion: reduce) { .btn, .toggle::after { transition: none; } .btn:hover, .btn:active { transform: none; } }

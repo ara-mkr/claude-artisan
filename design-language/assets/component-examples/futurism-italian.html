@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Futurism (Italian) — component example</title>
+<!-- Import the one starter theme; that's ~80% of the look. -->
+<link rel="stylesheet" href="../starter-themes/futurism-italian.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-16) var(--space-6); display: grid; gap: var(--space-8); }
+  h1 { font: 800 var(--text-4xl)/1.02 var(--font-display); margin: 0; text-transform: uppercase;
+    transform: var(--tilt-heading); letter-spacing: .01em; }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-lg); margin: 0; max-width: 52ch; }
+  .row { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4); }
+  .card h3 { margin: 0 0 var(--space-2); font: 800 var(--text-xl) var(--font-display); text-transform: uppercase; }
+  .card p { margin: 0; color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto; font-family:var(--font-display); text-transform:uppercase; letter-spacing:.04em;">Velocità</strong>
+      <a href="#" style="color:var(--color-text);text-decoration:none">Manifesto</a>
+      <a href="#" style="color:var(--color-text-muted);text-decoration:none">Depero</a>
+      <button class="btn btn--primary">Ignite</button>
+    </nav>
+
+    <header>
+      <h1>Words hurled at speed.</h1>
+      <p class="lede">Type tilts off the grid, shadows print hard and offset like a
+        letterpress poster, and radiating speed-lines push every surface toward motion —
+        the celebration of machine and velocity over the static page.</p>
+    </header>
+
+    <div class="row">
+      <button class="btn btn--primary">Accelerate</button>
+      <button class="btn">Manifesto</button>
+      <button class="btn" disabled>Stalled</button>
+      <span class="badge">⚡ 300km/h</span>
+    </div>
+
+    <input class="input" placeholder="il tuo nome, velocemente" aria-label="Name">
+
+    <div class="grid">
+      <article class="card">
+        <h3>Parole in libertà</h3>
+        <p>Words-in-freedom typography rejects syntax and stillness — diagonal lines chase
+          the eye across the composition.</p>
+      </article>
+      <article class="card">
+        <h3>Hard offset shadow</h3>
+        <p>No blur, no softness. Every raised surface casts a flat, mechanical shadow like
+          a printed poster peeling off the wall.</p>
+      </article>
+    </div>
+  </div>
+</body>
+</html>

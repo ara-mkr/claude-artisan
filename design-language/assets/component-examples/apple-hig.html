@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apple HIG — component example</title>
+<!-- Import the one starter theme; that's ~80% of the look. -->
+<link rel="stylesheet" href="../starter-themes/apple-hig.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-16) var(--space-6); display: grid; gap: var(--space-8); }
+  h1 { font: 700 var(--text-4xl)/1.05 var(--font-display); margin: 0; letter-spacing: -0.02em; }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-lg); margin: 0; max-width: 52ch; }
+  .row { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4); }
+  .card h3 { margin: 0 0 var(--space-2); font-size: var(--text-xl); }
+  .card p { margin: 0; color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto">Weather</strong>
+      <a href="#" style="color:var(--color-text);text-decoration:none">Today</a>
+      <a href="#" style="color:var(--color-text-muted);text-decoration:none">10-Day</a>
+      <button class="btn btn--primary">Sign in</button>
+    </nav>
+
+    <header>
+      <h1>Content leads. Chrome recedes.</h1>
+      <p class="lede">Generous spacing, a hairline separator instead of a heavy border, and a
+        vibrancy blur on the nav — every system control stays consistent so your content is
+        what people actually notice.</p>
+    </header>
+
+    <div class="row">
+      <button class="btn btn--primary">Continue</button>
+      <button class="btn">Not now</button>
+      <button class="btn" disabled>Unavailable</button>
+      <span class="badge">Updated</span>
+    </div>
+
+    <input class="input" placeholder="you@icloud.com" aria-label="Email">
+
+    <div class="grid">
+      <article class="card">
+        <h3>Clarity</h3>
+        <p>Legible type at every size, icons precise and lucid, subtlety of adornment.</p>
+      </article>
+      <article class="card">
+        <h3>Deference</h3>
+        <p>Fluid motion and a crisp interface help people understand and interact with content.</p>
+      </article>
+    </div>
+  </div>
+</body>
+</html>

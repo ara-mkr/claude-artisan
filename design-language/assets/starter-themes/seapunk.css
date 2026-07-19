@@ -1,0 +1,95 @@
+/* Seapunk — design tokens */
+/* 2011–2013 | Tumblr-born internet microgenre, condensed */
+:root {
+  /* color */
+  --color-bg: #062c31;
+  --color-surface: #0d4750;
+  --color-surface-strong: #135b66;
+  --color-border: #00e5ff;
+  --color-text: #eafffc;
+  --color-text-muted: #9fd9d4;
+  --color-primary: #00e5ff;
+  --color-accent: #ff6ec7;
+  --color-lime: #a6ff3d;
+  /* radius */
+  --radius-sm: 4px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 0 2px 8px rgba(0,229,255,0.25);
+  --shadow-md: 0 8px 20px rgba(0,229,255,0.28);
+  --shadow-lg: 0 18px 40px rgba(0,229,255,0.32);
+  /* font */
+  --font-sans: 'Verdana', 'Geneva', sans-serif;
+  --font-display: 'Papyrus', 'Herculanum', 'Verdana', sans-serif;
+  --font-mono: 'Courier New', monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  /* extra: a holographic gradient border and a rippling wave-gradient background, both repeated */
+  --holo-gradient: linear-gradient(120deg, #00e5ff, #ff6ec7, #a6ff3d, #00e5ff);
+  --wave-bg: radial-gradient(120% 90% at 20% 0%, rgba(0,229,255,0.18), transparent 55%),
+             radial-gradient(100% 80% at 90% 100%, rgba(255,110,199,0.14), transparent 55%);
+}
+
+/* ============================================================
+   Base component classes — Seapunk
+   Signature move: a 2px holographic gradient border (cyan → pink → lime)
+   wrapping the nav, cards, and the primary button, over a rippling
+   teal wave-gradient page background — watery, kitschy, ironic Web 1.0.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans);
+  background: var(--wave-bg), var(--color-bg); background-attachment: fixed; min-height: 100vh; }
+.nav { display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-3) var(--space-6); background: var(--color-surface);
+  border-radius: var(--radius-pill); border: 2px solid transparent;
+  background-image: linear-gradient(var(--color-surface), var(--color-surface)), var(--holo-gradient);
+  background-origin: border-box; background-clip: padding-box, border-box; }
+.btn {
+  font: 700 var(--text-base)/1 var(--font-sans); color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-pill);
+  background: var(--color-surface-strong); border: 2px solid transparent;
+  background-image: linear-gradient(var(--color-surface-strong), var(--color-surface-strong)), var(--holo-gradient);
+  background-origin: border-box; background-clip: padding-box, border-box;
+  box-shadow: var(--shadow-sm); cursor: pointer;
+  transition: transform .2s var(--ease-standard), box-shadow .2s var(--ease-standard);
+}
+.btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn:active { transform: translateY(0); }
+.btn:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; transform: none; }
+.btn--primary { background-image: linear-gradient(90deg, #00b8cc, #0d4750), var(--holo-gradient); color: #04181b; }
+.card { background: var(--color-surface); color: var(--color-text);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-md);
+  padding: var(--space-6); border: 2px solid transparent;
+  background-image: linear-gradient(var(--color-surface), var(--color-surface)), var(--holo-gradient);
+  background-origin: border-box; background-clip: padding-box, border-box; }
+.input { width: 100%; box-sizing: border-box; color: var(--color-text);
+  font: var(--text-base) var(--font-sans); padding: var(--space-3) var(--space-4);
+  background: var(--color-surface-strong); border-radius: var(--radius-md); border: 1px solid var(--color-border); }
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 30%, transparent); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font-size: var(--text-xs);
+  padding: .3em .8em; border-radius: var(--radius-pill); background: var(--color-lime); color: #0a1f00; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }

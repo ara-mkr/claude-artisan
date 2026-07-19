@@ -1,0 +1,85 @@
+/* GOV.UK Design System — design tokens */
+/* 2012–present | UK Government Digital Service, condensed */
+:root {
+  /* color */
+  --color-bg: #ffffff;
+  --color-surface: #f3f2f1;
+  --color-surface-strong: #ebeae9;
+  --color-border: #0b0c0c;
+  --color-text: #0b0c0c;
+  --color-text-muted: #505a5f;
+  --color-primary: #00703c;
+  --color-accent: #1d70b8;
+  --color-focus: #ffdd00;
+  --color-error: #d4351c;
+  /* radius: GDS is deliberately square, no rounding */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-pill: 0px;
+  /* shadow: GDS avoids drop shadows; uses a hard 2px bottom offset instead */
+  --shadow-sm: 0 2px 0 #002d18;
+  --shadow-md: 0 2px 0 #002d18;
+  --shadow-lg: 0 2px 0 #002d18;
+  /* font */
+  --font-sans: 'GDS Transport', 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'GDS Transport', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'GDS Transport Mono', ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1.1875rem;
+  --text-lg: 1.375rem;
+  --text-xl: 1.75rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.5rem;
+  --text-4xl: 3rem;
+  --text-5xl: 3.75rem;
+  /* space */
+  --space-1: 5px;
+  --space-2: 10px;
+  --space-3: 15px;
+  --space-4: 20px;
+  --space-6: 30px;
+  --space-8: 40px;
+  --space-12: 50px;
+  --space-16: 60px;
+  --space-24: 80px;
+  /* ease */
+  --ease-standard: ease-in-out;
+  /* extra: the signature move is the 3px solid yellow focus state with a
+     black inset, mandated across every interactive control */
+  --focus-ring: 3px solid var(--color-focus);
+  --focus-shadow: 0 0 0 3px #0b0c0c;
+}
+
+/* ============================================================
+   Base component classes — GOV.UK Design System
+   Signature move: the yellow-on-black focus state (a thick yellow outline
+   with a black inset shadow) appears identically on every interactive
+   element — buttons, inputs, links — nothing else competes for attention.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--color-bg); line-height: 1.4; }
+.nav { display: flex; gap: var(--space-4); align-items: center; padding: var(--space-3) var(--space-6);
+  background: #0b0c0c; color: #fff; border-bottom: 10px solid var(--color-accent); }
+.nav a { color: #fff; }
+.btn { font: 400 var(--text-base)/1.19 var(--font-sans); color: #fff;
+  padding: var(--space-2) var(--space-4); border-radius: var(--radius-md);
+  background: #00703c; border: 2px solid transparent; box-shadow: var(--shadow-sm);
+  cursor: pointer; transition: box-shadow .1s var(--ease-standard); }
+.btn:hover { background: #005a30; }
+.btn:active { box-shadow: none; transform: translateY(2px); }
+.btn:focus-visible { outline: var(--focus-ring); outline-offset: 0; box-shadow: var(--focus-shadow); color: var(--color-text); background: var(--color-focus); }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: var(--color-primary); }
+.card { background: var(--color-bg); border-left: 5px solid var(--color-accent);
+  border-radius: var(--radius-lg); padding: var(--space-4) var(--space-6); }
+.input { width: 100%; box-sizing: border-box; color: var(--color-text); font: var(--text-base) var(--font-sans);
+  padding: var(--space-2) var(--space-3); border-radius: var(--radius-sm);
+  background: var(--color-bg); border: 2px solid var(--color-border); }
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: var(--focus-ring); outline-offset: 0; box-shadow: var(--focus-shadow); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font-size: var(--text-sm); font-weight: 700;
+  padding: .2em .6em; border-radius: var(--radius-pill); background: var(--color-surface);
+  border: 1px solid var(--color-border); color: var(--color-text); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } }

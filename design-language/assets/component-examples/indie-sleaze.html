@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Indie Sleaze — component example</title>
+<!-- Import the one starter theme; that's ~80% of the look. -->
+<link rel="stylesheet" href="../starter-themes/indie-sleaze.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-16) var(--space-6); display: grid; gap: var(--space-8); }
+  h1 { font: 800 var(--text-4xl)/1.0 var(--font-display); margin: 0; text-transform: uppercase; }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-lg); margin: 0; max-width: 52ch; }
+  .row { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4); }
+  .card h3 { margin: 0 0 var(--space-2); font: 800 var(--text-xl) var(--font-display); text-transform: uppercase; color: var(--color-primary); }
+  .card p { margin: 0; color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto; font-family:var(--font-display); text-transform:uppercase; color:var(--color-accent);">COBRA//NIGHT</strong>
+      <a href="#" style="color:var(--color-text);text-decoration:none">Party Pics</a>
+      <a href="#" style="color:var(--color-text-muted);text-decoration:none">Playlist</a>
+      <button class="btn btn--primary">RSVP</button>
+    </nav>
+
+    <header>
+      <h1>Flash on, filter off.</h1>
+      <p class="lede">Overexposed and grainy, tilted like a photo taped crooked to a wall —
+        this is 3am on a sticky venue floor, American Apparel leggings and skinny jeans,
+        no polish, all noise.</p>
+    </header>
+
+    <div class="row">
+      <button class="btn btn--primary">Get on the list</button>
+      <button class="btn">See the flyer</button>
+      <button class="btn" disabled>Sold out</button>
+      <span class="badge">★ blog-house</span>
+    </div>
+
+    <input class="input" placeholder="your MySpace handle" aria-label="Handle">
+
+    <div class="grid">
+      <article class="card">
+        <h3>Grain over gloss</h3>
+        <p>Every surface carries the same blown-out flash grain — nothing here was meant
+          to look clean.</p>
+      </article>
+      <article class="card">
+        <h3>Crooked by design</h3>
+        <p>Cards and buttons tilt slightly off-axis, like party photos taped up in a dorm
+          room the morning after.</p>
+      </article>
+    </div>
+  </div>
+</body>
+</html>

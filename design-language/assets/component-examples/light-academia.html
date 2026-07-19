@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Light Academia — component example</title>
+<link rel="stylesheet" href="../starter-themes/light-academia.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-16, 64px) var(--space-6, 24px); display: grid; gap: var(--space-8, 32px); }
+  h1 { font: 700 var(--text-4xl, 3rem)/1.05 var(--font-display); margin: 0; }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-lg, 1.125rem); margin: 0; max-width: 52ch; }
+  .row { display: flex; gap: var(--space-4, 16px); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4, 16px); }
+  .card h3 { margin: 0 0 var(--space-2, 8px); font-size: var(--text-xl, 1.375rem); }
+  .card p { margin: 0; color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto">Lindenwood Reading Society</strong>
+      <a href="#" style="color:var(--color-text);text-decoration:none">Library</a>
+      <a href="#" style="color:var(--color-text-muted);text-decoration:none">Lectures</a>
+      <button class="btn btn--primary">Sign in</button>
+    </nav>
+    <header>
+      <h1>Sunlit libraries, gentle scholarship.</h1>
+      <p class="lede">A thin gold hairline rule closes the nav and opens every card — one warm
+        thread of gilt against cream and linen, echoing a well-loved book's edge.</p>
+    </header>
+    <div class="row">
+      <button class="btn btn--primary">Reserve a desk</button>
+      <button class="btn">Browse the stacks</button>
+      <button class="btn" disabled>Fully booked</button>
+      <span class="badge">Est. 1892</span>
+    </div>
+    <input class="input" placeholder="Search the catalogue…" aria-label="Search the catalogue">
+    <div class="grid">
+      <article class="card"><h3>Morning seminar</h3><p>Sage and gold tones, sunlight through tall windows.</p></article>
+      <article class="card"><h3>Marginalia club</h3><p>Hopeful, romantic learning, one annotated page at a time.</p></article>
+    </div>
+  </div>
+</body>
+</html>

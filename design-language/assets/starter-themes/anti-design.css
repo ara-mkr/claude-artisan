@@ -1,0 +1,97 @@
+/* Anti-Design — design tokens */
+/* 2016–present | Reaction against polished 'design-by-committee' minimalism, condensed */
+:root {
+  /* color */
+  --color-bg: #ffe600;
+  --color-surface: #ff00ff;
+  --color-surface-strong: #00ffff;
+  --color-border: #000000;
+  --color-text: #000000;
+  --color-text-muted: #1a1a1a;
+  --color-primary: #0000ff;
+  --color-accent: #ff0000;
+  /* radius: none, deliberately harsh defaults */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-pill: 0px;
+  /* shadow: clashing double offset, mimicking mis-registered print */
+  --shadow-sm: 3px 3px 0 #ff0000;
+  --shadow-md: 5px 5px 0 #0000ff, -3px -3px 0 #00ffff;
+  --shadow-lg: 8px 8px 0 #ff0000, -5px -5px 0 #0000ff;
+  /* font: deliberately clashing default-browser choices */
+  --font-sans: 'Times New Roman', Times, serif;
+  --font-display: 'Comic Sans MS', 'Chalkboard SE', cursive;
+  --font-mono: 'Courier New', monospace;
+  /* text: default browser sizes exaggerated */
+  --text-xs: 0.7rem;
+  --text-sm: 0.9rem;
+  --text-base: 1rem;
+  --text-lg: 1.2rem;
+  --text-xl: 1.6rem;
+  --text-2xl: 2.1rem;
+  --text-3xl: 2.8rem;
+  --text-4xl: 3.6rem;
+  --text-5xl: 4.8rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease: abrupt, no easing */
+  --ease-standard: steps(1);
+  /* extra: intentional misregistration rotation */
+  --tilt-a: rotate(-1.6deg);
+  --tilt-b: rotate(1.1deg);
+}
+
+/* ============================================================
+   Base component classes — Anti-Design
+   Signature move: a hard, offset double drop-shadow in clashing
+   colors (like mis-registered print plates) plus a slight rotate
+   on every surface — refusing the polished, aligned grid. Repeats
+   on nav, card, and btn.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--color-bg); min-height: 100vh; }
+.nav {
+  display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-3) var(--space-6); background: var(--color-surface-strong);
+  border: 3px solid var(--color-border); box-shadow: var(--shadow-md);
+  transform: var(--tilt-a); color: var(--color-text);
+}
+.btn {
+  font: bold var(--text-base)/1 var(--font-display); color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-md);
+  background: #c0c0c0; border: 3px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer; transition: none; transform: var(--tilt-b);
+}
+.btn:hover { background: #d9d9d9; transform: rotate(0deg); }
+.btn:active { box-shadow: none; transform: translate(3px,3px); }
+.btn:focus-visible { outline: 4px dashed var(--color-primary); outline-offset: 4px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: var(--color-accent); color: #000000; text-decoration: underline; }
+.card {
+  background: var(--color-surface); color: #000000; border-radius: var(--radius-lg);
+  padding: var(--space-6); border: 3px solid var(--color-border); box-shadow: var(--shadow-lg);
+  transform: var(--tilt-a);
+}
+.card h3, .card p { color: #000000; }
+.input {
+  width: 100%; box-sizing: border-box; color: var(--color-text); font: var(--text-base) var(--font-sans);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm);
+  background: #ffffff; border: 3px solid var(--color-border); box-shadow: var(--shadow-sm);
+}
+.input::placeholder { color: var(--color-text-muted); font-style: italic; }
+.input:focus { outline: 4px dashed var(--color-primary); outline-offset: 2px; }
+.badge {
+  display: inline-flex; align-items: center; gap: .4em; font: bold var(--text-xs) var(--font-mono); text-transform: uppercase;
+  padding: .3em .8em; background: var(--color-primary); color: #ffff00; border: 2px solid var(--color-border);
+  transform: var(--tilt-b);
+}
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover, .btn:active { transform: none; } }

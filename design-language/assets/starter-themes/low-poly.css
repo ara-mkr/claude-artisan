@@ -1,0 +1,90 @@
+/* Low Poly — design tokens */
+/* 2012–present | Stylized faceted 3D from real-time graphics constraints, condensed */
+:root {
+  /* color */
+  --color-bg: #1b2a4a;
+  --color-surface: #24365c;
+  --color-surface-strong: #2f4570;
+  --color-border: #3c5480;
+  --color-text: #eef3fb;
+  --color-text-muted: #aebedc;
+  --color-primary: #ff7f5c;
+  --color-accent: #46e0c8;
+  --color-facet-dark: #16223c;
+  /* radius */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 0 2px 6px rgba(0,0,0,0.35);
+  --shadow-md: 0 8px 20px rgba(0,0,0,0.4);
+  --shadow-lg: 0 18px 40px rgba(0,0,0,0.45);
+  /* font */
+  --font-sans: 'Space Grotesk', 'Rajdhani', system-ui, sans-serif;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  /* extra: hard-edged faceted gradient (no smoothing) is the signature move */
+  --facet-gradient: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent) 33%,
+    var(--color-primary) 33%, var(--color-primary) 66%, var(--color-surface-strong) 66%);
+  --facet-corner: polygon(0 0, 100% 0, 100% 100%, 22% 100%, 0 70%);
+}
+
+/* ============================================================
+   Base component classes — low poly
+   Signature move: a hard-stopped (non-smooth) triangular facet gradient
+   clipped to a crystalline corner, repeated as a corner accent on nav and
+   card, and as the fill on primary buttons.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans);
+  background: linear-gradient(160deg, var(--color-bg) 0%, var(--color-facet-dark) 100%); min-height: 100vh; }
+.nav { display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-3) var(--space-6); background: var(--color-surface);
+  border: 1px solid var(--color-border); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);
+  position: relative; overflow: hidden; }
+.nav::before { content: ""; position: absolute; top: 0; right: 0; width: 90px; height: 100%;
+  background: var(--facet-gradient); clip-path: var(--facet-corner); opacity: .35; }
+.btn { font: 600 var(--text-base)/1 var(--font-sans); color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-md);
+  background: var(--color-surface-strong); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm);
+  cursor: pointer; transition: transform .15s var(--ease-standard), box-shadow .15s var(--ease-standard); }
+.btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.btn:active { transform: translateY(0); }
+.btn:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; transform: none; }
+.btn--primary { background: var(--facet-gradient); color: #10192c; border-color: transparent; font-weight: 700; }
+.card { background: var(--color-surface); border-radius: var(--radius-lg); border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md); padding: var(--space-6); position: relative; overflow: hidden; }
+.card::after { content: ""; position: absolute; bottom: 0; left: 0; width: 70px; height: 70px;
+  background: var(--facet-gradient); clip-path: polygon(0 100%, 100% 100%, 0 0); opacity: .3; }
+.input { width: 100%; box-sizing: border-box; color: var(--color-text); font: var(--text-base) var(--font-sans);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-md);
+  background: var(--color-surface-strong); border: 1px solid var(--color-border); }
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 25%, transparent); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font-size: var(--text-xs); font-weight: 700;
+  padding: .3em .8em; border-radius: var(--radius-pill); background: var(--facet-gradient); color: #10192c; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }

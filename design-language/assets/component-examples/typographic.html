@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Typography-Driven — component example</title>
+<link rel="stylesheet" href="../starter-themes/typographic.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-16, 64px) var(--space-6, 24px); display: grid; gap: var(--space-8, 32px); }
+  h1 { font: 700 var(--text-4xl, 3rem)/0.95 var(--font-display); letter-spacing: var(--tight-tracking); margin: 0; }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-lg, 1.125rem); margin: 0; max-width: 52ch; }
+  .row { display: flex; gap: var(--space-4, 16px); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-6, 24px); }
+  .card h3 { margin: 0 0 var(--space-2, 8px); font-size: var(--text-xl, 1.375rem); }
+  .card p { margin: 0; color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto">SET</strong>
+      <a href="#" style="color:var(--color-text);text-decoration:none">Work</a>
+      <a href="#" style="color:var(--color-text-muted);text-decoration:none">Type</a>
+      <button class="btn btn--primary">Sign in</button>
+    </nav>
+    <header>
+      <h1>The words are the whole design.</h1>
+      <p class="lede">No imagery, no gradients, no shadow — just tightly-tracked oversized type and
+        one bold rule, repeated as the underline on the nav and the top border of every card.</p>
+    </header>
+    <div class="row">
+      <button class="btn btn--primary">Read the manifesto</button>
+      <button class="btn">View specimens</button>
+      <button class="btn" disabled>Coming soon</button>
+      <span class="badge">Est. 2018</span>
+    </div>
+    <input class="input" placeholder="Search the archive" aria-label="Search the archive">
+    <div class="grid">
+      <article class="card"><h3>Variable weight</h3><p>Headlines flex from 100 to 900 as you scroll — the type itself is the animation.</p></article>
+      <article class="card"><h3>One rule, everywhere</h3><p>The same 3px black rule marks the nav, the card top, and the input underline.</p></article>
+    </div>
+  </div>
+</body>
+</html>

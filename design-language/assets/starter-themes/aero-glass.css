@@ -1,0 +1,110 @@
+/* Windows Aero Glass — design tokens */
+/* 2006–2012 | Microsoft Windows Vista (2006) and Windows 7 Aero, condensed */
+:root {
+  /* color */
+  --color-bg: #0d2a4a;
+  --color-bg-gradient-a: #14406e;
+  --color-bg-gradient-b: #0a1c33;
+  --color-surface: rgba(173, 216, 255, 0.22);
+  --color-surface-strong: rgba(173, 216, 255, 0.35);
+  --color-border: rgba(255, 255, 255, 0.55);
+  --color-text: #f3faff;
+  --color-text-muted: rgba(243, 250, 255, 0.78);
+  --color-primary: #3d8eeb;
+  --color-accent: #8fd7ff;
+  /* radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 0 2px 6px rgba(0,0,0,0.3);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(141,206,255,0.3);
+  --shadow-lg: 0 20px 50px rgba(0,0,0,0.45), 0 0 24px rgba(141,206,255,0.35);
+  --shadow-inset-hi: inset 0 1px 0 rgba(255,255,255,0.7);
+  /* blur */
+  --blur-backdrop: 12px;
+  /* font */
+  --font-sans: 'Segoe UI', Tahoma, system-ui, sans-serif;
+  --font-display: 'Segoe UI', Tahoma, sans-serif;
+  --font-mono: 'Consolas', ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.2, 0, 0.1, 1);
+  /* extra: glossy specular sheen band + glass fill */
+  --bg-image: radial-gradient(120% 100% at 50% -20%, #1f5794 0%, #0d2a4a 55%, #071829 100%);
+  --glass-fill: linear-gradient(180deg, rgba(210,235,255,0.4) 0%, rgba(173,216,255,0.15) 45%, rgba(120,170,220,0.1) 100%);
+  --glass-sheen: linear-gradient(to bottom, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0.08) 40%, rgba(255,255,255,0) 70%);
+}
+
+/* ============================================================
+   Base component classes — Windows Aero Glass
+   Signature move: a glossy top-half specular sheen laid over
+   translucent blue-tinted glass, with a bright 1px highlight edge.
+   Repeats on nav (title bar), card (window panel), and btn (glossy pill).
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--bg-image); background-attachment: fixed; min-height: 100vh; }
+.nav {
+  display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-lg);
+  background: var(--glass-sheen), var(--glass-fill);
+  backdrop-filter: blur(var(--blur-backdrop)); -webkit-backdrop-filter: blur(var(--blur-backdrop));
+  border: 1px solid var(--color-border); box-shadow: var(--shadow-md), var(--shadow-inset-hi);
+}
+.btn {
+  font: 600 var(--text-base)/1 var(--font-sans); color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-pill);
+  background: var(--glass-sheen), var(--glass-fill); border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm), var(--shadow-inset-hi);
+  cursor: pointer; transition: transform .15s var(--ease-standard), box-shadow .15s var(--ease-standard);
+  text-shadow: 0 1px 1px rgba(0,0,0,0.35);
+}
+.btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-md), var(--shadow-inset-hi); }
+.btn:active { transform: translateY(0); }
+.btn:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: var(--glass-sheen), linear-gradient(180deg, rgba(120,190,255,0.55), rgba(61,142,235,0.35)); border-color: rgba(255,255,255,0.7); }
+.card {
+  background: var(--glass-sheen), var(--glass-fill);
+  backdrop-filter: blur(var(--blur-backdrop)); -webkit-backdrop-filter: blur(var(--blur-backdrop));
+  border: 1px solid var(--color-border); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md), var(--shadow-inset-hi); padding: var(--space-6);
+}
+.input {
+  width: 100%; box-sizing: border-box; color: #0d2a4a; font: var(--text-base) var(--font-sans);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm);
+  background: rgba(255,255,255,0.85); border: 1px solid var(--color-border);
+}
+.input::placeholder { color: rgba(13,42,74,0.6); }
+.input:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(61,142,235,0.35); }
+.badge {
+  display: inline-flex; align-items: center; gap: .4em; font-size: var(--text-xs);
+  padding: .3em .8em; border-radius: var(--radius-pill);
+  background: var(--glass-sheen), var(--glass-fill); border: 1px solid var(--color-border);
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .nav, .card, .btn { background: #1c4066; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .nav, .card, .btn { background: #1c4066; backdrop-filter: none; -webkit-backdrop-filter: none; }
+}
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }

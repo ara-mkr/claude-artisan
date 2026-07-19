@@ -1,0 +1,104 @@
+/* Cluttercore — design tokens */
+/* 2020–present | Cozy maximalist embrace of visible stuff, condensed */
+:root {
+  /* color: warm eclectic collected-object palette */
+  --color-bg: #e8d9c0;
+  --color-surface: #fff8ec;
+  --color-surface-strong: #f4e8d0;
+  --color-border: #2b1d14;
+  --color-text: #2b1d14;
+  --color-text-muted: #5c4632;
+  --color-primary: #b23a48;
+  --color-accent: #d99a2b;
+  --color-teal: #2f6f6a;
+  --color-forest: #4c7a5e;
+  /* radius: rounded like worn trinkets, never sharp */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+  /* shadow: stacked layers, mimicking piles of objects */
+  --shadow-sm: 2px 2px 0 var(--color-border), 5px 5px 0 rgba(43,29,20,0.15);
+  --shadow-md: 3px 3px 0 var(--color-border), 8px 8px 0 rgba(43,29,20,0.15), 12px 12px 0 rgba(43,29,20,0.08);
+  --shadow-lg: 4px 4px 0 var(--color-border), 11px 11px 0 rgba(43,29,20,0.16), 18px 18px 0 rgba(43,29,20,0.08);
+  /* font: cozy serif display + friendly sans body */
+  --font-sans: 'Nunito', 'Poppins', system-ui, sans-serif;
+  --font-display: 'Fraunces', 'DM Serif Display', Georgia, serif;
+  --font-mono: ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  /* extra: dense layered dot-and-plaid clutter pattern + a sticker-corner
+     badge stack — the signature "no empty space" move */
+  --clutter-pattern:
+    radial-gradient(circle, var(--color-primary) 1.5px, transparent 2px) 0 0/26px 26px,
+    radial-gradient(circle, var(--color-teal) 1.5px, transparent 2px) 13px 13px/26px 26px,
+    repeating-linear-gradient(45deg, rgba(217,154,43,0.10) 0 6px, transparent 6px 18px);
+  --sticker-tilt: rotate(-4deg);
+}
+
+/* ============================================================
+   Base component classes — Cluttercore
+   Signature move: a dense layered pattern (polka dots + diagonal plaid,
+   all built from gradients) filling every background, plus a triple-
+   stacked "pile of objects" shadow — repeats on nav, card, and badge so
+   the whole surface feels collected and lived-in, never empty.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans);
+  background: var(--color-bg); background-image: var(--clutter-pattern); min-height: 100vh; }
+.nav {
+  display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-3) var(--space-6); background: var(--color-surface);
+  background-image: var(--clutter-pattern);
+  border: 2px solid var(--color-border); border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm); margin: var(--space-4);
+}
+.btn {
+  font: 700 var(--text-base)/1 var(--font-display); color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-pill);
+  background: var(--color-surface-strong); border: 2px solid var(--color-border);
+  box-shadow: var(--shadow-sm); cursor: pointer;
+  transition: transform .18s var(--ease-standard), box-shadow .18s var(--ease-standard);
+}
+.btn:hover { transform: translate(-2px,-2px); box-shadow: var(--shadow-md); }
+.btn:active { transform: translate(0,0); box-shadow: 1px 1px 0 var(--color-border); }
+.btn:focus-visible { outline: 3px solid var(--color-teal); outline-offset: 3px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; transform: none; box-shadow: var(--shadow-sm); }
+.btn--primary { background: var(--color-primary); color: #fff8ec; border-color: var(--color-border); }
+.card {
+  background: var(--color-surface); color: var(--color-text);
+  background-image: var(--clutter-pattern);
+  border-radius: var(--radius-lg); padding: var(--space-6);
+  border: 2px solid var(--color-border); box-shadow: var(--shadow-lg);
+}
+.input {
+  width: 100%; box-sizing: border-box; color: var(--color-text); font: var(--text-base) var(--font-sans);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-md);
+  background: var(--color-surface); border: 2px solid var(--color-border); box-shadow: var(--shadow-sm);
+}
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-teal);
+  box-shadow: var(--shadow-sm), 0 0 0 3px rgba(47,111,106,0.25); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font: 700 var(--text-xs) var(--font-sans);
+  padding: .3em .8em; border-radius: var(--radius-pill); background: var(--color-accent);
+  color: #2b1d14; border: 2px solid var(--color-border); transform: var(--sticker-tilt); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }

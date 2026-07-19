@@ -1,0 +1,88 @@
+/* Mallsoft — design tokens */
+/* 2014–present | Vaporwave subgenre evoking dead shopping malls, condensed */
+:root {
+  /* color */
+  --color-bg: #2f3b3a;
+  --color-surface: #3d4c48;
+  --color-surface-strong: #4a5c56;
+  --color-border: rgba(212, 196, 168, 0.28);
+  --color-text: #f1ead9;
+  --color-text-muted: #c9c0a8;
+  --color-primary: #d98fae;
+  --color-accent: #6fb8ae;
+  --color-fountain: #7fa39c;
+  --color-marquee: #e0b060;
+  /* radius */
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 0 2px 6px rgba(0,0,0,0.30);
+  --shadow-md: 0 6px 18px rgba(0,0,0,0.36);
+  --shadow-lg: 0 14px 34px rgba(0,0,0,0.42);
+  --shadow-haze: inset 0 0 40px rgba(217,143,174,0.10);
+  /* font */
+  --font-sans: 'Century Gothic', 'Trebuchet MS', system-ui, sans-serif;
+  --font-display: 'Copperplate', 'Trebuchet MS', serif;
+  --font-mono: 'Courier New', ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  /* extra: faded muzak haze — desaturated teal/beige gradient + soft vignette,
+     as if lit by dying skylights over a food court */
+  --bg-image: radial-gradient(140% 100% at 50% -10%, #3d4c48 0%, #2f3b3a 60%, #24302f 100%);
+  --haze-fill: linear-gradient(160deg, rgba(111,184,174,0.12), rgba(217,143,174,0.06));
+  --tile-line: repeating-linear-gradient(90deg, rgba(212,196,168,0.05) 0 2px, transparent 2px 40px);
+}
+
+/* ============================================================
+   Base component classes — Mallsoft
+   Signature move: a desaturated teal/beige haze wash (--haze-fill) laid over
+   every raised surface like fluorescent skylight through dust, plus a faint
+   floor-tile grid line texture. Repeats on nav, card, and input.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans);
+  background: var(--bg-image), var(--tile-line); background-blend-mode: normal; min-height: 100vh; }
+.nav { display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-3) var(--space-6); background: var(--haze-fill), var(--color-surface);
+  border-bottom: 1px solid var(--color-border); box-shadow: var(--shadow-sm); }
+.btn { font: 600 var(--text-base)/1 var(--font-sans); color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-pill);
+  background: var(--color-surface-strong); border: 1px solid var(--color-border);
+  cursor: pointer; transition: transform .2s var(--ease-standard), filter .2s var(--ease-standard); }
+.btn:hover { transform: translateY(-1px); filter: brightness(1.08); }
+.btn:active { transform: translateY(0); filter: brightness(0.96); }
+.btn:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; transform: none; }
+.btn--primary { background: var(--color-primary); color: #2a2018; border-color: transparent; }
+.card { background: var(--haze-fill), var(--color-surface); border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-md), var(--shadow-haze); padding: var(--space-6); }
+.input { width: 100%; box-sizing: border-box; color: var(--color-text); font: var(--text-base) var(--font-sans);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-md);
+  background: var(--color-surface); border: 1px solid var(--color-border); }
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(111,184,174,0.25); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font-size: var(--text-xs);
+  padding: .3em .8em; border-radius: var(--radius-pill); background: var(--color-marquee); color: #2a2018; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover, .btn:active { transform: none; } }

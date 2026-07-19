@@ -1,0 +1,89 @@
+/* Silicon Dreams — design tokens */
+/* 2005–2012 | Frutiger-family aesthetic; darker tech-corporate variant, condensed */
+:root {
+  /* color */
+  --color-bg: #050b14;
+  --color-surface: #0d1b2a;
+  --color-surface-strong: #132840;
+  --color-border: #234a6b;
+  --color-text: #eaf4ff;
+  --color-text-muted: #8fb3d1;
+  --color-primary: #2fb8ff;
+  --color-accent: #6ee7ff;
+  --color-glow: rgba(47,184,255,0.55);
+  /* radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.4);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.5), 0 0 20px var(--color-glow);
+  --shadow-lg: 0 18px 44px rgba(0,0,0,0.55), 0 0 32px var(--color-glow);
+  /* font */
+  --font-sans: 'Frutiger', 'Segoe UI', system-ui, sans-serif;
+  --font-display: 'Frutiger', 'Eurostile', 'Segoe UI', sans-serif;
+  --font-mono: 'Consolas', ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  /* extra: a faint circuitry grid + an electric-blue glow, the two repeated signature moves */
+  --circuit-grid: linear-gradient(90deg, rgba(47,184,255,0.06) 1px, transparent 1px) 0 0 / 24px 24px,
+                  linear-gradient(0deg, rgba(47,184,255,0.06) 1px, transparent 1px) 0 0 / 24px 24px;
+  --glass-sheen: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0) 40%);
+}
+
+/* ============================================================
+   Base component classes — Silicon Dreams
+   Signature move: a faint circuitry grid on the page background paired
+   with an electric-blue outer glow on raised surfaces (nav, card,
+   primary button, input focus) — dark glossy corporate-tech futurism.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans);
+  background: var(--circuit-grid), var(--color-bg); min-height: 100vh; }
+.nav { display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-3) var(--space-6); background: var(--color-surface);
+  background-image: var(--glass-sheen), linear-gradient(var(--color-surface), var(--color-surface));
+  border-bottom: 1px solid var(--color-border); box-shadow: var(--shadow-sm); }
+.btn {
+  font: 600 var(--text-base)/1 var(--font-sans); color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-md);
+  background: var(--color-surface-strong); background-image: var(--glass-sheen), linear-gradient(var(--color-surface-strong), var(--color-surface-strong));
+  border: 1px solid var(--color-border); box-shadow: var(--shadow-sm); cursor: pointer;
+  transition: box-shadow .2s var(--ease-standard), transform .2s var(--ease-standard);
+}
+.btn:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; transform: none; }
+.btn--primary { background: linear-gradient(180deg, #3fc4ff, #1782c4); color: #041220; border-color: var(--color-accent); box-shadow: var(--shadow-md); }
+.card { background: var(--color-surface); background-image: var(--glass-sheen), linear-gradient(var(--color-surface), var(--color-surface));
+  color: var(--color-text); border-radius: var(--radius-lg); box-shadow: var(--shadow-md);
+  padding: var(--space-6); border: 1px solid var(--color-border); }
+.input { width: 100%; box-sizing: border-box; color: var(--color-text);
+  font: var(--text-base) var(--font-sans); padding: var(--space-3) var(--space-4);
+  background: #081422; border-radius: var(--radius-md); border: 1px solid var(--color-border); }
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-primary); box-shadow: var(--shadow-md); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font-size: var(--text-xs);
+  padding: .3em .8em; border-radius: var(--radius-pill); background: var(--color-primary); color: #041220; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }

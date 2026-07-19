@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Normcore — component example</title>
+<!-- Import the one starter theme; that's ~80% of the look. -->
+<link rel="stylesheet" href="../starter-themes/normcore.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-16) var(--space-6); display: grid; gap: var(--space-8); }
+  h1 { font: 600 var(--text-4xl)/1.15 var(--font-display); margin: 0; }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-lg); margin: 0; max-width: 52ch; }
+  .row { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4); }
+  .card h3 { margin: 0 0 var(--space-2); font-size: var(--text-xl); font-weight: 600; }
+  .card p { margin: 0; color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto">Account</strong>
+      <a href="#" style="color:var(--color-text);text-decoration:none">Settings</a>
+      <a href="#" style="color:var(--color-text-muted);text-decoration:none">Help</a>
+      <button class="btn btn--primary">Sign in</button>
+    </nav>
+
+    <header>
+      <h1>Nothing to see here, on purpose.</h1>
+      <p class="lede">Beige, gray, a little denim blue — no logo, no statement, no trend to
+        chase. It blends in because blending in is the whole idea: comfort over any kind
+        of look.</p>
+    </header>
+
+    <div class="row">
+      <button class="btn btn--primary">Continue</button>
+      <button class="btn">Cancel</button>
+      <button class="btn" disabled>Unavailable</button>
+      <span class="badge">Default plan</span>
+    </div>
+
+    <input class="input" placeholder="Enter your email" aria-label="Email">
+
+    <div class="grid">
+      <article class="card">
+        <h3>Unbranded by default</h3>
+        <p>No custom typeface, no gradient, no signature flourish — the system stack and a
+          plain border are the whole story.</p>
+      </article>
+      <article class="card">
+        <h3>One quiet accent</h3>
+        <p>A single denim-gray line marks structure, reused sparingly so it never reads as
+          a logo or a "look."</p>
+      </article>
+    </div>
+  </div>
+</body>
+</html>

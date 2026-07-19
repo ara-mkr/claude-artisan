@@ -1,0 +1,109 @@
+/* Indie Sleaze — design tokens */
+/* 2006–2012 (revived 2021) | Late-2000s hipster party aesthetic, condensed */
+:root {
+  /* color */
+  --color-bg: #0c0c0c;
+  --color-surface: #161616;
+  --color-surface-strong: #1f1f1f;
+  --color-border: #3a3a3a;
+  --color-text: #f5f5f2;
+  --color-text-muted: #b8b3ad;
+  --color-primary: #ff2d9c;
+  --color-accent: #ccff00;
+  --color-flash: #ffffff;
+  /* radius: nothing designed on purpose, snapshots have no rounding logic */
+  --radius-sm: 1px;
+  --radius-md: 2px;
+  --radius-lg: 3px;
+  --radius-pill: 999px;
+  /* shadow: a blown-out on-camera flash halo instead of a soft drop shadow */
+  --shadow-sm: 0 0 0 1px rgba(255,255,255,0.08), 0 2px 10px rgba(0,0,0,0.6);
+  --shadow-md: 0 0 24px rgba(255,255,255,0.14), 0 8px 24px rgba(0,0,0,0.7);
+  --shadow-lg: 0 0 40px rgba(255,255,255,0.18), 0 16px 40px rgba(0,0,0,0.75);
+  /* font */
+  --font-sans: 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Impact', 'Arial Black', sans-serif;
+  --font-mono: 'Courier New', ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.85rem;
+  --text-3xl: 2.5rem;
+  --text-4xl: 3.4rem;
+  --text-5xl: 4.6rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.3, 0, 0.4, 1);
+  /* extra: a harsh camera-flash grain overlay plus a crooked "taped collage"
+     tilt — the two signature moves of blog-house party photography,
+     repeated on nav, card and btn so the whole page feels shot on a
+     point-and-shoot at 1am, not laid out on a grid */
+  --flash-grain: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/></svg>");
+  --collage-tilt: rotate(-1.5deg);
+  --collage-tilt-alt: rotate(1deg);
+}
+
+/* ============================================================
+   Base component classes — indie-sleaze
+   Signature move: a harsh grain overlay (--flash-grain) simulating on-camera
+   flash photography, plus a crooked collage tilt (--collage-tilt) applied
+   to raised surfaces — repeated on nav, card and btn for DIY party-photo
+   energy instead of a polished grid.
+   ============================================================ */
+body {
+  margin: 0; color: var(--color-text); font-family: var(--font-sans);
+  background-color: var(--color-bg); background-image: var(--flash-grain);
+  background-size: 140px 140px;
+}
+.nav {
+  display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-3) var(--space-6); background: var(--color-surface);
+  background-image: var(--flash-grain); border-bottom: 1px solid var(--color-border);
+}
+.btn {
+  font: 800 var(--text-base)/1 var(--font-display); color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-sm);
+  background: var(--color-surface-strong); background-image: var(--flash-grain);
+  border: 1px solid var(--color-border); box-shadow: var(--shadow-sm); cursor: pointer;
+  text-transform: uppercase; letter-spacing: .02em; transform: var(--collage-tilt-alt);
+  transition: transform .15s var(--ease-standard), box-shadow .15s var(--ease-standard);
+}
+.btn:hover { transform: rotate(0deg) translateY(-1px); box-shadow: var(--shadow-md); }
+.btn:active { transform: rotate(0deg) translateY(0); box-shadow: var(--shadow-sm); }
+.btn:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; transform: none; }
+.btn--primary { background: var(--color-primary); color: #0c0c0c; border-color: var(--color-primary); }
+.card {
+  background: var(--color-surface); background-image: var(--flash-grain);
+  border: 1px solid var(--color-border); border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md); padding: var(--space-6); transform: var(--collage-tilt);
+}
+.input {
+  width: 100%; box-sizing: border-box; color: var(--color-text);
+  font: var(--text-base) var(--font-sans);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm);
+  background: var(--color-surface-strong); border: 1px solid var(--color-border);
+}
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(255,45,156,0.3); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font: 800 var(--text-xs) var(--font-display);
+  padding: .3em .8em; border-radius: var(--radius-pill); background: var(--color-accent); color: #0c0c0c;
+  text-transform: uppercase; }
+@media (prefers-reduced-motion: reduce) {
+  .btn { transition: none; }
+  .btn, .card { transform: none; }
+  .btn:hover { transform: none; }
+}

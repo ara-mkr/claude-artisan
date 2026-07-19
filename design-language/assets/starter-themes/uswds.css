@@ -1,0 +1,95 @@
+/* U.S. Web Design System — design tokens (generated from style_catalog.json) */
+/* 2017–present | U.S. General Services Administration (18F). */
+:root {
+  /* color */
+  --color-bg: #ffffff;
+  --color-surface: #f0f0f0;
+  --color-surface-strong: #e6e6e6;
+  --color-border: #a9aeb1;
+  --color-text: #1b1b1b;
+  --color-text-muted: #565c65;
+  --color-primary: #005ea2;
+  --color-accent: #b50909;
+  --color-primary-dark: #1a4480;
+  --color-focus: #2491ff;
+  /* radius */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.12);
+  --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.14);
+  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.16);
+  --shadow-none: none;
+  /* font */
+  --font-sans: 'Public Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Public Sans', system-ui, sans-serif;
+  --font-mono: 'Roboto Mono', ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  /* extra: a trust-first federal top band (deep blue bar + thin red hairline)
+     signaling an official .gov context, echoed as a left rule on cards and
+     a bottom rule under primary buttons */
+  --gov-band: linear-gradient(180deg, var(--color-primary-dark) 0%, var(--color-primary-dark) 70%, var(--color-accent) 70%, var(--color-accent) 100%);
+  --trust-rule: 4px solid var(--color-primary);
+}
+
+/* ============================================================
+   Base component classes — U.S. Web Design System
+   Signature move: a trust-first "gov band" — a deep federal-blue rule with a
+   thin red hairline — repeated as the nav's top edge and every card's left
+   border, plus plain, high-legibility Public Sans throughout.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--color-bg); }
+.nav { display: flex; gap: var(--space-4); align-items: center; padding: var(--space-3) var(--space-6);
+  background: var(--color-surface); border-top: 6px solid var(--color-primary-dark);
+  border-bottom: 1px solid var(--color-border); }
+.btn {
+  font: 600 var(--text-base)/1 var(--font-sans); color: var(--color-primary);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-md);
+  background: transparent; border: 1px solid var(--color-primary);
+  cursor: pointer; transition: background-color .15s var(--ease-standard), box-shadow .15s var(--ease-standard);
+}
+.btn:hover { background: color-mix(in srgb, var(--color-primary) 10%, transparent); }
+.btn:active { background: color-mix(in srgb, var(--color-primary) 18%, transparent); }
+.btn:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: var(--color-primary); color: #ffffff; border-color: var(--color-primary-dark);
+  border-bottom: 3px solid var(--color-accent); }
+.btn--primary:hover { background: var(--color-primary-dark); }
+.card {
+  background: var(--color-surface); border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm); padding: var(--space-6); border-left: var(--trust-rule);
+}
+.input {
+  width: 100%; box-sizing: border-box; color: var(--color-text); font: var(--text-base) var(--font-sans);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm);
+  background: var(--color-bg); border: 1px solid var(--color-border);
+}
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: 3px solid var(--color-focus); outline-offset: 0; border-color: var(--color-focus); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font: 700 var(--text-xs) var(--font-sans);
+  padding: .3em .8em; border-radius: var(--radius-pill); background: color-mix(in srgb, var(--color-primary) 12%, var(--color-bg));
+  color: var(--color-primary-dark); border: 1px solid var(--color-primary); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } }

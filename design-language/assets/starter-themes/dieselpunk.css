@@ -1,0 +1,88 @@
+/* Dieselpunk — design tokens */
+/* 2001–present | Term coined ~2001; aesthetic of 1920s–1940s diesel era, condensed */
+:root {
+  /* color */
+  --color-bg: #23201a;
+  --color-surface: #2e2a22;
+  --color-surface-strong: #3a352b;
+  --color-border: #6b5f45;
+  --color-text: #ece3cf;
+  --color-text-muted: #b8ab8c;
+  --color-primary: #b5461f;
+  --color-accent: #8a9a5b;
+  --color-rivet: #4a4436;
+  /* radius */
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.5);
+  --shadow-md: 0 4px 10px rgba(0,0,0,0.55);
+  --shadow-lg: 0 10px 24px rgba(0,0,0,0.6);
+  /* font */
+  --font-sans: 'Oswald', 'Bebas Neue', 'Arial Narrow', sans-serif;
+  --font-display: 'Bebas Neue', 'Oswald', sans-serif;
+  --font-mono: 'Courier New', ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  /* extra: signature = riveted steel-plate border (corner dots) + hazard-stripe accent */
+  --rivet-dot: radial-gradient(circle at 10px 10px, var(--color-rivet) 2px, transparent 2.4px);
+  --hazard-stripe: repeating-linear-gradient(45deg, var(--color-primary) 0 10px, var(--color-accent) 10px 20px);
+}
+
+/* ============================================================
+   Base component classes — Dieselpunk
+   Signature move: a riveted steel-plate border — corner rivet dots
+   (radial-gradient) on every panel edge, echoed by a thin hazard-stripe
+   underline on primary actions. Muted propaganda-poster palette.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--color-bg); }
+.nav { display: flex; gap: var(--space-4); align-items: center; padding: var(--space-4) var(--space-6);
+  background: var(--color-surface); border: 2px solid var(--color-border);
+  background-image: var(--rivet-dot); background-repeat: no-repeat;
+  background-position: 10px 10px, calc(100% - 10px) 10px; }
+.btn { font: 700 var(--text-sm)/1 var(--font-display); letter-spacing: .05em; text-transform: uppercase;
+  color: var(--color-text); background: var(--color-surface-strong); border: 2px solid var(--color-border);
+  border-radius: var(--radius-md); padding: var(--space-3) var(--space-6); cursor: pointer;
+  box-shadow: var(--shadow-sm); transition: filter .15s var(--ease-standard), transform .15s var(--ease-standard); }
+.btn:hover { filter: brightness(1.12); transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: var(--color-primary); color: #ece3cf; border-color: #7a2e14;
+  border-bottom: 4px solid; border-image: var(--hazard-stripe) 1; }
+.card { background: var(--color-surface); border: 2px solid var(--color-border); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md); padding: var(--space-6); position: relative;
+  background-image: var(--rivet-dot); background-repeat: no-repeat;
+  background-position: 10px 10px, calc(100% - 10px) 10px, 10px calc(100% - 10px), calc(100% - 10px) calc(100% - 10px); }
+.input { width: 100%; box-sizing: border-box; font: var(--text-base) var(--font-sans); color: var(--color-text);
+  background: var(--color-surface-strong); border: 2px solid var(--color-border); border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4); }
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 25%, transparent); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font: 700 var(--text-xs) var(--font-sans);
+  letter-spacing: .04em; text-transform: uppercase; color: #23201a; background: var(--color-accent);
+  border-radius: var(--radius-pill); padding: .3em .8em; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tidalpunk — component example</title>
+<link rel="stylesheet" href="../starter-themes/tidalpunk.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-16, 64px) var(--space-6, 24px); display: grid; gap: var(--space-8, 32px); }
+  h1 { font: 700 var(--text-4xl, 3rem)/1.05 var(--font-display); margin: 0; }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-lg, 1.125rem); margin: 0; max-width: 52ch; }
+  .row { display: flex; gap: var(--space-4, 16px); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4, 16px); margin-top: var(--space-4, 16px); }
+  .card h3 { margin: 0 0 var(--space-2, 8px); font-size: var(--text-xl, 1.375rem); }
+  .card p { margin: 0; color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto">Tideworks</strong>
+      <a href="#" style="color:var(--color-text);text-decoration:none">Flotilla</a>
+      <a href="#" style="color:var(--color-text-muted);text-decoration:none">Kelp Farms</a>
+      <button class="btn btn--primary">Sign in</button>
+    </nav>
+    <header>
+      <h1>Powered by the tide, built from what washed ashore.</h1>
+      <p class="lede">A scalloped wave-crest line tops both the nav and every card — the same
+        tideline motif marking where salvaged tech meets the sea.</p>
+    </header>
+    <div class="row">
+      <button class="btn btn--primary">Join the flotilla</button>
+      <button class="btn">View kelp yield</button>
+      <button class="btn" disabled>Dock full</button>
+      <span class="badge">Tide: rising</span>
+    </div>
+    <input class="input" placeholder="Buoy ID or coordinates…" aria-label="Buoy ID or coordinates">
+    <div class="grid">
+      <article class="card"><h3>Wave-energy array</h3><p>Salvaged turbine hulls, teal-and-gold hull paint, tuned to the tideline motif.</p></article>
+      <article class="card"><h3>Coral nursery</h3><p>Sunlit kelp forests fade from surface teal down to the deep-water background.</p></article>
+    </div>
+  </div>
+</body>
+</html>

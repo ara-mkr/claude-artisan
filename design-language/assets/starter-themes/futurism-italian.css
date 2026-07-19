@@ -1,0 +1,100 @@
+/* Futurism (Italian) — design tokens */
+/* 1909–1944 | Italy (Filippo Marinetti), condensed */
+:root {
+  /* color */
+  --color-bg: #efe6d8;
+  --color-surface: #f7f1e6;
+  --color-surface-strong: #e9ddc7;
+  --color-border: #171512;
+  --color-text: #171512;
+  --color-text-muted: #4c4640;
+  --color-primary: #c81d1d;
+  --color-accent: #1c1c8a;
+  /* radius: sharp, almost no rounding — speed and mechanism, not softness */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-pill: 999px;
+  /* shadow: hard offset "printed poster" shadow, no blur */
+  --shadow-sm: 3px 3px 0 var(--color-border);
+  --shadow-md: 6px 6px 0 var(--color-border);
+  --shadow-lg: 10px 10px 0 var(--color-border);
+  /* font */
+  --font-sans: 'Futura', 'Eurostile', Arial, sans-serif;
+  --font-display: 'Bifur', 'Anton', 'Impact', sans-serif;
+  --font-mono: ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2.1rem;
+  --text-3xl: 2.9rem;
+  --text-4xl: 4rem;
+  --text-5xl: 5.4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.7, 0, 0.2, 1);
+  /* extra: diagonal "words-in-freedom" tilt applied to headings/badges, plus
+     radiating speed-lines behind surfaces — the two signature moves of
+     parole in libertà typography */
+  --tilt-heading: rotate(-2.5deg);
+  --tilt-badge: rotate(3deg);
+  --speed-lines: repeating-linear-gradient(115deg, rgba(23,21,18,0.05) 0 2px, transparent 2px 22px);
+}
+
+/* ============================================================
+   Base component classes — futurism-italian
+   Signature move: diagonal "words-in-freedom" tilt on type elements plus
+   radiating speed-line texture (--speed-lines), repeated on nav, card and
+   badge to read as dynamic/explosive rather than a static grid.
+   ============================================================ */
+body {
+  margin: 0; color: var(--color-text); font-family: var(--font-sans);
+  background-color: var(--color-bg); background-image: var(--speed-lines);
+}
+.nav {
+  display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-3) var(--space-6); background: var(--color-surface);
+  border-bottom: 3px solid var(--color-border);
+}
+.btn {
+  font: 800 var(--text-base)/1 var(--font-display); letter-spacing: .02em; color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-sm);
+  background: var(--color-surface); border: 2px solid var(--color-border);
+  box-shadow: var(--shadow-sm); cursor: pointer; text-transform: uppercase;
+  transition: transform .16s var(--ease-standard), box-shadow .16s var(--ease-standard);
+}
+.btn:hover { transform: translate(-2px,-2px); box-shadow: var(--shadow-md); }
+.btn:active { transform: translate(0,0); box-shadow: var(--shadow-sm); }
+.btn:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: var(--color-primary); color: #f7f1e6; border-color: var(--color-border); }
+.card {
+  background: var(--color-surface); background-image: var(--speed-lines);
+  border: 2px solid var(--color-border); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md); padding: var(--space-6);
+}
+.input {
+  width: 100%; box-sizing: border-box; color: var(--color-text);
+  font: var(--text-base) var(--font-sans);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm);
+  background: var(--color-surface-strong); border: 2px solid var(--color-border);
+}
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-primary);
+  box-shadow: var(--shadow-sm); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font: 800 var(--text-xs) var(--font-display);
+  padding: .3em .8em; border-radius: var(--radius-pill); background: var(--color-accent);
+  color: #f7f1e6; transform: var(--tilt-badge); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }

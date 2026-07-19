@@ -1,0 +1,76 @@
+/* Constructivism — design tokens (generated from style_catalog.json) */
+/* 1915–1930s | Russia/USSR (Alexander Rodchenko, El Lissitzky, Stenberg brothers). */
+:root {
+  /* color */
+  --color-bg: #f0ece1;
+  --color-surface: #ffffff;
+  --color-text: #141414;
+  --color-text-muted: #3a3a3a;
+  --color-primary: #d7261e;
+  --color-accent: #141414;
+  --color-cream: #f0ece1;
+  /* radius */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-pill: 0px;
+  /* shadow */
+  --shadow-none: none;
+  /* font */
+  --font-sans: 'Alternate Gothic', 'Oswald', 'Anton', sans-serif;
+  --font-display: 'Anton', 'Oswald', sans-serif;
+  --font-mono: ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.9rem;
+  --text-base: 1rem;
+  --text-lg: 1.3rem;
+  --text-xl: 1.9rem;
+  --text-2xl: 2.8rem;
+  --text-3xl: 4rem;
+  --text-4xl: 5.6rem;
+  --text-5xl: 8rem;
+  /* space */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-6: 48px;
+  --space-8: 64px;
+  --space-12: 96px;
+  --space-16: 128px;
+  /* ease */
+  --ease-standard: linear;
+  /* extra (signature gradients, composite borders, filters) */
+  --diagonal: -15deg;
+  --red-black: #d7261e #141414;
+}
+
+/* ============================================================
+   Base component classes — Constructivism (token-driven).
+   Signature move lives in references/00-flagship-implementation-specs/constructivism.md;
+   these are accessible, token-wired starting points. */
+body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-sans); }
+.card { background: var(--color-surface, var(--color-bg)); color: var(--color-text);
+  border-radius: var(--radius-md); box-shadow: var(--shadow-none);
+  padding: var(--space-6, 24px); border: 2px solid var(--color-text); }
+.nav { display: flex; gap: var(--space-4, 16px); align-items: center;
+  padding: var(--space-3, 12px) var(--space-6, 24px); background: var(--color-surface, var(--color-bg));
+  border-bottom: 2px solid var(--color-text); }
+.btn { font: 700 var(--text-base, 1rem)/1 var(--font-display, var(--font-sans)); color: var(--color-text);
+  background: var(--color-surface, var(--color-bg)); border-radius: var(--radius-md);
+  padding: var(--space-3, 12px) var(--space-6, 24px); box-shadow: var(--shadow-none); cursor: pointer; border: 2px solid var(--color-text);
+  transition: transform .12s var(--ease-standard, ease), box-shadow .12s var(--ease-standard, ease), filter .12s; }
+.btn:hover { transform: translateY(-1px); filter: brightness(0.96); }
+.btn:active { transform: translateY(0); }
+.btn:focus-visible { outline: 2px solid var(--color-accent, var(--color-primary)); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; transform: none; }
+.btn--primary { background: var(--color-primary); color: #ffffff; border-color: var(--color-text); }
+.input { width: 100%; box-sizing: border-box; font: var(--text-base, 1rem) var(--font-sans); color: var(--color-text);
+  background: var(--color-surface, #fff); border-radius: var(--radius-sm);
+  padding: var(--space-3, 12px) var(--space-4, 16px); border: 2px solid var(--color-text); }
+.input:focus { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.input::placeholder { color: var(--color-text-muted, currentColor); opacity: .7; }
+.badge { display: inline-flex; align-items: center; gap: .4em; font: 700 var(--text-xs, .75rem) var(--font-sans);
+  color: #ffffff; background: var(--color-primary); border-radius: var(--radius-pill, 999px); padding: .3em .8em; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover, .btn:active { transform: none; } }

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Googie — component example</title>
+<!-- Import the one starter theme; that's ~80% of the look. -->
+<link rel="stylesheet" href="../starter-themes/googie.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-16) var(--space-6); display: grid; gap: var(--space-8); }
+  h1 { font: 700 var(--text-4xl)/1.05 var(--font-display); margin: 0; }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-lg); margin: 0; max-width: 52ch; }
+  .row { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4); }
+  .card h3 { margin: 0 0 var(--space-2); font: 700 var(--text-xl) var(--font-display); }
+  .card p { margin: 0; color: var(--color-text-muted); }
+  .starburst-badge { width: 2.4em; height: 2.4em; border-radius: 999px; background-image: var(--starburst);
+    display: inline-flex; align-items: center; justify-content: center; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto; font-family:var(--font-display);">Satellite Diner</strong>
+      <a href="#" style="color:var(--color-text);text-decoration:none">Menu</a>
+      <a href="#" style="color:var(--color-text-muted);text-decoration:none">Location</a>
+      <button class="btn btn--primary">Order up</button>
+    </nav>
+
+    <header>
+      <h1>Space-age optimism, roadside size.</h1>
+      <p class="lede">Boomerang corners swoop where a right angle used to be, hard offset
+        shadows print like a neon sign, and a starburst badge announces the future has
+        already landed at the drive-in.</p>
+    </header>
+
+    <div class="row">
+      <button class="btn btn--primary">Blast off</button>
+      <button class="btn">View menu</button>
+      <button class="btn" disabled>Closed tonight</button>
+      <span class="badge">🛸 Open 24hrs</span>
+    </div>
+
+    <input class="input" placeholder="carhop your order here" aria-label="Order">
+
+    <div class="grid">
+      <article class="card">
+        <h3>Boomerang geometry</h3>
+        <p>Two corners swoop, two stay sharp — the same asymmetric radius that defined
+          atomic-age motel signage.</p>
+      </article>
+      <article class="card">
+        <h3>Starburst accent</h3>
+        <p><span class="starburst-badge" aria-hidden="true"></span> A conic-gradient burst
+          stands in for the neon atom motifs bolted to every roof.</p>
+      </article>
+    </div>
+  </div>
+</body>
+</html>

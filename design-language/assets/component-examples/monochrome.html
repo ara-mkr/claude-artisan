@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monochrome / Grayscale — component example</title>
+<link rel="stylesheet" href="../starter-themes/monochrome.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-16, 64px) var(--space-6, 24px); display: grid; gap: var(--space-8, 32px); }
+  h1 { font: 700 var(--text-4xl, 3rem)/1.05 var(--font-display); margin: 0; }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-lg, 1.125rem); margin: 0; max-width: 52ch; }
+  .row { display: flex; gap: var(--space-4, 16px); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4, 16px); }
+  .card h3 { margin: 0 0 var(--space-2, 8px); font-size: var(--text-xl, 1.375rem); }
+  .card p { margin: 0; color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto">FRAME</strong>
+      <a href="#" style="color:var(--color-text);text-decoration:none">Archive</a>
+      <a href="#" style="color:var(--color-text-muted);text-decoration:none">Index</a>
+      <button class="btn btn--primary">Sign in</button>
+    </nav>
+    <header>
+      <h1>No color to hide behind.</h1>
+      <p class="lede">A single hairline rule is the only border anywhere — on the nav, the cards, and
+        every button — with contrast, not hue, doing all the work of the hierarchy.</p>
+    </header>
+    <div class="row">
+      <button class="btn btn--primary">View series</button>
+      <button class="btn">Contact</button>
+      <button class="btn" disabled>Sold</button>
+      <span class="badge">Ed. 12/50</span>
+    </div>
+    <input class="input" placeholder="Search the archive…" aria-label="Search the archive">
+    <div class="grid">
+      <article class="card"><h3>Silver Gelatin</h3><p>A single red accent breaks the grayscale only when it matters.</p></article>
+      <article class="card"><h3>Contact Sheet</h3><p>Grain texture keeps flat gray reading as photography, not paint.</p></article>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+/* Weirdcore — design tokens */
+/* 2020–present | Unsettling amateur-photo internet aesthetic, condensed */
+:root {
+  /* color */
+  --color-bg: #d8d3c4;
+  --color-surface: #eae5d6;
+  --color-surface-strong: #f4f0e4;
+  --color-border: #6b6558;
+  --color-text: #201f1a;
+  --color-text-muted: #55523f;
+  --color-primary: #c23b3b;
+  --color-accent: #3b6fc2;
+  --color-sickly: #a8b23f;
+  /* radius */
+  --radius-sm: 2px;
+  --radius-md: 2px;
+  --radius-lg: 2px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 0 1px 0 rgba(0,0,0,0.3);
+  --shadow-md: 0 3px 0 rgba(0,0,0,0.3);
+  --shadow-lg: 0 6px 10px rgba(0,0,0,0.35);
+  /* font */
+  --font-sans: 'Times New Roman', 'Georgia', serif;
+  --font-display: 'Impact', 'Arial Narrow', sans-serif;
+  --font-mono: 'Courier New', monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.6, 0, 0.4, 1);
+  /* extra (signature gradients, composite borders, filters) */
+  --grain-filter: contrast(1.05) saturate(0.75) brightness(0.98);
+  --tilt-off: rotate(-0.6deg);
+  --arrow-overlay: "→";
+}
+
+/* ============================================================
+   Base component classes — Weirdcore
+   Signature move: a very slight off-kilter rotation (--tilt-off) and a
+   desaturated/contrasty filter (--grain-filter) applied to raised
+   surfaces, making the layout feel like a scanned, slightly-wrong photo.
+   Repeats on nav, card, and btn.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--color-bg); filter: var(--grain-filter); }
+.nav { display: flex; gap: var(--space-4); align-items: center; padding: var(--space-3) var(--space-6);
+  background: var(--color-surface); border: 1px solid var(--color-border); transform: var(--tilt-off); }
+.btn { font: 600 var(--text-base)/1 var(--font-sans); color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-sm);
+  background: var(--color-surface-strong); border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm); cursor: pointer;
+  transition: transform .2s var(--ease-standard); }
+.btn:hover { transform: rotate(0.8deg) translateY(-1px); }
+.btn:active { transform: rotate(-0.4deg); }
+.btn:focus-visible { outline: 2px dashed var(--color-primary); outline-offset: 3px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: var(--color-primary); color: #f4f0e4; border-color: var(--color-primary); }
+.card { background: var(--color-surface); color: var(--color-text); padding: var(--space-6);
+  border: 1px solid var(--color-border); box-shadow: var(--shadow-lg); transform: var(--tilt-off); position: relative; }
+.card::after { content: var(--arrow-overlay); position: absolute; top: 8px; right: 12px; color: var(--color-primary); opacity: .5; font-size: var(--text-lg); }
+.input { width: 100%; box-sizing: border-box; color: var(--color-text); font: var(--text-base) var(--font-sans);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm);
+  background: var(--color-surface); border: 1px solid var(--color-border); }
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 2px rgba(194,59,59,0.3); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font-size: var(--text-xs);
+  padding: .3em .8em; border-radius: var(--radius-pill); background: var(--color-sickly); color: #1a1c07;
+  transform: var(--tilt-off); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover, .btn:active { transform: var(--tilt-off); } }

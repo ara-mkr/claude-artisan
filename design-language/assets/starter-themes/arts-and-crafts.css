@@ -1,0 +1,86 @@
+/* Arts & Crafts — design tokens */
+/* 1880s–1910 | UK (William Morris, John Ruskin), condensed */
+:root {
+  /* color */
+  --color-bg: #ece2cd;
+  --color-surface: #fbf5e6;
+  --color-surface-strong: #e3d3ac;
+  --color-border: #6b4a2b;
+  --color-text: #2b2013;
+  --color-text-muted: #5c4a30;
+  --color-primary: #7a2e2e;
+  --color-accent: #4a6741;
+  /* radius — handcraft over machine: soft, slightly uneven, never a perfect pill */
+  --radius-sm: 3px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-pill: 4px;
+  /* shadow */
+  --shadow-sm: 0 1px 3px rgba(43,32,19,0.2);
+  --shadow-md: 0 4px 10px rgba(43,32,19,0.22);
+  --shadow-lg: 0 10px 22px rgba(43,32,19,0.26);
+  /* font */
+  --font-sans: 'Crimson Text', 'EB Garamond', Georgia, serif;
+  --font-display: 'IM Fell English', 'Crimson Text', Georgia, serif;
+  --font-mono: ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: ease-out;
+  /* extra — signature botanical repeat border, Morris-style leaf motif */
+  --leaf-repeat: repeating-linear-gradient(135deg, var(--color-accent) 0 3px, transparent 3px 14px);
+  --border-frame: 3px double var(--color-border);
+}
+
+/* ============================================================
+   Base component classes — Arts & Crafts
+   Signature move: a thick double ornamental border plus a thin repeating
+   diagonal "leaf stitch" band, echoing Morris & Co block-print borders.
+   Repeated on nav, card, and inputs.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--color-bg); }
+.nav { display: flex; gap: var(--space-4); align-items: center; padding: var(--space-3) var(--space-6);
+  background: var(--color-surface); border-bottom: var(--border-frame); }
+.nav::after { content: none; }
+.btn {
+  font: 600 var(--text-base)/1 var(--font-sans); color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-md);
+  background: var(--color-surface); border: 2px solid var(--color-border);
+  box-shadow: var(--shadow-sm); cursor: pointer;
+  transition: transform .15s var(--ease-standard), box-shadow .15s var(--ease-standard);
+}
+.btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.btn:active { transform: translateY(0); }
+.btn:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: var(--color-primary); color: #f7ecd8; border-color: var(--color-primary); }
+.card { background: var(--color-surface); border-radius: var(--radius-lg); border: var(--border-frame);
+  box-shadow: var(--shadow-md); padding: var(--space-6); position: relative; }
+.card { border-top: 8px solid transparent; border-image: var(--leaf-repeat) 8; }
+.input { width: 100%; box-sizing: border-box; color: var(--color-text); font: var(--text-base) var(--font-sans);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm); background: var(--color-surface);
+  border: 2px solid var(--color-border); }
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(122,46,46,0.18); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font-size: var(--text-xs);
+  padding: .3em .9em; border-radius: var(--radius-pill); background: var(--color-surface-strong);
+  border: 1px solid var(--color-border); color: var(--color-text); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }

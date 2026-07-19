@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brat — component example</title>
+<link rel="stylesheet" href="../starter-themes/brat.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-16, 64px) var(--space-6, 24px); display: grid; gap: var(--space-8, 32px); }
+  h1 { font: 400 var(--text-4xl, 3rem)/1.0 var(--font-display); margin: 0; transform: var(--text-stretch); filter: var(--text-blur); letter-spacing: -0.03em; }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-lg, 1.125rem); margin: 0; max-width: 52ch; }
+  .row { display: flex; gap: var(--space-4, 16px); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4, 16px); }
+  .card h3 { margin: 0 0 var(--space-2, 8px); font-size: var(--text-xl, 1.375rem); font-weight: 400; }
+  .card p { margin: 0; color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto">brat</strong>
+      <a href="#" style="color:var(--color-text);text-decoration:none">tour</a>
+      <a href="#" style="color:var(--color-text-muted);text-decoration:none">merch</a>
+      <button class="btn btn--primary">sign in</button>
+    </nav>
+    <header>
+      <h1>so brat you can't even.</h1>
+      <p class="lede">one flat lime field, no shadows, no rounding — the stretched, slightly blurred
+        low-res Arial shows up in the nav name and the headline, nowhere else.</p>
+    </header>
+    <div class="row">
+      <button class="btn btn--primary">stream it</button>
+      <button class="btn">remix</button>
+      <button class="btn" disabled>disabled</button>
+      <span class="badge">365</span>
+    </div>
+    <input class="input" placeholder="type something blunt…" aria-label="Message">
+    <div class="grid">
+      <article class="card"><h3>flat, always</h3><p>no shadow tokens exist here — everything sits directly on the field.</p></article>
+      <article class="card"><h3>black on lime</h3><p>the only palette move is black text against toxic green, everywhere.</p></article>
+    </div>
+  </div>
+</body>
+</html>

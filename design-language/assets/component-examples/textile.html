@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Textile / Knit / Embroidery — component example</title>
+<link rel="stylesheet" href="../starter-themes/textile.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-16, 64px) var(--space-6, 24px); display: grid; gap: var(--space-8, 32px); }
+  h1 { font: 700 var(--text-4xl, 3rem)/1.05 var(--font-display); margin: 0; }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-lg, 1.125rem); margin: 0; max-width: 52ch; }
+  .row { display: flex; gap: var(--space-4, 16px); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4, 16px); }
+  .card h3 { margin: 0 0 var(--space-2, 8px); font-size: var(--text-xl, 1.375rem); }
+  .card p { margin: 0; color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto">Loom &amp; Thread</strong>
+      <a href="#" style="color:var(--color-text);text-decoration:none">Patterns</a>
+      <a href="#" style="color:var(--color-text-muted);text-decoration:none">Workshop</a>
+      <button class="btn btn--primary">Sign in</button>
+    </nav>
+    <header>
+      <h1>Stitched by hand, worn with warmth.</h1>
+      <p class="lede">A running dashed thread traces every button and card edge, and a faint
+        cross-hatch weave fills each surface — the same hand-embroidered seam repeated
+        across the whole system.</p>
+    </header>
+    <div class="row">
+      <button class="btn btn--primary">Cast on</button>
+      <button class="btn">Browse yarns</button>
+      <button class="btn" disabled>Sold out</button>
+      <span class="badge">Hand-stitched</span>
+    </div>
+    <input class="input" placeholder="Search patterns…" aria-label="Search patterns">
+    <div class="grid">
+      <article class="card"><h3>Cable knit throw</h3><p>Chunky wool, cross-hatched weave fill echoes the actual knit texture underneath.</p></article>
+      <article class="card"><h3>Embroidered tote</h3><p>Dashed seam borders on every card mimic a visible running stitch along the hem.</p></article>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+/* Primer — design tokens */
+/* 2017–present | GitHub, condensed */
+:root {
+  /* color: GitHub light theme, dense but calm */
+  --color-bg: #f6f8fa;
+  --color-surface: #ffffff;
+  --color-surface-strong: #f6f8fa;
+  --color-border: #d0d7de;
+  --color-text: #1f2328;
+  --color-text-muted: #59636e;
+  --color-primary: #1f883d;
+  --color-accent: #0969da;
+  --color-danger: #cf222e;
+  /* radius */
+  --radius-sm: 6px;
+  --radius-md: 6px;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 0 1px 0 rgba(31, 35, 40, 0.04);
+  --shadow-md: 0 3px 6px rgba(140, 149, 159, 0.15);
+  --shadow-lg: 0 8px 24px rgba(140, 149, 159, 0.2);
+  /* font */
+  --font-sans: -apple-system, 'Segoe UI', 'Noto Sans', 'Helvetica Neue', sans-serif;
+  --font-display: -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', 'Consolas', monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.8125rem;
+  --text-base: 0.875rem;
+  --text-lg: 1rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.5rem;
+  --text-5xl: 3.25rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 20px;
+  --space-8: 28px;
+  --space-12: 40px;
+  --space-16: 56px;
+  --space-24: 80px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  /* extra: octicon-style dot indicator + code-friendly border rhythm */
+  --focus-ring: 0 0 0 3px rgba(9, 105, 218, 0.3);
+  --code-diff-add: #d1f4dc;
+}
+
+/* ============================================================
+   Base component classes — Primer
+   Signature move: a single consistent 1px hairline border + 6px radius
+   repeated identically across nav, card, btn and input — developer-tool
+   density paired with calm, never-noisy borders.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--color-bg); }
+.nav {
+  display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-3) var(--space-6); background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+.btn {
+  font: 500 var(--text-base)/1 var(--font-sans); color: var(--color-text);
+  padding: var(--space-2) var(--space-4); border-radius: var(--radius-md);
+  background: #f6f8fa; border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm); cursor: pointer;
+  transition: background .12s var(--ease-standard), border-color .12s var(--ease-standard);
+}
+.btn:hover { background: #f3f4f6; border-color: #1f2328; }
+.btn:active { background: #ebecf0; }
+.btn:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: var(--color-primary); color: #ffffff; border-color: rgba(31,35,40,0.15); }
+.btn--primary:hover { background: #1a7f37; }
+.card {
+  background: var(--color-surface); border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border); box-shadow: var(--shadow-sm); padding: var(--space-6);
+}
+.input {
+  width: 100%; box-sizing: border-box; color: var(--color-text); font: var(--text-base) var(--font-mono);
+  padding: var(--space-2) var(--space-3); border-radius: var(--radius-md);
+  background: var(--color-surface); border: 1px solid var(--color-border);
+}
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-accent); box-shadow: var(--focus-ring); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font-size: var(--text-xs);
+  padding: .25em .7em; border-radius: var(--radius-pill); background: var(--code-diff-add); color: #116329;
+  border: 1px solid rgba(17, 99, 41, 0.2); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } }

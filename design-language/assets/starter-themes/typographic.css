@@ -1,0 +1,91 @@
+/* Typography-Driven — design tokens */
+/* Timeless (revival 2018+) | Type-as-hero editorial approach, condensed */
+:root {
+  /* color */
+  --color-bg: #f4f4f0;
+  --color-surface: #ffffff;
+  --color-surface-strong: #eaeae4;
+  --color-border: #0f0f0f;
+  --color-text: #0f0f0f;
+  --color-text-muted: #55554e;
+  --color-primary: #0f0f0f;
+  --color-accent: #ff3d00;
+  /* radius */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  /* font */
+  --font-sans: 'Neue Haas Grotesk', 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Söhne', 'Neue Haas Grotesk Display', 'Helvetica Neue', sans-serif;
+  --font-mono: ui-monospace, monospace;
+  /* text — exaggerated jumps: type IS the design */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.75rem;
+  --text-2xl: 2.75rem;
+  --text-3xl: 4.25rem;
+  --text-4xl: 6.5rem;
+  --text-5xl: 9rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  /* extra: negative letter-spacing on display type + a single accent-color
+     underline rule is the entire ornament budget — type carries everything */
+  --tight-tracking: -0.03em;
+  --rule: 3px solid var(--color-text);
+}
+
+/* ============================================================
+   Base component classes — typographic
+   Signature move: oversized, tightly-tracked display type used as the primary
+   visual element itself, with a single bold rule underlining key surfaces —
+   no imagery, no gradients, no shadow. Type repeats as the ornament on nav,
+   card headings, and buttons.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--color-bg); }
+.nav { display: flex; gap: var(--space-6); align-items: center; padding: var(--space-4) var(--space-6);
+  background: var(--color-surface); border-bottom: var(--rule);
+  font-family: var(--font-display); letter-spacing: var(--tight-tracking); }
+.btn {
+  font: 700 var(--text-lg)/1 var(--font-display); letter-spacing: var(--tight-tracking); color: var(--color-bg);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-pill);
+  background: var(--color-primary); border: none; cursor: pointer;
+  transition: opacity .15s var(--ease-standard);
+}
+.btn:hover { opacity: .8; }
+.btn:active { opacity: .65; }
+.btn:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
+.btn[disabled] { opacity: .35; cursor: not-allowed; }
+.btn--primary { background: var(--color-accent); color: var(--color-text); }
+.card {
+  background: var(--color-surface); border-top: var(--rule);
+  padding: var(--space-6) 0;
+}
+.card h3 { font-family: var(--font-display); letter-spacing: var(--tight-tracking); font-size: var(--text-2xl); }
+.input {
+  width: 100%; box-sizing: border-box; color: var(--color-text); font: var(--text-xl) var(--font-display);
+  letter-spacing: var(--tight-tracking); padding: var(--space-3) 0; background: transparent;
+  border: none; border-bottom: var(--rule); border-radius: 0;
+}
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-bottom-color: var(--color-accent); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font: 700 var(--text-xs)/1 var(--font-display);
+  letter-spacing: .08em; text-transform: uppercase; padding: .4em 1em; border-radius: 0;
+  background: var(--color-text); color: var(--color-bg); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } }

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ant Design — component example</title>
+<!-- Import the one starter theme; that's ~80% of the look. -->
+<link rel="stylesheet" href="../starter-themes/ant-design.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-16) var(--space-6); display: grid; gap: var(--space-8); }
+  h1 { font: 600 var(--text-4xl)/1.05 var(--font-display); margin: 0; }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-lg); margin: 0; max-width: 52ch; }
+  .row { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4); }
+  .card h3 { margin: 0 0 var(--space-2); font-size: var(--text-xl); }
+  .card p { margin: 0; color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto">Console</strong>
+      <a href="#" style="color:var(--color-text);text-decoration:none">Dashboard</a>
+      <a href="#" style="color:var(--color-text-muted);text-decoration:none">Orders</a>
+      <button class="btn btn--primary">New task</button>
+    </nav>
+
+    <header>
+      <h1>Dense, pragmatic, enterprise-ready.</h1>
+      <p class="lede">A uniform 6px radius and subtle shadows keep every table, form, and panel
+        information-dense but legible — the component-rich console look of Alibaba's admin tools.</p>
+    </header>
+
+    <div class="row">
+      <button class="btn btn--primary">Submit</button>
+      <button class="btn">Cancel</button>
+      <button class="btn" disabled>Locked</button>
+      <span class="badge">Processing</span>
+    </div>
+
+    <input class="input" placeholder="Search order ID">
+
+    <div class="grid">
+      <article class="card">
+        <h3>Compact spacing</h3>
+        <p>Tight padding and a 1px border on every surface maximize density without feeling cramped.</p>
+      </article>
+      <article class="card">
+        <h3>Blue focus ring</h3>
+        <p>A consistent blue focus ring and hover state ties every form control together.</p>
+      </article>
+    </div>
+  </div>
+</body>
+</html>

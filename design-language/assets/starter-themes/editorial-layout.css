@@ -1,0 +1,82 @@
+/* Editorial / Magazine — design tokens */
+/* Print heritage → web | Magazine/print art direction adapted to screen, condensed */
+:root {
+  /* color */
+  --color-bg: #faf7f2;
+  --color-surface: #ffffff;
+  --color-surface-strong: #f0ebe1;
+  --color-border: #d8cfbe;
+  --color-text: #211d17;
+  --color-text-muted: #665c4a;
+  --color-primary: #8a2a1e;
+  --color-accent: #1e4f4a;
+  /* radius */
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 0 1px 3px rgba(33,29,23,0.08);
+  --shadow-md: 0 4px 14px rgba(33,29,23,0.10);
+  --shadow-lg: 0 12px 32px rgba(33,29,23,0.14);
+  /* font */
+  --font-sans: 'Helvetica Neue', system-ui, sans-serif;
+  --font-display: 'Playfair Display', 'Georgia', serif;
+  --font-mono: 'Courier New', ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.75rem;
+  --text-4xl: 3.75rem;
+  --text-5xl: 5rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  /* extra: signature = drop cap + thin double-rule (kicker) repeated as section dividers */
+  --double-rule: linear-gradient(var(--color-border), var(--color-border)) top / 100% 1px no-repeat,
+    linear-gradient(var(--color-border), var(--color-border)) bottom 3px / 100% 1px no-repeat;
+  --dropcap-font: var(--font-display);
+}
+
+/* ============================================================
+   Base component classes — Editorial / Magazine
+   Signature move: a thin double-rule (kicker line) brackets the nav
+   and separates card titles from body copy, echoing a print masthead;
+   the display serif carries all headline weight.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--color-bg); }
+.nav { display: flex; gap: var(--space-6); align-items: center; padding: var(--space-4) var(--space-6);
+  background: var(--double-rule), var(--color-surface); font-family: var(--font-mono); text-transform: uppercase;
+  letter-spacing: .08em; font-size: var(--text-xs); }
+.btn { font: 600 var(--text-sm)/1 var(--font-sans); color: var(--color-text); background: transparent;
+  border: 1px solid var(--color-text); border-radius: var(--radius-sm); padding: var(--space-3) var(--space-6);
+  cursor: pointer; transition: background .15s var(--ease-standard), color .15s var(--ease-standard); }
+.btn:hover { background: var(--color-text); color: var(--color-bg); }
+.btn:active { background: var(--color-primary); border-color: var(--color-primary); }
+.btn:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: var(--color-primary); color: #faf7f2; border-color: var(--color-primary); }
+.card { background: var(--color-surface); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); padding: var(--space-6); }
+.card h3 { font-family: var(--font-display); font-weight: 700; background: var(--double-rule); padding-bottom: var(--space-3); }
+.input { width: 100%; box-sizing: border-box; font: var(--text-base) var(--font-sans); color: var(--color-text);
+  background: var(--color-surface); border: none; border-bottom: 1px solid var(--color-text); border-radius: 0;
+  padding: var(--space-3) var(--space-1); }
+.input::placeholder { color: var(--color-text-muted); font-style: italic; }
+.input:focus { outline: none; border-bottom: 2px solid var(--color-primary); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font: 700 var(--text-xs) var(--font-mono);
+  text-transform: uppercase; letter-spacing: .05em; color: var(--color-accent); border: 1px solid var(--color-accent);
+  border-radius: var(--radius-pill); padding: .3em .8em; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } }

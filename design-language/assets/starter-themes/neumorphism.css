@@ -1,0 +1,84 @@
+/* Neumorphism — design tokens (generated from style_catalog.json) */
+/* 2019–2021 | Named after Alexander Plyuto's 2019 Dribbble concept; 'neumorphism' coined by Michał Malewicz. */
+:root {
+  /* color */
+  --color-bg: #e0e5ec;
+  --color-surface: #e0e5ec;
+  --color-text: #4b5563;
+  --color-text-muted: #8a94a6;
+  --color-primary: #6d5dfc;
+  --color-accent: #4d80e4;
+  --color-light: #ffffff;
+  --color-dark: #a3b1c6;
+  /* radius */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 32px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-raised: 8px 8px 16px #a3b1c6, -8px -8px 16px #ffffff;
+  --shadow-raised-sm: 4px 4px 8px #a3b1c6, -4px -4px 8px #ffffff;
+  --shadow-pressed: inset 6px 6px 12px #a3b1c6, inset -6px -6px 12px #ffffff;
+  --shadow-pressed-sm: inset 3px 3px 6px #a3b1c6, inset -3px -3px 6px #ffffff;
+  /* font */
+  --font-sans: 'Poppins', system-ui, sans-serif;
+  --font-display: 'Poppins', system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  /* extra (signature gradients, composite borders, filters) */
+  --bg-tint-light: #ffffff;
+  --bg-tint-dark: #a3b1c6;
+}
+
+/* ============================================================
+   Base component classes — neumorphism
+   Signature move: same-color extrusion via a dual light/dark shadow pair.
+   "Pressed" = swap outer shadow for INSET. Everything shares the bg color.
+   WARNING: this style fails contrast by default — see the a11y block below.
+   ============================================================ */
+body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-sans); }
+.card { background: var(--color-surface); border-radius: var(--radius-md); box-shadow: var(--shadow-raised);
+  padding: var(--space-8); }
+.nav { display:flex; gap: var(--space-4); align-items:center; background: var(--color-surface);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-raised); padding: var(--space-3) var(--space-6); }
+.btn { font: 600 var(--text-base)/1 var(--font-sans); color: var(--color-primary); background: var(--color-surface);
+  border: none; border-radius: var(--radius-sm); box-shadow: var(--shadow-raised-sm); cursor: pointer;
+  padding: var(--space-3) var(--space-6); transition: box-shadow .18s var(--ease-standard); }
+.btn:hover { box-shadow: var(--shadow-raised); }
+.btn:active,[aria-pressed="true"].btn { box-shadow: var(--shadow-pressed-sm); color: var(--color-primary); }
+.btn:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
+.btn[disabled] { opacity:.6; cursor:not-allowed; }
+.input { width:100%; font: var(--text-base) var(--font-sans); color: var(--color-text); background: var(--color-surface);
+  border: none; border-radius: var(--radius-sm); box-shadow: var(--shadow-pressed-sm); padding: var(--space-3) var(--space-4); }
+.input:focus { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.badge { display:inline-flex; font: 600 var(--text-xs) var(--font-sans); color: var(--color-text);
+  background: var(--color-surface); border-radius: var(--radius-pill); padding:.35em .9em; box-shadow: var(--shadow-raised-sm); }
+/* Accessibility (critical): the default #4b5563 text on #e0e5ec is ~5.5:1 (OK),
+   but the soft shadows carry no contrast, so state changes must ALSO change color
+   or an icon — never rely on emboss alone. Add a 1px inset border for users with
+   prefers-contrast: more so controls have a visible edge. */
+@media (prefers-contrast: more) {
+  .card,.nav,.btn,.input { border: 1px solid var(--bg-tint-dark); }
+}
+@media (prefers-reduced-motion: reduce) { .btn { transition:none; } }

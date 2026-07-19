@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Illuminated Manuscript — component example</title>
+<!-- Import the one starter theme; that's ~80% of the look. -->
+<link rel="stylesheet" href="../starter-themes/illuminated-manuscript.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-16) var(--space-6); display: grid; gap: var(--space-8); }
+  h1 { font: 400 var(--text-4xl)/1.1 var(--font-display); margin: 0; color: var(--color-primary); }
+  h1 .drop-cap { font-size: 1.6em; color: var(--color-gold); background: var(--color-primary);
+    padding: .1em .18em; border-radius: 2px; margin-right: .05em; display: inline-block; }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-lg); margin: 0; max-width: 52ch; font-style: italic; }
+  .row { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4); }
+  .card h3 { margin: 0 0 var(--space-2); font: 400 var(--text-xl) var(--font-display); color: var(--color-primary); }
+  .card p { margin: 0; color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto; font-family:var(--font-display); color:var(--color-primary);">Scriptorium</strong>
+      <a href="#" style="color:var(--color-text);text-decoration:none">Codex</a>
+      <a href="#" style="color:var(--color-text-muted);text-decoration:none">Marginalia</a>
+      <button class="btn btn--primary">Illuminate</button>
+    </nav>
+
+    <header>
+      <h1><span class="drop-cap">T</span>he page as devotion.</h1>
+      <p class="lede">Gold leaf catches candlelight along every border, vines curl through the
+        margins, and blackletter script slows the eye — a page copied by hand, meant to be
+        revered as much as read.</p>
+    </header>
+
+    <div class="row">
+      <button class="btn btn--primary">Begin the folio</button>
+      <button class="btn">View marginalia</button>
+      <button class="btn" disabled>Sealed</button>
+      <span class="badge">✒ Hand-copied</span>
+    </div>
+
+    <input class="input" placeholder="inscribe your name in the colophon" aria-label="Name">
+
+    <div class="grid">
+      <article class="card">
+        <h3>Gilded borders</h3>
+        <p>A repeating gold-and-crimson rule frames the page like the ruled margins of a
+          medieval choir book.</p>
+      </article>
+      <article class="card">
+        <h3>Corner flourishes</h3>
+        <p>Gold roundels mark each corner, echoing the flourished vines that climb every
+          illuminated leaf.</p>
+      </article>
+    </div>
+  </div>
+</body>
+</html>

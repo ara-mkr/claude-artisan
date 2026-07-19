@@ -1,0 +1,92 @@
+/* Regencycore — design tokens */
+/* 2020–present | Regency-era romance revival (Bridgerton, 2020), condensed */
+:root {
+  /* color */
+  --color-bg: #fbeef0;
+  --color-surface: #fffaf6;
+  --color-surface-strong: #f6e0e4;
+  --color-border: #e3b8c2;
+  --color-text: #4a2c3a;
+  --color-text-muted: #8a6274;
+  --color-primary: #c1436a;
+  --color-accent: #c9a35c;
+  --color-sage: #8fa583;
+  /* radius: soft empire-waist curves everywhere */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 0 2px 6px rgba(193, 67, 106, 0.10);
+  --shadow-md: 0 8px 20px rgba(193, 67, 106, 0.14);
+  --shadow-lg: 0 18px 36px rgba(193, 67, 106, 0.16);
+  /* font */
+  --font-sans: 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Great Vibes', 'Snell Roundhand', cursive;
+  --font-mono: ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.25, 0.1, 0.25, 1);
+  /* extra: a double gilt frame — a thin gold line inset within a blush border — is the signature ornament */
+  --gilt-frame: 1px solid var(--color-accent);
+  --gilt-outer: 2px solid var(--color-border);
+  --floral-wash: radial-gradient(120% 100% at 100% 0%, rgba(201,163,92,0.14), transparent 55%);
+}
+
+/* ============================================================
+   Base component classes — Regencycore
+   Signature move: a double gilt frame — a slim gold hairline sitting
+   just inside a soft blush border, like a miniature portrait frame —
+   repeated on the nav, every card, and the primary button; a script
+   display face for headlines and brand marks.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--floral-wash), var(--color-bg); }
+.nav { display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-4) var(--space-8); background: var(--color-surface);
+  border: var(--gilt-outer); border-radius: var(--radius-lg);
+  outline: var(--gilt-frame); outline-offset: -4px; margin: var(--space-4); }
+.btn {
+  font: 600 var(--text-base)/1 var(--font-sans); color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-pill);
+  background: var(--color-surface); border: var(--gilt-outer);
+  box-shadow: var(--shadow-sm); cursor: pointer;
+  transition: transform .2s var(--ease-standard), box-shadow .2s var(--ease-standard);
+}
+.btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.btn:active { transform: translateY(0); }
+.btn:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; transform: none; }
+.btn--primary { background: var(--color-primary); color: #fff5f7; border-color: var(--color-accent); }
+.card { background: var(--color-surface); color: var(--color-text);
+  border: var(--gilt-outer); border-radius: var(--radius-lg);
+  outline: var(--gilt-frame); outline-offset: -5px;
+  box-shadow: var(--shadow-md); padding: var(--space-8); }
+.input { width: 100%; box-sizing: border-box; color: var(--color-text);
+  font: var(--text-base) var(--font-sans); padding: var(--space-3) var(--space-4);
+  background: var(--color-surface); border: var(--gilt-outer); border-radius: var(--radius-pill); }
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 22%, transparent); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font-size: var(--text-xs);
+  padding: .35em .9em; border-radius: var(--radius-pill); background: var(--color-surface-strong);
+  border: 1px solid var(--color-accent); color: var(--color-text); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }

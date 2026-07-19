@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vienna Secession — component example</title>
+<link rel="stylesheet" href="../starter-themes/vienna-secession.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-16, 64px) var(--space-6, 24px); display: grid; gap: var(--space-8, 32px); }
+  h1 { font: 700 var(--text-4xl, 3rem)/1.05 var(--font-display); margin: 0; }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-lg, 1.125rem); margin: 0; max-width: 52ch; }
+  .row { display: flex; gap: var(--space-4, 16px); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4, 16px); }
+  .card h3 { margin: 0 0 var(--space-2, 8px); font-size: var(--text-xl, 1.375rem); }
+  .card p { margin: 0; color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto">Ver Sacrum</strong>
+      <a href="#" style="color:var(--color-text);text-decoration:none">Journal</a>
+      <a href="#" style="color:var(--color-text-muted);text-decoration:none">Exhibition</a>
+      <button class="btn btn--primary">Sign in</button>
+    </nav>
+    <header>
+      <h1>Geometry in Service of Ornament</h1>
+      <p class="lede">A band of small gold squares, the Secession's signature grid motif, runs along the nav, every card, and the primary button — one repeated rhythm instead of a border.</p>
+    </header>
+    <div class="row">
+      <button class="btn btn--primary">Enter the Frieze</button>
+      <button class="btn">View Catalogue</button>
+      <button class="btn" disabled>Reserved</button>
+      <span class="badge">Ver Sacrum No. 3</span>
+    </div>
+    <input class="input" placeholder="Subscriber name" aria-label="Subscriber name">
+    <div class="grid">
+      <article class="card"><h3>The Beethoven Frieze</h3><p>Gold squares crown each panel, bridging Art Nouveau curves and Deco order.</p></article>
+      <article class="card"><h3>Werkstätte Editions</h3><p>Hoffmann's grid logic applied to type, borders, and every raised surface.</p></article>
+    </div>
+  </div>
+</body>
+</html>

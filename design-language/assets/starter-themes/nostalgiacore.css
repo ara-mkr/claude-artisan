@@ -1,0 +1,102 @@
+/* Nostalgiacore — design tokens */
+/* 2019–present | Broad nostalgia for the recent past, condensed */
+:root {
+  /* color */
+  --color-bg: #e8dcc8;
+  --color-surface: #f2e9d8;
+  --color-surface-strong: #ede0c4;
+  --color-border: #b8a37e;
+  --color-text: #4a3d2c;
+  --color-text-muted: #7a6a52;
+  --color-primary: #c17a4e;
+  --color-accent: #8a9a6b;
+  --color-sepia-tint: rgba(163, 120, 63, 0.18);
+  --color-timestamp: #e8622c;
+  /* radius */
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 0 1px 3px rgba(74, 61, 44, 0.22);
+  --shadow-md: 0 4px 10px rgba(74, 61, 44, 0.26);
+  --shadow-lg: 0 10px 24px rgba(74, 61, 44, 0.3);
+  /* font */
+  --font-sans: 'Century Gothic', 'Trebuchet MS', system-ui, sans-serif;
+  --font-display: 'Courier New', 'Trebuchet MS', monospace;
+  --font-mono: 'Courier New', ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  /* extra: sepia grain overlay + faded-photo vignette + timestamp stamp */
+  --grain-overlay: repeating-radial-gradient(circle at 20% 30%, rgba(74,61,44,0.04) 0px, transparent 2px), repeating-radial-gradient(circle at 70% 80%, rgba(74,61,44,0.03) 0px, transparent 2px);
+  --photo-vignette: radial-gradient(120% 100% at 50% 40%, transparent 55%, rgba(74,61,44,0.14) 100%);
+  --timestamp-font: 'Courier New', monospace;
+}
+
+/* ============================================================
+   Base component classes — Nostalgiacore
+   Signature move: faded-photo sepia tint + film-grain overlay + an orange
+   digital-camera timestamp stamp in the corner of raised surfaces.
+   ============================================================ */
+body {
+  margin: 0; color: var(--color-text); font-family: var(--font-sans);
+  background: var(--color-bg) var(--grain-overlay); background-blend-mode: multiply;
+}
+.nav {
+  display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-3) var(--space-6); background: var(--color-surface);
+  background-image: var(--photo-vignette); border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+.btn {
+  font: 600 var(--text-base)/1 var(--font-sans); color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-md);
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm); cursor: pointer;
+  transition: transform .15s var(--ease-standard), box-shadow .15s var(--ease-standard);
+}
+.btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.btn:active { transform: translateY(0); box-shadow: var(--shadow-sm); }
+.btn:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: var(--color-primary); color: #fff8ec; border-color: var(--color-primary); }
+.card {
+  position: relative; background: var(--color-surface); background-image: var(--photo-vignette);
+  border-radius: var(--radius-lg); border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md); padding: var(--space-6);
+}
+.card::after {
+  content: attr(data-stamp, "'00 SUMMER"); position: absolute; right: var(--space-3); bottom: var(--space-2);
+  font: 700 var(--text-xs)/1 var(--timestamp-font); color: var(--color-timestamp); letter-spacing: .05em;
+}
+.input {
+  width: 100%; box-sizing: border-box; color: var(--color-text); font: var(--text-base) var(--font-sans);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm);
+  background: var(--color-surface-strong); border: 1px solid var(--color-border);
+}
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(193, 122, 78, 0.25); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font-size: var(--text-xs);
+  padding: .3em .8em; border-radius: var(--radius-pill); background: var(--color-accent); color: #2c331f; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }

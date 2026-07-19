@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Op Art — component example</title>
+<link rel="stylesheet" href="../starter-themes/op-art.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-16, 64px) var(--space-6, 24px); display: grid; gap: var(--space-8, 32px); }
+  h1 { font: 700 var(--text-4xl, 3rem)/1.05 var(--font-display); margin: 0; }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-lg, 1.125rem); margin: 0; max-width: 52ch; }
+  .row { display: flex; gap: var(--space-4, 16px); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4, 16px); }
+  .card h3 { margin: var(--space-4, 16px) 0 var(--space-2, 8px); font-size: var(--text-xl, 1.375rem); }
+  .card p { margin: 0; color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto">VASARELY</strong>
+      <a href="#" style="color:var(--color-text);text-decoration:none">Works</a>
+      <a href="#" style="color:var(--color-text-muted);text-decoration:none">Gallery</a>
+      <button class="btn btn--primary">Sign in</button>
+    </nav>
+    <header>
+      <h1>Stripes that won't sit still.</h1>
+      <p class="lede">The same black-and-white repeating stripe border tops every card and edges the
+        nav, so the eye keeps re-registering vibration across the whole page.</p>
+    </header>
+    <div class="row">
+      <button class="btn btn--primary">Enter gallery</button>
+      <button class="btn">Preview</button>
+      <button class="btn" disabled>Disabled</button>
+      <span class="badge">Illusion</span>
+    </div>
+    <input class="input" placeholder="Search by artist" aria-label="Search by artist">
+    <div class="grid">
+      <article class="card"><h3>Movement in Squares</h3><p>Precise repetition, not softness, is what makes the pattern read as motion.</p></article>
+      <article class="card"><h3>Kinetic study 7</h3><p>Hovering a button swaps its fill for the tight stripe pattern for an extra jolt.</p></article>
+    </div>
+  </div>
+</body>
+</html>

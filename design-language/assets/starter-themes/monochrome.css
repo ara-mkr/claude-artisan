@@ -1,0 +1,83 @@
+/* Monochrome / Grayscale — design tokens */
+/* Timeless | Reductive palette discipline, condensed */
+:root {
+  /* color: pure grayscale, one optional accent used sparingly */
+  --color-bg: #ffffff;
+  --color-surface: #f4f4f4;
+  --color-surface-strong: #e6e6e6;
+  --color-border: #c9c9c9;
+  --color-text: #0a0a0a;
+  --color-text-muted: #5a5a5a;
+  --color-primary: #0a0a0a;
+  --color-accent: #d0021b;
+  /* radius: crisp, editorial, minimal curvature */
+  --radius-sm: 0px;
+  --radius-md: 2px;
+  --radius-lg: 4px;
+  --radius-pill: 999px;
+  /* shadow: near-flat, contrast carries the hierarchy instead */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 10px rgba(0,0,0,0.10);
+  --shadow-lg: 0 12px 28px rgba(0,0,0,0.14);
+  /* font */
+  --font-sans: 'Helvetica Neue', 'Inter', Arial, sans-serif;
+  --font-display: 'Times New Roman', 'Georgia', serif;
+  --font-mono: ui-monospace, 'Courier New', monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  /* extra: grain texture film — a subtle noise overlay so flat gray reads
+     as photographic rather than a color picker default */
+  --grain: repeating-conic-gradient(from 0deg, rgba(0,0,0,0.015) 0deg 1deg, transparent 1deg 2deg);
+  --hairline: 1px solid var(--color-text);
+}
+
+/* ============================================================
+   Base component classes — Monochrome
+   Signature move: --hairline (a single 1px pure-black rule) as the only
+   border treatment everywhere, plus a faint --grain texture on raised
+   surfaces so it reads as photography-forward, not a flat gray theme.
+   Repeats on nav, card, and btn.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--grain), var(--color-bg); min-height: 100vh; }
+.nav { display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-4) var(--space-6); background: var(--color-bg); border-bottom: var(--hairline); }
+.btn { font: 500 var(--text-base)/1 var(--font-sans); letter-spacing: .02em; color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-sm);
+  background: var(--color-bg); border: var(--hairline);
+  cursor: pointer; transition: background-color .16s var(--ease-standard), color .16s var(--ease-standard); }
+.btn:hover { background-color: var(--color-text); color: var(--color-bg); }
+.btn:active { background-color: var(--color-text-muted); }
+.btn:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.btn[disabled] { opacity: .4; cursor: not-allowed; background: var(--color-bg); color: var(--color-text); }
+.btn--primary { background: var(--color-text); color: var(--color-bg); border: var(--hairline); }
+.btn--primary:hover { background: var(--color-text-muted); color: var(--color-bg); }
+.card { background: var(--grain), var(--color-surface); border: var(--hairline);
+  border-radius: var(--radius-md); box-shadow: var(--shadow-sm); padding: var(--space-6); }
+.input { width: 100%; box-sizing: border-box; color: var(--color-text); font: var(--text-base) var(--font-sans);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm);
+  background: var(--color-bg); border: var(--hairline); }
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; box-shadow: 0 0 0 2px var(--color-accent) inset; }
+.badge { display: inline-flex; align-items: center; gap: .4em; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: .06em;
+  padding: .3em .8em; border-radius: var(--radius-pill); background: var(--color-text); color: var(--color-bg); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } }

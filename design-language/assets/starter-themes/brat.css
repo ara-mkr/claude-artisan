@@ -1,0 +1,90 @@
+/* Brat — design tokens */
+/* 2024–present | Charli XCX 'Brat' album (2024), condensed */
+:root {
+  /* color: one toxic lime field, deliberately blunt */
+  --color-bg: #8ace00;
+  --color-surface: #97d611;
+  --color-surface-strong: #a4e022;
+  --color-border: #111111;
+  --color-text: #0e0e0e;
+  --color-text-muted: #2c2c2c;
+  --color-primary: #0e0e0e;
+  --color-accent: #ffffff;
+  /* radius: blunt, no rounding, nothing precious */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-pill: 0px;
+  /* shadow: none — flat and confrontational */
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  /* font: stretched, low-res Arial-style, deliberately ungainly */
+  --font-sans: Arial, 'Helvetica Neue', sans-serif;
+  --font-display: Arial, 'Helvetica Neue', sans-serif;
+  --font-mono: 'Courier New', monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3.25rem;
+  --text-5xl: 4.5rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: linear;
+  /* extra: stretched/blurred text as the signature move */
+  --text-blur: blur(0.4px);
+  --text-stretch: scaleX(1.12);
+}
+
+/* ============================================================
+   Base component classes — Brat
+   Signature move: everything sits on the single lime field with no
+   shadow, no radius, and headline/nav text horizontally stretched +
+   very slightly blurred — the lo-fi Arial look — repeated on nav
+   brand and headline.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans);
+  background: var(--color-bg); min-height: 100vh; }
+.nav { display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-3) var(--space-6); background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border); }
+.nav strong { transform: var(--text-stretch); filter: var(--text-blur); display: inline-block;
+  font-weight: 400; letter-spacing: -0.02em; }
+.btn {
+  font: 400 var(--text-base)/1 var(--font-sans); color: var(--color-accent);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-md);
+  background: var(--color-primary); border: 1px solid var(--color-border);
+  cursor: pointer; transition: opacity .1s var(--ease-standard);
+}
+.btn:hover { opacity: .8; }
+.btn:active { opacity: .6; }
+.btn:focus-visible { outline: 2px solid var(--color-border); outline-offset: 2px; }
+.btn[disabled] { opacity: .35; cursor: not-allowed; }
+.btn--primary { background: var(--color-primary); color: var(--color-bg); }
+.card { background: var(--color-surface); color: var(--color-text);
+  border-radius: var(--radius-lg); padding: var(--space-6); border: 1px solid var(--color-border); }
+.input {
+  width: 100%; box-sizing: border-box; color: var(--color-text); font: var(--text-base) var(--font-sans);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm);
+  background: var(--color-surface); border: 1px solid var(--color-border);
+}
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font-size: var(--text-xs);
+  padding: .3em .8em; border-radius: var(--radius-pill); background: var(--color-primary); color: var(--color-bg); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } }

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>U.S. Web Design System — component example</title>
+<!-- Import the one starter theme; that's ~80% of the look. -->
+<link rel="stylesheet" href="../starter-themes/uswds.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-16) var(--space-6); display: grid; gap: var(--space-8); }
+  h1 { font: 700 var(--text-4xl)/1.15 var(--font-display); margin: 0; }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-lg); margin: 0; max-width: 52ch; }
+  .row { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4); }
+  .card h3 { margin: 0 0 var(--space-2); font-size: var(--text-xl); }
+  .card p { margin: 0; color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto">Benefits.gov</strong>
+      <a href="#" style="color:var(--color-primary);text-decoration:none">Programs</a>
+      <a href="#" style="color:var(--color-text-muted);text-decoration:none">How to apply</a>
+      <button class="btn btn--primary">Start your application</button>
+    </nav>
+
+    <header>
+      <h1>Plain language. Federal trust.</h1>
+      <p class="lede">A deep federal-blue band with a red hairline marks every official surface,
+        and Public Sans keeps every sentence Section 508-legible.</p>
+    </header>
+
+    <div class="row">
+      <button class="btn btn--primary">Check eligibility</button>
+      <button class="btn">Read the guide</button>
+      <button class="btn" disabled>Applications closed</button>
+      <span class="badge">Official Source</span>
+    </div>
+
+    <input class="input" placeholder="Search federal benefits…" aria-label="Search">
+
+    <div class="grid">
+      <article class="card">
+        <h3>Accessibility first</h3>
+        <p>Every interactive element ships with a visible focus ring and AA-plus contrast.</p>
+      </article>
+      <article class="card">
+        <h3>Built for trust</h3>
+        <p>Neutral grays, government blue and red, and zero decorative flourish.</p>
+      </article>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acrylic (Fluent Material) — component example</title>
+<!-- Import the one starter theme; that's ~80% of the look. -->
+<link rel="stylesheet" href="../starter-themes/acrylic-fluent.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-16) var(--space-6); display: grid; gap: var(--space-8); }
+  h1 { font: 700 var(--text-4xl)/1.05 var(--font-display); margin: 0; }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-lg); margin: 0; max-width: 52ch; }
+  .row { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4); }
+  .card h3 { margin: 0 0 var(--space-2); font-size: var(--text-xl); }
+  .card p { margin: 0; color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto">Flyout</strong>
+      <a href="#" style="color:var(--color-text);text-decoration:none">Apps</a>
+      <a href="#" style="color:var(--color-text-muted);text-decoration:none">Settings</a>
+      <button class="btn btn--primary">Sign in</button>
+    </nav>
+
+    <header>
+      <h1>A material that sits beneath your UI.</h1>
+      <p class="lede">Acrylic tints and a faint noise layer give context menus and command bars a
+        translucent base — light-dismiss surfaces that never fight the content on top.</p>
+    </header>
+
+    <div class="row">
+      <button class="btn btn--primary">Open flyout</button>
+      <button class="btn">Cancel</button>
+      <button class="btn" disabled>Unavailable</button>
+      <span class="badge">Mode-aware</span>
+    </div>
+
+    <input class="input" placeholder="Search settings">
+
+    <div class="grid">
+      <article class="card">
+        <h3>Tint + noise</h3>
+        <p>A soft white tint layered over a subtle conic noise texture, so the blur never looks flat.</p>
+      </article>
+      <article class="card">
+        <h3>Light-dismiss ready</h3>
+        <p>Command bars and flyouts share this base material and dismiss on outside click.</p>
+      </article>
+    </div>
+  </div>
+</body>
+</html>

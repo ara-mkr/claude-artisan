@@ -1,0 +1,89 @@
+/* Raw / Default HTML — design tokens */
+/* 1991–present (revival 2016+) | The literal default browser stylesheet, condensed */
+:root {
+  /* color */
+  --color-bg: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-strong: #eeeeee;
+  --color-border: #000000;
+  --color-text: #000000;
+  --color-text-muted: #444444;
+  --color-primary: #0000ee;
+  --color-accent: #551a8b;
+  --color-visited: #551a8b;
+  /* radius: the whole point is zero styling ambition */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-pill: 0px;
+  /* shadow: default HTML has none */
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  /* font */
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-display: 'Times New Roman', Times, serif;
+  --font-mono: 'Courier New', monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease: no animation is the point */
+  --ease-standard: linear;
+  /* extra: the classic 2px outset/inset bevel border that browsers used to draw for free */
+  --bevel-outset: 2px outset #c0c0c0;
+  --bevel-inset: 2px inset #c0c0c0;
+}
+
+/* ============================================================
+   Base component classes — Raw / Default HTML
+   Signature move: the literal UA-stylesheet look — Times New Roman body
+   copy, underlined default-blue links, and a chunky 2px outset/inset
+   bevel border standing in for every "button" the browser used to draw
+   for free. Repeated on both btn and input; zero border-radius everywhere.
+   ============================================================ */
+body { margin: 8px; color: var(--color-text); font-family: var(--font-display); background: var(--color-bg); font-size: var(--text-base); }
+a { color: var(--color-primary); }
+a:visited { color: var(--color-visited); }
+.nav { display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-2) var(--space-3); background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border); font-family: var(--font-sans); }
+.btn {
+  font: var(--text-base) var(--font-sans); color: #000000;
+  padding: 1px 6px; border-radius: var(--radius-sm);
+  background: #dddddd; border: var(--bevel-outset);
+  cursor: pointer;
+}
+.btn:hover { background: #e5e5e5; }
+.btn:active { border: var(--bevel-inset); }
+.btn:focus-visible { outline: 1px dotted #000000; outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: #dddddd; color: #000000; font-weight: bold; }
+.card { background: var(--color-surface); color: var(--color-text);
+  border: 1px solid var(--color-border); border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm); padding: var(--space-4); }
+.input { width: 100%; box-sizing: border-box; color: var(--color-text);
+  font: var(--text-base) var(--font-sans); padding: 2px 4px;
+  background: #ffffff; border: var(--bevel-inset); border-radius: var(--radius-sm); }
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: 1px dotted #000000; }
+.badge { display: inline-flex; align-items: center; gap: .4em; font-size: var(--text-sm);
+  padding: 1px 6px; border-radius: var(--radius-sm); background: #ffff00;
+  border: 1px solid var(--color-border); color: #000000; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }

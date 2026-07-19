@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zen / Wabi-Sabi / Ma — component example</title>
+<!-- Import the one starter theme; that's ~80% of the look. -->
+<link rel="stylesheet" href="../starter-themes/zen-wabisabi.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-24) var(--space-6); display: grid; gap: var(--space-12); }
+  h1 { font: 500 var(--text-4xl)/1.25 var(--font-display); margin: 0; }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-lg); margin: 0; max-width: 48ch; }
+  .row { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-6); }
+  .card h3 { margin: 0 0 var(--space-2); font-size: var(--text-xl); font-family: var(--font-display); font-weight: 500; }
+  .card p { margin: 0; color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto">庵 Iori</strong>
+      <a href="#" style="color:var(--color-text);text-decoration:none">Tea Room</a>
+      <a href="#" style="color:var(--color-text-muted);text-decoration:none">Practice</a>
+      <button class="btn btn--primary">Reserve a seat</button>
+    </nav>
+
+    <header>
+      <h1>Beauty in the imperfect, room to breathe.</h1>
+      <p class="lede">No two corners match — every surface is hand-thrown, not gridded — and
+        generous empty space around each element gives the page its quiet, unhurried pace.</p>
+    </header>
+
+    <div class="row">
+      <button class="btn btn--primary">Begin the ceremony</button>
+      <button class="btn">Read the practice</button>
+      <button class="btn" disabled>Fully seated</button>
+      <span class="badge">静 Quiet</span>
+    </div>
+
+    <input class="input" placeholder="Ask about the tea room…" aria-label="Search">
+
+    <div class="grid">
+      <article class="card">
+        <h3>Wabi — rustic simplicity</h3>
+        <p>Muted clay and moss tones stand in for gloss; nothing here is polished to hide its age.</p>
+      </article>
+      <article class="card">
+        <h3>Ma — the space between</h3>
+        <p>Padding is doubled where you'd expect density, leaving room for the eye to rest.</p>
+      </article>
+    </div>
+  </div>
+</body>
+</html>

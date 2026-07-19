@@ -1,0 +1,85 @@
+/* WPA / Vintage Poster — design tokens */
+/* 1935–1943 | US Works Progress Administration Federal Art Project, condensed */
+:root {
+  /* color */
+  --color-bg: #e8d9b5;
+  --color-surface: #f0e6c8;
+  --color-surface-strong: #dcc98f;
+  --color-border: #1c3d5a;
+  --color-text: #1c1c1c;
+  --color-text-muted: #4a3f2c;
+  --color-primary: #c1502e;
+  --color-accent: #1c3d5a;
+  --color-mustard: #d69c2f;
+  /* radius */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 2px 2px 0 var(--color-border);
+  --shadow-md: 4px 4px 0 var(--color-border);
+  --shadow-lg: 6px 6px 0 var(--color-border);
+  /* font */
+  --font-sans: 'Futura', 'Century Gothic', sans-serif;
+  --font-display: 'Bebas Neue', 'Futura', sans-serif;
+  --font-mono: ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.9rem;
+  --text-base: 1rem;
+  --text-lg: 1.2rem;
+  --text-xl: 1.6rem;
+  --text-2xl: 2.2rem;
+  --text-3xl: 3rem;
+  --text-4xl: 4rem;
+  --text-5xl: 5.5rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: linear;
+  /* extra (signature gradients, composite borders, filters) */
+  --sky-gradient: linear-gradient(180deg, var(--color-mustard) 0%, var(--color-primary) 55%, var(--color-accent) 100%);
+  --ink-band: 6px solid var(--color-border);
+  --sun-rays: repeating-conic-gradient(from 0deg, var(--color-mustard) 0deg 4deg, transparent 4deg 20deg);
+}
+
+/* ============================================================
+   Base component classes — WPA / Vintage Poster
+   Signature move: a flat, banded "sky gradient" (--sky-gradient) with a
+   thick ink-colored rule (--ink-band), like the limited screen-print
+   layers of a WPA travel poster. Repeats on nav, card, btn--primary.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--color-bg); }
+.nav { display: flex; gap: var(--space-4); align-items: center; padding: var(--space-3) var(--space-6);
+  background: var(--color-surface); border-bottom: var(--ink-band); }
+.btn { font: 700 var(--text-base)/1 var(--font-display); letter-spacing: .04em; color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-sm);
+  background: var(--color-surface-strong); border: 3px solid var(--color-border);
+  box-shadow: var(--shadow-sm); cursor: pointer;
+  transition: transform .12s var(--ease-standard), box-shadow .12s var(--ease-standard); }
+.btn:hover { transform: translate(-2px,-2px); box-shadow: var(--shadow-md); }
+.btn:active { transform: translate(0,0); box-shadow: none; }
+.btn:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: var(--sky-gradient); color: #f0e6c8; border-color: var(--color-border); }
+.card { background: var(--color-surface); color: var(--color-text); padding: var(--space-6);
+  border: 3px solid var(--color-border); box-shadow: var(--shadow-lg); position: relative; overflow: hidden; }
+.card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 8px; background: var(--sky-gradient); }
+.input { width: 100%; box-sizing: border-box; color: var(--color-text); font: var(--text-base) var(--font-sans);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm);
+  background: var(--color-surface); border: 3px solid var(--color-border); }
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-primary); box-shadow: var(--shadow-sm); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font: 700 var(--text-xs) var(--font-display);
+  padding: .3em .9em; border-radius: var(--radius-pill); background: #8a3a20; color: #f0e6c8;
+  border: 2px solid var(--color-border); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover, .btn:active { transform: none; } }

@@ -1,0 +1,105 @@
+/* Engraving / Line Art — design tokens */
+/* Print heritage | Old-master engraving/etching revival, condensed */
+:root {
+  /* color */
+  --color-bg: #f2ead9;
+  --color-surface: #ece1cb;
+  --color-surface-strong: #e4d5b8;
+  --color-border: #2b2013;
+  --color-text: #1c140b;
+  --color-text-muted: #4a3a24;
+  --color-primary: #5a2e12;
+  --color-accent: #8a6d3b;
+  --color-ink: #241a0e;
+  /* radius */
+  --radius-sm: 2px;
+  --radius-md: 2px;
+  --radius-lg: 3px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 0 1px 0 rgba(36,26,14,0.3);
+  --shadow-md: 0 2px 0 rgba(36,26,14,0.28), 0 4px 8px rgba(36,26,14,0.18);
+  --shadow-lg: 0 4px 0 rgba(36,26,14,0.26), 0 10px 20px rgba(36,26,14,0.22);
+  /* font */
+  --font-sans: 'Freight Text', 'Georgia', 'Iowan Old Style', serif;
+  --font-display: 'Playfair Display', 'Didot', 'Georgia', serif;
+  --font-mono: 'Courier Prime', ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  /* extra: cross-hatch texture (repeating fine lines at two angles) used on
+     nav/card/input to mimic engraved tonal shading; a certificate-style
+     double-rule border for the "currency/certificate" heritage feel */
+  --hatch-fine: repeating-linear-gradient(115deg, rgba(28,20,11,0.09) 0 1px, transparent 1px 4px),
+                repeating-linear-gradient(25deg, rgba(28,20,11,0.05) 0 1px, transparent 1px 6px);
+  --border-certificate: 3px double var(--color-ink);
+}
+
+/* ============================================================
+   Base component classes — engraving
+   Signature move: fine cross-hatch line texture (var(--hatch-fine)) layered
+   under every surface, plus a certificate double-rule border repeated on
+   nav, card and input to read as "engraved plate" rather than flat print.
+   ============================================================ */
+body {
+  margin: 0; color: var(--color-text); font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  background-image: var(--hatch-fine);
+}
+.nav {
+  display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-3) var(--space-6);
+  background-color: var(--color-surface); background-image: var(--hatch-fine);
+  border-bottom: var(--border-certificate);
+}
+.btn {
+  font: 600 var(--text-base)/1 var(--font-sans); color: var(--color-ink);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-sm);
+  background-color: var(--color-surface); background-image: var(--hatch-fine);
+  border: 1.5px solid var(--color-ink);
+  box-shadow: var(--shadow-sm); cursor: pointer;
+  transition: transform .15s var(--ease-standard), box-shadow .15s var(--ease-standard);
+}
+.btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.btn:active { transform: translateY(0); box-shadow: var(--shadow-sm); }
+.btn:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background-color: var(--color-primary); background-image: none; color: #f2ead9; border-color: var(--color-ink); }
+.card {
+  background-color: var(--color-surface); background-image: var(--hatch-fine);
+  border: var(--border-certificate); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md); padding: var(--space-6);
+}
+.input {
+  width: 100%; box-sizing: border-box; color: var(--color-ink);
+  font: var(--text-base) var(--font-sans);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm);
+  background-color: var(--color-surface-strong); background-image: var(--hatch-fine);
+  border: 1.5px solid var(--color-ink);
+}
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(90,46,18,0.25); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font-size: var(--text-xs);
+  padding: .3em .8em; border-radius: var(--radius-pill); background-color: var(--color-ink);
+  color: var(--color-bg); border: 1px solid var(--color-ink); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }

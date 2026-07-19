@@ -1,0 +1,83 @@
+/* Balletcore — design tokens */
+/* 2022–present | Ballet-inspired soft feminine aesthetic, condensed */
+:root {
+  /* color */
+  --color-bg: #fdf3f1;
+  --color-surface: #fffbfa;
+  --color-surface-strong: #fbe4e3;
+  --color-border: #e7b8bd;
+  --color-text: #5a3a3f;
+  --color-text-muted: #8a6266;
+  --color-primary: #c98a9c;
+  --color-accent: #b9a6d9;
+  /* radius — soft tulle, everything rounded like a dancer's silhouette */
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 0 2px 8px rgba(90,58,63,0.1);
+  --shadow-md: 0 8px 20px rgba(90,58,63,0.12);
+  --shadow-lg: 0 16px 36px rgba(90,58,63,0.14);
+  /* font */
+  --font-sans: 'Nunito', 'Quicksand', system-ui, sans-serif;
+  --font-display: 'Cormorant Garamond', 'Playfair Display', serif;
+  --font-mono: ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.34, 1.2, 0.64, 1);
+  /* extra — signature satin ribbon: a dashed silk-tie border and soft blush gradient */
+  --ribbon-border: 2px dashed var(--color-border);
+  --satin-fill: linear-gradient(160deg, #fffbfa 0%, #fce8e7 100%);
+}
+
+/* ============================================================
+   Base component classes — Balletcore
+   Signature move: a dashed "ribbon-tie" border plus a soft satin gradient
+   fill, echoing pointe-shoe ribbons. Repeated on nav, card, and input.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--color-bg); }
+.nav { display: flex; gap: var(--space-4); align-items: center; padding: var(--space-3) var(--space-6);
+  background: var(--satin-fill); border-bottom: var(--ribbon-border); border-radius: 0 0 var(--radius-lg) var(--radius-lg); }
+.btn {
+  font: 600 var(--text-base)/1 var(--font-sans); color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-pill);
+  background: var(--color-surface); border: var(--ribbon-border);
+  box-shadow: var(--shadow-sm); cursor: pointer;
+  transition: transform .2s var(--ease-standard), box-shadow .2s var(--ease-standard);
+}
+.btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn:active { transform: translateY(0); }
+.btn:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: var(--color-primary); color: #fffbfa; border-color: var(--color-primary); }
+.card { background: var(--satin-fill); border-radius: var(--radius-lg); border: var(--ribbon-border);
+  box-shadow: var(--shadow-md); padding: var(--space-6); }
+.input { width: 100%; box-sizing: border-box; color: var(--color-text); font: var(--text-base) var(--font-sans);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-pill); background: var(--color-surface);
+  border: var(--ribbon-border); }
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(201,138,156,0.22); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font-size: var(--text-xs);
+  padding: .3em .9em; border-radius: var(--radius-pill); background: var(--color-surface-strong);
+  border: 1px solid var(--color-border); color: var(--color-text); font-family: var(--font-display); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }

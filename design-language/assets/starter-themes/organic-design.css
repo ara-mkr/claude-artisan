@@ -1,0 +1,91 @@
+/* Organic / Biomorphic — design tokens */
+/* 2018–present | Reaction to rigid grids; nature-derived forms, condensed */
+:root {
+  /* color: soft natural palette */
+  --color-bg: #f6f1e7;
+  --color-surface: #ffffff;
+  --color-surface-strong: #eee6d6;
+  --color-border: #dccdb0;
+  --color-text: #2f3b2a;
+  --color-text-muted: #5c6b53;
+  --color-primary: #6f8f4e;
+  --color-accent: #d98b5f;
+  --color-clay: #e7c9a9;
+  /* radius: rounded everything, asymmetric blob feel via border-radius mixes */
+  --radius-sm: 16px;
+  --radius-md: 28px;
+  --radius-lg: 44px;
+  --radius-pill: 999px;
+  --radius-blob: 60% 40% 55% 45% / 45% 55% 40% 60%;
+  /* shadow */
+  --shadow-sm: 0 2px 8px rgba(47, 59, 42, 0.08);
+  --shadow-md: 0 8px 24px rgba(47, 59, 42, 0.12);
+  --shadow-lg: 0 20px 48px rgba(47, 59, 42, 0.16);
+  /* font */
+  --font-sans: 'Quicksand', 'Nunito', system-ui, sans-serif;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-mono: ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.34, 1.2, 0.4, 1);
+  /* extra: wave divider + blob radius */
+  --wave-divider: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20' preserveAspectRatio='none'%3E%3Cpath d='M0 10 Q 25 0 50 10 T 100 10 T 150 10 T 200 10 V20 H0 Z' fill='%23f6f1e7'/%3E%3C/svg%3E");
+}
+
+/* ============================================================
+   Base component classes — Organic / Biomorphic
+   Signature move: asymmetric blob border-radius (--radius-blob) applied to
+   raised surfaces, plus soft natural greens/clay accents, so nothing reads
+   as a rigid rectangle.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--color-bg); }
+.nav {
+  display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-4) var(--space-6); background: var(--color-surface);
+  border-radius: var(--radius-pill); box-shadow: var(--shadow-sm);
+}
+.btn {
+  font: 600 var(--text-base)/1 var(--font-sans); color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-pill);
+  background: var(--color-surface-strong); border: none; cursor: pointer;
+  transition: transform .25s var(--ease-standard), box-shadow .25s var(--ease-standard);
+}
+.btn:hover { transform: translateY(-2px) scale(1.02); box-shadow: var(--shadow-md); }
+.btn:active { transform: translateY(0) scale(.98); }
+.btn:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: var(--color-primary); color: #f6f1e7; }
+.card {
+  background: var(--color-surface); border-radius: var(--radius-blob);
+  box-shadow: var(--shadow-md); padding: var(--space-8) var(--space-6); border: none;
+}
+.input {
+  width: 100%; box-sizing: border-box; color: var(--color-text); font: var(--text-base) var(--font-sans);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-pill);
+  background: var(--color-surface); border: 2px solid var(--color-border);
+}
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(111, 143, 78, 0.2); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font-size: var(--text-xs);
+  padding: .35em .9em; border-radius: var(--radius-pill); background: var(--color-clay); color: #4a3520; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover, .btn:active { transform: none; } }

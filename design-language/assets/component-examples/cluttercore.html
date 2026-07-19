@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cluttercore — component example</title>
+<!-- Import the one starter theme; that's ~80% of the look. -->
+<link rel="stylesheet" href="../starter-themes/cluttercore.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-16) var(--space-6); display: grid; gap: var(--space-8); }
+  h1 { font: 700 var(--text-4xl)/1.1 var(--font-display); margin: 0; }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-lg); margin: 0; max-width: 52ch; }
+  .row { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-6); }
+  .card h3 { margin: 0 0 var(--space-2); font-size: var(--text-xl); font-family: var(--font-display); }
+  .card p { margin: 0; color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto; font-family: var(--font-display)">The Whole Shelf</strong>
+      <a href="#" style="color:var(--color-text);text-decoration:none">Collections</a>
+      <a href="#" style="color:var(--color-text-muted);text-decoration:none">Trinkets</a>
+      <button class="btn btn--primary">Add a pile</button>
+    </nav>
+
+    <header>
+      <h1>No empty space left on purpose.</h1>
+      <p class="lede">A dense layered pattern of dots and diagonal plaid fills every surface,
+        and a triple-stacked shadow makes each card feel like a pile of collected objects —
+        comfort found in abundance, not restraint.</p>
+    </header>
+
+    <div class="row">
+      <button class="btn btn--primary">Keep it all</button>
+      <button class="btn">Rearrange</button>
+      <button class="btn" disabled>Full shelf</button>
+      <span class="badge">✦ new find</span>
+    </div>
+
+    <input class="input" placeholder="label this trinket…" aria-label="Label">
+
+    <div class="grid">
+      <article class="card">
+        <h3>Books, stacked sideways</h3>
+        <p>Every surface holds something else on top of it — that's the whole point.</p>
+      </article>
+      <article class="card">
+        <h3>Lived-in, not staged</h3>
+        <p>Eclectic warmth beats a curated, empty room every time.</p>
+      </article>
+    </div>
+  </div>
+</body>
+</html>

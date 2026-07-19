@@ -1,0 +1,87 @@
+/* Fluent Design 2 (Fluent 2) — design tokens (generated from style_catalog.json) */
+/* 2017–present | Microsoft; Fluent (2017), Fluent 2 refresh (2021+ for Windows 11). */
+:root {
+  /* color */
+  --color-bg: #f3f3f3;
+  --color-surface: rgba(255,255,255,0.70);
+  --color-mica: rgba(243,243,243,0.85);
+  --color-acrylic: rgba(252,252,252,0.60);
+  --color-text: #1b1b1b;
+  --color-text-muted: #616161;
+  --color-primary: #0f6cbd;
+  --color-accent: #005fb8;
+  --color-stroke: rgba(0,0,0,0.10);
+  /* radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.14);
+  --shadow-md: 0 8px 16px rgba(0,0,0,0.14);
+  --shadow-lg: 0 32px 64px rgba(0,0,0,0.19);
+  --shadow-card-stroke: inset 0 0 0 1px rgba(0,0,0,0.06), inset 0 -1px 0 rgba(0,0,0,0.10);
+  /* blur */
+  --blur-acrylic: 30px;
+  --blur-acrylic-thin: 60px;
+  /* font */
+  --font-sans: 'Segoe UI Variable', 'Segoe UI', system-ui, sans-serif;
+  --font-display: 'Segoe UI Variable Display', 'Segoe UI', sans-serif;
+  --font-mono: 'Cascadia Code', ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.33, 0, 0.67, 1);
+  --ease-decel: cubic-bezier(0.1, 0.9, 0.2, 1);
+  --ease-accel: cubic-bezier(0.7, 0, 1, 0.5);
+  /* extra (signature gradients, composite borders, filters) */
+  --acrylic-noise: 0.02;
+  --reveal-highlight: radial-gradient(circle at var(--x,50%) var(--y,50%), rgba(255,255,255,0.35), transparent 60%);
+}
+
+/* ============================================================
+   Base component classes — Fluent Design 2 (Fluent 2) (token-driven).
+   Signature move lives in references/00-flagship-implementation-specs/fluent-design-2.md;
+   these are accessible, token-wired starting points. */
+body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-sans); }
+.card { background: var(--color-surface, var(--color-bg)); color: var(--color-text);
+  border-radius: var(--radius-md); box-shadow: var(--shadow-md);
+  padding: var(--space-6, 24px); border: 1px solid var(--color-border, transparent); }
+.nav { display: flex; gap: var(--space-4, 16px); align-items: center;
+  padding: var(--space-3, 12px) var(--space-6, 24px); background: var(--color-surface, var(--color-bg));
+  box-shadow: var(--shadow-md); }
+.btn { font: 700 var(--text-base, 1rem)/1 var(--font-display, var(--font-sans)); color: var(--color-text);
+  background: var(--color-surface, var(--color-bg)); border-radius: var(--radius-md);
+  padding: var(--space-3, 12px) var(--space-6, 24px); box-shadow: var(--shadow-md); cursor: pointer; border: 1px solid var(--color-border, transparent);
+  transition: transform .12s var(--ease-standard, ease), box-shadow .12s var(--ease-standard, ease), filter .12s; }
+.btn:hover { transform: translateY(-1px); filter: brightness(1.05); }
+.btn:active { transform: translateY(0); }
+.btn:focus-visible { outline: 2px solid var(--color-accent, var(--color-primary)); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; transform: none; }
+.btn--primary { background: var(--color-primary); color: #ffffff; border-color: transparent; }
+.input { width: 100%; box-sizing: border-box; font: var(--text-base, 1rem) var(--font-sans); color: var(--color-text);
+  background: var(--color-surface, #fff); border-radius: var(--radius-sm);
+  padding: var(--space-3, 12px) var(--space-4, 16px); border: 1px solid var(--color-border, transparent); }
+.input:focus { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.input::placeholder { color: var(--color-text-muted, currentColor); opacity: .7; }
+.badge { display: inline-flex; align-items: center; gap: .4em; font: 700 var(--text-xs, .75rem) var(--font-sans);
+  color: #ffffff; background: var(--color-primary); border-radius: var(--radius-pill, 999px); padding: .3em .8em; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover, .btn:active { transform: none; } }

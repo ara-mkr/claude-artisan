@@ -1,0 +1,115 @@
+/* Frosted Glass — design tokens */
+/* 2013–present | Generic pattern popularized by iOS 7 blur layers, condensed */
+:root {
+  /* color: a neutral photo-toned backdrop (not a vivid gradient like
+     glassmorphism) with a plain white/dark scrim doing all the work */
+  --color-bg: #7c8a99;
+  --color-bg-photo-a: #93a2b0;
+  --color-bg-photo-b: #5c6b7a;
+  --color-surface: rgba(255, 255, 255, 0.55);
+  --color-surface-strong: rgba(255, 255, 255, 0.72);
+  --color-border: rgba(255, 255, 255, 0.4);
+  --color-text: #16202b;
+  --color-text-muted: #3d4a58;
+  --color-primary: #1f6feb;
+  --color-accent: #1a1f26;
+  /* radius */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 0 2px 8px rgba(10,16,24,0.18);
+  --shadow-md: 0 6px 20px rgba(10,16,24,0.22);
+  --shadow-lg: 0 14px 36px rgba(10,16,24,0.26);
+  /* blur: moderate, uniform — no refraction/edge-lighting, just legibility */
+  --blur-backdrop: 12px;
+  /* font */
+  --font-sans: 'SF Pro Text', -apple-system, system-ui, sans-serif;
+  --font-display: 'SF Pro Display', -apple-system, system-ui, sans-serif;
+  --font-mono: 'SF Mono', ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  /* extra: the background is a plain diagonal photo-like gradient (no color
+     mixing), and every raised surface is a flat semi-opaque white scrim +
+     blur — the signature move, deliberately simpler than glassmorphism's
+     tinted refractive panel */
+  --bg-image: linear-gradient(160deg, var(--color-bg-photo-a) 0%, var(--color-bg-photo-b) 100%);
+}
+
+/* ============================================================
+   Base component classes — frosted-glass
+   Signature move: a flat semi-opaque white scrim + backdrop blur (no tint,
+   no gradient fill, no edge highlight) — repeated identically on nav, card
+   and input so it reads as one uniform "frosted pane" material.
+   ============================================================ */
+body {
+  margin: 0; color: var(--color-text); font-family: var(--font-sans);
+  background: var(--bg-image); background-attachment: fixed; min-height: 100vh;
+}
+.nav {
+  display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-3) var(--space-6);
+  background: var(--color-surface);
+  backdrop-filter: blur(var(--blur-backdrop)); -webkit-backdrop-filter: blur(var(--blur-backdrop));
+  border-bottom: 1px solid var(--color-border);
+}
+.btn {
+  font: 600 var(--text-base)/1 var(--font-sans); color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  backdrop-filter: blur(var(--blur-backdrop)); -webkit-backdrop-filter: blur(var(--blur-backdrop));
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm); cursor: pointer;
+  transition: background .18s var(--ease-standard), box-shadow .18s var(--ease-standard);
+}
+.btn:hover { background: var(--color-surface-strong); box-shadow: var(--shadow-md); }
+.btn:active { box-shadow: var(--shadow-sm); }
+.btn:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: var(--color-primary); color: #ffffff; border-color: var(--color-primary); }
+.card {
+  background: var(--color-surface);
+  backdrop-filter: blur(var(--blur-backdrop)); -webkit-backdrop-filter: blur(var(--blur-backdrop));
+  border: 1px solid var(--color-border); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md); padding: var(--space-6);
+}
+.input {
+  width: 100%; box-sizing: border-box; color: var(--color-text);
+  font: var(--text-base) var(--font-sans);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-md);
+  background: var(--color-surface-strong); border: 1px solid var(--color-border);
+}
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(31,111,235,0.28); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font-size: var(--text-xs);
+  padding: .3em .8em; border-radius: var(--radius-pill); background: var(--color-accent);
+  color: #ffffff; }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .nav, .btn, .card { background: #eef2f6; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .nav, .btn, .card { background: #eef2f6; backdrop-filter: none; -webkit-backdrop-filter: none; }
+}
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } }

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Goblincore — component example</title>
+<!-- Import the one starter theme; that's ~80% of the look. -->
+<link rel="stylesheet" href="../starter-themes/goblincore.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-16) var(--space-6); display: grid; gap: var(--space-8); }
+  h1 { font: 400 var(--text-4xl)/1.05 var(--font-display); margin: 0; }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-lg); margin: 0; max-width: 52ch; }
+  .row { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4); }
+  .card h3 { margin: 0 0 var(--space-2); font: 400 var(--text-xl) var(--font-display); }
+  .card p { margin: 0; color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto; font-family:var(--font-display); font-size:var(--text-lg);">Mossheap</strong>
+      <a href="#" style="color:var(--color-text);text-decoration:none">Trinkets</a>
+      <a href="#" style="color:var(--color-text-muted);text-decoration:none">Field notes</a>
+      <button class="btn btn--primary">Dig in</button>
+    </nav>
+
+    <header>
+      <h1>A little muddy, a little magic.</h1>
+      <p class="lede">Nothing here lines up on purpose. Blobby found-object corners and a
+        mottled moss-and-mud texture repeat across every surface — mushrooms, snails, and
+        shiny trinkets welcome.</p>
+    </header>
+
+    <div class="row">
+      <button class="btn btn--primary">Collect it</button>
+      <button class="btn">Poke around</button>
+      <button class="btn" disabled>Hibernating</button>
+      <span class="badge">🐌 47 trinkets</span>
+    </div>
+
+    <input class="input" placeholder="name your favorite fungus" aria-label="Fungus name">
+
+    <div class="grid">
+      <article class="card">
+        <h3>Found, not bought</h3>
+        <p>A pocketful of acorns, a curious snail shell, moss still damp from the walk home.</p>
+      </article>
+      <article class="card">
+        <h3>Anti-perfection</h3>
+        <p>Every corner is a little different. The chaos is the point — nature doesn't
+          use a ruler.</p>
+      </article>
+    </div>
+  </div>
+</body>
+</html>

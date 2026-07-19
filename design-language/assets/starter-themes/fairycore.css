@@ -1,0 +1,107 @@
+/* Fairycore — design tokens */
+/* 2020–present | Whimsical fairy-tale nature aesthetic, condensed */
+:root {
+  /* color */
+  --color-bg: #fdf3f8;
+  --color-bg-gradient-a: #f6e3f5;
+  --color-bg-gradient-b: #e3f0e6;
+  --color-surface: #fffdfb;
+  --color-surface-strong: #fbeaf3;
+  --color-border: #e7bfd9;
+  --color-text: #4a2b45;
+  --color-text-muted: #7a5573;
+  --color-primary: #c9679a;
+  --color-accent: #8fb98a;
+  --color-glow: #fff3c4;
+  /* radius */
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 0 2px 8px rgba(201,103,154,0.16);
+  --shadow-md: 0 8px 24px rgba(201,103,154,0.20);
+  --shadow-lg: 0 16px 40px rgba(201,103,154,0.24);
+  --shadow-glow: 0 0 24px rgba(255,243,196,0.55);
+  /* font */
+  --font-sans: 'Quicksand', 'Nunito', system-ui, sans-serif;
+  --font-display: 'Cormorant Garamond', 'Parisienne', 'Georgia', serif;
+  --font-mono: ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-entrance: cubic-bezier(0, 0, 0, 1);
+  /* extra: sparkle dot field + a soft glow halo, the two signature moves
+     that repeat across nav/card/btn to read as "enchanted", not just pastel */
+  --bg-image: radial-gradient(60% 50% at 15% 0%, var(--color-bg-gradient-b) 0%, transparent 60%),
+              radial-gradient(70% 60% at 100% 20%, var(--color-bg-gradient-a) 0%, transparent 65%),
+              var(--color-bg);
+  --sparkle-field: radial-gradient(circle, rgba(255,255,255,0.9) 0 1px, transparent 1.5px) 0 0/26px 26px,
+                    radial-gradient(circle, rgba(255,243,196,0.8) 0 1px, transparent 1.5px) 13px 13px/26px 26px;
+}
+
+/* ============================================================
+   Base component classes — fairycore
+   Signature move: a soft golden glow halo (--shadow-glow) plus a scattered
+   sparkle-dot field (--sparkle-field), repeated across nav, card and btn
+   so surfaces feel lit from within rather than merely pastel-colored.
+   ============================================================ */
+body {
+  margin: 0; color: var(--color-text); font-family: var(--font-sans);
+  background: var(--bg-image); min-height: 100vh;
+}
+.nav {
+  display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-pill);
+  background: var(--color-surface); background-image: var(--sparkle-field);
+  border: 1px solid var(--color-border); box-shadow: var(--shadow-sm), var(--shadow-glow);
+}
+.btn {
+  font: 600 var(--text-base)/1 var(--font-sans); color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-pill);
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm); cursor: pointer;
+  transition: transform .2s var(--ease-standard), box-shadow .2s var(--ease-standard);
+}
+.btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-md), var(--shadow-glow); }
+.btn:active { transform: translateY(0); box-shadow: var(--shadow-sm); }
+.btn:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: var(--color-primary); color: #fff7fb; border-color: var(--color-primary); }
+.card {
+  background: var(--color-surface); background-image: var(--sparkle-field);
+  border: 1px solid var(--color-border); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md), var(--shadow-glow); padding: var(--space-6);
+}
+.input {
+  width: 100%; box-sizing: border-box; color: var(--color-text);
+  font: var(--text-base) var(--font-sans);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-md);
+  background: var(--color-surface-strong); border: 1px solid var(--color-border);
+}
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(201,103,154,0.22), var(--shadow-glow); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font-size: var(--text-xs);
+  padding: .3em .8em; border-radius: var(--radius-pill); background: var(--color-accent);
+  color: #24361f; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }

@@ -1,0 +1,95 @@
+/* Op Art — design tokens */
+/* 1960s | Bridget Riley, Victor Vasarely, condensed */
+:root {
+  /* color: near-monochrome, high-contrast vibration */
+  --color-bg: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-strong: #f0f0f0;
+  --color-border: #0a0a0a;
+  --color-text: #0a0a0a;
+  --color-text-muted: #4a4a4a;
+  --color-primary: #0a0a0a;
+  --color-accent: #e10600;
+  /* radius: precise geometry, no softness */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-sm: 0 0 0 rgba(0,0,0,0);
+  --shadow-md: 0 6px 0 rgba(10,10,10,1);
+  --shadow-lg: 0 10px 0 rgba(10,10,10,1);
+  /* font */
+  --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-display: 'Futura', 'Helvetica Neue', sans-serif;
+  --font-mono: ui-monospace, monospace;
+  /* text */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: steps(6, end);
+  /* extra: repeating-stripe pattern that vibrates at edges */
+  --stripe-pattern: repeating-linear-gradient(90deg, #0a0a0a 0px, #0a0a0a 6px, #ffffff 6px, #ffffff 12px);
+  --stripe-pattern-tight: repeating-linear-gradient(90deg, #0a0a0a 0px, #0a0a0a 3px, #ffffff 3px, #ffffff 6px);
+  --concentric-pattern: repeating-radial-gradient(circle at 50% 50%, #0a0a0a 0px, #0a0a0a 4px, #ffffff 4px, #ffffff 8px);
+}
+
+/* ============================================================
+   Base component classes — Op Art
+   Signature move: precise repeating black/white line stripes that vibrate
+   optically; repeated as a border treatment and a background fill across
+   nav and card so the eye keeps re-registering motion.
+   ============================================================ */
+body { margin: 0; color: var(--color-text); font-family: var(--font-sans); background: var(--color-bg); }
+.nav {
+  display: flex; gap: var(--space-4); align-items: center;
+  padding: var(--space-3) var(--space-6); background: var(--color-surface);
+  border-bottom: 6px solid transparent; border-image: var(--stripe-pattern) 6;
+}
+.btn {
+  font: 700 var(--text-base)/1 var(--font-sans); color: var(--color-text);
+  padding: var(--space-3) var(--space-6); border-radius: var(--radius-md);
+  background: var(--color-surface); border: 3px solid var(--color-border);
+  cursor: pointer; transition: transform .1s var(--ease-standard), background .1s var(--ease-standard);
+}
+.btn:hover { transform: translateY(-2px); background: var(--stripe-pattern-tight); color: #fff; }
+.btn:active { transform: translateY(0); }
+.btn:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn--primary { background: var(--color-primary); color: #ffffff; border-color: var(--color-primary); }
+.card {
+  background: var(--color-surface); border-radius: var(--radius-lg);
+  border: 3px solid var(--color-border); box-shadow: var(--shadow-md); padding: var(--space-6);
+  position: relative; overflow: hidden;
+}
+.card::before {
+  content: ""; position: absolute; inset: 0 0 auto 0; height: 10px; background: var(--stripe-pattern);
+}
+.input {
+  width: 100%; box-sizing: border-box; color: var(--color-text); font: var(--text-base) var(--font-sans);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm);
+  background: var(--color-surface); border: 3px solid var(--color-border);
+}
+.input::placeholder { color: var(--color-text-muted); }
+.input:focus { outline: none; border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(225, 6, 0, 0.25); }
+.badge { display: inline-flex; align-items: center; gap: .4em; font: 700 var(--text-xs)/1 var(--font-sans);
+  padding: .3em .8em; border-radius: var(--radius-pill); background: var(--color-accent); color: #fff; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }

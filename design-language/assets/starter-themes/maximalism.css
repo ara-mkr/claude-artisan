@@ -1,0 +1,79 @@
+/* Maximalism — design tokens (generated from style_catalog.json) */
+/* 2018–present | Reaction against flat minimalism; 'more is more'. */
+:root {
+  /* color */
+  --color-bg: #14002e;
+  --color-surface: #2a0a52;
+  --color-text: #fff6d5;
+  --color-text-muted: #f2c9ff;
+  --color-primary: #ff007a;
+  --color-accent: #ffd400;
+  --color-lime: #aaff00;
+  --color-cyan: #00e5ff;
+  --color-orange: #ff6a00;
+  /* radius */
+  --radius-sm: 6px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-pop: 8px 8px 0 #ffd400, 16px 16px 0 #ff007a;
+  --shadow-glow: 0 0 24px rgba(255,0,122,0.6);
+  /* font */
+  --font-sans: 'Fraunces', 'Poppins', system-ui, sans-serif;
+  --font-display: 'Rubik Mono One', 'Fraunces', serif;
+  --font-mono: 'Space Mono', monospace;
+  /* text */
+  --text-xs: 0.8rem;
+  --text-sm: 1rem;
+  --text-base: 1.15rem;
+  --text-lg: 1.5rem;
+  --text-xl: 2.1rem;
+  --text-2xl: 3rem;
+  --text-3xl: 4.2rem;
+  --text-4xl: 6rem;
+  --text-5xl: 8.5rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(0.34, 1.56, 0.64, 1);
+  /* extra (signature gradients, composite borders, filters) */
+  --clash: linear-gradient(135deg, #ff007a, #ffd400, #00e5ff);
+}
+
+/* ============================================================
+   Base component classes — Maximalism (token-driven).
+   Signature move lives in references/00-flagship-implementation-specs/maximalism.md;
+   these are accessible, token-wired starting points. */
+body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-sans); }
+.card { background: var(--color-surface, var(--color-bg)); color: var(--color-text);
+  border-radius: var(--radius-md); box-shadow: var(--shadow-glow);
+  padding: var(--space-6, 24px); border: 1px solid var(--color-border, transparent); }
+.nav { display: flex; gap: var(--space-4, 16px); align-items: center;
+  padding: var(--space-3, 12px) var(--space-6, 24px); background: var(--color-surface, var(--color-bg));
+  box-shadow: var(--shadow-glow); }
+.btn { font: 700 var(--text-base, 1rem)/1 var(--font-display, var(--font-sans)); color: var(--color-text);
+  background: var(--color-surface, var(--color-bg)); border-radius: var(--radius-md);
+  padding: var(--space-3, 12px) var(--space-6, 24px); box-shadow: var(--shadow-glow); cursor: pointer; border: 1px solid var(--color-border, transparent);
+  transition: transform .12s var(--ease-standard, ease), box-shadow .12s var(--ease-standard, ease), filter .12s; }
+.btn:hover { transform: translateY(-1px); filter: brightness(0.96); }
+.btn:active { transform: translateY(0); }
+.btn:focus-visible { outline: 2px solid var(--color-accent, var(--color-primary)); outline-offset: 2px; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; transform: none; }
+.btn--primary { background: var(--color-primary); color: #111111; border-color: transparent; }
+.input { width: 100%; box-sizing: border-box; font: var(--text-base, 1rem) var(--font-sans); color: var(--color-text);
+  background: var(--color-surface, #fff); border-radius: var(--radius-sm);
+  padding: var(--space-3, 12px) var(--space-4, 16px); border: 1px solid var(--color-border, transparent); }
+.input:focus { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.input::placeholder { color: var(--color-text-muted, currentColor); opacity: .7; }
+.badge { display: inline-flex; align-items: center; gap: .4em; font: 700 var(--text-xs, .75rem) var(--font-sans);
+  color: #111111; background: var(--color-primary); border-radius: var(--radius-pill, 999px); padding: .3em .8em; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover, .btn:active { transform: none; } }

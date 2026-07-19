@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claymorphism — component example</title>
+<link rel="stylesheet" href="../starter-themes/claymorphism.css">
+<style>
+  .wrap { max-width: 820px; margin: 0 auto; padding: var(--space-16) var(--space-6); display: grid; gap: var(--space-8); }
+  h1 { font: 800 var(--text-4xl)/1.05 var(--font-display); margin: 0; }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-lg); margin: 0; max-width: 50ch; }
+  .row { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-6); }
+  .card h3 { margin: 0 0 var(--space-2); font: 700 var(--text-xl) var(--font-display); }
+  .card p { margin: 0; color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto;font-family:var(--font-display)">Puffy</strong>
+      <a href="#" style="color:var(--color-text-muted);text-decoration:none">Features</a>
+      <button class="btn">Try free</button>
+    </nav>
+    <header>
+      <h1>Soft, inflated, and friendly.</h1>
+      <p class="lede">The puffy look is one recipe repeated everywhere: big radius, a double inner
+        shadow, and a soft outer drop shadow — all in candy pastels.</p>
+    </header>
+    <div class="row">
+      <button class="btn">Primary</button>
+      <button class="btn btn--accent">Accent</button>
+      <button class="btn" disabled>Disabled</button>
+      <span class="badge">Beta</span>
+    </div>
+    <input class="input" placeholder="Search…" aria-label="Search">
+    <div class="grid">
+      <article class="card"><h3>Pillowy cards</h3><p>Every surface looks pressed from soft clay.</p></article>
+      <article class="card"><h3>Bouncy motion</h3><p>Overshoot easing makes taps feel springy.</p></article>
+    </div>
+  </div>
+</body>
+</html>
