@@ -1,0 +1,6292 @@
+{
+  "meta": {
+    "name": "Design Language Catalog",
+    "version": "1.0.0",
+    "count": 186,
+    "flagship_count": 33,
+    "categories": {
+      "morphism": "Morphism / tactile-dimensional",
+      "glass": "Glass & transparency family",
+      "brutalist": "Brutalist & anti-design",
+      "flat-platform": "Flat, material & platform systems",
+      "historical": "Historical graphic & art movements",
+      "retrofuturism": "Retrofuturism & speculative-fiction genres",
+      "minimal-organic": "Minimal / maximal / organic / layout-driven",
+      "texture": "Texture / material / rendering techniques",
+      "niche": "Niche subculture & kitsch aesthetics"
+    },
+    "token_schema": [
+      "color",
+      "radius",
+      "shadow",
+      "blur",
+      "font",
+      "text",
+      "space",
+      "ease",
+      "extra"
+    ],
+    "note": "Single source of truth. Prose reference files and scripts derive from this file."
+  },
+  "styles": [
+    {
+      "slug": "skeuomorphism",
+      "name": "Skeuomorphism",
+      "aliases": [
+        "skeuo",
+        "realistic UI",
+        "textured UI"
+      ],
+      "category": "morphism",
+      "era": "1980s–2013 (peak iOS 2007–2012)",
+      "origin": "Apple; term from Greek 'skeuos' (vessel). Popularized by early iOS/Mac OS X under Scott Forstall.",
+      "traits": [
+        "Digital objects mimic real materials (leather, felt, brushed metal, paper)",
+        "Literal metaphors: notepad, bookshelf, calculator keys",
+        "Rich gradients, bevels, drop shadows and highlights for depth",
+        "Realistic affordances signaling how to interact"
+      ],
+      "example": "Apple iOS 6 Notes (yellow legal pad), Find My Friends (leather), GarageBand wood.",
+      "confuse_with": [
+        "neumorphism",
+        "claymorphism"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#d9c7a8",
+          "surface": "#f3ead2",
+          "surface-2": "#e8dcc0",
+          "text": "#2d2416",
+          "text-muted": "#6b5d43",
+          "primary": "#3a7d44",
+          "accent": "#b23b2e",
+          "stitch": "#8a7856"
+        },
+        "radius": {
+          "sm": "6px",
+          "md": "10px",
+          "lg": "14px",
+          "pill": "999px"
+        },
+        "shadow": {
+          "raised": "0 1px 0 rgba(255,255,255,0.6) inset, 0 2px 4px rgba(0,0,0,0.35), 0 6px 12px rgba(0,0,0,0.25)",
+          "pressed": "inset 0 2px 6px rgba(0,0,0,0.45)",
+          "bevel": "inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -2px 3px rgba(0,0,0,0.25)"
+        },
+        "blur": {},
+        "font": {
+          "sans": "'Helvetica Neue', 'Lucida Grande', system-ui, sans-serif",
+          "display": "Georgia, 'Times New Roman', serif",
+          "mono": "'Courier New', monospace"
+        },
+        "text": {
+          "xs": "0.75rem",
+          "sm": "0.875rem",
+          "base": "1rem",
+          "lg": "1.125rem",
+          "xl": "1.375rem",
+          "2xl": "1.75rem",
+          "3xl": "2.25rem",
+          "4xl": "3rem",
+          "5xl": "4rem"
+        },
+        "space": {
+          "1": "4px",
+          "2": "8px",
+          "3": "12px",
+          "4": "16px",
+          "6": "24px",
+          "8": "32px",
+          "12": "48px",
+          "16": "64px",
+          "24": "96px"
+        },
+        "ease": {
+          "standard": "cubic-bezier(0.4, 0, 0.2, 1)"
+        },
+        "extra": {
+          "leather": "linear-gradient(#f3ead2, #e2d3b0)",
+          "gloss": "linear-gradient(180deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.05) 50%, rgba(0,0,0,0.06) 51%, rgba(0,0,0,0.14) 100%)"
+        }
+      }
+    },
+    {
+      "slug": "neumorphism",
+      "name": "Neumorphism",
+      "aliases": [
+        "soft UI",
+        "neo-skeuomorphism",
+        "new skeuomorphism"
+      ],
+      "category": "morphism",
+      "era": "2019–2021",
+      "origin": "Named after Alexander Plyuto's 2019 Dribbble concept; 'neumorphism' coined by Michał Malewicz.",
+      "traits": [
+        "Extruded shapes that look pressed from the background (same base color)",
+        "Dual light+dark shadow pair creates soft embossing",
+        "Very low contrast, monochromatic surfaces",
+        "Inset shadow toggles for 'pressed' state"
+      ],
+      "example": "Alexander Plyuto's Skeuomorph 2.0 Dribbble concept; many fintech dashboard concepts.",
+      "confuse_with": [
+        "skeuomorphism",
+        "claymorphism"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#e0e5ec",
+          "surface": "#e0e5ec",
+          "text": "#4b5563",
+          "text-muted": "#8a94a6",
+          "primary": "#6d5dfc",
+          "accent": "#4d80e4",
+          "light": "#ffffff",
+          "dark": "#a3b1c6"
+        },
+        "radius": {
+          "sm": "12px",
+          "md": "20px",
+          "lg": "32px",
+          "pill": "999px"
+        },
+        "shadow": {
+          "raised": "8px 8px 16px #a3b1c6, -8px -8px 16px #ffffff",
+          "raised-sm": "4px 4px 8px #a3b1c6, -4px -4px 8px #ffffff",
+          "pressed": "inset 6px 6px 12px #a3b1c6, inset -6px -6px 12px #ffffff",
+          "pressed-sm": "inset 3px 3px 6px #a3b1c6, inset -3px -3px 6px #ffffff"
+        },
+        "blur": {},
+        "font": {
+          "sans": "'Poppins', system-ui, sans-serif",
+          "display": "'Poppins', system-ui, sans-serif",
+          "mono": "ui-monospace, monospace"
+        },
+        "text": {
+          "xs": "0.75rem",
+          "sm": "0.875rem",
+          "base": "1rem",
+          "lg": "1.125rem",
+          "xl": "1.375rem",
+          "2xl": "1.75rem",
+          "3xl": "2.25rem",
+          "4xl": "3rem",
+          "5xl": "4rem"
+        },
+        "space": {
+          "1": "4px",
+          "2": "8px",
+          "3": "12px",
+          "4": "16px",
+          "6": "24px",
+          "8": "32px",
+          "12": "48px",
+          "16": "64px",
+          "24": "96px"
+        },
+        "ease": {
+          "standard": "cubic-bezier(0.4, 0, 0.2, 1)"
+        },
+        "extra": {
+          "bg-tint-light": "#ffffff",
+          "bg-tint-dark": "#a3b1c6"
+        }
+      }
+    },
+    {
+      "slug": "claymorphism",
+      "name": "Claymorphism",
+      "aliases": [
+        "clay UI",
+        "3D clay",
+        "puffy UI"
+      ],
+      "category": "morphism",
+      "era": "2021–present",
+      "origin": "Coined by Michał Malewicz (Hype4) in 2021.",
+      "traits": [
+        "Puffy, inflated 3D shapes like modeling clay",
+        "Large border-radius on everything",
+        "Double inner shadow (light top-left, colored bottom-right) plus soft outer drop shadow",
+        "Pastel, candy-like palettes"
+      ],
+      "example": "Hype4 claymorphism generator; many 2022 illustration-heavy landing pages.",
+      "confuse_with": [
+        "neumorphism",
+        "corporate-memphis"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#eef1ff",
+          "surface": "#ffffff",
+          "surface-2": "#f2eaff",
+          "text": "#3a2e5c",
+          "text-muted": "#7c6f9e",
+          "primary": "#7c5cff",
+          "accent": "#ff8fab",
+          "secondary": "#5ce1e6"
+        },
+        "radius": {
+          "sm": "18px",
+          "md": "28px",
+          "lg": "40px",
+          "pill": "999px"
+        },
+        "shadow": {
+          "clay": "35px 35px 68px rgba(124,92,255,0.20), inset -8px -8px 16px rgba(124,92,255,0.16), inset 8px 8px 20px rgba(255,255,255,0.90)",
+          "clay-sm": "16px 16px 30px rgba(124,92,255,0.18), inset -4px -4px 10px rgba(124,92,255,0.14), inset 6px 6px 14px rgba(255,255,255,0.90)"
+        },
+        "blur": {},
+        "font": {
+          "sans": "'Nunito', 'Baloo 2', system-ui, sans-serif",
+          "display": "'Baloo 2', 'Nunito', system-ui, sans-serif",
+          "mono": "ui-monospace, monospace"
+        },
+        "text": {
+          "xs": "0.75rem",
+          "sm": "0.875rem",
+          "base": "1rem",
+          "lg": "1.125rem",
+          "xl": "1.375rem",
+          "2xl": "1.75rem",
+          "3xl": "2.25rem",
+          "4xl": "3rem",
+          "5xl": "4rem"
+        },
+        "space": {
+          "1": "4px",
+          "2": "8px",
+          "3": "12px",
+          "4": "16px",
+          "6": "24px",
+          "8": "32px",
+          "12": "48px",
+          "16": "64px",
+          "24": "96px"
+        },
+        "ease": {
+          "standard": "cubic-bezier(0.34, 1.56, 0.64, 1)"
+        },
+        "extra": {
+          "clay-inner-light": "inset 8px 8px 20px rgba(255,255,255,0.9)"
+        }
+      }
+    },
+    {
+      "slug": "flat-2",
+      "name": "Flat 2.0 / Semi-flat",
+      "aliases": [
+        "almost flat",
+        "flat design 2.0",
+        "semi-flat"
+      ],
+      "category": "morphism",
+      "era": "2015–present",
+      "origin": "Google Material (2014) and industry reaction to pure flat's usability problems.",
+      "traits": [
+        "Flat foundation with subtle shadows and depth cues restored",
+        "Long/ghost shadows, subtle gradients",
+        "Clear affordances without skeuomorphic texture",
+        "Layered card surfaces"
+      ],
+      "example": "Google Material Design; most modern SaaS dashboards.",
+      "confuse_with": [
+        "flat-design",
+        "material-design"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "aurora-ui",
+      "name": "Aurora UI",
+      "aliases": [
+        "gradient glow",
+        "aurora gradients"
+      ],
+      "category": "morphism",
+      "era": "2020–present",
+      "origin": "Popularized ~2020 across product marketing sites (Stripe-influenced).",
+      "traits": [
+        "Large soft blurred color blobs behind content",
+        "Aurora-like overlapping gradients",
+        "Often paired with glass surfaces",
+        "Dark backgrounds with luminous color washes"
+      ],
+      "example": "Stripe landing pages; many AI startup sites (2023–2024).",
+      "confuse_with": [
+        "glassmorphism",
+        "mesh-gradient"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "mesh-gradient",
+      "name": "Mesh Gradient",
+      "aliases": [
+        "gradient mesh",
+        "fluid gradient"
+      ],
+      "category": "morphism",
+      "era": "2021–present",
+      "origin": "Popularized by design tools (Mesh Gradient generators, Figma plugins).",
+      "traits": [
+        "Multi-point smooth gradients that blend many hues",
+        "Organic, cloud-like color transitions",
+        "Used as hero backgrounds",
+        "Often animated/shifting"
+      ],
+      "example": "Stripe backgrounds; Apple event key art.",
+      "confuse_with": [
+        "aurora-ui",
+        "holographic"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "soft-3d",
+      "name": "Soft 3D Illustration",
+      "aliases": [
+        "3D render UI",
+        "Spline 3D",
+        "claymation UI"
+      ],
+      "category": "morphism",
+      "era": "2020–present",
+      "origin": "Rise of Spline, Blender, and Dribbble 3D illustration trend.",
+      "traits": [
+        "Rounded, soft-lit 3D rendered objects",
+        "Matte pastel materials, ambient occlusion",
+        "Floating isometric-ish scenes",
+        "Paired with flat UI chrome"
+      ],
+      "example": "Spline showcase sites; Stripe/Vercel 3D hero scenes.",
+      "confuse_with": [
+        "claymorphism",
+        "isometric"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "realism-ui",
+      "name": "Hyperrealism UI",
+      "aliases": [
+        "photoreal UI",
+        "realistic skeuomorphism"
+      ],
+      "category": "morphism",
+      "era": "2008–2013",
+      "origin": "High-water mark of skeuomorphic app design.",
+      "traits": [
+        "Photorealistic materials and reflections",
+        "Physically plausible lighting",
+        "Detailed micro-textures",
+        "Tactile knobs, dials, switches"
+      ],
+      "example": "Korg iMS-20 synth app; early podcast/voice-memo apps.",
+      "confuse_with": [
+        "skeuomorphism"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "emboss-deboss",
+      "name": "Emboss / Deboss",
+      "aliases": [
+        "letterpress UI",
+        "pressed type"
+      ],
+      "category": "morphism",
+      "era": "2000s–present",
+      "origin": "Print letterpress heritage adapted to screen (text-shadow technique).",
+      "traits": [
+        "Type looks stamped into or raised from the surface",
+        "Subtle 1px light/dark text-shadow pair",
+        "Works on textured/tinted backgrounds",
+        "Tactile, premium feel"
+      ],
+      "example": "Letterpress text effects on textured web headers (~2010).",
+      "confuse_with": [
+        "neumorphism"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "glassmorphism",
+      "name": "Glassmorphism",
+      "aliases": [
+        "glass UI",
+        "frosted glass",
+        "glass morphism"
+      ],
+      "category": "glass",
+      "era": "2020–present",
+      "origin": "Coined by Michał Malewicz (2020); echoes macOS Big Sur / Windows Acrylic.",
+      "traits": [
+        "Frosted translucent panels via background blur",
+        "Thin light border + subtle inner highlight",
+        "Vivid colorful background shows through",
+        "Layered floating cards with depth"
+      ],
+      "example": "macOS Big Sur Control Center; Windows 11 Acrylic; countless 2020–2022 dashboards.",
+      "confuse_with": [
+        "liquid-glass",
+        "frutiger-aero",
+        "acrylic-fluent"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#0f172a",
+          "bg-gradient-a": "#1e3a8a",
+          "bg-gradient-b": "#7c3aed",
+          "surface": "rgba(255, 255, 255, 0.10)",
+          "surface-strong": "rgba(255, 255, 255, 0.18)",
+          "border": "rgba(255, 255, 255, 0.22)",
+          "text": "#f8fafc",
+          "text-muted": "rgba(248, 250, 252, 0.72)",
+          "primary": "#38bdf8",
+          "accent": "#e879f9"
+        },
+        "radius": {
+          "sm": "10px",
+          "md": "16px",
+          "lg": "24px",
+          "pill": "999px"
+        },
+        "shadow": {
+          "sm": "0 4px 16px rgba(0,0,0,0.18)",
+          "md": "0 8px 32px rgba(0,0,0,0.28)",
+          "lg": "0 16px 48px rgba(0,0,0,0.36)",
+          "inset-hi": "inset 0 1px 0 rgba(255,255,255,0.35)"
+        },
+        "blur": {
+          "backdrop": "16px",
+          "backdrop-strong": "28px"
+        },
+        "font": {
+          "sans": "'Inter', system-ui, -apple-system, sans-serif",
+          "display": "'Inter', system-ui, sans-serif",
+          "mono": "'JetBrains Mono', ui-monospace, monospace"
+        },
+        "text": {
+          "xs": "0.75rem",
+          "sm": "0.875rem",
+          "base": "1rem",
+          "lg": "1.125rem",
+          "xl": "1.375rem",
+          "2xl": "1.75rem",
+          "3xl": "2.25rem",
+          "4xl": "3rem",
+          "5xl": "4rem"
+        },
+        "space": {
+          "1": "4px",
+          "2": "8px",
+          "3": "12px",
+          "4": "16px",
+          "6": "24px",
+          "8": "32px",
+          "12": "48px",
+          "16": "64px",
+          "24": "96px"
+        },
+        "ease": {
+          "standard": "cubic-bezier(0.2, 0, 0, 1)",
+          "entrance": "cubic-bezier(0, 0, 0, 1)",
+          "exit": "cubic-bezier(0.3, 0, 1, 1)"
+        },
+        "extra": {
+          "bg-image": "radial-gradient(120% 120% at 0% 0%, #1e3a8a 0%, #0f172a 55%, #7c3aed 120%)",
+          "glass-fill": "linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.06))",
+          "glass-border": "1px solid rgba(255,255,255,0.22)"
+        }
+      }
+    },
+    {
+      "slug": "liquid-glass",
+      "name": "Liquid Glass",
+      "aliases": [
+        "Apple Liquid Glass",
+        "iOS 26 glass"
+      ],
+      "category": "glass",
+      "era": "2025–present",
+      "origin": "Apple, announced WWDC June 2025; ships in iOS/iPadOS 26, macOS Tahoe, etc.",
+      "traits": [
+        "Dynamic 'meta-material' that bends and refracts light like a lens",
+        "Specular edge highlights and real-time refraction of content behind",
+        "Hierarchy through depth, not color/size",
+        "Fluid, springy motion; concentric rounded shapes matching hardware"
+      ],
+      "example": "iOS 26 / macOS Tahoe system UI (tab bars, controls, sidebars).",
+      "confuse_with": [
+        "glassmorphism",
+        "frutiger-aero"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#000000",
+          "surface": "rgba(255,255,255,0.06)",
+          "surface-strong": "rgba(255,255,255,0.14)",
+          "border": "rgba(255,255,255,0.30)",
+          "specular": "rgba(255,255,255,0.65)",
+          "text": "#ffffff",
+          "text-muted": "rgba(235,235,245,0.60)",
+          "primary": "#0a84ff",
+          "accent": "#64d2ff",
+          "scrim": "rgba(0,0,0,0.35)"
+        },
+        "radius": {
+          "sm": "12px",
+          "md": "20px",
+          "lg": "28px",
+          "pill": "999px",
+          "concentric": "22px"
+        },
+        "shadow": {
+          "sm": "0 2px 10px rgba(0,0,0,0.25)",
+          "md": "0 10px 40px rgba(0,0,0,0.35)",
+          "lg": "0 20px 60px rgba(0,0,0,0.45)",
+          "edge": "inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -1px 0 rgba(255,255,255,0.10)"
+        },
+        "blur": {
+          "backdrop": "20px",
+          "backdrop-thick": "40px"
+        },
+        "font": {
+          "sans": "-apple-system, 'SF Pro Text', system-ui, sans-serif",
+          "display": "-apple-system, 'SF Pro Display', system-ui, sans-serif",
+          "mono": "'SF Mono', ui-monospace, monospace"
+        },
+        "text": {
+          "xs": "0.75rem",
+          "sm": "0.875rem",
+          "base": "1rem",
+          "lg": "1.125rem",
+          "xl": "1.375rem",
+          "2xl": "1.75rem",
+          "3xl": "2.25rem",
+          "4xl": "3rem",
+          "5xl": "4rem"
+        },
+        "space": {
+          "1": "4px",
+          "2": "8px",
+          "3": "12px",
+          "4": "16px",
+          "6": "24px",
+          "8": "32px",
+          "12": "48px",
+          "16": "64px",
+          "24": "96px"
+        },
+        "ease": {
+          "standard": "cubic-bezier(0.4, 0, 0.2, 1)",
+          "spring": "cubic-bezier(0.2, 0.9, 0.1, 1.1)",
+          "entrance": "cubic-bezier(0.16, 1, 0.3, 1)"
+        },
+        "extra": {
+          "lens-highlight": "linear-gradient(135deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.05) 40%, rgba(255,255,255,0) 70%)",
+          "refraction": "saturate(1.8) brightness(1.1)",
+          "glass-border": "1px solid rgba(255,255,255,0.30)"
+        }
+      }
+    },
+    {
+      "slug": "aero-glass",
+      "name": "Windows Aero Glass",
+      "aliases": [
+        "Aero",
+        "Vista glass",
+        "Aero Glass"
+      ],
+      "category": "glass",
+      "era": "2006–2012",
+      "origin": "Microsoft Windows Vista (2006) and Windows 7 Aero.",
+      "traits": [
+        "Translucent window chrome with Gaussian blur",
+        "Colored glass tint with reflective sheen",
+        "Rounded window corners and glow",
+        "Live thumbnails / Flip 3D"
+      ],
+      "example": "Windows Vista / 7 title bars and taskbar.",
+      "confuse_with": [
+        "glassmorphism",
+        "frutiger-aero"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "acrylic-fluent",
+      "name": "Acrylic (Fluent Material)",
+      "aliases": [
+        "Fluent acrylic",
+        "Windows 11 acrylic"
+      ],
+      "category": "glass",
+      "era": "2017–present",
+      "origin": "Microsoft Fluent Design System.",
+      "traits": [
+        "Translucency + blur + subtle noise texture",
+        "Light-dismiss transient surfaces (menus, flyouts)",
+        "Mode-aware (light/dark)",
+        "Sits beneath interactive UI as a base layer"
+      ],
+      "example": "Windows 11 flyouts, command bars, context menus.",
+      "confuse_with": [
+        "glassmorphism",
+        "liquid-glass"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "macos-vibrancy",
+      "name": "macOS Vibrancy / Translucency",
+      "aliases": [
+        "vibrancy",
+        "NSVisualEffectView"
+      ],
+      "category": "glass",
+      "era": "2014–present",
+      "origin": "Apple OS X Yosemite (2014).",
+      "traits": [
+        "Sidebar/toolbar materials that sample and blur the desktop",
+        "Vibrant text/icons that adapt to backdrop",
+        "Subtle luminance blending",
+        "System-level material tiers (menu, sidebar, HUD)"
+      ],
+      "example": "macOS Finder sidebar; Notification Center.",
+      "confuse_with": [
+        "glassmorphism",
+        "liquid-glass"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "frosted-glass",
+      "name": "Frosted Glass",
+      "aliases": [
+        "frosted panel",
+        "blur overlay"
+      ],
+      "category": "glass",
+      "era": "2013–present",
+      "origin": "Generic pattern popularized by iOS 7 blur layers.",
+      "traits": [
+        "Simple backdrop-filter blur behind modals/overlays",
+        "Semi-opaque white or dark scrim",
+        "Content legibility via blur + tint",
+        "No strong refraction or edge lighting"
+      ],
+      "example": "iOS Control Center; modal backdrops across the web.",
+      "confuse_with": [
+        "glassmorphism"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "brutalism",
+      "name": "Brutalist Web Design",
+      "aliases": [
+        "web brutalism",
+        "raw web"
+      ],
+      "category": "brutalist",
+      "era": "2014–present",
+      "origin": "Named after architectural Brutalism (béton brut); web movement popularized via brutalistwebsites.com (Pascal Deville).",
+      "traits": [
+        "Raw, unstyled or near-default HTML aesthetics",
+        "System fonts, default blue links, visible structure",
+        "High contrast, monospace, hard edges, no rounding",
+        "Deliberately 'undesigned', utilitarian honesty"
+      ],
+      "example": "brutalistwebsites.com; Bloomberg Businessweek features; Craigslist ethos.",
+      "confuse_with": [
+        "neubrutalism",
+        "minimalism"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#ffffff",
+          "surface": "#ffffff",
+          "surface-2": "#f0f0f0",
+          "text": "#000000",
+          "text-muted": "#333333",
+          "primary": "#0000ff",
+          "accent": "#ff0000",
+          "visited": "#800080"
+        },
+        "radius": {
+          "sm": "0px",
+          "md": "0px",
+          "lg": "0px",
+          "pill": "0px"
+        },
+        "shadow": {
+          "none": "none",
+          "hard": "4px 4px 0 #000000"
+        },
+        "blur": {},
+        "font": {
+          "sans": "'Times New Roman', Times, serif",
+          "display": "'Courier New', 'Times New Roman', serif",
+          "mono": "'Courier New', monospace"
+        },
+        "text": {
+          "xs": "0.75rem",
+          "sm": "0.9rem",
+          "base": "1rem",
+          "lg": "1.25rem",
+          "xl": "1.6rem",
+          "2xl": "2.2rem",
+          "3xl": "3rem",
+          "4xl": "4.5rem",
+          "5xl": "6rem"
+        },
+        "space": {
+          "1": "4px",
+          "2": "8px",
+          "3": "12px",
+          "4": "16px",
+          "6": "24px",
+          "8": "32px",
+          "12": "48px",
+          "16": "64px"
+        },
+        "ease": {
+          "standard": "linear"
+        },
+        "extra": {
+          "link-decoration": "underline",
+          "border": "2px solid #000000"
+        }
+      }
+    },
+    {
+      "slug": "neubrutalism",
+      "name": "Neubrutalism",
+      "aliases": [
+        "neo-brutalism",
+        "new brutalism UI"
+      ],
+      "category": "brutalist",
+      "era": "2020–present",
+      "origin": "Rose with Gumroad's 2021 redesign; heavily used by Figma community.",
+      "traits": [
+        "Thick solid black borders and hard offset drop shadows (no blur)",
+        "Loud, clashing saturated colors and flat fills",
+        "Zero-to-chunky border-radius, bold grotesk type",
+        "Playful, intentionally 'ugly-cute', high energy"
+      ],
+      "example": "Gumroad (2021 redesign); Figma marketing; many indie SaaS.",
+      "confuse_with": [
+        "brutalism",
+        "claymorphism",
+        "memphis-design"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#fef6e4",
+          "surface": "#ffffff",
+          "surface-2": "#fde68a",
+          "text": "#0a0a0a",
+          "text-muted": "#3d3d3d",
+          "primary": "#ffde00",
+          "accent": "#ff5c00",
+          "blue": "#3b82f6",
+          "green": "#22c55e",
+          "pink": "#ff5eb3",
+          "border": "#0a0a0a"
+        },
+        "radius": {
+          "sm": "0px",
+          "md": "6px",
+          "lg": "12px",
+          "pill": "999px"
+        },
+        "shadow": {
+          "hard-sm": "3px 3px 0 #0a0a0a",
+          "hard": "6px 6px 0 #0a0a0a",
+          "hard-lg": "10px 10px 0 #0a0a0a",
+          "hard-primary": "6px 6px 0 #ff5c00"
+        },
+        "blur": {},
+        "font": {
+          "sans": "'Space Grotesk', 'Archivo', system-ui, sans-serif",
+          "display": "'Archivo Black', 'Space Grotesk', sans-serif",
+          "mono": "'Space Mono', monospace"
+        },
+        "text": {
+          "xs": "0.8rem",
+          "sm": "0.95rem",
+          "base": "1.05rem",
+          "lg": "1.25rem",
+          "xl": "1.6rem",
+          "2xl": "2.1rem",
+          "3xl": "2.8rem",
+          "4xl": "3.8rem",
+          "5xl": "5rem"
+        },
+        "space": {
+          "1": "4px",
+          "2": "8px",
+          "3": "12px",
+          "4": "16px",
+          "6": "24px",
+          "8": "32px",
+          "12": "48px",
+          "16": "64px",
+          "24": "96px"
+        },
+        "ease": {
+          "standard": "cubic-bezier(0.2, 0, 0, 1)",
+          "snap": "steps(1, end)"
+        },
+        "extra": {
+          "border": "3px solid #0a0a0a",
+          "border-thick": "4px solid #0a0a0a"
+        }
+      }
+    },
+    {
+      "slug": "anti-design",
+      "name": "Anti-Design",
+      "aliases": [
+        "ugly design",
+        "undesign"
+      ],
+      "category": "brutalist",
+      "era": "2016–present",
+      "origin": "Reaction against polished 'design-by-committee' minimalism.",
+      "traits": [
+        "Deliberate rule-breaking: clashing type, misalignment",
+        "Default/system styling embraced",
+        "Rejects visual hierarchy conventions",
+        "Provocative, expressive, DIY"
+      ],
+      "example": "Balenciaga site experiments; art/fashion microsites.",
+      "confuse_with": [
+        "brutalism",
+        "dadaist-web"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "swiss-punk",
+      "name": "Swiss Punk / New Wave",
+      "aliases": [
+        "new wave typography",
+        "punk typography"
+      ],
+      "category": "brutalist",
+      "era": "1978–1990",
+      "origin": "Wolfgang Weingart (Basel), spread by April Greiman and Dan Friedman in the US.",
+      "traits": [
+        "Deconstructed Swiss grid; tilted, layered type",
+        "Wide letter-spacing, stepped baselines, rules",
+        "Photographic collage, gradients (Greiman's digital work)",
+        "Rebellion against rigid International Style"
+      ],
+      "example": "April Greiman 'Does It Make Sense?' (1986); Weingart Typographische Monatsblätter.",
+      "confuse_with": [
+        "swiss-design",
+        "deconstructivism"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "grunge",
+      "name": "Grunge Design",
+      "aliases": [
+        "dirty design",
+        "distressed design"
+      ],
+      "category": "brutalist",
+      "era": "1990s",
+      "origin": "David Carson (Ray Gun magazine); reaction to clean corporate design.",
+      "traits": [
+        "Distressed textures, dirt, splatter, torn edges",
+        "Chaotic overlapping type, broken legibility",
+        "Photocopied, degraded, layered collage",
+        "Anti-grid experimental layout"
+      ],
+      "example": "David Carson, Ray Gun magazine (1990s).",
+      "confuse_with": [
+        "swiss-punk",
+        "glitch-art"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "raw-html",
+      "name": "Raw / Default HTML",
+      "aliases": [
+        "unstyled web",
+        "default styles",
+        "HTML brutalism"
+      ],
+      "category": "brutalist",
+      "era": "1991–present (revival 2016+)",
+      "origin": "The literal default browser stylesheet; revived as an aesthetic statement.",
+      "traits": [
+        "Times New Roman, default blue/purple links",
+        "No CSS or minimal CSS",
+        "Single-column, top-to-bottom flow",
+        "Radical performance and honesty"
+      ],
+      "example": "motherfuckingwebsite.com; bettermotherfuckingwebsite.com.",
+      "confuse_with": [
+        "brutalism",
+        "minimalism"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "deconstructivism",
+      "name": "Deconstructivism (Graphic)",
+      "aliases": [
+        "deconstruction",
+        "fragmented type"
+      ],
+      "category": "brutalist",
+      "era": "1980s–1990s",
+      "origin": "Cranbrook Academy; influenced by Derrida; Katherine McCoy, Edward Fella.",
+      "traits": [
+        "Fragmented, layered, exploded typography",
+        "Rejection of the grid; ambiguous reading paths",
+        "Overlap, rotation, and collision of elements",
+        "Theory-driven, questions legibility"
+      ],
+      "example": "Cranbrook design work; Emigre magazine.",
+      "confuse_with": [
+        "swiss-punk",
+        "grunge"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "dadaist-web",
+      "name": "Dadaist / Collage Web",
+      "aliases": [
+        "dada web",
+        "collage UI"
+      ],
+      "category": "brutalist",
+      "era": "2015–present (from 1916 Dada)",
+      "origin": "Digital revival of Dada photomontage and chance-based layout.",
+      "traits": [
+        "Cut-and-paste photomontage, ransom-note type",
+        "Absurd juxtaposition and chaos",
+        "Mixed media scraps and stickers",
+        "Anti-rational composition"
+      ],
+      "example": "Art-school microsites; fashion editorial pages.",
+      "confuse_with": [
+        "anti-design",
+        "punk-zine"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "flat-design",
+      "name": "Flat Design",
+      "aliases": [
+        "flat UI"
+      ],
+      "category": "flat-platform",
+      "era": "2012–2016",
+      "origin": "Microsoft Metro (2010) and Apple iOS 7 (2013) cemented it industry-wide.",
+      "traits": [
+        "No shadows, gradients, or textures — pure flat color",
+        "Simple geometric shapes and iconography",
+        "Bold color blocking and generous whitespace",
+        "Typography and color carry the hierarchy"
+      ],
+      "example": "iOS 7; Windows Phone; early Google/Microsoft rebrands.",
+      "confuse_with": [
+        "material-design",
+        "minimalism",
+        "metro"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#ffffff",
+          "surface": "#f4f5f7",
+          "surface-2": "#e9ecef",
+          "text": "#212529",
+          "text-muted": "#6c757d",
+          "primary": "#2d8cff",
+          "accent": "#ff5a5f",
+          "success": "#2ecc71",
+          "warning": "#f1c40f",
+          "danger": "#e74c3c"
+        },
+        "radius": {
+          "sm": "3px",
+          "md": "6px",
+          "lg": "8px",
+          "pill": "999px"
+        },
+        "shadow": {
+          "none": "none",
+          "sm": "0 1px 2px rgba(0,0,0,0.06)",
+          "md": "0 2px 4px rgba(0,0,0,0.08)"
+        },
+        "blur": {},
+        "font": {
+          "sans": "'Helvetica Neue', Arial, system-ui, sans-serif",
+          "display": "'Helvetica Neue', Arial, sans-serif",
+          "mono": "ui-monospace, monospace"
+        },
+        "text": {
+          "xs": "0.75rem",
+          "sm": "0.875rem",
+          "base": "1rem",
+          "lg": "1.125rem",
+          "xl": "1.375rem",
+          "2xl": "1.75rem",
+          "3xl": "2.25rem",
+          "4xl": "3rem",
+          "5xl": "4rem"
+        },
+        "space": {
+          "1": "4px",
+          "2": "8px",
+          "3": "12px",
+          "4": "16px",
+          "6": "24px",
+          "8": "32px",
+          "12": "48px",
+          "16": "64px",
+          "24": "96px"
+        },
+        "ease": {
+          "standard": "cubic-bezier(0.4, 0, 0.2, 1)"
+        },
+        "extra": {}
+      }
+    },
+    {
+      "slug": "metro",
+      "name": "Metro / Microsoft Design Language",
+      "aliases": [
+        "Metro UI",
+        "Modern UI",
+        "Windows Phone design"
+      ],
+      "category": "flat-platform",
+      "era": "2010–2017",
+      "origin": "Microsoft, Windows Phone 7 (2010), Windows 8.",
+      "traits": [
+        "Live Tiles grid; content over chrome",
+        "Bold Segoe typography, edge-to-edge",
+        "Motion and typographic hierarchy",
+        "Flat, colorful, no skeuomorphism"
+      ],
+      "example": "Windows Phone 7/8; Windows 8 Start screen.",
+      "confuse_with": [
+        "flat-design",
+        "fluent-design-2"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "material-design",
+      "name": "Material Design (M2)",
+      "aliases": [
+        "Material",
+        "Material 2"
+      ],
+      "category": "flat-platform",
+      "era": "2014–2021",
+      "origin": "Google, introduced 2014.",
+      "traits": [
+        "Material metaphor: paper and ink with real elevation",
+        "Consistent shadow/elevation system",
+        "Bold color, meaningful motion, grid-based",
+        "Floating action button, ripple feedback"
+      ],
+      "example": "Android; Google apps (2014–2021).",
+      "confuse_with": [
+        "material-design-3",
+        "flat-2"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "material-design-3",
+      "name": "Material Design 3 / Material You",
+      "aliases": [
+        "M3",
+        "Material You",
+        "M3 Expressive"
+      ],
+      "category": "flat-platform",
+      "era": "2021–present",
+      "origin": "Google; Material You (2021), Material 3 Expressive (Google I/O 2025).",
+      "traits": [
+        "Dynamic color extracted from user wallpaper (tonal palettes)",
+        "Larger rounded shapes, shape-morphing tokens",
+        "Expressive spring-physics motion",
+        "Design tokens as single source of truth; updated components"
+      ],
+      "example": "Android 12+; Google apps; Wear OS 5.",
+      "confuse_with": [
+        "material-design",
+        "fluent-design-2"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#fef7ff",
+          "surface": "#fef7ff",
+          "surface-container": "#f3edf7",
+          "surface-variant": "#e7e0ec",
+          "text": "#1d1b20",
+          "text-muted": "#49454f",
+          "primary": "#6750a4",
+          "on-primary": "#ffffff",
+          "secondary": "#625b71",
+          "tertiary": "#7d5260",
+          "outline": "#79747e",
+          "error": "#b3261e"
+        },
+        "radius": {
+          "xs": "4px",
+          "sm": "8px",
+          "md": "12px",
+          "lg": "16px",
+          "xl": "28px",
+          "pill": "999px"
+        },
+        "shadow": {
+          "e1": "0 1px 2px rgba(0,0,0,0.30), 0 1px 3px 1px rgba(0,0,0,0.15)",
+          "e2": "0 1px 2px rgba(0,0,0,0.30), 0 2px 6px 2px rgba(0,0,0,0.15)",
+          "e3": "0 4px 8px 3px rgba(0,0,0,0.15), 0 1px 3px rgba(0,0,0,0.30)"
+        },
+        "blur": {},
+        "font": {
+          "sans": "'Roboto', 'Roboto Flex', system-ui, sans-serif",
+          "display": "'Roboto Flex', 'Roboto', system-ui, sans-serif",
+          "mono": "'Roboto Mono', monospace"
+        },
+        "text": {
+          "label-sm": "0.6875rem",
+          "label-md": "0.75rem",
+          "body-md": "0.875rem",
+          "body-lg": "1rem",
+          "title-md": "1rem",
+          "title-lg": "1.375rem",
+          "headline-md": "1.75rem",
+          "headline-lg": "2rem",
+          "display-md": "2.8125rem",
+          "display-lg": "3.5625rem"
+        },
+        "space": {
+          "1": "4px",
+          "2": "8px",
+          "3": "12px",
+          "4": "16px",
+          "6": "24px",
+          "8": "32px",
+          "12": "48px",
+          "16": "64px",
+          "24": "96px"
+        },
+        "ease": {
+          "standard": "cubic-bezier(0.2, 0, 0, 1)",
+          "emphasized": "cubic-bezier(0.2, 0, 0, 1)",
+          "spatial-expressive": "cubic-bezier(0.38, 1.21, 0.22, 1)"
+        },
+        "extra": {
+          "state-hover": "rgba(103,80,164,0.08)",
+          "state-pressed": "rgba(103,80,164,0.12)"
+        }
+      }
+    },
+    {
+      "slug": "fluent-design-2",
+      "name": "Fluent Design 2 (Fluent 2)",
+      "aliases": [
+        "Fluent",
+        "Fluent Design System",
+        "Windows 11 design"
+      ],
+      "category": "flat-platform",
+      "era": "2017–present",
+      "origin": "Microsoft; Fluent (2017), Fluent 2 refresh (2021+ for Windows 11).",
+      "traits": [
+        "Five fundamentals: light, depth, motion, material, scale",
+        "Materials: solid, Mica, Acrylic, Smoke",
+        "Mica tints long-lived surfaces with desktop color",
+        "Reveal highlight, subtle depth, rounded corners"
+      ],
+      "example": "Windows 11; Microsoft 365; Teams.",
+      "confuse_with": [
+        "material-design-3",
+        "acrylic-fluent"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#f3f3f3",
+          "surface": "rgba(255,255,255,0.70)",
+          "mica": "rgba(243,243,243,0.85)",
+          "acrylic": "rgba(252,252,252,0.60)",
+          "text": "#1b1b1b",
+          "text-muted": "#616161",
+          "primary": "#0f6cbd",
+          "accent": "#005fb8",
+          "stroke": "rgba(0,0,0,0.10)"
+        },
+        "radius": {
+          "sm": "4px",
+          "md": "8px",
+          "lg": "12px",
+          "pill": "999px"
+        },
+        "shadow": {
+          "sm": "0 2px 4px rgba(0,0,0,0.14)",
+          "md": "0 8px 16px rgba(0,0,0,0.14)",
+          "lg": "0 32px 64px rgba(0,0,0,0.19)",
+          "card-stroke": "inset 0 0 0 1px rgba(0,0,0,0.06), inset 0 -1px 0 rgba(0,0,0,0.10)"
+        },
+        "blur": {
+          "acrylic": "30px",
+          "acrylic-thin": "60px"
+        },
+        "font": {
+          "sans": "'Segoe UI Variable', 'Segoe UI', system-ui, sans-serif",
+          "display": "'Segoe UI Variable Display', 'Segoe UI', sans-serif",
+          "mono": "'Cascadia Code', ui-monospace, monospace"
+        },
+        "text": {
+          "xs": "0.75rem",
+          "sm": "0.875rem",
+          "base": "1rem",
+          "lg": "1.125rem",
+          "xl": "1.375rem",
+          "2xl": "1.75rem",
+          "3xl": "2.25rem",
+          "4xl": "3rem",
+          "5xl": "4rem"
+        },
+        "space": {
+          "1": "4px",
+          "2": "8px",
+          "3": "12px",
+          "4": "16px",
+          "6": "24px",
+          "8": "32px",
+          "12": "48px",
+          "16": "64px",
+          "24": "96px"
+        },
+        "ease": {
+          "standard": "cubic-bezier(0.33, 0, 0.67, 1)",
+          "decel": "cubic-bezier(0.1, 0.9, 0.2, 1)",
+          "accel": "cubic-bezier(0.7, 0, 1, 0.5)"
+        },
+        "extra": {
+          "acrylic-noise": "0.02",
+          "reveal-highlight": "radial-gradient(circle at var(--x,50%) var(--y,50%), rgba(255,255,255,0.35), transparent 60%)"
+        }
+      }
+    },
+    {
+      "slug": "carbon-design",
+      "name": "Carbon Design System",
+      "aliases": [
+        "Carbon",
+        "IBM Carbon"
+      ],
+      "category": "flat-platform",
+      "era": "2017–present",
+      "origin": "IBM.",
+      "traits": [
+        "2x grid, IBM Plex typeface",
+        "Restrained, enterprise, data-dense",
+        "Productive vs expressive themes",
+        "Strong accessibility standards"
+      ],
+      "example": "IBM Cloud; enterprise dashboards.",
+      "confuse_with": [
+        "ant-design",
+        "polaris"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "ant-design",
+      "name": "Ant Design",
+      "aliases": [
+        "antd"
+      ],
+      "category": "flat-platform",
+      "era": "2015–present",
+      "origin": "Ant Group / Alibaba (Chinese enterprise ecosystem).",
+      "traits": [
+        "Dense, component-rich enterprise UI",
+        "Blue primary, subtle shadows, 6px radius default",
+        "Comprehensive form/table components",
+        "Pragmatic, information-heavy"
+      ],
+      "example": "Alibaba enterprise consoles; many admin panels.",
+      "confuse_with": [
+        "carbon-design",
+        "material-design"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "polaris",
+      "name": "Shopify Polaris",
+      "aliases": [
+        "Polaris"
+      ],
+      "category": "flat-platform",
+      "era": "2017–present",
+      "origin": "Shopify.",
+      "traits": [
+        "Merchant-admin focused, calm and legible",
+        "Card-based layouts, clear affordances",
+        "Accessible, restrained color",
+        "Content guidelines baked in"
+      ],
+      "example": "Shopify admin.",
+      "confuse_with": [
+        "carbon-design",
+        "atlassian-design"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "lightning-design",
+      "name": "Salesforce Lightning",
+      "aliases": [
+        "SLDS",
+        "Lightning Design System"
+      ],
+      "category": "flat-platform",
+      "era": "2015–present",
+      "origin": "Salesforce.",
+      "traits": [
+        "Enterprise CRM density and consistency",
+        "Token-driven theming (SLDS)",
+        "Data tables, utility icons",
+        "Neutral, professional palette"
+      ],
+      "example": "Salesforce Lightning Experience.",
+      "confuse_with": [
+        "carbon-design",
+        "ant-design"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "atlassian-design",
+      "name": "Atlassian Design System",
+      "aliases": [
+        "ADS",
+        "Atlassian"
+      ],
+      "category": "flat-platform",
+      "era": "2017–present",
+      "origin": "Atlassian.",
+      "traits": [
+        "Friendly-professional productivity tone",
+        "Blue/neutral palette, clear hierarchy",
+        "Strong content + accessibility guidance",
+        "Componentized (Atlaskit)"
+      ],
+      "example": "Jira; Confluence; Trello.",
+      "confuse_with": [
+        "polaris",
+        "carbon-design"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "apple-hig",
+      "name": "Apple HIG (pre-Liquid flat)",
+      "aliases": [
+        "Human Interface Guidelines",
+        "iOS flat",
+        "Cupertino"
+      ],
+      "category": "flat-platform",
+      "era": "2013–2025",
+      "origin": "Apple, iOS 7 through iOS 18.",
+      "traits": [
+        "Deference: content over chrome",
+        "SF Pro type, generous spacing, subtle depth",
+        "Blur/vibrancy accents, clarity",
+        "Consistent system controls"
+      ],
+      "example": "iOS 7–18; macOS pre-Tahoe.",
+      "confuse_with": [
+        "liquid-glass",
+        "flat-design"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "base-web",
+      "name": "Base Web",
+      "aliases": [
+        "Base",
+        "Uber Base"
+      ],
+      "category": "flat-platform",
+      "era": "2018–present",
+      "origin": "Uber.",
+      "traits": [
+        "Highly themeable primitives",
+        "Neutral, functional, mobility-app roots",
+        "Strong theming tokens",
+        "Accessible components"
+      ],
+      "example": "Uber web products.",
+      "confuse_with": [
+        "carbon-design"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "primer",
+      "name": "Primer",
+      "aliases": [
+        "GitHub Primer"
+      ],
+      "category": "flat-platform",
+      "era": "2017–present",
+      "origin": "GitHub.",
+      "traits": [
+        "Developer-tool clarity, dense but calm",
+        "Mona Sans / system fonts, octicon iconography",
+        "Robust light/dark theming",
+        "Content-first, code-friendly"
+      ],
+      "example": "GitHub.com.",
+      "confuse_with": [
+        "atlassian-design"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "uswds",
+      "name": "U.S. Web Design System",
+      "aliases": [
+        "USWDS"
+      ],
+      "category": "flat-platform",
+      "era": "2017–present",
+      "origin": "U.S. General Services Administration (18F).",
+      "traits": [
+        "Accessibility- and trust-first (Section 508)",
+        "Government blue/red/neutral palette",
+        "Public Sans typeface",
+        "Plain-language, high-legibility"
+      ],
+      "example": "US federal government websites.",
+      "confuse_with": [
+        "govuk-design"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "govuk-design",
+      "name": "GOV.UK Design System",
+      "aliases": [
+        "GDS",
+        "GOV.UK"
+      ],
+      "category": "flat-platform",
+      "era": "2012–present",
+      "origin": "UK Government Digital Service.",
+      "traits": [
+        "Radically clear, task-focused, accessible",
+        "Transport/GDS typeface, black on white",
+        "No decoration; content and usability only",
+        "Rigorous WCAG compliance"
+      ],
+      "example": "gov.uk.",
+      "confuse_with": [
+        "uswds",
+        "minimalism"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "spectrum",
+      "name": "Adobe Spectrum",
+      "aliases": [
+        "Spectrum"
+      ],
+      "category": "flat-platform",
+      "era": "2019–present",
+      "origin": "Adobe.",
+      "traits": [
+        "Creative-tool oriented, neutral canvas-friendly",
+        "Adobe Clean typeface",
+        "Careful density scales (medium/large)",
+        "Strong theming + accessibility"
+      ],
+      "example": "Adobe Creative Cloud web apps.",
+      "confuse_with": [
+        "carbon-design"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "bauhaus",
+      "name": "Bauhaus",
+      "aliases": [
+        "Bauhaus style"
+      ],
+      "category": "historical",
+      "era": "1919–1933",
+      "origin": "German Bauhaus school (Walter Gropius, Weimar/Dessau).",
+      "traits": [
+        "Form follows function; geometric primitives (circle, square, triangle)",
+        "Primary red/yellow/blue plus black & white",
+        "Sans-serif geometric type (Futura lineage)",
+        "Asymmetric balance, no ornament"
+      ],
+      "example": "Herbert Bayer's Universal typeface; Bauhaus exhibition posters.",
+      "confuse_with": [
+        "de-stijl",
+        "constructivism",
+        "swiss-design"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#f4f1ea",
+          "surface": "#ffffff",
+          "text": "#1a1a1a",
+          "text-muted": "#4d4d4d",
+          "primary": "#e63946",
+          "accent": "#f4a300",
+          "blue": "#1d4ed8",
+          "black": "#1a1a1a"
+        },
+        "radius": {
+          "sm": "0px",
+          "md": "0px",
+          "lg": "0px",
+          "circle": "999px"
+        },
+        "shadow": {
+          "none": "none"
+        },
+        "blur": {},
+        "font": {
+          "sans": "'Futura', 'Century Gothic', 'Poppins', sans-serif",
+          "display": "'Futura', 'Josefin Sans', sans-serif",
+          "mono": "ui-monospace, monospace"
+        },
+        "text": {
+          "xs": "0.75rem",
+          "sm": "0.9rem",
+          "base": "1rem",
+          "lg": "1.25rem",
+          "xl": "1.75rem",
+          "2xl": "2.5rem",
+          "3xl": "3.5rem",
+          "4xl": "5rem",
+          "5xl": "7rem"
+        },
+        "space": {
+          "1": "8px",
+          "2": "16px",
+          "3": "24px",
+          "4": "32px",
+          "6": "48px",
+          "8": "64px",
+          "12": "96px",
+          "16": "128px"
+        },
+        "ease": {
+          "standard": "linear"
+        },
+        "extra": {
+          "primary-triad": "#e63946 #f4a300 #1d4ed8"
+        }
+      }
+    },
+    {
+      "slug": "swiss-design",
+      "name": "Swiss / International Typographic Style",
+      "aliases": [
+        "International Style",
+        "Swiss Style",
+        "grid design"
+      ],
+      "category": "historical",
+      "era": "1950s–1960s",
+      "origin": "Switzerland (Josef Müller-Brockmann, Armin Hofmann); Basel & Zurich schools.",
+      "traits": [
+        "Mathematical grid systems and rigorous alignment",
+        "Helvetica/Akzidenz-Grotesk, flush-left ragged-right",
+        "Objective, neutral, hierarchy via size/weight",
+        "Generous whitespace, photography over illustration"
+      ],
+      "example": "Müller-Brockmann concert posters; Helvetica.",
+      "confuse_with": [
+        "bauhaus",
+        "minimalism",
+        "flat-design"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#ffffff",
+          "surface": "#ffffff",
+          "surface-2": "#f2f2f2",
+          "text": "#111111",
+          "text-muted": "#555555",
+          "primary": "#e2001a",
+          "accent": "#000000",
+          "grid": "#d9d9d9"
+        },
+        "radius": {
+          "sm": "0px",
+          "md": "0px",
+          "lg": "0px",
+          "pill": "0px"
+        },
+        "shadow": {
+          "none": "none"
+        },
+        "blur": {},
+        "font": {
+          "sans": "'Helvetica Neue', 'Akzidenz-Grotesk', Arial, sans-serif",
+          "display": "'Helvetica Neue', Arial, sans-serif",
+          "mono": "ui-monospace, monospace"
+        },
+        "text": {
+          "xs": "0.75rem",
+          "sm": "0.875rem",
+          "base": "1rem",
+          "lg": "1.333rem",
+          "xl": "1.777rem",
+          "2xl": "2.369rem",
+          "3xl": "3.157rem",
+          "4xl": "4.209rem",
+          "5xl": "5.61rem"
+        },
+        "space": {
+          "1": "8px",
+          "2": "16px",
+          "3": "24px",
+          "4": "32px",
+          "6": "48px",
+          "8": "64px",
+          "12": "96px",
+          "16": "128px"
+        },
+        "ease": {
+          "standard": "cubic-bezier(0.4, 0, 0.2, 1)"
+        },
+        "extra": {
+          "baseline": "8px",
+          "columns": "12"
+        }
+      }
+    },
+    {
+      "slug": "de-stijl",
+      "name": "De Stijl / Neoplasticism",
+      "aliases": [
+        "Neoplasticism",
+        "Mondrian style"
+      ],
+      "category": "historical",
+      "era": "1917–1931",
+      "origin": "Netherlands (Theo van Doesburg, Piet Mondrian).",
+      "traits": [
+        "Only horizontals and verticals; thick black rules",
+        "Primary colors + white/gray/black",
+        "Asymmetric rectangular compositions",
+        "Pure abstraction, universal harmony"
+      ],
+      "example": "Mondrian 'Composition' paintings; Rietveld Schröder House.",
+      "confuse_with": [
+        "bauhaus",
+        "constructivism"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#f7f7f2",
+          "surface": "#ffffff",
+          "text": "#0d0d0d",
+          "text-muted": "#333333",
+          "primary": "#d40000",
+          "accent": "#0000c8",
+          "yellow": "#ffd500",
+          "black": "#0d0d0d"
+        },
+        "radius": {
+          "sm": "0px",
+          "md": "0px",
+          "lg": "0px",
+          "pill": "0px"
+        },
+        "shadow": {
+          "none": "none"
+        },
+        "blur": {},
+        "font": {
+          "sans": "'Futura', 'Century Gothic', 'Poppins', sans-serif",
+          "display": "'Archivo Black', 'Futura', sans-serif",
+          "mono": "ui-monospace, monospace"
+        },
+        "text": {
+          "xs": "0.75rem",
+          "sm": "0.875rem",
+          "base": "1rem",
+          "lg": "1.125rem",
+          "xl": "1.375rem",
+          "2xl": "1.75rem",
+          "3xl": "2.25rem",
+          "4xl": "3rem",
+          "5xl": "4rem"
+        },
+        "space": {
+          "1": "8px",
+          "2": "16px",
+          "3": "24px",
+          "4": "32px",
+          "6": "48px",
+          "8": "64px",
+          "12": "96px",
+          "16": "128px"
+        },
+        "ease": {
+          "standard": "linear"
+        },
+        "extra": {
+          "rule": "6px solid #0d0d0d",
+          "primaries": "#d40000 #ffd500 #0000c8"
+        }
+      }
+    },
+    {
+      "slug": "constructivism",
+      "name": "Constructivism",
+      "aliases": [
+        "Russian Constructivism",
+        "Soviet design"
+      ],
+      "category": "historical",
+      "era": "1915–1930s",
+      "origin": "Russia/USSR (Alexander Rodchenko, El Lissitzky, Stenberg brothers).",
+      "traits": [
+        "Bold diagonals and dynamic asymmetry",
+        "Red, black, cream; heavy sans/slab type",
+        "Photomontage, geometric shapes as propaganda",
+        "Industrial, purposeful, revolutionary"
+      ],
+      "example": "Rodchenko posters; El Lissitzky 'Beat the Whites with the Red Wedge'.",
+      "confuse_with": [
+        "suprematism",
+        "bauhaus",
+        "futurism-italian"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#f0ece1",
+          "surface": "#ffffff",
+          "text": "#141414",
+          "text-muted": "#3a3a3a",
+          "primary": "#d7261e",
+          "accent": "#141414",
+          "cream": "#f0ece1"
+        },
+        "radius": {
+          "sm": "0px",
+          "md": "0px",
+          "lg": "0px",
+          "pill": "0px"
+        },
+        "shadow": {
+          "none": "none"
+        },
+        "blur": {},
+        "font": {
+          "sans": "'Alternate Gothic', 'Oswald', 'Anton', sans-serif",
+          "display": "'Anton', 'Oswald', sans-serif",
+          "mono": "ui-monospace, monospace"
+        },
+        "text": {
+          "xs": "0.75rem",
+          "sm": "0.9rem",
+          "base": "1rem",
+          "lg": "1.3rem",
+          "xl": "1.9rem",
+          "2xl": "2.8rem",
+          "3xl": "4rem",
+          "4xl": "5.6rem",
+          "5xl": "8rem"
+        },
+        "space": {
+          "1": "8px",
+          "2": "16px",
+          "3": "24px",
+          "4": "32px",
+          "6": "48px",
+          "8": "64px",
+          "12": "96px",
+          "16": "128px"
+        },
+        "ease": {
+          "standard": "linear"
+        },
+        "extra": {
+          "diagonal": "-15deg",
+          "red-black": "#d7261e #141414"
+        }
+      }
+    },
+    {
+      "slug": "suprematism",
+      "name": "Suprematism",
+      "aliases": [
+        "Malevich style"
+      ],
+      "category": "historical",
+      "era": "1913–1920s",
+      "origin": "Russia (Kazimir Malevich).",
+      "traits": [
+        "Pure geometric abstraction floating in space",
+        "Limited palette, often on white ground",
+        "Feeling over representation",
+        "Circles, rectangles, crosses, tilted planes"
+      ],
+      "example": "Malevich 'Black Square'; 'Suprematist Composition'.",
+      "confuse_with": [
+        "constructivism",
+        "de-stijl"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "art-deco",
+      "name": "Art Deco",
+      "aliases": [
+        "Deco",
+        "Style Moderne"
+      ],
+      "category": "historical",
+      "era": "1920s–1930s",
+      "origin": "Paris 1925 Exposition Internationale des Arts Décoratifs.",
+      "traits": [
+        "Symmetry, geometric and stepped (ziggurat) forms",
+        "Luxurious gold/black/jewel tones",
+        "Sunburst, chevron, zigzag motifs",
+        "Elegant high-contrast display type"
+      ],
+      "example": "Chrysler Building; The Great Gatsby posters; Cassandre travel posters.",
+      "confuse_with": [
+        "art-nouveau",
+        "streamline-moderne",
+        "bauhaus"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#0e0e12",
+          "surface": "#16161d",
+          "text": "#f5e9c8",
+          "text-muted": "#b8a878",
+          "primary": "#c8a253",
+          "accent": "#1f7a6d",
+          "gold": "#c8a253",
+          "black": "#0e0e12",
+          "cream": "#f5e9c8"
+        },
+        "radius": {
+          "sm": "0px",
+          "md": "2px",
+          "lg": "4px",
+          "pill": "0px"
+        },
+        "shadow": {
+          "gold": "0 0 0 1px #c8a253, 0 8px 24px rgba(0,0,0,0.5)"
+        },
+        "blur": {},
+        "font": {
+          "sans": "'Poiret One', 'Century Gothic', sans-serif",
+          "display": "'Cinzel', 'Poiret One', serif",
+          "mono": "ui-monospace, monospace"
+        },
+        "text": {
+          "xs": "0.75rem",
+          "sm": "0.9rem",
+          "base": "1rem",
+          "lg": "1.3rem",
+          "xl": "1.8rem",
+          "2xl": "2.6rem",
+          "3xl": "3.8rem",
+          "4xl": "5.4rem",
+          "5xl": "7.6rem"
+        },
+        "space": {
+          "1": "8px",
+          "2": "16px",
+          "3": "24px",
+          "4": "32px",
+          "6": "48px",
+          "8": "64px",
+          "12": "96px",
+          "16": "128px"
+        },
+        "ease": {
+          "standard": "cubic-bezier(0.4, 0, 0.2, 1)"
+        },
+        "extra": {
+          "chevron": "#c8a253",
+          "sunburst": "repeating-conic-gradient(#c8a253 0deg 4deg, transparent 4deg 8deg)"
+        }
+      }
+    },
+    {
+      "slug": "art-nouveau",
+      "name": "Art Nouveau",
+      "aliases": [
+        "Jugendstil",
+        "Liberty style"
+      ],
+      "category": "historical",
+      "era": "1890–1910",
+      "origin": "Europe (Alphonse Mucha, Hector Guimard, Gustav Klimt).",
+      "traits": [
+        "Organic, sinuous 'whiplash' curves from nature",
+        "Floral and botanical ornament, flowing hair",
+        "Muted earthy + gold palettes",
+        "Decorative custom lettering"
+      ],
+      "example": "Mucha's theatrical posters; Paris Métro entrances.",
+      "confuse_with": [
+        "art-deco",
+        "solarpunk"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "memphis-design",
+      "name": "Memphis Design",
+      "aliases": [
+        "Memphis Group",
+        "Memphis Milano"
+      ],
+      "category": "historical",
+      "era": "1981–1987",
+      "origin": "Memphis Group, Milan (Ettore Sottsass).",
+      "traits": [
+        "Playful clashing colors and bold geometric shapes",
+        "Squiggles, zigzags, confetti, polka dots",
+        "Black-and-white grids and patterns",
+        "Anti-'good taste' postmodern exuberance"
+      ],
+      "example": "Sottsass Carlton bookcase; 1980s MTV graphics.",
+      "confuse_with": [
+        "neubrutalism",
+        "postmodernism",
+        "pop-art"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#fdf6e3",
+          "surface": "#ffffff",
+          "text": "#1a1a2e",
+          "text-muted": "#575780",
+          "primary": "#ff2e63",
+          "accent": "#08d9d6",
+          "yellow": "#ffde22",
+          "purple": "#8a4fff",
+          "black": "#252a34"
+        },
+        "radius": {
+          "sm": "0px",
+          "md": "8px",
+          "lg": "20px",
+          "pill": "999px"
+        },
+        "shadow": {
+          "hard": "6px 6px 0 #252a34"
+        },
+        "blur": {},
+        "font": {
+          "sans": "'Poppins', 'Futura', system-ui, sans-serif",
+          "display": "'Righteous', 'Poppins', sans-serif",
+          "mono": "ui-monospace, monospace"
+        },
+        "text": {
+          "xs": "0.75rem",
+          "sm": "0.875rem",
+          "base": "1rem",
+          "lg": "1.125rem",
+          "xl": "1.375rem",
+          "2xl": "1.75rem",
+          "3xl": "2.25rem",
+          "4xl": "3rem",
+          "5xl": "4rem"
+        },
+        "space": {
+          "1": "4px",
+          "2": "8px",
+          "3": "12px",
+          "4": "16px",
+          "6": "24px",
+          "8": "32px",
+          "12": "48px",
+          "16": "64px",
+          "24": "96px"
+        },
+        "ease": {
+          "standard": "cubic-bezier(0.34, 1.56, 0.64, 1)"
+        },
+        "extra": {
+          "squiggle": "#ff2e63",
+          "confetti": "#08d9d6 #ffde22 #8a4fff"
+        }
+      }
+    },
+    {
+      "slug": "postmodernism",
+      "name": "Postmodern Graphic Design",
+      "aliases": [
+        "postmodern design"
+      ],
+      "category": "historical",
+      "era": "1970s–1990s",
+      "origin": "Reaction to Modernism (Wolfgang Weingart, April Greiman, David Carson).",
+      "traits": [
+        "Rejects rigid grid and objectivity",
+        "Layering, collage, historical pastiche, irony",
+        "Mixed type, texture, decoration",
+        "Expressive and subjective"
+      ],
+      "example": "Emigre magazine; MTV identity; Cranbrook work.",
+      "confuse_with": [
+        "memphis-design",
+        "swiss-punk"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "pop-art",
+      "name": "Pop Art",
+      "aliases": [
+        "comic style",
+        "Warhol style"
+      ],
+      "category": "historical",
+      "era": "1950s–1960s",
+      "origin": "UK/US (Andy Warhol, Roy Lichtenstein, Eduardo Paolozzi).",
+      "traits": [
+        "Bright saturated primary colors, bold outlines",
+        "Ben-Day dots / halftone comic texture",
+        "Repetition and mass-media imagery",
+        "Speech bubbles, exclamatory type"
+      ],
+      "example": "Lichtenstein 'Whaam!'; Warhol Campbell's Soup.",
+      "confuse_with": [
+        "op-art",
+        "memphis-design",
+        "comic"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#fff8e7",
+          "surface": "#ffffff",
+          "text": "#111111",
+          "text-muted": "#333333",
+          "primary": "#ff2d95",
+          "accent": "#00b3ff",
+          "yellow": "#ffe000",
+          "red": "#ff1e1e",
+          "black": "#111111"
+        },
+        "radius": {
+          "sm": "0px",
+          "md": "8px",
+          "lg": "16px",
+          "pill": "999px"
+        },
+        "shadow": {
+          "hard": "5px 5px 0 #111111"
+        },
+        "blur": {},
+        "font": {
+          "sans": "'Bangers', 'Archivo Black', sans-serif",
+          "display": "'Bangers', 'Anton', sans-serif",
+          "mono": "ui-monospace, monospace"
+        },
+        "text": {
+          "xs": "0.75rem",
+          "sm": "0.875rem",
+          "base": "1rem",
+          "lg": "1.125rem",
+          "xl": "1.375rem",
+          "2xl": "1.75rem",
+          "3xl": "2.25rem",
+          "4xl": "3rem",
+          "5xl": "4rem"
+        },
+        "space": {
+          "1": "4px",
+          "2": "8px",
+          "3": "12px",
+          "4": "16px",
+          "6": "24px",
+          "8": "32px",
+          "12": "48px",
+          "16": "64px",
+          "24": "96px"
+        },
+        "ease": {
+          "standard": "steps(2, end)"
+        },
+        "extra": {
+          "benday": "radial-gradient(#ff2d95 30%, transparent 31%) 0 0 / 12px 12px",
+          "outline": "3px solid #111111"
+        }
+      }
+    },
+    {
+      "slug": "op-art",
+      "name": "Op Art",
+      "aliases": [
+        "Optical Art"
+      ],
+      "category": "historical",
+      "era": "1960s",
+      "origin": "Bridget Riley, Victor Vasarely.",
+      "traits": [
+        "Black-and-white (or vibrating color) geometric patterns",
+        "Illusions of motion, depth, and warping",
+        "Precise repetition of lines/shapes",
+        "Perceptual, hypnotic effects"
+      ],
+      "example": "Bridget Riley 'Movement in Squares'; Vasarely.",
+      "confuse_with": [
+        "pop-art",
+        "psychedelic"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "dada",
+      "name": "Dada",
+      "aliases": [
+        "Dadaism"
+      ],
+      "category": "historical",
+      "era": "1916–1924",
+      "origin": "Zurich (Cabaret Voltaire), Berlin, NY (Tzara, Höch, Heartfield).",
+      "traits": [
+        "Photomontage and chance composition",
+        "Ransom-note mixed typography",
+        "Anti-art, absurd, provocative",
+        "Collage of found media"
+      ],
+      "example": "Hannah Höch photomontages; Heartfield political montage.",
+      "confuse_with": [
+        "dadaist-web",
+        "punk-zine"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "futurism-italian",
+      "name": "Futurism (Italian)",
+      "aliases": [
+        "Futurismo",
+        "parole in libertà"
+      ],
+      "category": "historical",
+      "era": "1909–1944",
+      "origin": "Italy (Filippo Marinetti).",
+      "traits": [
+        "Words-in-freedom: explosive dynamic typography",
+        "Speed, machines, motion lines",
+        "Diagonal, chaotic type on the page",
+        "Celebration of technology and energy"
+      ],
+      "example": "Marinetti 'Zang Tumb Tumb'; Fortunato Depero.",
+      "confuse_with": [
+        "constructivism",
+        "dada"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "psychedelic",
+      "name": "Psychedelic Art",
+      "aliases": [
+        "1960s psychedelia",
+        "acid poster"
+      ],
+      "category": "historical",
+      "era": "1965–1971",
+      "origin": "San Francisco (Wes Wilson, Victor Moscoso).",
+      "traits": [
+        "Warped, melting, hand-drawn lettering",
+        "Intense vibrating complementary colors",
+        "Swirling Art-Nouveau-derived forms",
+        "Kaleidoscopic symmetry"
+      ],
+      "example": "Fillmore concert posters (Wes Wilson).",
+      "confuse_with": [
+        "art-nouveau",
+        "op-art",
+        "vaporwave"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "arts-and-crafts",
+      "name": "Arts & Crafts",
+      "aliases": [
+        "William Morris style"
+      ],
+      "category": "historical",
+      "era": "1880s–1910",
+      "origin": "UK (William Morris, John Ruskin).",
+      "traits": [
+        "Intricate botanical patterns and repeats",
+        "Handcraft over machine production",
+        "Earthy natural palettes",
+        "Ornamental borders, medieval revival type"
+      ],
+      "example": "Morris & Co wallpapers; Kelmscott Press.",
+      "confuse_with": [
+        "art-nouveau",
+        "victorian"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "victorian",
+      "name": "Victorian",
+      "aliases": [
+        "ornate Victorian",
+        "1800s ornament"
+      ],
+      "category": "historical",
+      "era": "1837–1901",
+      "origin": "Victorian-era Britain and US.",
+      "traits": [
+        "Dense ornamentation, filigree, flourishes",
+        "Multiple decorative typefaces per page",
+        "Gold, deep jewel tones, engravings",
+        "Circus/advertising exuberance"
+      ],
+      "example": "Victorian trade cards; circus posters.",
+      "confuse_with": [
+        "arts-and-crafts",
+        "steampunk"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "mid-century-modern",
+      "name": "Mid-Century Modern",
+      "aliases": [
+        "MCM",
+        "atomic age design"
+      ],
+      "category": "historical",
+      "era": "1945–1969",
+      "origin": "Post-war US/Scandinavia (Charles & Ray Eames, Paul Rand era).",
+      "traits": [
+        "Clean organic + geometric balance",
+        "Warm retro palette (mustard, teal, orange, brown)",
+        "Simple friendly illustration, atomic motifs",
+        "Functional optimism"
+      ],
+      "example": "Eames furniture; Paul Rand IBM/Westinghouse logos; Saul Bass.",
+      "confuse_with": [
+        "scandinavian",
+        "atompunk",
+        "space-age"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "streamline-moderne",
+      "name": "Streamline Moderne",
+      "aliases": [
+        "Art Moderne",
+        "Streamline"
+      ],
+      "category": "historical",
+      "era": "1930s",
+      "origin": "Late Art Deco offshoot, US industrial design.",
+      "traits": [
+        "Aerodynamic curves and horizontal speed lines",
+        "Rounded corners, nautical/machine forms",
+        "Silver, cream, chrome accents",
+        "Sleek, futuristic-for-its-time"
+      ],
+      "example": "Chrysler Airflow; diners; ocean-liner graphics.",
+      "confuse_with": [
+        "art-deco",
+        "googie"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "vienna-secession",
+      "name": "Vienna Secession",
+      "aliases": [
+        "Secessionist",
+        "Wiener Werkstätte"
+      ],
+      "category": "historical",
+      "era": "1897–1905",
+      "origin": "Vienna (Gustav Klimt, Koloman Moser, Josef Hoffmann).",
+      "traits": [
+        "Geometric grids of squares married to ornament",
+        "Gold leaf, decorative symbolism",
+        "Custom geometric lettering",
+        "Bridge between Art Nouveau and Deco"
+      ],
+      "example": "Klimt Beethoven Frieze; Ver Sacrum journal.",
+      "confuse_with": [
+        "art-nouveau",
+        "art-deco"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "punk-zine",
+      "name": "Punk Zine / Cut-and-Paste",
+      "aliases": [
+        "zine",
+        "ransom note",
+        "DIY punk"
+      ],
+      "category": "historical",
+      "era": "1976–1985",
+      "origin": "UK/US punk subculture (Jamie Reid, Sex Pistols).",
+      "traits": [
+        "Photocopied, torn, cut-and-paste collage",
+        "Ransom-note lettering from clippings",
+        "High-contrast xerox degradation",
+        "Anti-authority DIY energy"
+      ],
+      "example": "Jamie Reid Sex Pistols 'God Save the Queen'; punk fanzines.",
+      "confuse_with": [
+        "dada",
+        "grunge"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "wpa-poster",
+      "name": "WPA / Vintage Poster",
+      "aliases": [
+        "travel poster",
+        "screenprint poster",
+        "WPA"
+      ],
+      "category": "historical",
+      "era": "1935–1943",
+      "origin": "US Works Progress Administration Federal Art Project.",
+      "traits": [
+        "Flat screen-printed color areas",
+        "Bold simplified shapes and shadows",
+        "Limited ink palette, gradient skies",
+        "Optimistic public-service messaging"
+      ],
+      "example": "WPA national park posters; vintage airline/travel posters.",
+      "confuse_with": [
+        "mid-century-modern",
+        "risograph"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "cyberpunk",
+      "name": "Cyberpunk",
+      "aliases": [
+        "cyber",
+        "high tech low life",
+        "neon noir"
+      ],
+      "category": "retrofuturism",
+      "era": "1982–present",
+      "origin": "Literary roots (Gibson 'Neuromancer' 1984); visual codex from Blade Runner (1982); revived by Cyberpunk 2077.",
+      "traits": [
+        "Neon glow (cyan/magenta) on near-black",
+        "Dense HUD/glitch overlays, mono type, scanlines",
+        "Rain-slick megacity noir, holograms",
+        "High-contrast, dystopian, tech-saturated"
+      ],
+      "example": "Blade Runner; Cyberpunk 2077 UI; Ghost in the Shell.",
+      "confuse_with": [
+        "synthwave",
+        "vaporwave",
+        "glitch-art"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#05010d",
+          "surface": "#0d0221",
+          "surface-2": "#160a2b",
+          "text": "#e8f9ff",
+          "text-muted": "#7a8fa6",
+          "primary": "#00fff5",
+          "accent": "#ff003c",
+          "magenta": "#ff00e6",
+          "yellow": "#faff00",
+          "border": "#00fff5"
+        },
+        "radius": {
+          "sm": "0px",
+          "md": "2px",
+          "lg": "4px",
+          "pill": "999px"
+        },
+        "shadow": {
+          "glow-cyan": "0 0 6px #00fff5, 0 0 18px rgba(0,255,245,0.6)",
+          "glow-magenta": "0 0 6px #ff00e6, 0 0 18px rgba(255,0,230,0.6)"
+        },
+        "blur": {},
+        "font": {
+          "sans": "'Rajdhani', 'Chakra Petch', system-ui, sans-serif",
+          "display": "'Orbitron', 'Rajdhani', sans-serif",
+          "mono": "'Share Tech Mono', ui-monospace, monospace"
+        },
+        "text": {
+          "xs": "0.75rem",
+          "sm": "0.875rem",
+          "base": "1rem",
+          "lg": "1.125rem",
+          "xl": "1.375rem",
+          "2xl": "1.75rem",
+          "3xl": "2.25rem",
+          "4xl": "3rem",
+          "5xl": "4rem"
+        },
+        "space": {
+          "1": "4px",
+          "2": "8px",
+          "3": "12px",
+          "4": "16px",
+          "6": "24px",
+          "8": "32px",
+          "12": "48px",
+          "16": "64px",
+          "24": "96px"
+        },
+        "ease": {
+          "standard": "steps(3, end)",
+          "glitch": "steps(2, jump-none)"
+        },
+        "extra": {
+          "scanline": "repeating-linear-gradient(0deg, rgba(0,255,245,0.05) 0 1px, transparent 1px 3px)",
+          "neon-border": "1px solid #00fff5"
+        }
+      }
+    },
+    {
+      "slug": "solarpunk",
+      "name": "Solarpunk",
+      "aliases": [
+        "eco-futurism"
+      ],
+      "category": "retrofuturism",
+      "era": "2008–present",
+      "origin": "Emerged online ~2008 as optimistic counter to cyberpunk.",
+      "traits": [
+        "Lush greenery fused with clean technology",
+        "Warm sunlit palette: greens, gold, sky blue, terracotta",
+        "Art-Nouveau-influenced organic linework",
+        "Hopeful, sustainable, community-centered"
+      ],
+      "example": "Solarpunk art collections; 'Chobani' Solarpunk ad (2021).",
+      "confuse_with": [
+        "frutiger-aero",
+        "art-nouveau",
+        "cottagecore"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#f5f9e8",
+          "surface": "#ffffff",
+          "text": "#1f3a2e",
+          "text-muted": "#4f6f5f",
+          "primary": "#2f9e6e",
+          "accent": "#f4b23e",
+          "leaf": "#6cbf6c",
+          "sky": "#8fd0e6",
+          "clay": "#d98a5c"
+        },
+        "radius": {
+          "sm": "10px",
+          "md": "20px",
+          "lg": "32px",
+          "pill": "999px"
+        },
+        "shadow": {
+          "soft": "0 8px 24px rgba(47,158,110,0.15)"
+        },
+        "blur": {},
+        "font": {
+          "sans": "'Quicksand', 'Nunito', system-ui, sans-serif",
+          "display": "'Fraunces', 'Quicksand', serif",
+          "mono": "ui-monospace, monospace"
+        },
+        "text": {
+          "xs": "0.75rem",
+          "sm": "0.875rem",
+          "base": "1rem",
+          "lg": "1.125rem",
+          "xl": "1.375rem",
+          "2xl": "1.75rem",
+          "3xl": "2.25rem",
+          "4xl": "3rem",
+          "5xl": "4rem"
+        },
+        "space": {
+          "1": "4px",
+          "2": "8px",
+          "3": "12px",
+          "4": "16px",
+          "6": "24px",
+          "8": "32px",
+          "12": "48px",
+          "16": "64px",
+          "24": "96px"
+        },
+        "ease": {
+          "standard": "cubic-bezier(0.34, 1.2, 0.64, 1)"
+        },
+        "extra": {
+          "foliage": "radial-gradient(circle at 20% 10%, rgba(108,191,108,0.25), transparent 40%)",
+          "art-nouveau-line": "2px solid #2f9e6e"
+        }
+      }
+    },
+    {
+      "slug": "steampunk",
+      "name": "Steampunk",
+      "aliases": [
+        "Victorian sci-fi",
+        "gaslamp"
+      ],
+      "category": "retrofuturism",
+      "era": "1980s–present",
+      "origin": "Coined 1987 (K.W. Jeter); Victorian-era speculative tech.",
+      "traits": [
+        "Brass, copper, wood, leather materials",
+        "Exposed gears, cogs, rivets, pipes, gauges",
+        "Ornate Victorian serif type and filigree",
+        "Analog steam-powered anachronistic tech"
+      ],
+      "example": "The Difference Engine; Wild Wild West; BioShock Infinite-adjacent.",
+      "confuse_with": [
+        "dieselpunk",
+        "victorian"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "dieselpunk",
+      "name": "Dieselpunk",
+      "aliases": [
+        "interwar retrofuturism"
+      ],
+      "category": "retrofuturism",
+      "era": "2001–present",
+      "origin": "Term coined ~2001; aesthetic of 1920s–1940s diesel era.",
+      "traits": [
+        "Interwar/WWII industrial machine age",
+        "Art Deco + military-industrial forms",
+        "Muted metals, propaganda-poster palette",
+        "Streamlined engines, zeppelins, riveted steel"
+      ],
+      "example": "BioShock; Sky Captain and the World of Tomorrow.",
+      "confuse_with": [
+        "atompunk",
+        "art-deco",
+        "steampunk"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "atompunk",
+      "name": "Atompunk",
+      "aliases": [
+        "atomic age",
+        "raygun gothic-adjacent"
+      ],
+      "category": "retrofuturism",
+      "era": "1998–present",
+      "origin": "Retrofuturism of the atomic age (1945–1965).",
+      "traits": [
+        "Googie curves, boomerangs, starbursts",
+        "Space-race optimism, atoms and rockets",
+        "Teal, orange, chrome, formica",
+        "Populuxe consumer futurism"
+      ],
+      "example": "Fallout series UI; The Jetsons; mid-century ads.",
+      "confuse_with": [
+        "googie",
+        "raygun-gothic",
+        "space-age"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "cassette-futurism",
+      "name": "Cassette Futurism",
+      "aliases": [
+        "cassette punk",
+        "analog sci-fi"
+      ],
+      "category": "retrofuturism",
+      "era": "2010s–present (evokes 1970s–80s)",
+      "origin": "Fan term for retro-analog sci-fi tech aesthetics.",
+      "traits": [
+        "Chunky beige/grey plastic hardware",
+        "CRT monitors, blinking LEDs, physical switches",
+        "Monospace amber/green terminal type",
+        "Lo-fi analog 'future as imagined in 1979'"
+      ],
+      "example": "Alien (Nostromo); Severance; Fallout Pip-Boy.",
+      "confuse_with": [
+        "ascii-terminal",
+        "crt",
+        "dieselpunk"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "biopunk",
+      "name": "Biopunk",
+      "aliases": [
+        "organic sci-fi",
+        "biotech"
+      ],
+      "category": "retrofuturism",
+      "era": "1990s–present",
+      "origin": "Offshoot of cyberpunk focused on biotechnology.",
+      "traits": [
+        "Wet organic textures, flesh and fungus",
+        "Bio-luminescence, veins, membranes",
+        "Genetic/lab motifs",
+        "Body-horror-adjacent futurism"
+      ],
+      "example": "The Thing; Scorn; Annihilation.",
+      "confuse_with": [
+        "cyberpunk",
+        "organic-design"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "nanopunk",
+      "name": "Nanopunk",
+      "aliases": [
+        "nanotech futurism"
+      ],
+      "category": "retrofuturism",
+      "era": "2000s–present",
+      "origin": "Cyberpunk offshoot centered on nanotechnology.",
+      "traits": [
+        "Swarming particle/grey-goo motifs",
+        "Clinical near-future tech",
+        "Molecular grid overlays",
+        "Smart-material morphing surfaces"
+      ],
+      "example": "Prey; various near-future sci-fi UIs.",
+      "confuse_with": [
+        "cyberpunk",
+        "biopunk"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "y2k-futurism",
+      "name": "Y2K Futurism",
+      "aliases": [
+        "Y2K",
+        "millennium bug aesthetic",
+        "cyber-y2k"
+      ],
+      "category": "retrofuturism",
+      "era": "1995–2004",
+      "origin": "Turn-of-millennium optimistic tech aesthetic.",
+      "traits": [
+        "Glossy translucent 'blobjects' and chrome",
+        "Metallic silver, icy blues, hot pink accents",
+        "Bubble/inflatable UI, lens flares, starbursts",
+        "Techno-optimism, iMac G3 / bubble tech"
+      ],
+      "example": "iMac G3; The Matrix marketing; early Windows XP era ads.",
+      "confuse_with": [
+        "frutiger-aero",
+        "vaporwave",
+        "chromecore"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#dfe9f5",
+          "surface": "#ffffff",
+          "text": "#1b2a4a",
+          "text-muted": "#5a6b8c",
+          "primary": "#8ab6ff",
+          "accent": "#c0f0ff",
+          "silver": "#c7d2df",
+          "lilac": "#d6c7ff",
+          "hotpink": "#ff8fd6"
+        },
+        "radius": {
+          "sm": "8px",
+          "md": "18px",
+          "lg": "999px",
+          "pill": "999px"
+        },
+        "shadow": {
+          "bubble": "inset 0 2px 6px rgba(255,255,255,0.9), 0 6px 14px rgba(120,160,220,0.4)",
+          "chrome": "inset 0 1px 0 #ffffff, inset 0 -3px 6px rgba(0,0,0,0.15)"
+        },
+        "blur": {},
+        "font": {
+          "sans": "'Michroma', 'Eurostile', 'Arial', sans-serif",
+          "display": "'Michroma', 'Orbitron', sans-serif",
+          "mono": "ui-monospace, monospace"
+        },
+        "text": {
+          "xs": "0.75rem",
+          "sm": "0.875rem",
+          "base": "1rem",
+          "lg": "1.125rem",
+          "xl": "1.375rem",
+          "2xl": "1.75rem",
+          "3xl": "2.25rem",
+          "4xl": "3rem",
+          "5xl": "4rem"
+        },
+        "space": {
+          "1": "4px",
+          "2": "8px",
+          "3": "12px",
+          "4": "16px",
+          "6": "24px",
+          "8": "32px",
+          "12": "48px",
+          "16": "64px",
+          "24": "96px"
+        },
+        "ease": {
+          "standard": "cubic-bezier(0.34, 1.56, 0.64, 1)"
+        },
+        "extra": {
+          "aqua-gel": "linear-gradient(180deg, #ffffff 0%, #c0f0ff 45%, #8ab6ff 100%)",
+          "chrome-metal": "linear-gradient(180deg, #f4f8ff, #c7d2df 50%, #9fb0c4 51%, #eef3fb)"
+        }
+      }
+    },
+    {
+      "slug": "frutiger-aero",
+      "name": "Frutiger Aero",
+      "aliases": [
+        "Web 2.0 gloss",
+        "Aero",
+        "cleancore"
+      ],
+      "category": "retrofuturism",
+      "era": "2004–2013",
+      "origin": "Retroactively named (after Frutiger typeface + Windows Aero); nature-meets-tech optimism.",
+      "traits": [
+        "Glossy skeuomorphic bubbles and glass",
+        "Nature imagery: water, bubbles, grass, blue skies",
+        "Aqua gradients, lens flares, clean tech",
+        "Humanist Frutiger/Myriad type, auto-glow"
+      ],
+      "example": "Windows Vista/7; Wii/iOS-era wallpapers; Windows XP 'Bliss'.",
+      "confuse_with": [
+        "glassmorphism",
+        "y2k-futurism",
+        "solarpunk"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#eaf6ff",
+          "surface": "rgba(255,255,255,0.55)",
+          "text": "#0b3d2e",
+          "text-muted": "#2f6b57",
+          "primary": "#38b6ff",
+          "accent": "#7ed957",
+          "sky": "#8fd3ff",
+          "green": "#5bd06a",
+          "aqua": "#00c2c7"
+        },
+        "radius": {
+          "sm": "8px",
+          "md": "16px",
+          "lg": "24px",
+          "pill": "999px"
+        },
+        "shadow": {
+          "gloss": "inset 0 1px 0 rgba(255,255,255,0.9), 0 8px 20px rgba(56,182,255,0.25)",
+          "sm": "0 4px 12px rgba(56,182,255,0.2)"
+        },
+        "blur": {
+          "backdrop": "10px"
+        },
+        "font": {
+          "sans": "'Frutiger', 'Myriad Pro', 'Segoe UI', system-ui, sans-serif",
+          "display": "'Myriad Pro', 'Segoe UI', sans-serif",
+          "mono": "ui-monospace, monospace"
+        },
+        "text": {
+          "xs": "0.75rem",
+          "sm": "0.875rem",
+          "base": "1rem",
+          "lg": "1.125rem",
+          "xl": "1.375rem",
+          "2xl": "1.75rem",
+          "3xl": "2.25rem",
+          "4xl": "3rem",
+          "5xl": "4rem"
+        },
+        "space": {
+          "1": "4px",
+          "2": "8px",
+          "3": "12px",
+          "4": "16px",
+          "6": "24px",
+          "8": "32px",
+          "12": "48px",
+          "16": "64px",
+          "24": "96px"
+        },
+        "ease": {
+          "standard": "cubic-bezier(0.4, 0, 0.2, 1)"
+        },
+        "extra": {
+          "glossy": "linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.25) 50%, rgba(255,255,255,0.4) 51%, rgba(255,255,255,0.65) 100%)",
+          "sky-bg": "linear-gradient(180deg, #eaf6ff 0%, #bfe8ff 55%, #d9f7d0 100%)"
+        }
+      }
+    },
+    {
+      "slug": "vaporwave",
+      "name": "Vaporwave",
+      "aliases": [
+        "vapor",
+        "aesthetic (A E S T H E T I C)"
+      ],
+      "category": "retrofuturism",
+      "era": "2010–present",
+      "origin": "Internet music/visual microgenre (~2010–2012).",
+      "traits": [
+        "Roman busts, 80s/90s consumer nostalgia, glitch",
+        "Pink/purple/cyan sunset gradients",
+        "Japanese katakana, marble, palm trees, grids",
+        "Ironic, dreamy, mall-nostalgic"
+      ],
+      "example": "Macintosh Plus 'Floral Shoppe'; vaporwave album art.",
+      "confuse_with": [
+        "synthwave",
+        "seapunk",
+        "mallsoft"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#1a0033",
+          "surface": "#2d0a4e",
+          "text": "#ffffff",
+          "text-muted": "#c9a6ff",
+          "primary": "#ff71ce",
+          "accent": "#01cdfe",
+          "purple": "#b967ff",
+          "mint": "#05ffa1",
+          "yellow": "#fffb96"
+        },
+        "radius": {
+          "sm": "0px",
+          "md": "6px",
+          "lg": "12px",
+          "pill": "999px"
+        },
+        "shadow": {
+          "glow": "0 0 20px rgba(255,113,206,0.6)",
+          "text-chrome": "2px 2px 0 #01cdfe, -2px -2px 0 #ff71ce"
+        },
+        "blur": {},
+        "font": {
+          "sans": "'VT323', 'Poppins', system-ui, sans-serif",
+          "display": "'Monoton', 'VT323', cursive",
+          "mono": "'VT323', monospace"
+        },
+        "text": {
+          "xs": "0.75rem",
+          "sm": "0.875rem",
+          "base": "1rem",
+          "lg": "1.125rem",
+          "xl": "1.375rem",
+          "2xl": "1.75rem",
+          "3xl": "2.25rem",
+          "4xl": "3rem",
+          "5xl": "4rem"
+        },
+        "space": {
+          "1": "4px",
+          "2": "8px",
+          "3": "12px",
+          "4": "16px",
+          "6": "24px",
+          "8": "32px",
+          "12": "48px",
+          "16": "64px",
+          "24": "96px"
+        },
+        "ease": {
+          "standard": "linear"
+        },
+        "extra": {
+          "grid": "linear-gradient(#ff71ce 1px, transparent 1px), linear-gradient(90deg, #ff71ce 1px, transparent 1px)",
+          "sunset": "linear-gradient(180deg, #ff71ce, #ff9a5a, #fffb96)"
+        }
+      }
+    },
+    {
+      "slug": "synthwave",
+      "name": "Synthwave / Outrun",
+      "aliases": [
+        "outrun",
+        "retrowave",
+        "retro-futurism 80s"
+      ],
+      "category": "retrofuturism",
+      "era": "2009–present",
+      "origin": "Music-driven revival of 1980s sci-fi/action visuals.",
+      "traits": [
+        "Neon grid horizon and giant gradient sun",
+        "Magenta/cyan on deep blue-purple night",
+        "Chrome 80s type, palm trees, sports cars",
+        "Retro-futuristic, cinematic, VHS glow"
+      ],
+      "example": "Kavinsky 'Nightcall'; Hotline Miami; Far Cry Blood Dragon.",
+      "confuse_with": [
+        "vaporwave",
+        "cyberpunk"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#0d0221",
+          "surface": "#170a3a",
+          "text": "#f6f0ff",
+          "text-muted": "#9d8bd6",
+          "primary": "#ff2a6d",
+          "accent": "#05d9e8",
+          "purple": "#d300c5",
+          "orange": "#ff8b00",
+          "grid": "#ff2a6d"
+        },
+        "radius": {
+          "sm": "0px",
+          "md": "4px",
+          "lg": "8px",
+          "pill": "999px"
+        },
+        "shadow": {
+          "glow-pink": "0 0 8px #ff2a6d, 0 0 24px rgba(255,42,109,0.6)",
+          "glow-cyan": "0 0 8px #05d9e8, 0 0 24px rgba(5,217,232,0.6)"
+        },
+        "blur": {},
+        "font": {
+          "sans": "'Kanit', 'Rajdhani', system-ui, sans-serif",
+          "display": "'Monoton', 'Audiowide', cursive",
+          "mono": "'Share Tech Mono', monospace"
+        },
+        "text": {
+          "xs": "0.75rem",
+          "sm": "0.875rem",
+          "base": "1rem",
+          "lg": "1.125rem",
+          "xl": "1.375rem",
+          "2xl": "1.75rem",
+          "3xl": "2.25rem",
+          "4xl": "3rem",
+          "5xl": "4rem"
+        },
+        "space": {
+          "1": "4px",
+          "2": "8px",
+          "3": "12px",
+          "4": "16px",
+          "6": "24px",
+          "8": "32px",
+          "12": "48px",
+          "16": "64px",
+          "24": "96px"
+        },
+        "ease": {
+          "standard": "cubic-bezier(0.4, 0, 0.2, 1)"
+        },
+        "extra": {
+          "sun": "linear-gradient(180deg, #ff8b00 0%, #ff2a6d 60%, #d300c5 100%)",
+          "perspective-grid": "linear-gradient(#05d9e8 1px, transparent 1px)"
+        }
+      }
+    },
+    {
+      "slug": "cyberprep",
+      "name": "Cyberprep",
+      "aliases": [
+        "optimistic cyberpunk"
+      ],
+      "category": "retrofuturism",
+      "era": "1990s–present",
+      "origin": "Optimistic counterpart to dystopian cyberpunk (Frutiger-adjacent).",
+      "traits": [
+        "Clean, bright, safe high-tech future",
+        "White/aqua/green, glossy surfaces",
+        "Seamless friendly tech integration",
+        "Utopian consumer sci-fi"
+      ],
+      "example": "Mirror's Edge; early 2000s tech ads.",
+      "confuse_with": [
+        "frutiger-aero",
+        "cyberpunk"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "dreampunk",
+      "name": "Dreampunk",
+      "aliases": [
+        "oneiric aesthetic"
+      ],
+      "category": "retrofuturism",
+      "era": "2010s–present",
+      "origin": "Surreal, dream-logic offshoot of vaporwave/ambient.",
+      "traits": [
+        "Hazy, ethereal, foggy gradients",
+        "Soft glow, indistinct forms",
+        "Liminal, otherworldly calm",
+        "Ambient, hypnagogic"
+      ],
+      "example": "Dreampunk music visuals; 2814 album art.",
+      "confuse_with": [
+        "vaporwave",
+        "dreamcore"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "raygun-gothic",
+      "name": "Raygun Gothic",
+      "aliases": [
+        "retro sci-fi",
+        "googie sci-fi"
+      ],
+      "category": "retrofuturism",
+      "era": "1930s–1960s (revived)",
+      "origin": "Term popularized by William Gibson; pulp sci-fi + Googie.",
+      "traits": [
+        "Sleek rockets, ray guns, chrome fins",
+        "Streamlined optimistic space age",
+        "Bold geometric sans + starbursts",
+        "1950s 'World of Tomorrow' futurism"
+      ],
+      "example": "The Jetsons; Forbidden Planet; Tomorrowland.",
+      "confuse_with": [
+        "atompunk",
+        "googie",
+        "space-age"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "googie",
+      "name": "Googie",
+      "aliases": [
+        "populuxe",
+        "doo-wop architecture"
+      ],
+      "category": "retrofuturism",
+      "era": "1945–1969",
+      "origin": "Southern California car-culture architecture.",
+      "traits": [
+        "Upswept roofs, boomerangs, starbursts, atoms",
+        "Bold neon signage, cantilevers",
+        "Space-age optimism",
+        "Amoeba/kidney-bean shapes"
+      ],
+      "example": "LAX Theme Building; retro motel/diner signs.",
+      "confuse_with": [
+        "atompunk",
+        "streamline-moderne",
+        "space-age"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "space-age",
+      "name": "Space Age Pop",
+      "aliases": [
+        "space age",
+        "1960s futurism"
+      ],
+      "category": "retrofuturism",
+      "era": "1957–1972",
+      "origin": "Space-race-era design optimism.",
+      "traits": [
+        "Sleek white + primary pops, molded plastic",
+        "Spherical/pod forms, chrome",
+        "Op-art and geometric patterns",
+        "Astronaut-era optimism"
+      ],
+      "example": "2001: A Space Odyssey interiors; Panton furniture.",
+      "confuse_with": [
+        "atompunk",
+        "mid-century-modern"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "seapunk",
+      "name": "Seapunk",
+      "aliases": [
+        "aquatic vaporwave"
+      ],
+      "category": "retrofuturism",
+      "era": "2011–2013",
+      "origin": "Tumblr-born internet microgenre.",
+      "traits": [
+        "Aquatic teal/cyan, dolphins, waves",
+        "90s CGI/Web 1.0 nostalgia",
+        "Yin-yang, glitch, holographic",
+        "Watery, kitschy, ironic"
+      ],
+      "example": "Seapunk Tumblr; Rihanna 2012 SNL visuals.",
+      "confuse_with": [
+        "vaporwave",
+        "vectordelia",
+        "y2k-futurism"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "vectordelia",
+      "name": "Vectordelia",
+      "aliases": [
+        "Web 2.0 vectors",
+        "swirl graphics"
+      ],
+      "category": "retrofuturism",
+      "era": "2004–2010",
+      "origin": "Mid-2000s vector-art trend (part of Frutiger family).",
+      "traits": [
+        "Swooping vector swirls and 'wirebirds'",
+        "Glossy gradients, floral flourishes",
+        "Bright saturated color",
+        "Adobe Illustrator flourish era"
+      ],
+      "example": "Mid-2000s tech ads; Windows Vista promo art.",
+      "confuse_with": [
+        "frutiger-aero",
+        "y2k-futurism"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "mcbling",
+      "name": "McBling",
+      "aliases": [
+        "bling era",
+        "2000s glam"
+      ],
+      "category": "retrofuturism",
+      "era": "2003–2008",
+      "origin": "Mid-2000s pop-culture glamour aesthetic.",
+      "traits": [
+        "Rhinestones, glitter, hot pink, gold bling",
+        "Flip-phone/tabloid celebrity culture",
+        "Juicy/velour, Y2K glam",
+        "Ostentatious, playful excess"
+      ],
+      "example": "Paris Hilton era; early Myspace glam.",
+      "confuse_with": [
+        "y2k-futurism",
+        "barbiecore"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "chromecore",
+      "name": "Chromecore",
+      "aliases": [
+        "liquid chrome",
+        "metal type"
+      ],
+      "category": "retrofuturism",
+      "era": "2020s (evokes Y2K)",
+      "origin": "Revived Y2K metallic aesthetic.",
+      "traits": [
+        "Liquid/reflective chrome surfaces and type",
+        "Silver, mercury, iridescent reflections",
+        "Blobby metallic 3D forms",
+        "Futuristic, sleek, cold"
+      ],
+      "example": "2020s album covers; fashion (Balenciaga, Rui).",
+      "confuse_with": [
+        "y2k-futurism",
+        "holographic",
+        "chrome-metal"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "silicon-dreams",
+      "name": "Silicon Dreams",
+      "aliases": [
+        "Frutiger Metro"
+      ],
+      "category": "retrofuturism",
+      "era": "2005–2012",
+      "origin": "Frutiger-family aesthetic; darker tech-corporate variant.",
+      "traits": [
+        "Dark glossy tech backgrounds",
+        "Blue glow, circuitry, HUD hints",
+        "Corporate futurism",
+        "Glass + neon-blue accents"
+      ],
+      "example": "Mid-2000s corporate tech keynotes.",
+      "confuse_with": [
+        "frutiger-aero",
+        "cyberprep"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "laserwave",
+      "name": "Laserwave / Darksynth",
+      "aliases": [
+        "darksynth",
+        "dreamwave"
+      ],
+      "category": "retrofuturism",
+      "era": "2013–present",
+      "origin": "Darker, harder subgenre of synthwave.",
+      "traits": [
+        "Aggressive neon on black, horror tones",
+        "Red/purple/cyan, chrome skulls",
+        "Cinematic, ominous",
+        "VHS grain and glow"
+      ],
+      "example": "Perturbator; Carpenter Brut visuals.",
+      "confuse_with": [
+        "synthwave",
+        "cyberpunk"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "minimalism",
+      "name": "Minimalism",
+      "aliases": [
+        "minimal",
+        "less is more"
+      ],
+      "category": "minimal-organic",
+      "era": "1960s art → 2000s digital",
+      "origin": "Roots in minimal art (Donald Judd) + Dieter Rams; digital via Apple/Google.",
+      "traits": [
+        "Extreme restraint: whitespace, few elements",
+        "Limited (often monochrome) palette",
+        "Strong typographic hierarchy carries design",
+        "Every element earns its place"
+      ],
+      "example": "Apple product pages; Dieter Rams Braun; Google homepage.",
+      "confuse_with": [
+        "swiss-design",
+        "flat-design",
+        "minimalism-japanese"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#ffffff",
+          "surface": "#ffffff",
+          "surface-2": "#fafafa",
+          "text": "#111111",
+          "text-muted": "#767676",
+          "primary": "#111111",
+          "accent": "#111111",
+          "border": "#e6e6e6"
+        },
+        "radius": {
+          "sm": "2px",
+          "md": "4px",
+          "lg": "8px",
+          "pill": "999px"
+        },
+        "shadow": {
+          "none": "none",
+          "sm": "0 1px 2px rgba(0,0,0,0.04)"
+        },
+        "blur": {},
+        "font": {
+          "sans": "'Inter', 'Helvetica Neue', system-ui, sans-serif",
+          "display": "'Inter', system-ui, sans-serif",
+          "mono": "ui-monospace, monospace"
+        },
+        "text": {
+          "xs": "0.75rem",
+          "sm": "0.875rem",
+          "base": "1rem",
+          "lg": "1.125rem",
+          "xl": "1.375rem",
+          "2xl": "1.75rem",
+          "3xl": "2.25rem",
+          "4xl": "3rem",
+          "5xl": "4rem"
+        },
+        "space": {
+          "1": "8px",
+          "2": "16px",
+          "3": "24px",
+          "4": "32px",
+          "6": "48px",
+          "8": "64px",
+          "12": "96px",
+          "16": "128px",
+          "24": "192px"
+        },
+        "ease": {
+          "standard": "cubic-bezier(0.4, 0, 0.2, 1)"
+        },
+        "extra": {
+          "hairline": "1px solid #e6e6e6"
+        }
+      }
+    },
+    {
+      "slug": "maximalism",
+      "name": "Maximalism",
+      "aliases": [
+        "more is more",
+        "maximal"
+      ],
+      "category": "minimal-organic",
+      "era": "2018–present",
+      "origin": "Reaction against flat minimalism; 'more is more'.",
+      "traits": [
+        "Dense layering, clashing color and pattern",
+        "Big expressive type, many focal points",
+        "Ornament, texture, collage, saturation",
+        "Bold, joyful visual overload"
+      ],
+      "example": "Gucci editorial; many 2020s portfolio/agency sites.",
+      "confuse_with": [
+        "memphis-design",
+        "neubrutalism"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#14002e",
+          "surface": "#2a0a52",
+          "text": "#fff6d5",
+          "text-muted": "#f2c9ff",
+          "primary": "#ff007a",
+          "accent": "#ffd400",
+          "lime": "#aaff00",
+          "cyan": "#00e5ff",
+          "orange": "#ff6a00"
+        },
+        "radius": {
+          "sm": "6px",
+          "md": "16px",
+          "lg": "28px",
+          "pill": "999px"
+        },
+        "shadow": {
+          "pop": "8px 8px 0 #ffd400, 16px 16px 0 #ff007a",
+          "glow": "0 0 24px rgba(255,0,122,0.6)"
+        },
+        "blur": {},
+        "font": {
+          "sans": "'Fraunces', 'Poppins', system-ui, sans-serif",
+          "display": "'Rubik Mono One', 'Fraunces', serif",
+          "mono": "'Space Mono', monospace"
+        },
+        "text": {
+          "xs": "0.8rem",
+          "sm": "1rem",
+          "base": "1.15rem",
+          "lg": "1.5rem",
+          "xl": "2.1rem",
+          "2xl": "3rem",
+          "3xl": "4.2rem",
+          "4xl": "6rem",
+          "5xl": "8.5rem"
+        },
+        "space": {
+          "1": "4px",
+          "2": "8px",
+          "3": "12px",
+          "4": "16px",
+          "6": "24px",
+          "8": "32px",
+          "12": "48px",
+          "16": "64px",
+          "24": "96px"
+        },
+        "ease": {
+          "standard": "cubic-bezier(0.34, 1.56, 0.64, 1)"
+        },
+        "extra": {
+          "clash": "linear-gradient(135deg, #ff007a, #ffd400, #00e5ff)"
+        }
+      }
+    },
+    {
+      "slug": "bento-grid",
+      "name": "Bento Grid",
+      "aliases": [
+        "bento box layout",
+        "bento UI"
+      ],
+      "category": "minimal-organic",
+      "era": "2022–present",
+      "origin": "Named after Japanese bento boxes; popularized by Apple keynote slides & MagicUI.",
+      "traits": [
+        "Modular rounded-rectangle cells of varied sizes",
+        "Each cell one idea/feature; dense but tidy",
+        "Consistent gaps, mixed media per cell",
+        "Scannable dashboard-like composition"
+      ],
+      "example": "Apple keynote feature slides; Vercel/Linear marketing; MagicUI.",
+      "confuse_with": [
+        "minimalism",
+        "dashboard-analytics"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#0b0b0f",
+          "surface": "#16161d",
+          "surface-2": "#1f1f28",
+          "text": "#f5f5f7",
+          "text-muted": "#a1a1aa",
+          "primary": "#0a84ff",
+          "accent": "#30d158",
+          "border": "rgba(255,255,255,0.08)"
+        },
+        "radius": {
+          "sm": "14px",
+          "md": "20px",
+          "lg": "28px",
+          "cell": "24px",
+          "pill": "999px"
+        },
+        "shadow": {
+          "sm": "0 1px 2px rgba(0,0,0,0.4)",
+          "cell": "0 8px 30px rgba(0,0,0,0.35)"
+        },
+        "blur": {},
+        "font": {
+          "sans": "'Inter', 'SF Pro Text', system-ui, sans-serif",
+          "display": "'Inter Display', 'SF Pro Display', system-ui, sans-serif",
+          "mono": "'JetBrains Mono', monospace"
+        },
+        "text": {
+          "xs": "0.75rem",
+          "sm": "0.875rem",
+          "base": "1rem",
+          "lg": "1.125rem",
+          "xl": "1.375rem",
+          "2xl": "1.75rem",
+          "3xl": "2.25rem",
+          "4xl": "3rem",
+          "5xl": "4rem"
+        },
+        "space": {
+          "1": "4px",
+          "2": "8px",
+          "3": "12px",
+          "4": "16px",
+          "6": "24px",
+          "8": "32px",
+          "12": "48px",
+          "16": "64px",
+          "24": "96px"
+        },
+        "ease": {
+          "standard": "cubic-bezier(0.2, 0, 0, 1)"
+        },
+        "extra": {
+          "grid-gap": "16px",
+          "cell-padding": "24px"
+        }
+      }
+    },
+    {
+      "slug": "organic-design",
+      "name": "Organic / Biomorphic",
+      "aliases": [
+        "biomorphic",
+        "nature-inspired"
+      ],
+      "category": "minimal-organic",
+      "era": "2018–present",
+      "origin": "Reaction to rigid grids; nature-derived forms.",
+      "traits": [
+        "Flowing curves and asymmetric blobs",
+        "Soft natural palettes",
+        "Fluid, hand-tuned layouts",
+        "Wave dividers, rounded everything"
+      ],
+      "example": "Wellness/beauty brand sites; many 2020s landing pages.",
+      "confuse_with": [
+        "blobmorphism",
+        "solarpunk"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "blobmorphism",
+      "name": "Blobmorphism",
+      "aliases": [
+        "blob design",
+        "blob shapes"
+      ],
+      "category": "minimal-organic",
+      "era": "2019–present",
+      "origin": "Trend of amorphous blob shapes as UI/decoration.",
+      "traits": [
+        "Irregular gooey blob backgrounds and masks",
+        "Bright gradient-filled blobs",
+        "Playful, friendly, soft",
+        "Animated morphing shapes"
+      ],
+      "example": "Dribbble blob illustration sets; startup hero backgrounds.",
+      "confuse_with": [
+        "organic-design",
+        "claymorphism"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "scandinavian",
+      "name": "Scandinavian / Nordic",
+      "aliases": [
+        "Nordic design",
+        "hygge"
+      ],
+      "category": "minimal-organic",
+      "era": "1930s–present",
+      "origin": "Nordic modernism (Alvar Aalto, Arne Jacobsen).",
+      "traits": [
+        "Warm minimalism: light woods, soft neutrals",
+        "Functional, cozy (hygge), uncluttered",
+        "Natural materials and muted accents",
+        "Human-centered simplicity"
+      ],
+      "example": "IKEA; Muuto; HAY.",
+      "confuse_with": [
+        "minimalism",
+        "japandi",
+        "mid-century-modern"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#f7f4ef",
+          "surface": "#ffffff",
+          "surface-2": "#efe9e1",
+          "text": "#2b2b2b",
+          "text-muted": "#6f6a63",
+          "primary": "#3a5a40",
+          "accent": "#c98a6a",
+          "sky": "#a8c5d6",
+          "wood": "#d8b8a0"
+        },
+        "radius": {
+          "sm": "6px",
+          "md": "12px",
+          "lg": "20px",
+          "pill": "999px"
+        },
+        "shadow": {
+          "soft": "0 6px 20px rgba(43,43,43,0.06)"
+        },
+        "blur": {},
+        "font": {
+          "sans": "'Poppins', 'Work Sans', system-ui, sans-serif",
+          "display": "'Fraunces', 'Poppins', serif",
+          "mono": "ui-monospace, monospace"
+        },
+        "text": {
+          "xs": "0.75rem",
+          "sm": "0.875rem",
+          "base": "1rem",
+          "lg": "1.125rem",
+          "xl": "1.375rem",
+          "2xl": "1.75rem",
+          "3xl": "2.25rem",
+          "4xl": "3rem",
+          "5xl": "4rem"
+        },
+        "space": {
+          "1": "8px",
+          "2": "16px",
+          "3": "24px",
+          "4": "32px",
+          "6": "48px",
+          "8": "64px",
+          "12": "96px",
+          "16": "128px"
+        },
+        "ease": {
+          "standard": "cubic-bezier(0.4, 0, 0.2, 1)"
+        },
+        "extra": {
+          "hairline": "1px solid #e4ddd2"
+        }
+      }
+    },
+    {
+      "slug": "japandi",
+      "name": "Japandi",
+      "aliases": [
+        "Japanese Scandinavian"
+      ],
+      "category": "minimal-organic",
+      "era": "2017–present",
+      "origin": "Hybrid of Japanese wabi-sabi and Scandinavian minimalism.",
+      "traits": [
+        "Muted earthy neutrals, natural materials",
+        "Calm, warm, functional restraint",
+        "Handcraft imperfection (wabi-sabi)",
+        "Negative space and balance"
+      ],
+      "example": "Muji-adjacent interiors; premium wellness brands.",
+      "confuse_with": [
+        "scandinavian",
+        "zen-wabisabi",
+        "minimalism"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "zen-wabisabi",
+      "name": "Zen / Wabi-Sabi / Ma",
+      "aliases": [
+        "wabi-sabi",
+        "ma",
+        "Japanese minimalism"
+      ],
+      "category": "minimal-organic",
+      "era": "Traditional Japanese → modern",
+      "origin": "Japanese aesthetics of imperfection (wabi-sabi) and negative space (ma).",
+      "traits": [
+        "Embraces imperfection, age, asymmetry",
+        "Generous negative space ('ma')",
+        "Muted natural, earthen tones",
+        "Calm, contemplative, handmade"
+      ],
+      "example": "Traditional tea-ceremony aesthetics; MUJI.",
+      "confuse_with": [
+        "japandi",
+        "minimalism"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "editorial-layout",
+      "name": "Editorial / Magazine",
+      "aliases": [
+        "editorial design",
+        "magazine layout"
+      ],
+      "category": "minimal-organic",
+      "era": "Print heritage → web",
+      "origin": "Magazine/print art direction adapted to screen.",
+      "traits": [
+        "Strong typographic hierarchy, pull quotes",
+        "Multi-column grids, large imagery",
+        "Drop caps, captions, art-directed spreads",
+        "Reading-first rhythm"
+      ],
+      "example": "The New York Times; Kinfolk; editorial portfolio sites.",
+      "confuse_with": [
+        "swiss-design",
+        "minimalism"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "asymmetric-layout",
+      "name": "Asymmetric / Broken Grid",
+      "aliases": [
+        "broken grid",
+        "offset layout"
+      ],
+      "category": "minimal-organic",
+      "era": "2017–present",
+      "origin": "Reaction to templated symmetric layouts.",
+      "traits": [
+        "Intentional off-grid, overlapping elements",
+        "Dynamic tension and asymmetry",
+        "Layered z-depth, diagonal flow",
+        "Editorial, expressive"
+      ],
+      "example": "Awwwards agency sites; fashion lookbooks.",
+      "confuse_with": [
+        "editorial-layout",
+        "swiss-punk"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "dark-mode",
+      "name": "Dark Mode",
+      "aliases": [
+        "dark theme",
+        "night mode"
+      ],
+      "category": "minimal-organic",
+      "era": "2018–present",
+      "origin": "Mainstreamed by iOS/Android/macOS dark themes (2018–2019).",
+      "traits": [
+        "Dark neutral backgrounds (#0d0d12-ish, not pure black)",
+        "Desaturated accent colors to avoid vibration",
+        "Elevation via lighter surfaces, not shadow",
+        "Reduced eye strain, OLED-friendly"
+      ],
+      "example": "System dark modes; Linear; developer tools.",
+      "confuse_with": [
+        "minimalism",
+        "bento-grid"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "monochrome",
+      "name": "Monochrome / Grayscale",
+      "aliases": [
+        "black and white",
+        "single-hue"
+      ],
+      "category": "minimal-organic",
+      "era": "Timeless",
+      "origin": "Reductive palette discipline.",
+      "traits": [
+        "Single hue or pure grayscale",
+        "Contrast and texture do the work",
+        "Photography-forward, elegant",
+        "Optional single accent color"
+      ],
+      "example": "Fashion houses (COS, Céline); photography portfolios.",
+      "confuse_with": [
+        "minimalism",
+        "swiss-design"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "editorial-brutalist-minimal",
+      "name": "Brutalist Minimalism",
+      "aliases": [
+        "minimal brutalism"
+      ],
+      "category": "minimal-organic",
+      "era": "2018–present",
+      "origin": "Cross of brutalism's honesty with minimalism's restraint.",
+      "traits": [
+        "Big type, hairline rules, monospace accents",
+        "Lots of whitespace, few colors",
+        "Exposed structure without decoration",
+        "Cold, confident, editorial"
+      ],
+      "example": "Fashion/agency portfolios; type-foundry sites.",
+      "confuse_with": [
+        "brutalism",
+        "minimalism",
+        "swiss-design"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "chrome-metal",
+      "name": "Chrome / Liquid Metal",
+      "aliases": [
+        "liquid metal",
+        "metallic",
+        "chrome type"
+      ],
+      "category": "texture",
+      "era": "1990s & 2020s revival",
+      "origin": "90s 3D chrome + Y2K revival (2020s).",
+      "traits": [
+        "Reflective mirror-metal surfaces and type",
+        "Environment-map reflections, gradients top-light",
+        "Cold silver/steel with rainbow edge",
+        "Heavy, premium, futuristic"
+      ],
+      "example": "90s metal logos; 2020s chrome typography trend.",
+      "confuse_with": [
+        "holographic",
+        "y2k-futurism",
+        "chromecore"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "holographic",
+      "name": "Holographic / Iridescent",
+      "aliases": [
+        "iridescent",
+        "foil",
+        "holo"
+      ],
+      "category": "texture",
+      "era": "2017–present",
+      "origin": "Holographic foil / oil-slick trend.",
+      "traits": [
+        "Rainbow gradient that shifts by angle",
+        "Oil-slick / soap-bubble iridescence",
+        "Metallic foil sheen on dark or white",
+        "Futuristic, dreamy, premium"
+      ],
+      "example": "Holographic packaging; iridescent brand identities.",
+      "confuse_with": [
+        "chrome-metal",
+        "mesh-gradient",
+        "vaporwave"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#0b0b12",
+          "surface": "rgba(255,255,255,0.08)",
+          "text": "#ffffff",
+          "text-muted": "#c7c7d9",
+          "primary": "#a0f0ff",
+          "accent": "#ff9ff3",
+          "cyan": "#7cf9ff",
+          "pink": "#ff9ff3",
+          "lime": "#c8ff8f"
+        },
+        "radius": {
+          "sm": "10px",
+          "md": "18px",
+          "lg": "28px",
+          "pill": "999px"
+        },
+        "shadow": {
+          "iri": "0 8px 30px rgba(160,240,255,0.35)"
+        },
+        "blur": {
+          "backdrop": "8px"
+        },
+        "font": {
+          "sans": "'Space Grotesk', system-ui, sans-serif",
+          "display": "'Space Grotesk', sans-serif",
+          "mono": "'Space Mono', monospace"
+        },
+        "text": {
+          "xs": "0.75rem",
+          "sm": "0.875rem",
+          "base": "1rem",
+          "lg": "1.125rem",
+          "xl": "1.375rem",
+          "2xl": "1.75rem",
+          "3xl": "2.25rem",
+          "4xl": "3rem",
+          "5xl": "4rem"
+        },
+        "space": {
+          "1": "4px",
+          "2": "8px",
+          "3": "12px",
+          "4": "16px",
+          "6": "24px",
+          "8": "32px",
+          "12": "48px",
+          "16": "64px",
+          "24": "96px"
+        },
+        "ease": {
+          "standard": "cubic-bezier(0.4, 0, 0.2, 1)"
+        },
+        "extra": {
+          "holo": "linear-gradient(115deg, #ff9ff3, #a0f0ff, #c8ff8f, #ff9ff3)",
+          "foil": "conic-gradient(from 0deg, #ff9ff3, #a0f0ff, #c8ff8f, #ffd28f, #ff9ff3)"
+        }
+      }
+    },
+    {
+      "slug": "duotone",
+      "name": "Duotone",
+      "aliases": [
+        "two-tone",
+        "bitone"
+      ],
+      "category": "texture",
+      "era": "Print heritage → 2015 web",
+      "origin": "Spotify's 2015 rebrand mainstreamed digital duotone.",
+      "traits": [
+        "Two-color gradient mapped onto photos",
+        "High-contrast bold pairings",
+        "Unifies mixed imagery",
+        "Punchy, modern, brand-forward"
+      ],
+      "example": "Spotify 2015 identity; festival branding.",
+      "confuse_with": [
+        "halftone",
+        "risograph"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "halftone",
+      "name": "Halftone",
+      "aliases": [
+        "dot pattern",
+        "Ben-Day dots"
+      ],
+      "category": "texture",
+      "era": "Print heritage",
+      "origin": "Newspaper/comic printing technique as aesthetic.",
+      "traits": [
+        "Dot grids simulate tone via dot size",
+        "Comic/newsprint texture",
+        "Bold with CMYK registration feel",
+        "Retro print nostalgia"
+      ],
+      "example": "Comic books; Roy Lichtenstein; retro posters.",
+      "confuse_with": [
+        "pop-art",
+        "risograph",
+        "comic"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "risograph",
+      "name": "Risograph",
+      "aliases": [
+        "riso",
+        "riso print"
+      ],
+      "category": "texture",
+      "era": "1980s stencil printing → 2010s revival",
+      "origin": "Riso Kagaku duplicator; indie print revival.",
+      "traits": [
+        "Limited bright spot-ink palette (fluoro pink, blue)",
+        "Visible misregistration and grain",
+        "Overprint multiply blends",
+        "Handmade, imperfect, zine-like"
+      ],
+      "example": "Indie zines; risograph art prints; event posters.",
+      "confuse_with": [
+        "halftone",
+        "duotone",
+        "wpa-poster"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#f3ecde",
+          "surface": "#f3ecde",
+          "text": "#1a1a1a",
+          "text-muted": "#444444",
+          "primary": "#ff5b45",
+          "accent": "#0078bf",
+          "yellow": "#ffd200",
+          "green": "#00a95c",
+          "pink": "#ff48b0"
+        },
+        "radius": {
+          "sm": "0px",
+          "md": "2px",
+          "lg": "4px",
+          "pill": "999px"
+        },
+        "shadow": {
+          "none": "none"
+        },
+        "blur": {},
+        "font": {
+          "sans": "'Space Grotesk', 'Archivo', system-ui, sans-serif",
+          "display": "'Archivo Black', sans-serif",
+          "mono": "'Space Mono', monospace"
+        },
+        "text": {
+          "xs": "0.75rem",
+          "sm": "0.875rem",
+          "base": "1rem",
+          "lg": "1.125rem",
+          "xl": "1.375rem",
+          "2xl": "1.75rem",
+          "3xl": "2.25rem",
+          "4xl": "3rem",
+          "5xl": "4rem"
+        },
+        "space": {
+          "1": "4px",
+          "2": "8px",
+          "3": "12px",
+          "4": "16px",
+          "6": "24px",
+          "8": "32px",
+          "12": "48px",
+          "16": "64px",
+          "24": "96px"
+        },
+        "ease": {
+          "standard": "linear"
+        },
+        "extra": {
+          "grain": "url('data:image/svg+xml;...noise')",
+          "halftone": "radial-gradient(#ff5b45 30%, transparent 31%) 0 0 / 6px 6px",
+          "multiply": "multiply"
+        }
+      }
+    },
+    {
+      "slug": "isometric",
+      "name": "Isometric",
+      "aliases": [
+        "iso illustration",
+        "2.5D"
+      ],
+      "category": "texture",
+      "era": "2015–present",
+      "origin": "Flat 2.5D illustration trend.",
+      "traits": [
+        "Parallel projection, no perspective vanishing",
+        "30° axonometric grids",
+        "Cutaway rooms/cities, tiny detailed scenes",
+        "Clean vector or soft 3D"
+      ],
+      "example": "Tech explainer illustrations; game art.",
+      "confuse_with": [
+        "low-poly",
+        "soft-3d"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "low-poly",
+      "name": "Low Poly",
+      "aliases": [
+        "lowpoly",
+        "faceted 3D"
+      ],
+      "category": "texture",
+      "era": "2012–present",
+      "origin": "Stylized faceted 3D from real-time graphics constraints.",
+      "traits": [
+        "Visible triangular facets and flat shading",
+        "Crystalline geometric forms",
+        "Gradient facet lighting",
+        "Stylized, game-adjacent"
+      ],
+      "example": "Indie game art; low-poly hero backgrounds.",
+      "confuse_with": [
+        "isometric",
+        "voxel"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "voxel",
+      "name": "Voxel Art",
+      "aliases": [
+        "voxel",
+        "3D pixel"
+      ],
+      "category": "texture",
+      "era": "2010s–present",
+      "origin": "3D cubes as pixels (MagicaVoxel, Minecraft-adjacent).",
+      "traits": [
+        "Cubic 3D 'pixels' build objects",
+        "Blocky charming forms",
+        "Bright toy-like palettes",
+        "Isometric voxel scenes"
+      ],
+      "example": "Minecraft; MagicaVoxel dioramas.",
+      "confuse_with": [
+        "pixel-art",
+        "low-poly"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "pixel-art",
+      "name": "Pixel Art / 8-bit",
+      "aliases": [
+        "8-bit",
+        "16-bit",
+        "retro game"
+      ],
+      "category": "texture",
+      "era": "1970s–present",
+      "origin": "Constraint of early raster displays, now deliberate style.",
+      "traits": [
+        "Visible grid of chunky pixels",
+        "Limited palettes (NES/Game Boy)",
+        "Dithering for gradients",
+        "Nostalgic, playful, game-y"
+      ],
+      "example": "Game Boy/NES games; Celeste; pixel-art portfolios.",
+      "confuse_with": [
+        "voxel",
+        "crt"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "ascii-terminal",
+      "name": "ASCII / Terminal / TUI",
+      "aliases": [
+        "terminal UI",
+        "TUI",
+        "ANSI art",
+        "green screen"
+      ],
+      "category": "texture",
+      "era": "1970s–present",
+      "origin": "Text-only terminals; revived as retro/hacker aesthetic.",
+      "traits": [
+        "Monospace text-only layouts, box-drawing chars",
+        "Green/amber phosphor on black",
+        "Blinking cursor, ASCII art, command-line framing",
+        "Utilitarian, hacker, nostalgic"
+      ],
+      "example": "Old DOS/Unix terminals; modern TUIs; hacker movie UIs.",
+      "confuse_with": [
+        "crt",
+        "cassette-futurism",
+        "cyberpunk"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#0a0e0a",
+          "surface": "#0f150f",
+          "text": "#33ff66",
+          "text-muted": "#1f9940",
+          "primary": "#33ff66",
+          "accent": "#ffb000",
+          "amber": "#ffb000",
+          "cursor": "#33ff66",
+          "dim": "#0a3d1a"
+        },
+        "radius": {
+          "sm": "0px",
+          "md": "0px",
+          "lg": "0px",
+          "pill": "0px"
+        },
+        "shadow": {
+          "glow": "0 0 4px rgba(51,255,102,0.7)"
+        },
+        "blur": {},
+        "font": {
+          "sans": "'IBM Plex Mono', 'Courier New', monospace",
+          "display": "'IBM Plex Mono', monospace",
+          "mono": "'IBM Plex Mono', 'Courier New', monospace"
+        },
+        "text": {
+          "xs": "0.75rem",
+          "sm": "0.875rem",
+          "base": "1rem",
+          "lg": "1.125rem",
+          "xl": "1.25rem",
+          "2xl": "1.5rem",
+          "3xl": "2rem",
+          "4xl": "2.5rem",
+          "5xl": "3rem"
+        },
+        "space": {
+          "1": "0.5ch",
+          "2": "1ch",
+          "3": "1.5ch",
+          "4": "2ch",
+          "6": "3ch",
+          "8": "4ch",
+          "12": "6ch",
+          "16": "8ch"
+        },
+        "ease": {
+          "standard": "steps(1, end)"
+        },
+        "extra": {
+          "scanline": "repeating-linear-gradient(0deg, rgba(51,255,102,0.08) 0 1px, transparent 1px 2px)",
+          "border": "1px solid #33ff66"
+        }
+      }
+    },
+    {
+      "slug": "crt",
+      "name": "CRT / Scanline / Retro Monitor",
+      "aliases": [
+        "scanlines",
+        "phosphor",
+        "retro monitor"
+      ],
+      "category": "texture",
+      "era": "Evokes 1970s–90s",
+      "origin": "Emulation of cathode-ray-tube displays.",
+      "traits": [
+        "Horizontal scanlines and screen curvature",
+        "Phosphor glow and bloom",
+        "RGB subpixel/aperture-grille texture",
+        "Flicker, vignette, chromatic edges"
+      ],
+      "example": "Retro game emulators; Fallout terminals; VHS/CRT web filters.",
+      "confuse_with": [
+        "ascii-terminal",
+        "glitch-art",
+        "vhs"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "glitch-art",
+      "name": "Glitch Art",
+      "aliases": [
+        "glitch",
+        "datamosh",
+        "databending"
+      ],
+      "category": "texture",
+      "era": "2010s–present",
+      "origin": "Digital-error aesthetics (databending, datamoshing).",
+      "traits": [
+        "RGB channel split / chromatic aberration",
+        "Pixel sorting, block corruption, tearing",
+        "Scan glitches, jitter, noise",
+        "Broken-signal energy"
+      ],
+      "example": "Glitch music visuals; cyberpunk UIs; error-art.",
+      "confuse_with": [
+        "cyberpunk",
+        "vhs",
+        "crt"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#050505",
+          "surface": "#0d0d0d",
+          "text": "#f2f2f2",
+          "text-muted": "#8a8a8a",
+          "primary": "#ff003c",
+          "accent": "#00f0ff",
+          "green": "#00ff5f",
+          "border": "#ff003c"
+        },
+        "radius": {
+          "sm": "0px",
+          "md": "0px",
+          "lg": "0px",
+          "pill": "0px"
+        },
+        "shadow": {
+          "rgb-split": "2px 0 #ff003c, -2px 0 #00f0ff"
+        },
+        "blur": {},
+        "font": {
+          "sans": "'Space Mono', 'Courier New', monospace",
+          "display": "'Major Mono Display', monospace",
+          "mono": "'Space Mono', monospace"
+        },
+        "text": {
+          "xs": "0.75rem",
+          "sm": "0.875rem",
+          "base": "1rem",
+          "lg": "1.125rem",
+          "xl": "1.375rem",
+          "2xl": "1.75rem",
+          "3xl": "2.25rem",
+          "4xl": "3rem",
+          "5xl": "4rem"
+        },
+        "space": {
+          "1": "4px",
+          "2": "8px",
+          "3": "12px",
+          "4": "16px",
+          "6": "24px",
+          "8": "32px",
+          "12": "48px",
+          "16": "64px",
+          "24": "96px"
+        },
+        "ease": {
+          "standard": "steps(2, jump-none)"
+        },
+        "extra": {
+          "chromatic": "drop-shadow(2px 0 #ff003c) drop-shadow(-2px 0 #00f0ff)",
+          "noise": "repeating-linear-gradient(0deg, rgba(255,255,255,0.04) 0 1px, transparent 1px 2px)"
+        }
+      }
+    },
+    {
+      "slug": "vhs",
+      "name": "VHS / Analog Video",
+      "aliases": [
+        "retro video",
+        "tracking lines",
+        "camcorder"
+      ],
+      "category": "texture",
+      "era": "Evokes 1980s–90s",
+      "origin": "Nostalgia for analog videotape artifacts.",
+      "traits": [
+        "Tracking distortion, tape warble, timestamp overlay",
+        "Chromatic bleed, soft blur, grain",
+        "Date/REC HUD, interlacing",
+        "Warm nostalgic degradation"
+      ],
+      "example": "80s home-video aesthetic; music videos; horror pastiche.",
+      "confuse_with": [
+        "crt",
+        "glitch-art",
+        "vaporwave"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "film-grain",
+      "name": "Film Grain / Noise",
+      "aliases": [
+        "grain",
+        "noise texture",
+        "grainy"
+      ],
+      "category": "texture",
+      "era": "Analog film heritage",
+      "origin": "Adding grain/noise to fight digital sterility.",
+      "traits": [
+        "Subtle photographic grain over flat color",
+        "Analog warmth and texture",
+        "Reduces banding on gradients",
+        "Cinematic, tactile"
+      ],
+      "example": "A24 film sites; premium editorial (grainy gradients).",
+      "confuse_with": [
+        "risograph",
+        "mesh-gradient"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "blueprint",
+      "name": "Blueprint / Technical Drawing",
+      "aliases": [
+        "schematic",
+        "wireframe aesthetic",
+        "draft"
+      ],
+      "category": "texture",
+      "era": "Drafting heritage",
+      "origin": "Architectural/engineering cyanotype drawings.",
+      "traits": [
+        "White line-work on cyan/blue ground",
+        "Grid paper, dimension lines, callouts",
+        "Monospace annotations",
+        "Precise, technical, honest"
+      ],
+      "example": "Product 'how it works' sections; engineering brand sites.",
+      "confuse_with": [
+        "ascii-terminal",
+        "isometric"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "hand-drawn",
+      "name": "Hand-Drawn / Sketch",
+      "aliases": [
+        "doodle",
+        "sketchy",
+        "hand-illustrated"
+      ],
+      "category": "texture",
+      "era": "2016–present",
+      "origin": "Humanizing counter to sterile flat UI.",
+      "traits": [
+        "Rough, wobbly hand-drawn strokes",
+        "Sketch-style borders and arrows",
+        "Marker/pencil textures",
+        "Friendly, approachable, human"
+      ],
+      "example": "Excalidraw; Basecaseinvest-style doodle sites; tldraw.",
+      "confuse_with": [
+        "papercut",
+        "blueprint"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "papercut",
+      "name": "Papercut / Paper Collage",
+      "aliases": [
+        "paper craft",
+        "layered paper",
+        "kirigami"
+      ],
+      "category": "texture",
+      "era": "2016–present",
+      "origin": "Digital simulation of layered cut paper.",
+      "traits": [
+        "Layered paper with soft realistic shadows",
+        "Torn/cut edges, fold lines",
+        "Warm matte pastel stock",
+        "Craft, tactile, storybook"
+      ],
+      "example": "Google paper-craft doodles; kids'-brand sites.",
+      "confuse_with": [
+        "hand-drawn",
+        "claymorphism"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "comic",
+      "name": "Comic / Manga",
+      "aliases": [
+        "comic book",
+        "manga style"
+      ],
+      "category": "texture",
+      "era": "20th c. → present",
+      "origin": "Comic-book and manga illustration conventions.",
+      "traits": [
+        "Bold ink outlines, cel shading",
+        "Speech bubbles, action lines, SFX lettering",
+        "Halftone/screentone shading",
+        "Dynamic paneling"
+      ],
+      "example": "Comic-styled marketing; webtoon UIs.",
+      "confuse_with": [
+        "pop-art",
+        "halftone"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "engraving",
+      "name": "Engraving / Line Art",
+      "aliases": [
+        "etching",
+        "woodcut",
+        "hatching"
+      ],
+      "category": "texture",
+      "era": "Print heritage",
+      "origin": "Old-master engraving/etching revival.",
+      "traits": [
+        "Fine hatching and cross-hatching for tone",
+        "Monochrome, high detail line work",
+        "Vintage currency/certificate feel",
+        "Premium, heritage, editorial"
+      ],
+      "example": "Financial/whisky brand illustration; Ivan Ramen-style menus.",
+      "confuse_with": [
+        "blueprint",
+        "victorian"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "thermal",
+      "name": "Thermal / Infrared",
+      "aliases": [
+        "heatmap aesthetic",
+        "thermal cam"
+      ],
+      "category": "texture",
+      "era": "2020s aesthetic use",
+      "origin": "Thermal-camera color mapping as style.",
+      "traits": [
+        "Heat-map gradient (black-purple-red-yellow-white)",
+        "Glowing edges, body-heat blobs",
+        "Sci-fi surveillance vibe",
+        "High-tech, eerie"
+      ],
+      "example": "Sci-fi/security UI motifs; experimental fashion.",
+      "confuse_with": [
+        "holographic",
+        "cyberpunk"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "gradient-noise",
+      "name": "Grainy Gradient",
+      "aliases": [
+        "noise gradient",
+        "grainy gradient"
+      ],
+      "category": "texture",
+      "era": "2021–present",
+      "origin": "Adding grain to smooth gradients for depth.",
+      "traits": [
+        "Smooth color gradient overlaid with fine grain",
+        "Reduces banding, adds tactility",
+        "Soft dreamy color fields",
+        "Premium editorial feel"
+      ],
+      "example": "Vercel/Linear backgrounds; A24-style sites.",
+      "confuse_with": [
+        "mesh-gradient",
+        "film-grain"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "neon-tube",
+      "name": "Neon Sign / Tube",
+      "aliases": [
+        "neon",
+        "neon glow",
+        "tube light"
+      ],
+      "category": "texture",
+      "era": "Signage heritage → web",
+      "origin": "Neon-tube signage simulated with glow.",
+      "traits": [
+        "Glowing tube strokes on dark ground",
+        "Saturated pink/cyan/orange light bloom",
+        "Flicker and reflection",
+        "Nightlife, retro, vivid"
+      ],
+      "example": "Bar/nightlife branding; synthwave crossovers.",
+      "confuse_with": [
+        "synthwave",
+        "cyberpunk"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "textile",
+      "name": "Textile / Knit / Embroidery",
+      "aliases": [
+        "knit",
+        "embroidered",
+        "stitched"
+      ],
+      "category": "texture",
+      "era": "Craft heritage",
+      "origin": "Simulated fabric/stitch textures.",
+      "traits": [
+        "Woven, knitted, or embroidered textures",
+        "Visible thread and stitch detail",
+        "Warm tactile materiality",
+        "Cozy, crafted"
+      ],
+      "example": "Apparel brands; cozy holiday campaigns.",
+      "confuse_with": [
+        "skeuomorphism",
+        "papercut"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "dark-academia",
+      "name": "Dark Academia",
+      "aliases": [
+        "dark academic"
+      ],
+      "category": "niche",
+      "era": "2015–present (peak 2020)",
+      "origin": "Tumblr/TikTok subculture romanticizing classic scholarship.",
+      "traits": [
+        "Moody browns, oxblood, forest green, cream",
+        "Serif type, old books, candlelight, tweed",
+        "Gothic/Ivy-League architecture motifs",
+        "Scholarly, nostalgic, melancholic"
+      ],
+      "example": "'Dead Poets Society' / 'The Secret History' moodboards.",
+      "confuse_with": [
+        "light-academia",
+        "victorian"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#1c1712",
+          "surface": "#26201a",
+          "surface-2": "#332a20",
+          "text": "#e8ddc7",
+          "text-muted": "#a99a7f",
+          "primary": "#8b5e34",
+          "accent": "#5a6b4f",
+          "oxblood": "#6e2b2b",
+          "gold": "#b89b5e"
+        },
+        "radius": {
+          "sm": "2px",
+          "md": "4px",
+          "lg": "6px",
+          "pill": "999px"
+        },
+        "shadow": {
+          "sm": "0 2px 8px rgba(0,0,0,0.5)"
+        },
+        "blur": {},
+        "font": {
+          "sans": "'EB Garamond', Georgia, serif",
+          "display": "'Cormorant Garamond', 'EB Garamond', serif",
+          "mono": "'Courier Prime', monospace"
+        },
+        "text": {
+          "xs": "0.8rem",
+          "sm": "0.9rem",
+          "base": "1.05rem",
+          "lg": "1.3rem",
+          "xl": "1.7rem",
+          "2xl": "2.3rem",
+          "3xl": "3.1rem",
+          "4xl": "4.2rem",
+          "5xl": "5.6rem"
+        },
+        "space": {
+          "1": "4px",
+          "2": "8px",
+          "3": "12px",
+          "4": "16px",
+          "6": "24px",
+          "8": "32px",
+          "12": "48px",
+          "16": "64px",
+          "24": "96px"
+        },
+        "ease": {
+          "standard": "cubic-bezier(0.4, 0, 0.2, 1)"
+        },
+        "extra": {
+          "paper": "#e8ddc7",
+          "rule": "1px solid #4a3f30"
+        }
+      }
+    },
+    {
+      "slug": "light-academia",
+      "name": "Light Academia",
+      "aliases": [
+        "light academic"
+      ],
+      "category": "niche",
+      "era": "2020–present",
+      "origin": "Optimistic counterpart to dark academia.",
+      "traits": [
+        "Warm creams, beige, soft gold, sage",
+        "Sunlit libraries, linen, pastoral scholarship",
+        "Serif type, gentle and airy",
+        "Hopeful, romantic learning"
+      ],
+      "example": "Light academia moodboards; cottage-scholar aesthetics.",
+      "confuse_with": [
+        "dark-academia",
+        "cottagecore"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "cottagecore",
+      "name": "Cottagecore",
+      "aliases": [
+        "farmcore",
+        "countrycore"
+      ],
+      "category": "niche",
+      "era": "2018–present (peak 2020)",
+      "origin": "Tumblr/TikTok idealized rural life.",
+      "traits": [
+        "Soft floral, gingham, pastoral palettes",
+        "Mushrooms, wildflowers, baking, cottages",
+        "Handwritten/serif type, warm nostalgia",
+        "Cozy, wholesome, slow-living"
+      ],
+      "example": "Cottagecore Tumblr; 'Anne with an E' moodboards.",
+      "confuse_with": [
+        "light-academia",
+        "fairycore",
+        "goblincore"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "goblincore",
+      "name": "Goblincore",
+      "aliases": [
+        "gremlincore"
+      ],
+      "category": "niche",
+      "era": "2019–present",
+      "origin": "Earthy 'ugly-cute' nature subculture.",
+      "traits": [
+        "Mushrooms, moss, frogs, snails, shiny trinkets",
+        "Muddy greens and browns",
+        "Chaotic natural collecting",
+        "Anti-perfection, whimsical"
+      ],
+      "example": "Goblincore Tumblr/TikTok.",
+      "confuse_with": [
+        "cottagecore",
+        "fairycore"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "webcore",
+      "name": "Webcore / Old Web",
+      "aliases": [
+        "oldweb",
+        "internetcore",
+        "Web 1.0"
+      ],
+      "category": "niche",
+      "era": "2019–present (evokes 1997–2005)",
+      "origin": "Nostalgia for early personal internet.",
+      "traits": [
+        "GeoCities clutter, tiled backgrounds, GIFs",
+        "Guestbooks, hit counters, 'under construction'",
+        "Comic Sans, marquee, bevel buttons",
+        "DIY, chaotic, nostalgic"
+      ],
+      "example": "GeoCities/Angelfire pages; Neocities revival.",
+      "confuse_with": [
+        "y2k-futurism",
+        "kidcore"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "kidcore",
+      "name": "Kidcore",
+      "aliases": [
+        "childcore"
+      ],
+      "category": "niche",
+      "era": "2018–present",
+      "origin": "Nostalgia for 90s/00s childhood.",
+      "traits": [
+        "Primary-color rainbows, stars, smileys",
+        "Toy/cartoon motifs, stickers",
+        "Chunky bubbly type",
+        "Playful, nostalgic, hyper"
+      ],
+      "example": "90s kids' TV; Lisa Frank-adjacent.",
+      "confuse_with": [
+        "webcore",
+        "memphis-design",
+        "kawaii"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "weirdcore",
+      "name": "Weirdcore",
+      "aliases": [
+        "strangecore"
+      ],
+      "category": "niche",
+      "era": "2020–present",
+      "origin": "Unsettling amateur-photo internet aesthetic.",
+      "traits": [
+        "Low-quality nostalgic photos, distorted",
+        "Deliberately 'off', eerie, uncanny",
+        "Text overlays, arrows, dream-logic",
+        "Nostalgic dread"
+      ],
+      "example": "Weirdcore image boards.",
+      "confuse_with": [
+        "dreamcore",
+        "liminal-spaces"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "dreamcore",
+      "name": "Dreamcore",
+      "aliases": [
+        "oneiric core"
+      ],
+      "category": "niche",
+      "era": "2020–present",
+      "origin": "Surreal dream/nostalgia internet aesthetic.",
+      "traits": [
+        "Hazy surreal dreamlike scenes",
+        "Nostalgic uncanny imagery",
+        "Soft glow, impossible spaces",
+        "Between comforting and unsettling"
+      ],
+      "example": "Dreamcore compilations.",
+      "confuse_with": [
+        "weirdcore",
+        "liminal-spaces",
+        "dreampunk"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "liminal-spaces",
+      "name": "Liminal Spaces",
+      "aliases": [
+        "backrooms",
+        "liminal"
+      ],
+      "category": "niche",
+      "era": "2019–present",
+      "origin": "Internet fascination with empty transitional spaces.",
+      "traits": [
+        "Empty familiar-yet-wrong places (malls, halls)",
+        "Fluorescent lighting, worn carpet",
+        "Uncanny emptiness and déjà-vu",
+        "Nostalgic unease"
+      ],
+      "example": "The Backrooms; empty-mall photos.",
+      "confuse_with": [
+        "weirdcore",
+        "dreamcore",
+        "mallsoft"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "kawaii",
+      "name": "Kawaii",
+      "aliases": [
+        "cute Japanese",
+        "chibi"
+      ],
+      "category": "niche",
+      "era": "1970s–present",
+      "origin": "Japanese 'cute culture' (Sanrio).",
+      "traits": [
+        "Round soft characters, big eyes",
+        "Pastel pinks and candy colors",
+        "Chubby friendly mascots",
+        "Sweet, playful, wholesome"
+      ],
+      "example": "Hello Kitty; Pusheen; Japanese packaging.",
+      "confuse_with": [
+        "kidcore",
+        "claymorphism"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "fairycore",
+      "name": "Fairycore",
+      "aliases": [
+        "faeriecore"
+      ],
+      "category": "niche",
+      "era": "2020–present",
+      "origin": "Whimsical fairy-tale nature aesthetic.",
+      "traits": [
+        "Ethereal pastels, wings, flowers, glow",
+        "Enchanted-forest whimsy",
+        "Sparkle and soft light",
+        "Dreamy, magical, delicate"
+      ],
+      "example": "Fairycore Pinterest/TikTok.",
+      "confuse_with": [
+        "cottagecore",
+        "angelcore"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "angelcore",
+      "name": "Angelcore",
+      "aliases": [
+        "ethereal core"
+      ],
+      "category": "niche",
+      "era": "2019–present",
+      "origin": "Ethereal celestial/religious-art aesthetic.",
+      "traits": [
+        "Cherubs, clouds, soft gold light",
+        "White/cream/pale gold, halos",
+        "Renaissance-painting references",
+        "Divine, soft, romantic"
+      ],
+      "example": "Angelcore moodboards; Renaissance-cherub edits.",
+      "confuse_with": [
+        "fairycore",
+        "light-academia"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "acid-graphics",
+      "name": "Acid Graphics / Acid Design",
+      "aliases": [
+        "acid design",
+        "psybient graphics",
+        "Y2K acid"
+      ],
+      "category": "niche",
+      "era": "2019–present (evokes 90s rave)",
+      "origin": "Revival of 90s rave/acid-house flyer graphics.",
+      "traits": [
+        "Melted chrome type, distorted 3D blobs",
+        "Toxic greens, purples, chrome",
+        "Trippy warped compositions",
+        "Rave/underground energy"
+      ],
+      "example": "Techno/rave posters; 2020s fashion (Balenciaga-adjacent).",
+      "confuse_with": [
+        "chromecore",
+        "psychedelic",
+        "holographic"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "brat",
+      "name": "Brat",
+      "aliases": [
+        "brat green",
+        "Charli XCX green"
+      ],
+      "category": "niche",
+      "era": "2024–present",
+      "origin": "Charli XCX 'Brat' album (2024).",
+      "traits": [
+        "Single toxic lime-green (#8ACE00-ish) field",
+        "Low-res stretched Arial-style text",
+        "Deliberately blunt and lo-fi",
+        "Confrontational, cool, ironic"
+      ],
+      "example": "Charli XCX 'Brat' album cover and campaign.",
+      "confuse_with": [
+        "anti-design",
+        "minimalism"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "coquette",
+      "name": "Coquette",
+      "aliases": [
+        "coquettecore",
+        "balletcore-adjacent"
+      ],
+      "category": "niche",
+      "era": "2022–present",
+      "origin": "Hyper-feminine bows-and-lace aesthetic.",
+      "traits": [
+        "Soft pinks, cream, lace, ribbon bows",
+        "Delicate serif/script type",
+        "Vintage romance, pearls, ballet",
+        "Dainty, flirtatious, nostalgic"
+      ],
+      "example": "Coquette TikTok; Lana Del Rey-adjacent moodboards.",
+      "confuse_with": [
+        "barbiecore",
+        "light-academia"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "barbiecore",
+      "name": "Barbiecore",
+      "aliases": [
+        "Barbie pink"
+      ],
+      "category": "niche",
+      "era": "2022–present",
+      "origin": "2023 Barbie film revived hot-pink maximal femininity.",
+      "traits": [
+        "Saturated hot/bubblegum pink everywhere",
+        "Glossy plastic, glam, playful",
+        "Bold sans display type",
+        "Fun, femme, unapologetic"
+      ],
+      "example": "Barbie (2023) marketing.",
+      "confuse_with": [
+        "coquette",
+        "mcbling",
+        "maximalism"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "mallsoft",
+      "name": "Mallsoft",
+      "aliases": [
+        "mall vaporwave"
+      ],
+      "category": "niche",
+      "era": "2014–present",
+      "origin": "Vaporwave subgenre evoking dead shopping malls.",
+      "traits": [
+        "Empty-mall photography, muzak nostalgia",
+        "Faded teal/beige 90s retail palette",
+        "Fountains, food courts, plants",
+        "Melancholic consumer nostalgia"
+      ],
+      "example": "Mallsoft album art; dead-mall photography.",
+      "confuse_with": [
+        "vaporwave",
+        "liminal-spaces"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "traumacore",
+      "name": "Traumacore",
+      "aliases": [
+        "traumcore"
+      ],
+      "category": "niche",
+      "era": "2020–present",
+      "origin": "Bittersweet childhood-nostalgia-with-pain aesthetic.",
+      "traits": [
+        "Childlike imagery (stickers, pastel) + heavy text",
+        "Faded nostalgic photos",
+        "Juxtaposition of innocence and distress",
+        "Emotionally raw"
+      ],
+      "example": "Traumacore edits (sensitive-content subculture).",
+      "confuse_with": [
+        "weirdcore",
+        "kidcore"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "nostalgiacore",
+      "name": "Nostalgiacore",
+      "aliases": [
+        "memorycore"
+      ],
+      "category": "niche",
+      "era": "2019–present",
+      "origin": "Broad nostalgia for the recent past.",
+      "traits": [
+        "Faded photos of childhood/00s ephemera",
+        "Warm degraded color, timestamps",
+        "Familiar objects and places",
+        "Wistful, comforting"
+      ],
+      "example": "Nostalgiacore compilations.",
+      "confuse_with": [
+        "webcore",
+        "vhs",
+        "mallsoft"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "clowncore",
+      "name": "Clowncore",
+      "aliases": [
+        "clown aesthetic"
+      ],
+      "category": "niche",
+      "era": "2019–present",
+      "origin": "Circus/clown maximal color subculture.",
+      "traits": [
+        "Primary + rainbow clash, polka dots, stripes",
+        "Ruffles, checkerboard, harlequin",
+        "Playful-creepy circus motifs",
+        "Chaotic, loud, campy"
+      ],
+      "example": "Clowncore fashion/edits.",
+      "confuse_with": [
+        "kidcore",
+        "memphis-design",
+        "maximalism"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "witchcore",
+      "name": "Witchcore / Witchy",
+      "aliases": [
+        "witchy aesthetic",
+        "goth-witch"
+      ],
+      "category": "niche",
+      "era": "2019–present",
+      "origin": "Mystical/occult cottage aesthetic.",
+      "traits": [
+        "Crystals, herbs, candles, tarot, moons",
+        "Deep purples, black, forest green, gold",
+        "Celestial and botanical symbols",
+        "Mystical, earthy, cozy-dark"
+      ],
+      "example": "Witchcore Pinterest; tarot-brand identities.",
+      "confuse_with": [
+        "dark-academia",
+        "goblincore",
+        "cottagecore"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "goth",
+      "name": "Goth / Gothic",
+      "aliases": [
+        "gothcore",
+        "dark aesthetic"
+      ],
+      "category": "niche",
+      "era": "1980s–present",
+      "origin": "Post-punk goth subculture.",
+      "traits": [
+        "Black-dominant, deep reds/purples",
+        "Ornate Victorian/ecclesiastical motifs",
+        "Blackletter/serif type, crosses, roses",
+        "Romantic, dark, dramatic"
+      ],
+      "example": "Goth music/fashion; The Cure-era visuals.",
+      "confuse_with": [
+        "dark-academia",
+        "victorian",
+        "witchcore"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "cybergoth",
+      "name": "Cybergoth",
+      "aliases": [
+        "cyber goth",
+        "rivethead-adjacent"
+      ],
+      "category": "niche",
+      "era": "1990s–2010s",
+      "origin": "Goth + rave + industrial fusion.",
+      "traits": [
+        "Black + toxic neon (green, UV pink)",
+        "Industrial, PVC, goggles, dreads",
+        "Rave energy meets goth darkness",
+        "Aggressive, futuristic"
+      ],
+      "example": "Early-2000s industrial/rave scene.",
+      "confuse_with": [
+        "cyberpunk",
+        "goth",
+        "acid-graphics"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "scene-emo",
+      "name": "Scene / Emo",
+      "aliases": [
+        "scene aesthetic",
+        "emo",
+        "2000s scene"
+      ],
+      "category": "niche",
+      "era": "2004–2012",
+      "origin": "Mid-2000s Myspace youth subculture.",
+      "traits": [
+        "Neon + black, hot pink, leopard, checkerboard",
+        "Choppy hair, glittery graphics, hearts/skulls",
+        "Comic-sans-adjacent chaos, sparkles",
+        "Loud, angsty, DIY"
+      ],
+      "example": "Myspace scene profiles; 2000s emo band art.",
+      "confuse_with": [
+        "mcbling",
+        "kidcore",
+        "webcore"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "indie-sleaze",
+      "name": "Indie Sleaze",
+      "aliases": [
+        "hipster 2008",
+        "blog-house"
+      ],
+      "category": "niche",
+      "era": "2006–2012 (revived 2021)",
+      "origin": "Late-2000s hipster party aesthetic.",
+      "traits": [
+        "Harsh on-camera flash photography",
+        "Grainy, messy, American Apparel era",
+        "Neon-on-black party grit",
+        "Ironic, hedonistic, lo-fi"
+      ],
+      "example": "Cobrasnake party photos; blog-house era.",
+      "confuse_with": [
+        "vhs",
+        "grunge"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "normcore",
+      "name": "Normcore",
+      "aliases": [
+        "anti-fashion minimal"
+      ],
+      "category": "niche",
+      "era": "2013–present",
+      "origin": "Deliberate unremarkable ordinariness (K-Hole 2013).",
+      "traits": [
+        "Neutral, generic, unbranded plainness",
+        "Beige/gray/denim ordinariness",
+        "Anti-trend, blends in",
+        "Comfort over statement"
+      ],
+      "example": "Normcore fashion editorials.",
+      "confuse_with": [
+        "minimalism",
+        "monochrome"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "grandmillennial",
+      "name": "Grandmillennial",
+      "aliases": [
+        "granny chic",
+        "grandmacore"
+      ],
+      "category": "niche",
+      "era": "2019–present",
+      "origin": "Millennial embrace of 'grandma' decor.",
+      "traits": [
+        "Chintz florals, ruffles, needlepoint",
+        "Scalloped edges, toile, warm traditional",
+        "Ornate but cozy",
+        "Nostalgic maximal comfort"
+      ],
+      "example": "Grandmillennial interiors (House Beautiful).",
+      "confuse_with": [
+        "cottagecore",
+        "victorian",
+        "maximalism"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "tiki-tropical",
+      "name": "Tiki / Tropical",
+      "aliases": [
+        "tropical",
+        "exotica",
+        "tiki bar"
+      ],
+      "category": "niche",
+      "era": "1930s–1960s revival",
+      "origin": "Mid-century Polynesian pop fantasy.",
+      "traits": [
+        "Bamboo, palms, hibiscus, tiki masks",
+        "Sunset oranges, teal, wood tones",
+        "Exotica lounge vibe",
+        "Escapist, kitschy, warm"
+      ],
+      "example": "Tiki bars; Trader Vic's; exotica album covers.",
+      "confuse_with": [
+        "mid-century-modern",
+        "googie"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "americana-diner",
+      "name": "Retro Americana / Diner",
+      "aliases": [
+        "diner",
+        "50s Americana",
+        "rockabilly"
+      ],
+      "category": "niche",
+      "era": "1950s revival",
+      "origin": "Nostalgic 1950s US diner/roadside culture.",
+      "traits": [
+        "Chrome, red vinyl, checkerboard floors",
+        "Neon signage, script + bold slab type",
+        "Cherry red, cream, turquoise",
+        "Nostalgic, wholesome, kitsch"
+      ],
+      "example": "50s diners; Route 66 signage; Coca-Cola retro.",
+      "confuse_with": [
+        "googie",
+        "streamline-moderne",
+        "pop-art"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "art-hoe",
+      "name": "Art Hoe",
+      "aliases": [
+        "artsy aesthetic"
+      ],
+      "category": "niche",
+      "era": "2015–present",
+      "origin": "Art-student creative-expression subculture.",
+      "traits": [
+        "Van Gogh/sunflower motifs, paint splatter",
+        "Warm earthy + bright accents",
+        "Journals, film photos, collage",
+        "Creative, expressive, personal"
+      ],
+      "example": "Art Hoe Tumblr collective.",
+      "confuse_with": [
+        "cottagecore",
+        "maximalism"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "shadcn-ui",
+      "name": "shadcn/ui (New York)",
+      "aliases": [
+        "shadcn",
+        "new-york style",
+        "radix + tailwind"
+      ],
+      "category": "flat-platform",
+      "era": "2023–present",
+      "origin": "shadcn/ui (Radix + Tailwind) by shadcn; default of countless 2023+ apps.",
+      "traits": [
+        "Neutral, refined, subtle borders and rings",
+        "Small radius (0.5rem), muted zinc/slate palette",
+        "Accessible Radix primitives",
+        "Understated developer-favorite polish"
+      ],
+      "example": "shadcn/ui showcase; Vercel/Cal.com-style apps.",
+      "confuse_with": [
+        "minimalism",
+        "geist",
+        "linear-dark"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "geist",
+      "name": "Vercel Geist",
+      "aliases": [
+        "Geist",
+        "Vercel design"
+      ],
+      "category": "flat-platform",
+      "era": "2023–present",
+      "origin": "Vercel Geist design system + Geist typeface.",
+      "traits": [
+        "High-contrast black/white, precise geometry",
+        "Geist Sans/Mono, tight grid",
+        "Subtle gradients and grain accents",
+        "Developer-premium minimalism"
+      ],
+      "example": "Vercel.com; Next.js docs.",
+      "confuse_with": [
+        "minimalism",
+        "shadcn-ui",
+        "bento-grid"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "linear-dark",
+      "name": "Linear Style",
+      "aliases": [
+        "Linear app style",
+        "product dark gradient"
+      ],
+      "category": "flat-platform",
+      "era": "2020–present",
+      "origin": "Linear (issue tracker) product aesthetic.",
+      "traits": [
+        "Dark UI with subtle purple/blue gradients",
+        "Crisp small type, hairline borders",
+        "Glow accents, fast micro-interactions",
+        "Refined, fast, premium SaaS"
+      ],
+      "example": "Linear.app; many 2020s dev-tool sites.",
+      "confuse_with": [
+        "dark-mode",
+        "bento-grid",
+        "geist"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "dashboard-analytics",
+      "name": "Analytics Dashboard",
+      "aliases": [
+        "admin dashboard",
+        "data dashboard"
+      ],
+      "category": "flat-platform",
+      "era": "Ongoing",
+      "origin": "Conventional data-product UI patterns.",
+      "traits": [
+        "Card grids, KPI tiles, charts, tables",
+        "Neutral surfaces, one or two accent colors",
+        "Dense but scannable, clear hierarchy",
+        "Function-first legibility"
+      ],
+      "example": "Stripe Dashboard; Vercel Analytics; admin panels.",
+      "confuse_with": [
+        "bento-grid",
+        "material-design-3",
+        "carbon-design"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "gradient-saas",
+      "name": "Modern Gradient SaaS",
+      "aliases": [
+        "startup gradient",
+        "SaaS landing"
+      ],
+      "category": "flat-platform",
+      "era": "2019–present",
+      "origin": "Ubiquitous startup landing-page look.",
+      "traits": [
+        "Vibrant gradient hero + soft blurred blobs",
+        "Rounded cards, subtle shadows, gradient buttons",
+        "Friendly geometric sans",
+        "Optimistic, clean, conversion-focused"
+      ],
+      "example": "Countless YC/startup landing pages.",
+      "confuse_with": [
+        "aurora-ui",
+        "corporate-memphis",
+        "mesh-gradient"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "corporate-memphis",
+      "name": "Corporate Memphis",
+      "aliases": [
+        "Alegria",
+        "big tech illustration",
+        "flat humano"
+      ],
+      "category": "minimal-organic",
+      "era": "2017–present",
+      "origin": "Named after Facebook's 'Alegria' illustration style; ubiquitous big-tech look.",
+      "traits": [
+        "Flat vector people with tiny heads, long bendy limbs",
+        "Simple geometric bodies, bold flat colors",
+        "Friendly, inclusive, generic illustration",
+        "Soft rounded UI around it"
+      ],
+      "example": "Facebook 'Alegria'; Google/Slack/startup illustrations.",
+      "confuse_with": [
+        "claymorphism",
+        "flat-design"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#ffffff",
+          "surface": "#f7f5ff",
+          "surface-2": "#eef0ff",
+          "text": "#1f2233",
+          "text-muted": "#5b607a",
+          "primary": "#6c5ce7",
+          "accent": "#ff7a8a",
+          "secondary": "#00b894",
+          "yellow": "#ffd166"
+        },
+        "radius": {
+          "sm": "8px",
+          "md": "16px",
+          "lg": "24px",
+          "pill": "999px"
+        },
+        "shadow": {
+          "sm": "0 4px 12px rgba(108,92,231,0.10)",
+          "md": "0 10px 30px rgba(108,92,231,0.14)"
+        },
+        "blur": {},
+        "font": {
+          "sans": "'Poppins', 'Circular', system-ui, sans-serif",
+          "display": "'Poppins', system-ui, sans-serif",
+          "mono": "ui-monospace, monospace"
+        },
+        "text": {
+          "xs": "0.75rem",
+          "sm": "0.875rem",
+          "base": "1rem",
+          "lg": "1.125rem",
+          "xl": "1.375rem",
+          "2xl": "1.75rem",
+          "3xl": "2.25rem",
+          "4xl": "3rem",
+          "5xl": "4rem"
+        },
+        "space": {
+          "1": "4px",
+          "2": "8px",
+          "3": "12px",
+          "4": "16px",
+          "6": "24px",
+          "8": "32px",
+          "12": "48px",
+          "16": "64px",
+          "24": "96px"
+        },
+        "ease": {
+          "standard": "cubic-bezier(0.4, 0, 0.2, 1)"
+        },
+        "extra": {
+          "blob": "radial-gradient(circle at 30% 30%, #ff7a8a, #6c5ce7)"
+        }
+      }
+    },
+    {
+      "slug": "spatial-visionos",
+      "name": "Spatial / visionOS",
+      "aliases": [
+        "spatial design",
+        "visionOS",
+        "mixed reality UI"
+      ],
+      "category": "glass",
+      "era": "2023–present",
+      "origin": "Apple visionOS (Vision Pro, 2023–2024).",
+      "traits": [
+        "Floating glass panels in 3D space",
+        "Depth, parallax, and light-based hierarchy",
+        "Eye/hand-driven interaction affordances",
+        "Translucent materials over the real world"
+      ],
+      "example": "Apple Vision Pro visionOS UI.",
+      "confuse_with": [
+        "liquid-glass",
+        "glassmorphism"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "ukiyo-e",
+      "name": "Ukiyo-e",
+      "aliases": [
+        "Japanese woodblock",
+        "floating world"
+      ],
+      "category": "historical",
+      "era": "1603–1868",
+      "origin": "Edo-period Japan (Hokusai, Hiroshige).",
+      "traits": [
+        "Flat areas of color with bold outlines",
+        "Woodblock print texture and registration",
+        "Nature, waves, Mt Fuji, everyday life",
+        "Asymmetric balance, negative space"
+      ],
+      "example": "Hokusai 'Great Wave off Kanagawa'.",
+      "confuse_with": [
+        "japandi",
+        "comic"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "illuminated-manuscript",
+      "name": "Illuminated Manuscript",
+      "aliases": [
+        "medieval manuscript",
+        "illumination"
+      ],
+      "category": "historical",
+      "era": "500–1500 CE",
+      "origin": "Medieval European monastic scriptoria.",
+      "traits": [
+        "Ornate drop caps and gold-leaf illumination",
+        "Decorative borders, vines, marginalia",
+        "Blackletter script",
+        "Rich reds, blues, gold on vellum"
+      ],
+      "example": "Book of Kells; Très Riches Heures.",
+      "confuse_with": [
+        "blackletter",
+        "goth",
+        "victorian"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "baroque-rococo",
+      "name": "Baroque / Rococo",
+      "aliases": [
+        "baroque",
+        "rococo",
+        "ornate classical"
+      ],
+      "category": "historical",
+      "era": "1600–1780",
+      "origin": "European Baroque (17th c.) and Rococo (18th c.).",
+      "traits": [
+        "Lavish ornament, scrollwork, gilding",
+        "Dramatic light/shadow (Baroque) or pastel frivolity (Rococo)",
+        "Curved cartouches and flourishes",
+        "Opulent, theatrical, aristocratic"
+      ],
+      "example": "Versailles interiors; Fragonard paintings.",
+      "confuse_with": [
+        "victorian",
+        "grandmillennial"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "blackletter",
+      "name": "Blackletter / Gothic Type",
+      "aliases": [
+        "Fraktur",
+        "Old English",
+        "gothic script"
+      ],
+      "category": "historical",
+      "era": "1150–1500 (revived)",
+      "origin": "Medieval European calligraphy; Gutenberg's type.",
+      "traits": [
+        "Dense angular condensed letterforms",
+        "Ornate capitals, heavy vertical strokes",
+        "Newspaper mastheads, tattoo, metal-band use",
+        "Solemn, historic, dramatic"
+      ],
+      "example": "The New York Times masthead; metal-band logos.",
+      "confuse_with": [
+        "goth",
+        "illuminated-manuscript"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "egyptian-revival",
+      "name": "Egyptian / Ancient Revival",
+      "aliases": [
+        "hieroglyphic",
+        "Egyptomania"
+      ],
+      "category": "historical",
+      "era": "1820s & 1920s revivals",
+      "origin": "Egyptomania after Napoleon's campaigns and Tutankhamun (1922).",
+      "traits": [
+        "Hieroglyph and papyrus motifs, lotus, scarab",
+        "Gold, lapis blue, terracotta",
+        "Bold slab 'Egyptian' typefaces",
+        "Monumental, symmetric, ancient"
+      ],
+      "example": "Art Deco Egyptian revival; museum branding.",
+      "confuse_with": [
+        "art-deco"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "clockpunk",
+      "name": "Clockpunk",
+      "aliases": [
+        "Renaissance punk",
+        "da Vinci punk"
+      ],
+      "category": "retrofuturism",
+      "era": "2000s–present",
+      "origin": "Punk genre set in Renaissance-era clockwork tech.",
+      "traits": [
+        "Clockwork gears, springs, brass automata",
+        "Da Vinci-style sketches and mechanisms",
+        "Renaissance materials: wood, brass",
+        "Analog pre-steam mechanical fantasy"
+      ],
+      "example": "Assassin's Creed (Leonardo's machines).",
+      "confuse_with": [
+        "steampunk"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "stonepunk",
+      "name": "Stonepunk",
+      "aliases": [
+        "prehistoric punk"
+      ],
+      "category": "retrofuturism",
+      "era": "2000s–present",
+      "origin": "Punk genre using stone-age technology.",
+      "traits": [
+        "Stone, bone, wood 'technology'",
+        "Earthy, rough, primitive materials",
+        "Cave-painting motifs",
+        "Anachronistic prehistoric tech"
+      ],
+      "example": "The Flintstones; The Croods.",
+      "confuse_with": [
+        "steampunk"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "silkpunk",
+      "name": "Silkpunk",
+      "aliases": [
+        "East-Asian retrofuturism"
+      ],
+      "category": "retrofuturism",
+      "era": "2015–present",
+      "origin": "Coined by Ken Liu; East-Asian-inspired bio/mechanical tech.",
+      "traits": [
+        "Bamboo, silk, paper, lacquer materials",
+        "Organic bio-mechanics (airships, kites)",
+        "Classical Chinese/Asian motifs",
+        "Elegant, flowing, nature-integrated tech"
+      ],
+      "example": "Ken Liu 'The Grace of Kings'.",
+      "confuse_with": [
+        "steampunk",
+        "biopunk"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "decopunk",
+      "name": "Decopunk",
+      "aliases": [
+        "Deco-punk",
+        "raygun deco"
+      ],
+      "category": "retrofuturism",
+      "era": "2010s–present",
+      "origin": "Sleeker, brighter offshoot of dieselpunk (1920s–40s).",
+      "traits": [
+        "Polished Art Deco chrome and glamour",
+        "Brighter palette than gritty dieselpunk",
+        "Streamlined luxury machine age",
+        "Gold, cream, chrome, geometric"
+      ],
+      "example": "BioShock (Rapture); The Great Gatsby (2013).",
+      "confuse_with": [
+        "dieselpunk",
+        "art-deco",
+        "streamline-moderne"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "tidalpunk",
+      "name": "Tidalpunk",
+      "aliases": [
+        "oceanpunk"
+      ],
+      "category": "retrofuturism",
+      "era": "2019–present",
+      "origin": "Ocean-focused optimistic offshoot of solarpunk.",
+      "traits": [
+        "Ocean tech: wave/tidal energy, kelp, coral",
+        "Blues, teals, salvaged materials",
+        "Sustainable seafaring future",
+        "Hopeful, aquatic, resourceful"
+      ],
+      "example": "Tidalpunk art community.",
+      "confuse_with": [
+        "solarpunk",
+        "seapunk"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "formicapunk",
+      "name": "Formicapunk",
+      "aliases": [
+        "1980s corporate futurism"
+      ],
+      "category": "retrofuturism",
+      "era": "2010s (evokes 1980s)",
+      "origin": "Neon-lit 1980s corporate/consumer futurism.",
+      "traits": [
+        "Formica, neon, geometric 80s corporate style",
+        "Miami-Vice pastels + chrome",
+        "Grid patterns, glass towers",
+        "Optimistic 80s consumer future"
+      ],
+      "example": "Miami Vice; 80s corporate design.",
+      "confuse_with": [
+        "synthwave",
+        "memphis-design"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "cyanotype",
+      "name": "Cyanotype",
+      "aliases": [
+        "sun print",
+        "blueprint photo"
+      ],
+      "category": "texture",
+      "era": "1842–present",
+      "origin": "Sir John Herschel's photographic process.",
+      "traits": [
+        "Prussian-blue monochrome photographic prints",
+        "White silhouettes on deep blue",
+        "Botanical/photogram subjects",
+        "Antique handmade quality"
+      ],
+      "example": "Anna Atkins botanical cyanotypes.",
+      "confuse_with": [
+        "blueprint",
+        "duotone"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "airbrush",
+      "name": "Airbrush / 70s-80s Illustration",
+      "aliases": [
+        "airbrushed",
+        "van art"
+      ],
+      "category": "texture",
+      "era": "1970s–1980s",
+      "origin": "Airbrush illustration golden age (sci-fi/van art).",
+      "traits": [
+        "Smooth gradient shading and soft glows",
+        "Chrome, lasers, fantasy sci-fi scenes",
+        "Highly polished rendered surfaces",
+        "Retro album/poster illustration"
+      ],
+      "example": "70s-80s sci-fi paperback covers; van murals.",
+      "confuse_with": [
+        "synthwave",
+        "chrome-metal"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "terrazzo",
+      "name": "Terrazzo",
+      "aliases": [
+        "speckled",
+        "confetti texture"
+      ],
+      "category": "texture",
+      "era": "Ancient → 2018 revival",
+      "origin": "Venetian composite flooring; graphic revival ~2018.",
+      "traits": [
+        "Speckled chip pattern on solid ground",
+        "Playful multicolor flecks",
+        "Soft pastel or bold color chips",
+        "Fresh, tactile, retro-modern"
+      ],
+      "example": "2018-era brand patterns; interior design.",
+      "confuse_with": [
+        "memphis-design",
+        "risograph"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "marble",
+      "name": "Marble / Stone",
+      "aliases": [
+        "marbled",
+        "stone texture"
+      ],
+      "category": "texture",
+      "era": "Timeless",
+      "origin": "Natural stone as luxury material reference.",
+      "traits": [
+        "Veined marble surfaces and swirls",
+        "Cream, black, green, gold veining",
+        "Premium, weighty, classical",
+        "Fluid ink-marble variants"
+      ],
+      "example": "Luxury/beauty branding; classical museum sites.",
+      "confuse_with": [
+        "engraving",
+        "art-deco"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "wireframe-lofi",
+      "name": "Lo-fi Wireframe",
+      "aliases": [
+        "wireframe aesthetic",
+        "sketch UI",
+        "lo-fi mockup"
+      ],
+      "category": "texture",
+      "era": "2015–present",
+      "origin": "Wireframe/mockup look used as a finished style.",
+      "traits": [
+        "Grey boxes, placeholder lines, X'd images",
+        "Hand-drawn or Balsamiq sketch strokes",
+        "Deliberately unfinished honesty",
+        "Neutral, structural, playful"
+      ],
+      "example": "Balsamiq mockups; 'in progress' brand sites.",
+      "confuse_with": [
+        "hand-drawn",
+        "blueprint",
+        "brutalism"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "stipple",
+      "name": "Stipple / Pointillism",
+      "aliases": [
+        "dotwork",
+        "pointillist"
+      ],
+      "category": "texture",
+      "era": "Print/art heritage",
+      "origin": "Engraving stipple and Seurat's pointillism.",
+      "traits": [
+        "Tone built from dots of varying density",
+        "Fine detailed dotwork portraits",
+        "WSJ 'hedcut' style",
+        "Refined, editorial, tactile"
+      ],
+      "example": "Wall Street Journal hedcuts; Seurat.",
+      "confuse_with": [
+        "halftone",
+        "engraving"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "gorpcore",
+      "name": "Gorpcore",
+      "aliases": [
+        "outdoorsy",
+        "techwear-lite"
+      ],
+      "category": "niche",
+      "era": "2017–present",
+      "origin": "Fashion trend elevating technical outdoor gear ('GORP').",
+      "traits": [
+        "Technical outdoor apparel as everyday style",
+        "Earthy + hi-vis accent palette",
+        "Functional, rugged, utilitarian",
+        "Trail/mountain aesthetic"
+      ],
+      "example": "Arc'teryx/Salomon-driven fashion.",
+      "confuse_with": [
+        "normcore",
+        "techwear"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "techwear",
+      "name": "Techwear",
+      "aliases": [
+        "cyber-utility",
+        "dark ninja"
+      ],
+      "category": "niche",
+      "era": "2014–present",
+      "origin": "Functional futuristic urban apparel subculture.",
+      "traits": [
+        "All-black technical fabrics, straps, buckles",
+        "Cyberpunk-utility silhouette",
+        "Matte, tactical, waterproof",
+        "Urban-ninja futurism"
+      ],
+      "example": "Acronym; techwear communities.",
+      "confuse_with": [
+        "cyberpunk",
+        "gorpcore"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "quiet-luxury",
+      "name": "Quiet Luxury / Old Money",
+      "aliases": [
+        "old money",
+        "stealth wealth"
+      ],
+      "category": "niche",
+      "era": "2022–present",
+      "origin": "Anti-logo luxury minimalism (post-'Succession').",
+      "traits": [
+        "Understated neutral tones: camel, cream, navy",
+        "No visible branding; quality materials",
+        "Serif type, restrained elegance",
+        "Timeless, expensive-looking calm"
+      ],
+      "example": "'Succession' costuming; Loro Piana-adjacent.",
+      "confuse_with": [
+        "minimalism",
+        "scandinavian"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "that-girl",
+      "name": "That Girl / Clean Girl",
+      "aliases": [
+        "clean girl",
+        "cleanfluencer"
+      ],
+      "category": "niche",
+      "era": "2021–present",
+      "origin": "Wellness/productivity lifestyle aesthetic.",
+      "traits": [
+        "Airy neutrals: beige, white, sage",
+        "Minimal, clean, aspirational-wellness",
+        "Soft serif + clean sans",
+        "Matcha, journaling, gym, 'wellness'"
+      ],
+      "example": "'That Girl' TikTok routines.",
+      "confuse_with": [
+        "minimalism",
+        "light-academia"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "cluttercore",
+      "name": "Cluttercore",
+      "aliases": [
+        "more is more decor",
+        "maximal cozy"
+      ],
+      "category": "niche",
+      "era": "2020–present",
+      "origin": "Cozy maximalist embrace of visible stuff.",
+      "traits": [
+        "Densely layered objects, books, trinkets",
+        "Warm eclectic clutter, no empty space",
+        "Personal, lived-in, collected",
+        "Comfort in abundance"
+      ],
+      "example": "Cluttercore home tours.",
+      "confuse_with": [
+        "maximalism",
+        "grandmillennial"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "acubi",
+      "name": "Acubi",
+      "aliases": [
+        "Y2K minimal",
+        "cyber-y2k fashion"
+      ],
+      "category": "niche",
+      "era": "2022–present",
+      "origin": "Korean-origin sleek minimal-Y2K fashion aesthetic.",
+      "traits": [
+        "Cool-toned grey, silver, black, white",
+        "Minimal cyber-Y2K, low-rise sleek",
+        "Metallic + muted, clean lines",
+        "Edgy, futuristic, understated"
+      ],
+      "example": "Acubi TikTok/Korean fashion.",
+      "confuse_with": [
+        "y2k-futurism",
+        "chromecore",
+        "minimalism"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "danish-pastel",
+      "name": "Danish Pastel",
+      "aliases": [
+        "pastel maximal"
+      ],
+      "category": "niche",
+      "era": "2021–present",
+      "origin": "Playful pastel maximalist decor aesthetic.",
+      "traits": [
+        "Soft multicolor pastels mixed freely",
+        "Checkerboard, wavy mirrors, smiley motifs",
+        "Cheerful cluttered coziness",
+        "Retro-playful decor"
+      ],
+      "example": "Danish Pastel TikTok interiors.",
+      "confuse_with": [
+        "cluttercore",
+        "kidcore",
+        "memphis-design"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "balletcore",
+      "name": "Balletcore",
+      "aliases": [
+        "coquette ballet"
+      ],
+      "category": "niche",
+      "era": "2022–present",
+      "origin": "Ballet-inspired soft feminine aesthetic.",
+      "traits": [
+        "Soft pinks, cream, tulle, ribbon",
+        "Delicate, graceful, romantic",
+        "Serif/script accents",
+        "Ethereal femininity"
+      ],
+      "example": "Balletcore fashion moodboards.",
+      "confuse_with": [
+        "coquette",
+        "light-academia"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "regencycore",
+      "name": "Regencycore",
+      "aliases": [
+        "Bridgerton aesthetic",
+        "Regency"
+      ],
+      "category": "niche",
+      "era": "2020–present",
+      "origin": "Regency-era romance revival (Bridgerton, 2020).",
+      "traits": [
+        "Pastel florals, empire silhouettes, pearls",
+        "Ornate script, gilt frames",
+        "Soft romantic period palette",
+        "Aristocratic, dreamy, floral"
+      ],
+      "example": "Netflix 'Bridgerton'.",
+      "confuse_with": [
+        "coquette",
+        "baroque-rococo",
+        "grandmillennial"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "vsco-girl",
+      "name": "VSCO Girl",
+      "aliases": [
+        "2019 aesthetic",
+        "soft summer"
+      ],
+      "category": "niche",
+      "era": "2019",
+      "origin": "Summer-2019 teen aesthetic (named after VSCO app).",
+      "traits": [
+        "Faded warm film-filter photos",
+        "Scrunchies, Hydro Flasks, seashells",
+        "Beige/teal beachy palette",
+        "Casual, sunny, laid-back"
+      ],
+      "example": "2019 VSCO/TikTok trend.",
+      "confuse_with": [
+        "nostalgiacore",
+        "cottagecore"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "typographic",
+      "name": "Typography-Driven",
+      "aliases": [
+        "type-only",
+        "typographic layout",
+        "big type"
+      ],
+      "category": "minimal-organic",
+      "era": "Timeless (revival 2018+)",
+      "origin": "Type-as-hero editorial approach.",
+      "traits": [
+        "Oversized expressive typography as the design",
+        "Minimal imagery; type carries everything",
+        "Variable fonts, kinetic type",
+        "Bold, confident, editorial"
+      ],
+      "example": "Type-foundry sites; award-winning agency landings.",
+      "confuse_with": [
+        "swiss-design",
+        "minimalism",
+        "brutalism"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "hyperpop",
+      "name": "Hyperpop Visuals",
+      "aliases": [
+        "hyperpop",
+        "glitchcore pop"
+      ],
+      "category": "niche",
+      "era": "2019–present",
+      "origin": "Hyperpop music-scene visual identity.",
+      "traits": [
+        "Oversaturated candy + glitch chaos",
+        "3D chrome, distorted type, motion blur",
+        "Ironic maximal internet-native energy",
+        "Loud, fast, chaotic"
+      ],
+      "example": "100 gecs; SOPHIE-adjacent visuals.",
+      "confuse_with": [
+        "maximalism",
+        "acid-graphics",
+        "glitch-art"
+      ],
+      "flagship": false
+    },
+    {
+      "slug": "one-ui",
+      "name": "Samsung One UI",
+      "aliases": [
+        "One UI",
+        "Samsung design"
+      ],
+      "category": "flat-platform",
+      "era": "2018–present",
+      "origin": "Samsung, One UI (2018).",
+      "traits": [
+        "Large rounded content zones, reachable UI",
+        "Bottom-weighted layouts for one-handed use",
+        "Soft neutral surfaces, clear color",
+        "Calm, spacious Android skin"
+      ],
+      "example": "Samsung Galaxy phones.",
+      "confuse_with": [
+        "material-design-3",
+        "fluent-design-2"
+      ],
+      "flagship": false
+    }
+  ]
+}
