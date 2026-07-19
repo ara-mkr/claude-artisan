@@ -1,3 +1,5 @@
+<img width="7616" height="1800" alt="CLAUDE ARTISAN HEADER copy" src="https://github.com/user-attachments/assets/8b37aa7e-1b22-459d-93eb-d195def9f600" />
+<img width="7616" height="3080" alt="banner_grid_landscape copy" src="https://github.com/user-attachments/assets/264709c1-3297-4dd7-b1dd-150ece8a925e" />
 # Claude Artisan
 
 **A Claude Code skill that turns "make this brutalist" into a finished, accessible, production UI — zero guesswork.**
