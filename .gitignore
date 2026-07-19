@@ -1,0 +1,27 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Python (scripts/)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node (playwright tooling used by screenshot_all.mjs)
+node_modules/
+
+# Build output — regenerate from source, don't commit binaries
+dist/
+
+# Excluded imagery (not tracked in this repo)
+design-language/assets/CLAUDE ARTISAN HEADER.png
+design-language/assets/banner_grid_landscape.png
+
+# Working/scratch files — never commit these
+*.tmp
+*.bak
+draft-*
+scratch/
