@@ -24,12 +24,12 @@ hierarchy clear, and the accessibility intact; then apply the aesthetic.
 ```
 SKILL.md                       ← you are here (workflow + navigation)
 scripts/
-  style_catalog.json           ← SINGLE SOURCE OF TRUTH: 186 styles, tokens for 33
+  style_catalog.json           ← SINGLE SOURCE OF TRUTH: 186 styles, tokens for all 186
   generate_tokens.py           ← style slug → CSS custom props + Tailwind fragment
   contrast_check.py            ← real WCAG AA/AAA math; pair or CSS-file scan
   consistency_audit.py         ← the "half-applied style" detector (run this last)
 references/
-  00-flagship-implementation-specs/<slug>.md   ← full deep spec per top style
+  00-flagship-implementation-specs/<slug>.md   ← full deep spec, every style (186)
   01..09-<family>.md           ← every catalogued style, grouped by family
   style-selection-decision-tree.md   ← vague vibe/brief → specific style
 assets/
@@ -61,16 +61,10 @@ makes them disagree with the JSON — change the source and regenerate.
 
 ### 2. Pull the implementation spec
 
-- **Flagship style** (33 of them): read
+- **Every cataloged style** (all 186): read
   `references/00-flagship-implementation-specs/<slug>.md`. It has the full token
   set, Tailwind fragment, per-primitive component rules, signature move(s),
   accessibility corrections, do/don't, and "don't confuse with X".
-- **Non-flagship style** (the other 150+): read its entry in the matching family
-  file (`references/0X-<family>.md`) for era, traits, example, and confusions,
-  then **derive tokens on the spot using the same schema** as the flagship specs
-  (color, radius, shadow, blur, font, text/type-scale, space, ease, extra) and
-  the traits as your guide. `generate_tokens.py <slug>` prints that metadata for
-  non-flagship styles to seed you.
 - **Style not in the catalog at all**: research it live (web search the
   era/origin, 3–5 defining visual traits, and one real reference example),
   then derive tokens with the same schema. Add it to the catalog if it'll recur.
@@ -131,17 +125,14 @@ single source of truth). If code execution isn't available in the target
 environment, do the same reasoning by hand: scan for literal color/radius/shadow
 values and confirm each maps to a token.
 
-## Quick reference: the 33 flagship (deep-spec) styles
+## Quick reference: every style now has a deep spec
 
-`glassmorphism · liquid-glass · neumorphism · claymorphism · skeuomorphism ·
-flat-design · material-design-3 · fluent-design-2 · brutalism · neubrutalism ·
-corporate-memphis · bento-grid · swiss-design · bauhaus · memphis-design ·
-art-deco · constructivism · de-stijl · pop-art · cyberpunk · vaporwave ·
-synthwave · y2k-futurism · frutiger-aero · solarpunk · ascii-terminal ·
-holographic · risograph · glitch-art · minimalism · maximalism · scandinavian ·
-dark-academia`
-
-For any other style, use its family file + the token schema. Run
+All 186 cataloged styles have a full deep-implementation spec in
+`references/00-flagship-implementation-specs/<slug>.md` — there's no
+flagship/non-flagship split left to reason about. Use the family files
+(`references/0X-<family>.md`) and the decision tree purely for discovery
+(browsing, disambiguation, vibe → slug resolution), then always pull the
+deep spec for the resolved slug. Run
 `python3 scripts/generate_tokens.py --list` for all 186 slugs and aliases, or
 `--flagship` for just the deep-spec set.
 

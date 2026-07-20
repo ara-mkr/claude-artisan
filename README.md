@@ -26,19 +26,14 @@ Design systems live in people's heads. An agent told "make it brutalist" will im
 | | |
 |---|---|
 | **Styles cataloged** | 186, researched — not invented |
-| **Flagship deep-specs** | 33, full implementation-grade |
+| **Deep implementation specs** | 186 — every style, full implementation-grade |
 | **Style families** | 9 |
-| **Starter theme files** | 219 (186 CSS + 33 flagship Tailwind fragments) |
+| **Starter theme files** | 372 (186 CSS + 186 Tailwind fragments) |
 | **Component examples** | 186 fully-styled HTML references — one per style |
 | **Scripts** | 3, stdlib-only, all tested |
 | **Single source of truth** | `scripts/style_catalog.json` — everything else derives from it |
 
-<details>
-<summary><strong>The 33 flagship styles</strong> (full tokens · Tailwind · component rules · a11y · do/don't · confusables)</summary>
-
-ASCII/Terminal/TUI · Art Deco · Bauhaus · Bento Grid · Brutalist Web Design · Claymorphism · Constructivism · Corporate Memphis · Cyberpunk · Dark Academia · De Stijl / Neoplasticism · Flat Design · Fluent Design 2 · Frutiger Aero · Glassmorphism · Glitch Art · Holographic / Iridescent · Liquid Glass · Material Design 3 / Material You · Maximalism · Memphis Design · Minimalism · Neubrutalism · Neumorphism · Pop Art · Risograph · Scandinavian / Nordic · Skeuomorphism · Solarpunk · Swiss / International Typographic Style · Synthwave / Outrun · Vaporwave · Y2K Futurism
-
-</details>
+Every one of the 186 cataloged styles now has the full treatment: tokens, Tailwind fragment, a 10-primitive component-rules table, style-specific accessibility corrections, do/don't, and confusable neighbors — see `references/00-flagship-implementation-specs/`.
 
 <details>
 <summary><strong>All 9 families</strong> (186 styles total)</summary>
@@ -65,7 +60,7 @@ ASCII/Terminal/TUI · Art Deco · Bauhaus · Bento Grid · Brutalist Web Design 
 design-language/
 ├── SKILL.md                                    ← workflow, navigation, triggers (159 lines)
 ├── references/
-│   ├── 00-flagship-implementation-specs/       ← 33 files — one per deep-spec style
+│   ├── 00-flagship-implementation-specs/       ← 186 files — one per style, full deep-spec
 │   ├── 01-morphism-tactile-dimensional.md
 │   ├── 02-glass-transparency-family.md
 │   ├── 03-brutalist-antidesign.md
@@ -82,19 +77,19 @@ design-language/
 │   ├── contrast_check.py                       ← real WCAG AA/AAA luminance math
 │   └── consistency_audit.py                    ← the "half-applied style" detector
 ├── assets/
-│   ├── starter-themes/                         ← drop-in .css per style (186) + .tailwind.config.fragment.js (33 flagship)
+│   ├── starter-themes/                         ← drop-in .css (186) + .tailwind.config.fragment.js (186)
 │   └── component-examples/                     ← styled button/card/nav HTML — one per style (186)
 └── LICENSE.txt
 ```
 
-Everything downstream — the 9 category files, the 33 deep specs, the starter themes, both scripts — reads `scripts/style_catalog.json`. Change the catalog, regenerate; never hand-edit the derived files out of sync with it.
+Everything downstream — the 9 category files, the 186 deep specs, the starter themes, both scripts — reads `scripts/style_catalog.json`. Change the catalog, regenerate; never hand-edit the derived files out of sync with it.
 
 ---
 
 ## How an agent actually uses it
 
 1. **Identify the target style.** Named style → resolve slug/alias (`glassmorphism`, `"soft UI"` → `neumorphism`). Vibe/era/mood → `references/style-selection-decision-tree.md`, which forces a decade pin for anything "retro" (Y2K vs. Frutiger Aero vs. vaporwave are all "2000s" and easy to conflate).
-2. **Pull the spec.** Flagship style → the full deep-spec file. Non-flagship → derive tokens live from the catalog metadata using the same schema.
+2. **Pull the spec.** Every style has a full deep-spec file in `references/00-flagship-implementation-specs/`.
 3. **Apply consistently, token-first.** Walk every primitive — button, input, card, nav, modal, table, tooltip, badge, toggle, loading/empty state — and repeat the signature move everywhere it's relevant, not once decoratively.
 4. **Fix accessibility for that specific style.** Every flagship spec lists the exact contrast/scrim/motion-reduction corrections that style needs by default.
 5. **Run the drift check before calling it done.**
@@ -116,7 +111,7 @@ All standard-library Python, no dependencies, all tested against synthetic cases
 ```bash
 python3 scripts/generate_tokens.py glassmorphism ./out   # writes .css + .tailwind.config.fragment.js
 python3 scripts/generate_tokens.py --list                # every slug + alias
-python3 scripts/generate_tokens.py --flagship             # deep-spec styles only
+python3 scripts/generate_tokens.py --flagship             # all 186 now have deep specs
 ```
 
 ### `contrast_check.py` — real WCAG math, not an approximation
@@ -148,9 +143,9 @@ design-language/
 
 - **Research, don't invent.** Every cataloged style has a verified era, origin, and at least one real reference implementation.
 - **No placeholders.** Every token is one that would genuinely ship — real hex-adjacent palettes, real `box-shadow`/`backdrop-filter` values, real easing curves.
-- **Depth where it matters.** 186 styles for coverage; 33 get the full implementation-grade treatment because that's what people actually request.
+- **Depth everywhere.** All 186 cataloged styles get the full implementation-grade treatment — tokens, Tailwind, component rules, a11y, do/don't, confusables.
 - **Single source of truth.** The JSON catalog and every prose file agree by construction — the prose is generated from the catalog, not hand-synced.
-- **Known deviations, stated up front:** six starter themes (glassmorphism, neubrutalism, claymorphism, neumorphism, brutalism, cyberpunk) are hand-tuned and deliberately left untouched by the generic generator — they beat the auto-generated output. The optional trigger-description eval/benchmark loop from skill-creator was not run; it's polish, not scope.
+- **Known deviations, stated up front:** six starter themes (glassmorphism, neubrutalism, claymorphism, neumorphism, brutalism, cyberpunk) are hand-tuned and deliberately left untouched by the generic generator — they beat the auto-generated output. The remaining 180 CSS/Tailwind files were generated from catalog tokens (33 originally hand-authored as flagship specs, 153 authored alongside their deep-spec write-up). The optional trigger-description eval/benchmark loop from skill-creator was not run; it's polish, not scope.
 
 ---
 
