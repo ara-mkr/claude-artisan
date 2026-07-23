@@ -1,6 +1,6 @@
 # Retrofuturism & Speculative-Fiction Genres
 
-*29 styles in this family (6 flagship). Generated from `scripts/style_catalog.json` — the single source of truth.*
+*30 styles in this family (7 flagship). Generated from `scripts/style_catalog.json` — the single source of truth.*
 
 How different eras imagined the future — cyberpunk, synthwave, Y2K, Frutiger Aero, solarpunk, and the whole '-punk' family (steam/diesel/atom/cassette). Each encodes a specific decade's optimism or dread. They're highly evocative and very palette/texture-driven.
 
@@ -9,6 +9,7 @@ How different eras imagined the future — cyberpunk, synthwave, Y2K, Frutiger A
 ## Contents
 - [Cyberpunk](#cyberpunk) ⭐
 - [Frutiger Aero](#frutiger-aero) ⭐
+- [Lunarpunk](#lunarpunk) ⭐
 - [Solarpunk](#solarpunk) ⭐
 - [Synthwave / Outrun](#synthwave--outrun) ⭐
 - [Vaporwave](#vaporwave) ⭐
@@ -72,6 +73,24 @@ How different eras imagined the future — cyberpunk, synthwave, Y2K, Frutiger A
 **Reference example.** Windows Vista/7; Wii/iOS-era wallpapers; Windows XP 'Bliss'.
 
 **Don't confuse with:** glassmorphism, y2k-futurism, solarpunk.
+
+---
+
+### Lunarpunk  ⭐ *flagship — full spec in [00-flagship-implementation-specs/lunarpunk.md](00-flagship-implementation-specs/lunarpunk.md)*
+*Aliases:* night solarpunk, moonpunk, dark solarpunk  
+*Slug:* `lunarpunk` · *Era:* 2020s–present
+
+**Origin.** Emerged online ~2020s as the nocturnal, mystical counterpart to solarpunk within eco-futurist communities.
+
+**Defining traits.**
+- Moonlit bioluminescence over deep indigo/black
+- Dark botanical and celestial motifs (moths, moonflowers, star charts)
+- Appropriate-tech-at-night: solar batteries, glow-lanterns, quiet machinery
+- Soft glowing edges instead of hard neon; mystical over corporate
+
+**Reference example.** Lunarpunk art communities on Tumblr/DeviantArt; 'nocturnal eco-futurism' zine covers.
+
+**Don't confuse with:** solarpunk, cyberpunk, dreampunk.
 
 ---
 

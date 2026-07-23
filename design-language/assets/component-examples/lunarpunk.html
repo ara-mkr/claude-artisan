@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lunarpunk — component example</title>
+<!-- Import the one starter theme; that's ~80% of the look. -->
+<link rel="stylesheet" href="../starter-themes/lunarpunk.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-16) var(--space-6); display: grid; gap: var(--space-8); }
+  h1 { font: 600 var(--text-4xl)/1.1 var(--font-display); margin: 0; color: var(--color-moonsilver); }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-lg); margin: 0; max-width: 54ch; }
+  .row { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4); }
+  .card h3 { margin: 0 0 var(--space-2); font: 600 var(--text-xl) var(--font-display); color: var(--color-primary); }
+  .card p { margin: 0; color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto; font-family:var(--font-display); letter-spacing:.04em;">NOCTURNE COMMONS</strong>
+      <a href="#" style="color:var(--color-text);text-decoration:none">Almanac</a>
+      <a href="#" style="color:var(--color-text-muted);text-decoration:none">Glow-lanterns</a>
+      <button class="btn btn--primary">Enter the grove</button>
+    </nav>
+
+    <header>
+      <h1>The tech sleeps by day, glows by night.</h1>
+      <p class="lede">Solar batteries banked at dusk, moth-wing sensors, moonflower trellises threaded with
+        fiber-optic root systems — appropriate technology tending itself quietly under starlight.</p>
+    </header>
+
+    <div class="row">
+      <button class="btn btn--primary">Join the vigil</button>
+      <button class="btn">Read the star chart</button>
+      <button class="btn" disabled>Grove closed</button>
+      <span class="badge">☾ Waning gibbous</span>
+    </div>
+
+    <input class="input" placeholder="leave your name at the lantern post">
+
+    <div class="grid">
+      <article class="card">
+        <h3>Battery groves</h3>
+        <p>Banked solar cells breathe out a slow teal glow overnight, feeding the glow-lanterns along the path.</p>
+      </article>
+      <article class="card">
+        <h3>Moonflower relay</h3>
+        <p>Bioluminescent trellises pulse violet when the mesh network hands off a packet between houses.</p>
+      </article>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fauvism — component example</title>
+<!-- Import the one starter theme; that's ~80% of the look. -->
+<link rel="stylesheet" href="../starter-themes/fauvism.css">
+<style>
+  .wrap { max-width: 880px; margin: 0 auto; padding: var(--space-16) var(--space-6); display: grid; gap: var(--space-8); }
+  h1 { font: 700 var(--text-4xl)/1.1 var(--font-display); margin: 0; background: var(--clash-gradient); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  p.lede { color: var(--color-text-muted); font-size: var(--text-lg); margin: 0; max-width: 52ch; }
+  .row { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4); }
+  .card:nth-of-type(1) { background: var(--color-surface-2); }
+  .card:nth-of-type(2) { background: #e4f3ea; }
+  .card h3 { margin: 0 0 var(--space-2); font: 700 var(--text-xl) var(--font-display); }
+  .card p { margin: 0; color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <strong style="margin-right:auto; font-family:var(--font-display);">LES FAUVES</strong>
+      <a href="#" style="color:var(--color-text);text-decoration:none">Salon</a>
+      <a href="#" style="color:var(--color-text-muted);text-decoration:none">Collioure</a>
+      <button class="btn btn--primary">Enter the salon</button>
+    </nav>
+
+    <header>
+      <h1>Paint it wrong on purpose.</h1>
+      <p class="lede">A green face, an orange sky, a magenta shadow — straight from the tube, flat, and
+        unapologetic. Color answers to the composition, never to the eye's memory of reality.</p>
+    </header>
+
+    <div class="row">
+      <button class="btn btn--primary">See the scandal</button>
+      <button class="btn">Read the reviews</button>
+      <button class="btn" disabled>Salon closed</button>
+      <span class="badge">★ Wild beast</span>
+    </div>
+
+    <input class="input" placeholder="sign the exhibition register">
+
+    <div class="grid">
+      <article class="card">
+        <h3>Collioure harbor, again</h3>
+        <p>The water is cobalt, the boats are magenta, and the light is somehow still true to the afternoon.</p>
+      </article>
+      <article class="card">
+        <h3>The woman in the green stripe</h3>
+        <p>One arbitrary stroke splits the face down the middle — and the portrait reads clearer for it.</p>
+      </article>
+    </div>
+  </div>
+</body>
+</html>

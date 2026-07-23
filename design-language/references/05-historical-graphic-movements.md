@@ -1,6 +1,6 @@
 # Historical Graphic & Art Movements
 
-*26 styles in this family (7 flagship). Generated from `scripts/style_catalog.json` — the single source of truth.*
+*28 styles in this family (9 flagship). Generated from `scripts/style_catalog.json` — the single source of truth.*
 
 Movements from art and design history — Bauhaus, Swiss, De Stijl, Art Deco, Memphis, Pop Art and more. A client asking for one of these wants the UI to *evoke an era*, so accuracy to the movement's actual principles (grid logic, palette, type, motif) matters more than any modern UI convention.
 
@@ -11,8 +11,10 @@ Movements from art and design history — Bauhaus, Swiss, De Stijl, Art Deco, Me
 - [Bauhaus](#bauhaus) ⭐
 - [Constructivism](#constructivism) ⭐
 - [De Stijl / Neoplasticism](#de-stijl--neoplasticism) ⭐
+- [Fauvism](#fauvism) ⭐
 - [Memphis Design](#memphis-design) ⭐
 - [Pop Art](#pop-art) ⭐
+- [Sumi-e (Japanese Ink Wash)](#sumi-e-japanese-ink-wash) ⭐
 - [Swiss / International Typographic Style](#swiss--international-typographic-style) ⭐
 - [Art Nouveau](#art-nouveau)
 - [Arts & Crafts](#arts--crafts)
@@ -108,6 +110,24 @@ Movements from art and design history — Bauhaus, Swiss, De Stijl, Art Deco, Me
 
 ---
 
+### Fauvism  ⭐ *flagship — full spec in [00-flagship-implementation-specs/fauvism.md](00-flagship-implementation-specs/fauvism.md)*
+*Aliases:* Les Fauves, wild beasts style  
+*Slug:* `fauvism` · *Era:* 1904–1908
+
+**Origin.** Paris (Henri Matisse, Andre Derain, Maurice de Vlaminck); named after a critic called the painters 'les fauves' (wild beasts).
+
+**Defining traits.**
+- Wild, non-naturalistic, highly saturated clashing color
+- Bold flat unmixed color fields applied straight from the tube
+- Expressive, loose, brush-like edges and borders
+- High-energy arbitrary palette: hot orange, cobalt, viridian, magenta
+
+**Reference example.** Matisse 'Woman with a Hat' (1905); Derain's Collioure harbor paintings.
+
+**Don't confuse with:** pop-art, psychedelic, memphis-design.
+
+---
+
 ### Memphis Design  ⭐ *flagship — full spec in [00-flagship-implementation-specs/memphis-design.md](00-flagship-implementation-specs/memphis-design.md)*
 *Aliases:* Memphis Group, Memphis Milano  
 *Slug:* `memphis-design` · *Era:* 1981–1987
@@ -141,6 +161,24 @@ Movements from art and design history — Bauhaus, Swiss, De Stijl, Art Deco, Me
 **Reference example.** Lichtenstein 'Whaam!'; Warhol Campbell's Soup.
 
 **Don't confuse with:** op-art, memphis-design, comic.
+
+---
+
+### Sumi-e (Japanese Ink Wash)  ⭐ *flagship — full spec in [00-flagship-implementation-specs/sumi-e.md](00-flagship-implementation-specs/sumi-e.md)*
+*Aliases:* ink wash painting, suibokuga, brush ink style  
+*Slug:* `sumi-e` · *Era:* 14th century–present
+
+**Origin.** Traditional East Asian ink wash painting, brought to Japan via Zen Buddhist monks from Song-dynasty China.
+
+**Defining traits.**
+- Monochrome black ink gradients (bokashi) on cream rice-paper backgrounds
+- Visible brush-stroke texture and ink-bleed edges
+- Deliberate negative space (ma) as a compositional element
+- Asymmetric, organic compositions with a single red seal (hanko) accent
+
+**Reference example.** Sesshu Toyo's landscape scrolls; Hasegawa Tohaku 'Pine Trees' screen.
+
+**Don't confuse with:** ukiyo-e, japandi, wabi-sabi.
 
 ---
 

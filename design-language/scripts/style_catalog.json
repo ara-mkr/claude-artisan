@@ -2,8 +2,8 @@
   "meta": {
     "name": "Design Language Catalog",
     "version": "1.0.0",
-    "count": 186,
-    "flagship_count": 186,
+    "count": 189,
+    "flagship_count": 189,
     "categories": {
       "morphism": "Morphism / tactile-dimensional",
       "glass": "Glass & transparency family",
@@ -15142,6 +15142,256 @@
         "extra": {
           "reach-zone-radius": "32px",
           "bottom-safe-pad": "28px"
+        }
+      }
+    },
+    {
+      "slug": "lunarpunk",
+      "name": "Lunarpunk",
+      "aliases": [
+        "night solarpunk",
+        "moonpunk",
+        "dark solarpunk"
+      ],
+      "category": "retrofuturism",
+      "era": "2020s–present",
+      "origin": "Emerged online ~2020s as the nocturnal, mystical counterpart to solarpunk within eco-futurist communities.",
+      "traits": [
+        "Moonlit bioluminescence over deep indigo/black",
+        "Dark botanical and celestial motifs (moths, moonflowers, star charts)",
+        "Appropriate-tech-at-night: solar batteries, glow-lanterns, quiet machinery",
+        "Soft glowing edges instead of hard neon; mystical over corporate"
+      ],
+      "example": "Lunarpunk art communities on Tumblr/DeviantArt; 'nocturnal eco-futurism' zine covers.",
+      "confuse_with": [
+        "solarpunk",
+        "cyberpunk",
+        "dreampunk"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#0a0e1a",
+          "surface": "#12182b",
+          "surface-2": "#1a2340",
+          "text": "#e8ecf7",
+          "text-muted": "#9aa4c4",
+          "primary": "#2dd4bf",
+          "accent": "#a78bfa",
+          "moonsilver": "#c7d2e0",
+          "nightbloom": "#5b4b8a"
+        },
+        "radius": {
+          "sm": "8px",
+          "md": "16px",
+          "lg": "28px",
+          "pill": "999px"
+        },
+        "shadow": {
+          "glow-teal": "0 0 24px rgba(45,212,191,0.35), 0 8px 24px rgba(0,0,0,0.4)",
+          "glow-violet": "0 0 20px rgba(167,139,250,0.30), 0 8px 20px rgba(0,0,0,0.4)"
+        },
+        "blur": {
+          "soft": "18px"
+        },
+        "font": {
+          "sans": "'Spectral', 'Cormorant Garamond', system-ui, serif",
+          "display": "'Cormorant Garamond', 'Spectral', serif",
+          "mono": "ui-monospace, monospace"
+        },
+        "text": {
+          "xs": "0.75rem",
+          "sm": "0.875rem",
+          "base": "1rem",
+          "lg": "1.125rem",
+          "xl": "1.375rem",
+          "2xl": "1.75rem",
+          "3xl": "2.25rem",
+          "4xl": "3rem",
+          "5xl": "4rem"
+        },
+        "space": {
+          "1": "4px",
+          "2": "8px",
+          "3": "12px",
+          "4": "16px",
+          "6": "24px",
+          "8": "32px",
+          "12": "48px",
+          "16": "64px",
+          "24": "96px"
+        },
+        "ease": {
+          "standard": "cubic-bezier(0.22, 0.61, 0.36, 1)"
+        },
+        "extra": {
+          "moonlight-gradient": "radial-gradient(circle at 80% 0%, rgba(199,210,224,0.18), transparent 45%)",
+          "bioluminescent-veil": "linear-gradient(180deg, rgba(45,212,191,0.08), rgba(167,139,250,0.08))"
+        }
+      }
+    },
+    {
+      "slug": "sumi-e",
+      "name": "Sumi-e (Japanese Ink Wash)",
+      "aliases": [
+        "ink wash painting",
+        "suibokuga",
+        "brush ink style"
+      ],
+      "category": "historical",
+      "era": "14th century–present",
+      "origin": "Traditional East Asian ink wash painting, brought to Japan via Zen Buddhist monks from Song-dynasty China.",
+      "traits": [
+        "Monochrome black ink gradients (bokashi) on cream rice-paper backgrounds",
+        "Visible brush-stroke texture and ink-bleed edges",
+        "Deliberate negative space (ma) as a compositional element",
+        "Asymmetric, organic compositions with a single red seal (hanko) accent"
+      ],
+      "example": "Sesshu Toyo's landscape scrolls; Hasegawa Tohaku 'Pine Trees' screen.",
+      "confuse_with": [
+        "ukiyo-e",
+        "japandi",
+        "wabi-sabi"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#f4efe4",
+          "surface": "#faf6ec",
+          "surface-2": "#ede5d3",
+          "text": "#1c1c1c",
+          "text-muted": "#5a564c",
+          "primary": "#232323",
+          "accent": "#b13d2c",
+          "ink-grey": "#8c8676",
+          "ink-wash": "#3d3a33"
+        },
+        "radius": {
+          "sm": "2px",
+          "md": "6px",
+          "lg": "14px",
+          "pill": "999px"
+        },
+        "shadow": {
+          "ink-bleed": "0 6px 18px rgba(28,28,28,0.14)",
+          "ink-bleed-sm": "0 2px 8px rgba(28,28,28,0.10)"
+        },
+        "blur": {},
+        "font": {
+          "sans": "'Shippori Mincho', 'Noto Serif JP', 'Zen Old Mincho', serif",
+          "display": "'Zen Old Mincho', 'Shippori Mincho', serif",
+          "mono": "ui-monospace, monospace"
+        },
+        "text": {
+          "xs": "0.75rem",
+          "sm": "0.875rem",
+          "base": "1rem",
+          "lg": "1.125rem",
+          "xl": "1.375rem",
+          "2xl": "1.75rem",
+          "3xl": "2.25rem",
+          "4xl": "3rem",
+          "5xl": "4rem"
+        },
+        "space": {
+          "1": "4px",
+          "2": "8px",
+          "3": "12px",
+          "4": "16px",
+          "6": "24px",
+          "8": "32px",
+          "12": "48px",
+          "16": "64px",
+          "24": "96px"
+        },
+        "ease": {
+          "standard": "cubic-bezier(0.4, 0.0, 0.2, 1)"
+        },
+        "extra": {
+          "ink-gradient": "linear-gradient(160deg, #232323 0%, #5a564c 55%, transparent 100%)",
+          "seal-stamp": "0 0 0 2px #b13d2c"
+        }
+      }
+    },
+    {
+      "slug": "fauvism",
+      "name": "Fauvism",
+      "aliases": [
+        "Les Fauves",
+        "wild beasts style"
+      ],
+      "category": "historical",
+      "era": "1904–1908",
+      "origin": "Paris (Henri Matisse, Andre Derain, Maurice de Vlaminck); named after a critic called the painters 'les fauves' (wild beasts).",
+      "traits": [
+        "Wild, non-naturalistic, highly saturated clashing color",
+        "Bold flat unmixed color fields applied straight from the tube",
+        "Expressive, loose, brush-like edges and borders",
+        "High-energy arbitrary palette: hot orange, cobalt, viridian, magenta"
+      ],
+      "example": "Matisse 'Woman with a Hat' (1905); Derain's Collioure harbor paintings.",
+      "confuse_with": [
+        "pop-art",
+        "psychedelic",
+        "memphis-design"
+      ],
+      "flagship": true,
+      "tokens": {
+        "color": {
+          "bg": "#fff8ee",
+          "surface": "#ffffff",
+          "surface-2": "#ffe9d1",
+          "text": "#1a1a1a",
+          "text-muted": "#5c4a3a",
+          "primary": "#ff5e1a",
+          "accent": "#1c3fab",
+          "viridian": "#00a878",
+          "magenta": "#d6146b"
+        },
+        "radius": {
+          "sm": "4px",
+          "md": "12px",
+          "lg": "24px",
+          "pill": "999px"
+        },
+        "shadow": {
+          "bold": "6px 6px 0 #1c3fab",
+          "bold-sm": "3px 3px 0 #d6146b"
+        },
+        "blur": {},
+        "font": {
+          "sans": "'Fraunces', 'Georgia', serif",
+          "display": "'Fraunces', 'Playfair Display', serif",
+          "mono": "ui-monospace, monospace"
+        },
+        "text": {
+          "xs": "0.75rem",
+          "sm": "0.875rem",
+          "base": "1rem",
+          "lg": "1.125rem",
+          "xl": "1.375rem",
+          "2xl": "1.75rem",
+          "3xl": "2.25rem",
+          "4xl": "3rem",
+          "5xl": "4rem"
+        },
+        "space": {
+          "1": "4px",
+          "2": "8px",
+          "3": "12px",
+          "4": "16px",
+          "6": "24px",
+          "8": "32px",
+          "12": "48px",
+          "16": "64px",
+          "24": "96px"
+        },
+        "ease": {
+          "standard": "cubic-bezier(0.34, 1.56, 0.64, 1)"
+        },
+        "extra": {
+          "brushstroke-border": "3px solid #1a1a1a",
+          "clash-gradient": "linear-gradient(105deg, #ff5e1a 0%, #d6146b 45%, #1c3fab 100%)"
         }
       }
     }
