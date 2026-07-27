@@ -1,0 +1,62 @@
+/* Fantasy Cartography — design tokens (generated from style_catalog.json) */
+/* contemporary | Illustrated fantasy maps and tabletop-world guides that use parchment, contour lines, compass marks, and hand-inked terrain. */
+:root {
+  /* color */
+  --color-bg: #e8d6ad;
+  --color-surface: #f6e8c7;
+  --color-surface-2: #d8c08c;
+  --color-text: #382b1b;
+  --color-text-muted: #755e3b;
+  --color-primary: #3f693f;
+  --color-accent: #a94832;
+  --color-ink: #293e48;
+  /* radius */
+  --radius-sm: 0;
+  --radius-md: 3px;
+  --radius-lg: 8px;
+  --radius-pill: 999px;
+  /* shadow */
+  --shadow-paper: 0 1px 0 rgba(255,255,255,.5) inset, 0 8px 18px rgba(56,43,27,.18);
+  --shadow-ink: 0 0 0 1px #382b1b;
+  /* font */
+  --font-sans: Georgia, serif;
+  --font-display: Georgia, 'Times New Roman', serif;
+  --font-mono: 'Courier New', monospace;
+  /* text */
+  --text-xs: .75rem;
+  --text-sm: .875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  /* ease */
+  --ease-standard: cubic-bezier(.2,.75,.3,1);
+  /* extra (signature gradients, composite borders, filters) */
+  --contours: repeating-radial-gradient(ellipse at 48% 56%, transparent 0 12px, rgba(41,62,72,.16) 13px 14px, transparent 15px 23px);
+}
+
+/* Reusable component primitives: Fantasy Cartography. */
+body { margin:0; min-height:100vh; color:var(--color-text); background:var(--color-bg); font-family:var(--font-sans); }
+.wrap { max-width:880px; margin:0 auto; padding:var(--space-16) var(--space-6); display:grid; gap:var(--space-8); }
+.nav { display:flex; align-items:center; gap:var(--space-4); padding:var(--space-4) var(--space-6); background:var(--color-surface); position:relative; z-index:1; }
+.nav a { color:var(--color-text-muted); text-decoration:none; font-size:var(--text-sm); }.nav a:hover { color:var(--color-text); }
+.btn { appearance:none; border:1px solid var(--color-text); border-radius:var(--radius-md); background:var(--color-surface-2); color:var(--color-text); padding:var(--space-3) var(--space-6); font:700 var(--text-sm)/1 var(--font-sans); cursor:pointer; transition:transform .18s var(--ease-standard),background .18s var(--ease-standard); }
+.btn:hover { transform:translateY(-2px); background:var(--color-accent); }.btn:active { transform:translateY(0); }.btn:focus-visible,.input:focus-visible { outline:3px solid var(--color-accent); outline-offset:3px; }.btn[disabled] { opacity:.5; cursor:not-allowed; transform:none; }
+.input { width:min(100%,500px); box-sizing:border-box; padding:var(--space-3) var(--space-4); border:1px solid var(--color-text-muted); border-radius:var(--radius-sm); background:var(--color-surface); color:var(--color-text); font:var(--text-base) var(--font-sans); }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:var(--space-4); }.card { background:var(--color-surface); padding:var(--space-6); position:relative; z-index:1; }.card h3 { margin:0 0 var(--space-2); font:700 var(--text-xl)/1.15 var(--font-display); }.card p { margin:0; color:var(--color-text-muted); }.row { display:flex; flex-wrap:wrap; align-items:center; gap:var(--space-3); position:relative; z-index:1; }.badge { display:inline-flex; align-items:center; padding:var(--space-2) var(--space-3); border-radius:var(--radius-pill); background:var(--color-surface-2); font-size:var(--text-xs); }
+@media (max-width:620px){.wrap{padding:var(--space-8) var(--space-4)}.nav{flex-wrap:wrap}.nav strong{width:100%}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+.wrap{position:relative}.wrap::before{content:"";position:fixed;inset:0;pointer-events:none;background:var(--contours);opacity:.45}.nav,.card{border:1px solid var(--color-ink);box-shadow:var(--shadow-paper)}.btn--primary{background:var(--color-primary);color:var(--color-surface)}.badge{color:var(--color-accent);border:1px solid var(--color-accent)}

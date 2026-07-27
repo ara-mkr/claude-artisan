@@ -25,27 +25,27 @@ Design systems live in people's heads. An agent told "make it brutalist" will im
 
 | | |
 |---|---|
-| **Styles cataloged** | 186, researched — not invented |
-| **Deep implementation specs** | 186 — every style, full implementation-grade |
+| **Styles cataloged** | 199, researched — not invented |
+| **Deep implementation specs** | 199 — every style, full implementation-grade |
 | **Style families** | 9 |
-| **Starter theme files** | 372 (186 CSS + 186 Tailwind fragments) |
-| **Component examples** | 186 fully-styled HTML references — one per style |
+| **Starter theme files** | 398 (199 CSS + 199 Tailwind fragments) |
+| **Component examples** | 199 fully-styled HTML references — one per style |
 | **Scripts** | 3, stdlib-only, all tested |
 | **Single source of truth** | `scripts/style_catalog.json` — everything else derives from it |
 
-Every one of the 186 cataloged styles now has the full treatment: tokens, Tailwind fragment, a 10-primitive component-rules table, style-specific accessibility corrections, do/don't, and confusable neighbors — see `references/00-flagship-implementation-specs/`.
+Every one of the 199 cataloged styles now has the full treatment: tokens, Tailwind fragment, a 10-primitive component-rules table, style-specific accessibility corrections, do/don't, and confusable neighbors — see `references/00-flagship-implementation-specs/`.
 
 <details>
-<summary><strong>All 9 families</strong> (186 styles total)</summary>
+<summary><strong>All 9 families</strong> (199 styles total)</summary>
 
 | Family | Count | Covers |
 |---|---:|---|
-| Niche subculture & kitsch | 41 | dark academia, cottagecore, webcore, cyberprep — accent layers, not full systems |
-| Retrofuturism & speculative genres | 29 | cyberpunk, solarpunk, steampunk, dieselpunk, atompunk, cassette futurism |
-| Texture / material / rendering | 29 | chrome, holographic, halftone, risograph, isometric, voxel, pixel art, glitch |
-| Historical graphic movements | 26 | Bauhaus, Swiss, De Stijl, Constructivism, Art Deco, Memphis, Pop Art, Dada |
-| Flat, material & platform systems | 22 | Material 3, Fluent 2, Liquid Glass, Carbon, Ant Design, Polaris, USWDS |
-| Minimal / maximal / organic | 15 | minimalism, maximalism, bento grid, biomorphic, Scandinavian |
+| Niche subculture & kitsch | 43 | dark academia, cottagecore, webcore, cyberprep — accent layers, not full systems |
+| Retrofuturism & speculative genres | 32 | cyberpunk, solarpunk, steampunk, dieselpunk, atompunk, cassette futurism |
+| Texture / material / rendering | 30 | chrome, holographic, halftone, risograph, isometric, voxel, pixel art, glitch |
+| Historical graphic movements | 30 | Bauhaus, Swiss, De Stijl, Constructivism, Art Deco, Memphis, Pop Art, Dada |
+| Flat, material & platform systems | 23 | Material 3, Fluent 2, Liquid Glass, Carbon, Ant Design, Polaris, USWDS |
+| Minimal / maximal / organic | 17 | minimalism, maximalism, bento grid, biomorphic, Scandinavian |
 | Morphism / tactile-dimensional | 9 | skeuomorphism, neumorphism, claymorphism, glassmorphism hybrids |
 | Brutalist & anti-design | 8 | brutalist web, neubrutalism, anti-design, Swiss Punk |
 | Glass & transparency | 7 | glassmorphism, liquid glass, acrylic, aero glass, frosted variants |
@@ -60,7 +60,7 @@ Every one of the 186 cataloged styles now has the full treatment: tokens, Tailwi
 design-language/
 ├── SKILL.md                                    ← workflow, navigation, triggers (159 lines)
 ├── references/
-│   ├── 00-flagship-implementation-specs/       ← 186 files — one per style, full deep-spec
+│   ├── 00-flagship-implementation-specs/       ← 199 files — one per style, full deep-spec
 │   ├── 01-morphism-tactile-dimensional.md
 │   ├── 02-glass-transparency-family.md
 │   ├── 03-brutalist-antidesign.md
@@ -72,17 +72,17 @@ design-language/
 │   ├── 09-niche-subculture-kitsch.md
 │   └── style-selection-decision-tree.md        ← vague vibe → specific style
 ├── scripts/
-│   ├── style_catalog.json                      ← SINGLE SOURCE OF TRUTH (186 styles)
+│   ├── style_catalog.json                      ← SINGLE SOURCE OF TRUTH (199 styles)
 │   ├── generate_tokens.py                      ← slug → CSS tokens + Tailwind fragment
 │   ├── contrast_check.py                       ← real WCAG AA/AAA luminance math
 │   └── consistency_audit.py                    ← the "half-applied style" detector
 ├── assets/
-│   ├── starter-themes/                         ← drop-in .css (186) + .tailwind.config.fragment.js (186)
-│   └── component-examples/                     ← styled button/card/nav HTML — one per style (186)
+│   ├── starter-themes/                         ← drop-in .css (199) + .tailwind.config.fragment.js (199)
+│   └── component-examples/                     ← styled button/card/nav HTML — one per style (199)
 └── LICENSE.txt
 ```
 
-Everything downstream — the 9 category files, the 186 deep specs, the starter themes, both scripts — reads `scripts/style_catalog.json`. Change the catalog, regenerate; never hand-edit the derived files out of sync with it.
+Everything downstream — the 9 category files, the 199 deep specs, the starter themes, both scripts — reads `scripts/style_catalog.json`. Change the catalog, regenerate; never hand-edit the derived files out of sync with it.
 
 ---
 
@@ -111,7 +111,7 @@ All standard-library Python, no dependencies, all tested against synthetic cases
 ```bash
 python3 scripts/generate_tokens.py glassmorphism ./out   # writes .css + .tailwind.config.fragment.js
 python3 scripts/generate_tokens.py --list                # every slug + alias
-python3 scripts/generate_tokens.py --flagship             # all 186 now have deep specs
+python3 scripts/generate_tokens.py --flagship             # all 199 now have deep specs
 ```
 
 ### `contrast_check.py` — real WCAG math, not an approximation
@@ -143,7 +143,7 @@ design-language/
 
 - **Research, don't invent.** Every cataloged style has a verified era, origin, and at least one real reference implementation.
 - **No placeholders.** Every token is one that would genuinely ship — real hex-adjacent palettes, real `box-shadow`/`backdrop-filter` values, real easing curves.
-- **Depth everywhere.** All 186 cataloged styles get the full implementation-grade treatment — tokens, Tailwind, component rules, a11y, do/don't, confusables.
+- **Depth everywhere.** All 199 cataloged styles get the full implementation-grade treatment — tokens, Tailwind, component rules, a11y, do/don't, confusables.
 - **Single source of truth.** The JSON catalog and every prose file agree by construction — the prose is generated from the catalog, not hand-synced.
 - **Known deviations, stated up front:** six starter themes (glassmorphism, neubrutalism, claymorphism, neumorphism, brutalism, cyberpunk) are hand-tuned and deliberately left untouched by the generic generator — they beat the auto-generated output. The remaining 180 CSS/Tailwind files were generated from catalog tokens (33 originally hand-authored as flagship specs, 153 authored alongside their deep-spec write-up). The optional trigger-description eval/benchmark loop from skill-creator was not run; it's polish, not scope.
 

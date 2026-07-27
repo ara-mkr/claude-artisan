@@ -24,12 +24,12 @@ hierarchy clear, and the accessibility intact; then apply the aesthetic.
 ```
 SKILL.md                       ← you are here (workflow + navigation)
 scripts/
-  style_catalog.json           ← SINGLE SOURCE OF TRUTH: 186 styles, tokens for all 186
+  style_catalog.json           ← SINGLE SOURCE OF TRUTH: 199 styles, tokens for all 199
   generate_tokens.py           ← style slug → CSS custom props + Tailwind fragment
   contrast_check.py            ← real WCAG AA/AAA math; pair or CSS-file scan
   consistency_audit.py         ← the "half-applied style" detector (run this last)
 references/
-  00-flagship-implementation-specs/<slug>.md   ← full deep spec, every style (186)
+  00-flagship-implementation-specs/<slug>.md   ← full deep spec, every style (199)
   01..09-<family>.md           ← every catalogued style, grouped by family
   style-selection-decision-tree.md   ← vague vibe/brief → specific style
 assets/
@@ -61,7 +61,7 @@ makes them disagree with the JSON — change the source and regenerate.
 
 ### 2. Pull the implementation spec
 
-- **Every cataloged style** (all 186): read
+- **Every cataloged style** (all 199): read
   `references/00-flagship-implementation-specs/<slug>.md`. It has the full token
   set, Tailwind fragment, per-primitive component rules, signature move(s),
   accessibility corrections, do/don't, and "don't confuse with X".
@@ -127,13 +127,13 @@ values and confirm each maps to a token.
 
 ## Quick reference: every style now has a deep spec
 
-All 186 cataloged styles have a full deep-implementation spec in
+All 199 cataloged styles have a full deep-implementation spec in
 `references/00-flagship-implementation-specs/<slug>.md` — there's no
 flagship/non-flagship split left to reason about. Use the family files
 (`references/0X-<family>.md`) and the decision tree purely for discovery
 (browsing, disambiguation, vibe → slug resolution), then always pull the
 deep spec for the resolved slug. Run
-`python3 scripts/generate_tokens.py --list` for all 186 slugs and aliases, or
+`python3 scripts/generate_tokens.py --list` for all 199 slugs and aliases, or
 `--flagship` for just the deep-spec set.
 
 ## Principles that make application good, not just present
